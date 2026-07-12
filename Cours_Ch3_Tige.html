@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>La tige · Botany Made Simple</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2E7D32;--green2:#6CC24A;--blue:#003366;--orange:#F47C20;--beige:#F8F8F4;--sky:#E6F0F8;--sage:#E7F0E4;--ink:#2B2B2B;--grey:#5a6b62;--line:#e4eae6;--head:'Poppins',-apple-system,Segoe UI,Roboto,sans-serif;--body:'Lato',-apple-system,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--beige);line-height:1.6;font-size:17px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.22;margin:0}
+.wrap{max-width:940px;margin:0 auto;padding:0 18px}
+.top{background:linear-gradient(150deg,#00284f,#0a4f7a);color:#fff;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+.top .brand{font-family:var(--head);font-weight:800;letter-spacing:.5px;font-size:15px}.top .brand .b2{color:#8fd39a}
+.top .nav{display:flex;gap:8px;flex-wrap:wrap}.top .nav a{color:#fff;text-decoration:none;font-family:var(--head);font-weight:600;font-size:12.5px;border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:5px 11px}
+.top .nav a.on{background:var(--orange);border-color:var(--orange)}.top .nav a:hover{background:var(--orange);border-color:var(--orange)}
+.hero{background:var(--sage);border-bottom:1px solid var(--line);padding:24px 0}
+.hero .chaptag{display:inline-block;background:var(--blue);color:#fff;font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:1px;border-radius:14px;padding:4px 13px;margin-bottom:6px}
+.hero h1{font-size:32px;color:var(--blue);margin:6px 0 2px}.hero .role{font-family:var(--head);font-weight:600;color:var(--orange);font-size:16px}
+section{padding:28px 0;border-bottom:1px solid var(--line)}
+.k{font-family:var(--head);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-size:12px}
+h2{font-size:23px;color:var(--blue);margin:6px 0 12px}h2 span{color:var(--orange)}
+h3{font-size:19px;color:var(--green);margin:16px 0 6px}
+p{margin:0 0 14px}
+.photo{border:2px dashed #bcd6c4;border-radius:16px;background:#fff;padding:26px 16px;text-align:center;margin:8px 0}
+.photo label{cursor:pointer;color:var(--green);font-family:var(--head);font-weight:700;font-size:16px}
+.photo .hint{display:block;color:var(--grey);font-size:12.5px;margin-top:6px}
+.photo input{display:none}.photo img{max-width:100%;border-radius:12px;margin-top:14px;display:none}
+.fig{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 10px;margin:10px 0;overflow-x:auto}
+.figcap{font-family:var(--head);font-weight:600;color:var(--blue);text-align:center;font-size:15px;margin:2px 0 6px}
+.rows{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 16px;border-left:6px solid var(--green)}
+.row{font-size:15px;margin:9px 0;border-bottom:1px solid #eef3f0;padding-bottom:8px}.row:last-child{border-bottom:none}
+.row b{color:var(--green);font-family:var(--head);font-size:12.5px;text-transform:uppercase;letter-spacing:.4px;display:block}
+.ex{background:#eaf5ec;border:1px solid #bfe0c8;border-radius:14px;padding:18px;margin:14px 0}
+.ex.field{background:#fff8f1;border-color:#f3d5b8}
+.ex .tag{display:inline-block;background:var(--green);color:#fff;font-family:var(--head);font-weight:700;font-size:11px;letter-spacing:1px;border-radius:12px;padding:3px 11px}
+.ex.field .tag{background:var(--orange)}
+.ex h3{color:var(--blue);margin:8px 0 6px}
+.up{border:2px dashed #bcd6c4;border-radius:12px;padding:14px;text-align:center;background:#fff;margin-top:10px}
+.up input{display:none}.up label{cursor:pointer;color:var(--green);font-family:var(--head);font-weight:600}.up img{max-width:100%;border-radius:10px;margin-top:12px;display:none}
+.pager{display:flex;justify-content:space-between;gap:10px;margin:22px 0 8px;flex-wrap:wrap}
+.pager a{font-family:var(--head);font-weight:600;font-size:14px;text-decoration:none;color:var(--blue);background:#fff;border:1px solid var(--line);border-radius:22px;padding:11px 18px}
+.pager a.next{background:var(--green);color:#fff;border-color:var(--green)}
+.foot{text-align:center;color:var(--grey);font-size:13px;padding:22px 0}
+.partsgrid{display:grid;grid-template-columns:1fr;gap:14px;margin:12px 0}
+@media(min-width:640px){.partsgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:920px){.partsgrid{grid-template-columns:1fr 1fr 1fr}}
+.pcard{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;border-top:4px solid var(--green);transition:transform .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,.08);border-color:var(--orange)}
+.pcard .emoji{font-size:34px}.pcard h4{color:var(--blue);font-size:18px;margin:4px 0 2px}.pcard .role{color:var(--orange);font-family:var(--head);font-weight:600;font-size:13px}.pcard .go{color:var(--green);font-family:var(--head);font-weight:600;font-size:13px;margin-top:8px}
+</style><link rel="manifest" href="manifest.webmanifest"></head><body><div class="top"><div class="brand">BOTA<span class="b2">PRENEURS</span> · Botany Made Simple</div><div class="nav">
+<a href="Cours_Ch1_Evolution.html">Ch.1</a>
+<a href="Cours_Ch2_Morphologie.html">Ch.2</a>
+<a href="Cours_Ch3_Parties.html" class="on">Ch.3</a></div></div><div class="hero"><div class="wrap"><div class="chaptag">CHAPITRE 3 · 2/6</div><h1>🌿 La tige</h1><div class="role">Le pilier et l'autoroute</div></div></div>
+ <div class="wrap">
+ <section>
+   <p style="font-size:19px">La tige soutient la plante, l'élève vers la lumière et fait circuler la sève.</p>
+   <div class="photo"><label for="ph_tige">📷 Déposez une vraie photo de « la tige »</label>
+     <span class="hint">La vôtre, prise sur le terrain. Sur la plateforme, elle sera partagée avec la communauté.</span>
+     <input class="uin" id="ph_tige" type="file" accept="image/*" data-t="phimg_tige"><img id="phimg_tige" alt="photo tige"></div>
+   <div class="fig"><div class="figcap">Coupe transversale d'une tige</div><svg viewBox="0 0 300 240" role="img"><circle cx="150" cy="120" r="92" fill="#e9dcc4"/><circle cx="150" cy="120" r="70" fill="#f0e6cf"/><circle cx="150" cy="120" r="44" fill="#dfeee5"/><circle cx="150" cy="120" r="16" fill="#cfe0d6"/>
+  <g font-family="Poppins" font-size="12" font-weight="600" fill="#003366">
+  <line x1="150" y1="28" x2="150" y2="60" stroke="#c9d8cf"/><text x="150" y="22" text-anchor="middle">Écorce</text>
+  <line x1="220" y1="120" x2="255" y2="120" stroke="#c9d8cf"/><text x="258" y="124">Bois (xylème)</text>
+  <line x1="150" y1="212" x2="150" y2="176" stroke="#c9d8cf"/><text x="150" y="228" text-anchor="middle">Moelle (centre)</text></g></svg></div>
+   <div class="rows"><div class="row"><b>Structure</b>Herbacée, ligneuse, rampante ou grimpante ; porte les branches, les feuilles et les fleurs.</div><div class="row"><b>Rôle</b>Soutient, élève les feuilles vers la lumière, conduit la sève (eau et nourriture).</div><div class="row"><b>Importance</b>Elle relie tout : racines ↔ feuilles ↔ fleurs.</div><div class="row"><b>Stratégie</b>Grandir en hauteur (compétition pour la lumière) ou s'étaler (coloniser le sol).</div><div class="row"><b>Innovation</b>Les vaisseaux (xylème & phloème) : l'invention qui a permis aux plantes de grandir.</div></div>
+ </section>
+ <section>
+   <div class="k">Exercices</div><h2>À vous de jouer</h2>
+   <div class="ex"><span class="tag">EXERCICE TECHNIQUE ✏️</span><h3>La coupe de tige</h3><p>Coupez proprement une tige en travers. Dessinez la section : repérez le centre (moelle) et le pourtour (écorce). Photographiez.</p>
+     <div class="up"><label for="tx_tige">📷 Déposer mon travail</label><input class="uin" id="tx_tige" type="file" accept="image/*" data-t="tximg_tige"><img id="tximg_tige" alt=""></div></div>
+   <div class="ex field"><span class="tag">EXERCICE TERRAIN 🌿</span><h3>Trois tiges différentes</h3><p>Trouvez et photographiez trois tiges : une herbacée (molle), une ligneuse (dure/bois), une grimpante. Classez-les et notez où chacune pousse.</p>
+     <div class="up"><label for="fd_tige">📷 Déposer ma photo de terrain</label><input class="uin" id="fd_tige" type="file" accept="image/*" data-t="fdimg_tige"><img id="fdimg_tige" alt=""></div></div>
+   <div class="pager"><a href="Cours_Ch3_Racine.html">← La racine</a><a class="next" href="Cours_Ch3_Feuille.html">La feuille →</a></div>
+ </section>
+ <div class="foot">Botapreneurs · Botany Made Simple · Chapitre 3 — La tige</div>
+ </div><script>document.querySelectorAll('.uin').forEach(function(el){el.addEventListener('change',function(){var f=this.files&&this.files[0];if(!f)return;var im=document.getElementById(this.dataset.t);im.src=URL.createObjectURL(f);im.style.display='block';});});
+document.querySelectorAll('.mcq').forEach(function(q){q.querySelectorAll('.opt').forEach(function(b){b.addEventListener('click',function(){q.querySelectorAll('.opt').forEach(function(x){x.classList.remove('ok','no')});this.classList.add(this.dataset.ok==='1'?'ok':'no');if(this.dataset.ok!=='1'){var ok=q.querySelector('.opt[data-ok="1"]');if(ok)ok.classList.add('ok');}});});});</script><script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("service-worker.js").catch(function(){});});}</script></body></html>

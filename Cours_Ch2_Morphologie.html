@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapitre 2 — Morphologie & diversité des formes · Botany Made Simple</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2E7D32;--green2:#6CC24A;--blue:#003366;--blue2:#0a4f7a;--orange:#F47C20;--beige:#F8F8F4;--sky:#E6F0F8;--sage:#E7F0E4;--ink:#2B2B2B;--grey:#5a6b62;--line:#e4eae6;--head:'Poppins',-apple-system,Segoe UI,Roboto,sans-serif;--body:'Lato',-apple-system,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--beige);line-height:1.6;font-size:17px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.22;margin:0}
+.wrap{max-width:940px;margin:0 auto;padding:0 18px}
+.top{background:linear-gradient(150deg,#00284f,#0a4f7a);color:#fff;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+.top .brand{font-family:var(--head);font-weight:800;letter-spacing:.5px;font-size:15px}.top .brand .b2{color:#8fd39a}
+.top .nav{display:flex;gap:8px}.top .nav a{color:#fff;text-decoration:none;font-family:var(--head);font-weight:600;font-size:12.5px;border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:5px 11px}
+.top .nav a.on{background:var(--orange);border-color:var(--orange)}.top .nav a:hover{background:var(--orange);border-color:var(--orange)}
+.hero{background:var(--sage);border-bottom:1px solid var(--line);padding:26px 0}
+.hero .chaptag{display:inline-block;background:var(--blue);color:#fff;font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:1px;border-radius:14px;padding:4px 13px;margin-bottom:6px}
+.hero h1{font-size:31px;color:var(--blue);margin:6px 0 4px}.hero h1 span{color:var(--orange)}.hero .sub{color:var(--grey);font-size:16px}
+section{padding:30px 0;border-bottom:1px solid var(--line)}
+.k{font-family:var(--head);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-size:12px}
+h2{font-size:24px;color:var(--blue);margin:6px 0 12px}
+h3{font-size:19px;color:var(--green);margin:18px 0 6px}
+p{margin:0 0 14px}
+.obj{background:#fff;border:1px solid var(--line);border-left:6px solid var(--green);border-radius:12px;padding:16px 18px;margin-bottom:8px}
+.obj h3{margin-top:0;color:var(--blue)}.obj ul{margin:8px 0 0;padding-left:20px}.obj li{margin:6px 0}
+.fig{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 10px;margin:10px 0;overflow-x:auto}
+.figcap{font-family:var(--head);font-weight:600;color:var(--blue);text-align:center;font-size:15px;margin:2px 0 6px}
+.note{font-size:13px;color:var(--grey);font-style:italic}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin:12px 0}
+@media(min-width:640px){.grid.g4{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.grid.g4{grid-template-columns:repeat(4,1fr)}}
+.form{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;border-top:4px solid var(--green);text-align:center}
+.form .ic{font-size:34px}.form h4{color:var(--blue);font-size:17px;margin:4px 0}.form .imp{font-size:13.5px;color:var(--grey);margin:0}
+.callout{background:#fff8f1;border:1px solid #f3d5b8;border-left:6px solid var(--orange);border-radius:12px;padding:14px 16px;margin:12px 0}.callout b{color:#b85e12}
+.ex{background:#eaf5ec;border:1px solid #bfe0c8;border-radius:14px;padding:18px;margin:14px 0}
+.ex .tag{display:inline-block;background:var(--green);color:#fff;font-family:var(--head);font-weight:700;font-size:11px;letter-spacing:1px;border-radius:12px;padding:3px 11px}.ex h3{color:var(--blue);margin:8px 0 6px}
+.up{border:2px dashed #bcd6c4;border-radius:12px;padding:16px;text-align:center;background:#fff;margin-top:10px}
+.up input{display:none}.up label{cursor:pointer;color:var(--green);font-family:var(--head);font-weight:600}.up img{max-width:100%;border-radius:10px;margin-top:12px;display:none}
+.pager{display:flex;justify-content:space-between;gap:10px;margin:22px 0 8px}
+.pager a{font-family:var(--head);font-weight:600;font-size:14px;text-decoration:none;color:var(--blue);background:#fff;border:1px solid var(--line);border-radius:22px;padding:11px 18px}
+.pager a.next{background:var(--green);color:#fff;border-color:var(--green)}
+.foot{text-align:center;color:var(--grey);font-size:13px;padding:22px 0}
+</style>
+<link rel="manifest" href="manifest.webmanifest"></head>
+<body>
+<div class="top">
+  <div class="brand">BOTA<span class="b2">PRENEURS</span> · Botany Made Simple</div>
+  <div class="nav"><a href="Cours_Ch1_Evolution.html">Ch.1</a><a class="on" href="Cours_Ch2_Morphologie.html">Ch.2</a><a href="Cours_Ch3_Parties.html">Ch.3</a></div>
+</div>
+
+<div class="hero"><div class="wrap">
+  <div class="chaptag">CHAPITRE 2</div>
+  <h1>Morphologie &amp; diversité des <span>formes</span></h1>
+  <div class="sub">Pourquoi les plantes prennent des formes si différentes — herbes, arbustes, arbres, lianes.</div>
+</div></div>
+
+<div class="wrap">
+
+<section>
+  <div class="obj">
+    <h3>🎯 Objectif du chapitre</h3>
+    <ul>
+      <li>reconnaître les grandes formes de vie : <b>herbes, arbustes, arbres, lianes</b> ;</li>
+      <li>comprendre que chaque forme est une <b>stratégie d'adaptation</b>, pas un hasard ;</li>
+      <li>saisir que <b>chaque espèce compte</b> — l'herbe autant que le grand arbre.</li>
+    </ul>
+  </div>
+
+  <div class="fig"><div class="figcap">Quatre stratégies pour occuper l'espace et capter la lumière</div>
+  <svg viewBox="0 0 760 250" role="img" aria-label="Formes de vie des plantes">
+    <line x1="20" y1="212" x2="740" y2="212" stroke="#b98b5e" stroke-width="3"/>
+    <g stroke="#3f9d54" stroke-width="3" fill="none"><path d="M80 212 q-6 -30 -2 -46 M88 212 q0 -34 4 -50 M96 212 q6 -30 10 -44 M72 212 q-2 -22 -8 -34"/></g>
+    <text x="88" y="234" text-anchor="middle" font-family="Poppins" font-size="13" font-weight="600" fill="#003366">Herbe</text>
+    <text x="88" y="248" text-anchor="middle" font-family="Lato" font-size="10" fill="#5a6b62">~0,1–1 m</text>
+    <rect x="245" y="176" width="8" height="36" fill="#8a5a2a"/>
+    <g fill="#4a9b57"><ellipse cx="230" cy="176" rx="26" ry="20"/><ellipse cx="268" cy="172" rx="28" ry="22"/><ellipse cx="249" cy="158" rx="30" ry="22"/></g>
+    <text x="249" y="234" text-anchor="middle" font-family="Poppins" font-size="13" font-weight="600" fill="#003366">Arbuste</text>
+    <text x="249" y="248" text-anchor="middle" font-family="Lato" font-size="10" fill="#5a6b62">~1–4 m</text>
+    <rect x="424" y="120" width="14" height="92" fill="#8a5a2a"/>
+    <circle cx="431" cy="96" r="52" fill="#2E7D32"/><circle cx="398" cy="112" r="30" fill="#3f9d54"/><circle cx="466" cy="110" r="32" fill="#3f9d54"/>
+    <text x="431" y="234" text-anchor="middle" font-family="Poppins" font-size="13" font-weight="600" fill="#003366">Arbre</text>
+    <text x="431" y="248" text-anchor="middle" font-family="Lato" font-size="10" fill="#5a6b62">~5–50 m</text>
+    <rect x="636" y="70" width="8" height="142" fill="#a98d6a"/>
+    <path d="M640 210 q-22 -14 0 -28 q22 -14 0 -28 q-22 -14 0 -28 q22 -14 0 -28 q-14 -10 -2 -22" stroke="#4a9b57" stroke-width="4" fill="none"/>
+    <g fill="#6CC24A"><ellipse cx="620" cy="180" rx="9" ry="5"/><ellipse cx="662" cy="150" rx="9" ry="5"/><ellipse cx="620" cy="120" rx="9" ry="5"/><ellipse cx="660" cy="92" rx="9" ry="5"/></g>
+    <text x="640" y="234" text-anchor="middle" font-family="Poppins" font-size="13" font-weight="600" fill="#003366">Liane</text>
+    <text x="640" y="248" text-anchor="middle" font-family="Lato" font-size="10" fill="#5a6b62">grimpante</text>
+  </svg>
+  </div>
+
+  <div class="grid g4">
+    <div class="form"><span class="ic">🌿</span><h4>Herbes</h4><p class="imp">Tendres, cycle court. Elles <b>couvrent et protègent le sol</b> (érosion), nourrissent d'innombrables êtres vivants et produisent de l'oxygène. La base de presque toutes les chaînes alimentaires.</p></div>
+    <div class="form"><span class="ic">🌱</span><h4>Arbustes</h4><p class="imp">Ligneux, ramifiés dès la base. <b>Abri et nourriture</b> (baies) pour la faune, lisières et transitions entre milieux, refuges pour la biodiversité.</p></div>
+    <div class="form"><span class="ic">🌳</span><h4>Arbres</h4><p class="imp">Grands, un tronc. Ils <b>structurent l'écosystème</b> : habitats, régulation du climat et de l'eau, stockage du carbone, intégration avec de nombreuses espèces.</p></div>
+    <div class="form"><span class="ic">🪴</span><h4>Lianes</h4><p class="imp">Tiges grimpantes. Stratégie maligne : <b>atteindre la lumière</b> sans construire un tronc coûteux, en s'appuyant sur les autres. Elles relient les strates de la forêt.</p></div>
+  </div>
+
+  <div class="callout">
+    <b>💡 À retenir — chaque espèce compte.</b> Nous valorisons volontiers les grands arbres et méprisons « les mauvaises herbes ». Erreur : chaque forme est une <b>spécialisation</b>, une réponse précise à un milieu. Une prairie d'herbes protège un sol, nourrit des insectes et stocke du carbone tout autant, à sa manière, qu'une forêt. Comprendre la botanique, c'est apprendre à respecter chaque strate du vivant.
+  </div>
+
+  <div class="ex">
+    <span class="tag">EXERCICE · TERRAIN 🌿</span>
+    <h3>Trois formes autour de vous</h3>
+    <p>Près de chez vous, trouvez et photographiez <b>une herbe, un arbuste et un arbre</b>. Pour chacun, notez dans votre carnet : sa taille, et <b>un rôle</b> qu'il joue dans son milieu.</p>
+    <div class="up"><label for="up1">📷 Déposer mes photos</label><input id="up1" type="file" accept="image/*" multiple><img id="im1" alt="aperçu"></div>
+  </div>
+
+  <div class="pager">
+    <a href="Cours_Ch1_Evolution.html">← Chapitre 1 : L'évolution</a>
+    <a class="next" href="Cours_Ch3_Parties.html">Chapitre 3 : Les parties de la plante →</a>
+  </div>
+</section>
+
+<div class="foot">Botapreneurs · Botany Made Simple · Chapitre 2 — Morphologie</div>
+</div>
+
+<script>
+var up1=document.getElementById('up1');if(up1)up1.addEventListener('change',function(){var f=this.files&&this.files[0];if(!f)return;var im=document.getElementById('im1');im.src=URL.createObjectURL(f);im.style.display='block';});
+</script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("service-worker.js").catch(function(){});});}</script></body>
+</html>

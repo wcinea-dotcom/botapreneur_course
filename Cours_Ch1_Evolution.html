@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapitre 1 — L'évolution des plantes · Botany Made Simple</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2E7D32;--green2:#6CC24A;--blue:#003366;--blue2:#0a4f7a;--orange:#F47C20;--beige:#F8F8F4;--sky:#E6F0F8;--sage:#E7F0E4;--ink:#2B2B2B;--grey:#5a6b62;--line:#e4eae6;--head:'Poppins',-apple-system,Segoe UI,Roboto,sans-serif;--body:'Lato',-apple-system,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--beige);line-height:1.6;font-size:17px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.22;margin:0}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+.top{background:linear-gradient(150deg,#00284f,#0a4f7a);color:#fff;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.top .brand{font-family:var(--head);font-weight:800;letter-spacing:.5px;font-size:15px}.top .brand .b2{color:#8fd39a}
+.top .chip{background:var(--orange);color:#fff;font-family:var(--head);font-weight:700;font-size:12px;border-radius:16px;padding:4px 12px}
+.hero{background:var(--sage);border-bottom:1px solid var(--line);padding:26px 0}
+.hero .k{font-family:var(--head);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-size:12px}
+.hero h1{font-size:32px;color:var(--blue);margin:6px 0 4px}.hero .sub{color:var(--grey);font-size:17px}
+section{padding:30px 0;border-bottom:1px solid var(--line)}
+.k{font-family:var(--head);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-size:12px}
+h2{font-size:25px;color:var(--blue);margin:4px 0 12px}
+h3{font-size:19px;color:var(--green);margin:18px 0 6px}
+p{margin:0 0 14px}
+.obj{background:#fff;border:1px solid var(--line);border-left:6px solid var(--green);border-radius:12px;padding:16px 18px}
+.obj h3{margin-top:0;color:var(--blue)}.obj ul{margin:8px 0 0;padding-left:20px}.obj li{margin:6px 0}
+.fig{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 10px;margin:8px 0;overflow-x:auto}
+.figcap{font-family:var(--head);font-weight:600;color:var(--blue);text-align:center;font-size:15px;margin:2px 0 6px}
+.note{font-size:13px;color:var(--grey);font-style:italic}
+.callout{background:var(--sky);border:1px solid #cfe0ee;border-radius:10px;padding:10px 14px;font-size:14.5px;margin-top:8px}
+.callout b{color:var(--blue)}
+/* classification tree */
+.tree{margin-top:6px}
+.tnode{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 13px;margin:7px 0;font-family:var(--head);font-weight:600;color:var(--blue);font-size:14.5px}
+.tnode span{font-family:var(--body);font-weight:400;color:var(--grey);font-size:12.5px}
+.tnode.root{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tnode.hl{background:var(--sage);border-color:var(--green);color:var(--green)}
+.tnode.leaf{border-left:4px solid var(--green2)}
+.branch{margin-left:16px;border-left:2px dashed #cfe0d6;padding-left:16px}
+/* vertical photo gallery */
+.pgal{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.prow{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.prow .pimg{width:120px;height:120px;flex:none;border-radius:12px;background:#eef4ef;border:2px dashed #bcd6c4;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.prow .pimg .lab{position:absolute;bottom:5px;left:0;right:0;text-align:center;font-size:9px;color:#8ba392}
+.prow .ptxt h4{color:var(--blue);font-size:17px}
+.prow .ptxt .tagline{color:var(--green);font-family:var(--head);font-weight:600;font-size:12.5px;margin:1px 0 4px}
+.prow .ptxt p{font-size:14px;margin:0}
+@media(max-width:520px){.prow .pimg{width:92px;height:92px}}
+/* tables */
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:8px}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff;min-width:640px}
+.tbl th,.tbl td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:center}
+.tbl th{background:var(--blue);color:#fff;font-family:var(--head);font-weight:600;font-size:12.5px}
+.tbl td:first-child,.tbl th:first-child{text-align:left;font-weight:700;color:var(--blue)}
+.tbl .y{color:var(--green);font-weight:700}.tbl .n{color:#c0553f;font-weight:700}.tbl .sp{font-weight:700;color:var(--orange)}
+.tbl tr:last-child td{border-bottom:none}
+.cards{display:grid;grid-template-columns:1fr;gap:12px;margin:12px 0}
+@media(min-width:640px){.cards.c3{grid-template-columns:repeat(3,1fr)}}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;border-top:4px solid var(--green)}
+.card h4{color:var(--blue);font-size:16px;margin-bottom:5px}.card p{font-size:14.5px;margin:0}
+.ex{background:#eaf5ec;border:1px solid #bfe0c8;border-radius:14px;padding:18px;margin:14px 0}
+.ex .tag{display:inline-block;background:var(--green);color:#fff;font-family:var(--head);font-weight:700;font-size:11px;letter-spacing:1px;border-radius:12px;padding:3px 11px}
+.ex h3{color:var(--blue);margin:8px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.chips .c{background:#fff;border:1px solid var(--line);border-radius:16px;padding:7px 13px;font-size:14px}
+.btn{display:inline-block;background:#fff;color:var(--blue);font-family:var(--head);font-weight:600;border:1px solid var(--line);border-radius:22px;padding:10px 18px;font-size:15px;cursor:pointer;margin-top:6px}
+.answer{display:none;background:#fff;border:1px dashed #bcd6c4;border-radius:10px;padding:12px;margin-top:10px;font-size:15px}.answer.show{display:block}
+.mcq .opt{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin:7px 0;font-size:15px;cursor:pointer;font-family:var(--body)}
+.mcq .opt.ok{background:#dff0e6;border-color:var(--green);color:#1c5a22;font-weight:700}.mcq .opt.no{background:#fbe3e3;border-color:#e07a7a}
+.up{border:2px dashed #bcd6c4;border-radius:12px;padding:16px;text-align:center;background:#fff;margin-top:10px}
+.up input{display:none}.up label{cursor:pointer;color:var(--green);font-family:var(--head);font-weight:600}.up img{max-width:100%;border-radius:10px;margin-top:12px;display:none}
+.foot{text-align:center;color:var(--grey);font-size:13px;padding:22px 0}
+.mfoot{display:flex;justify-content:flex-end;margin-top:16px}.mfoot a{background:var(--green);color:#fff;font-family:var(--head);font-weight:600;text-decoration:none;border-radius:22px;padding:10px 18px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="top"><div class="brand">BOTA<span class="b2">PRENEURS</span> · Botany Made Simple</div><div class="chip">CHAPITRE 1</div></div>
+
+<div class="hero"><div class="wrap">
+  <div class="k">Taxonomie · Le grand récit</div>
+  <h1>L'évolution des plantes</h1>
+  <div class="sub">Comment les plantes sont apparues bien avant nous — et ont appris à s'adapter, se défendre et se reproduire.</div>
+</div></div>
+
+<div class="wrap">
+
+<section>
+  <div class="obj">
+    <h3>🎯 Objectif du chapitre</h3>
+    <p>À la fin de ce chapitre, vous serez capable de :</p>
+    <ul>
+      <li>situer, sur un graphique, l'apparition des grands groupes — et connaître leur <b>nombre d'espèces</b> ;</li>
+      <li>comprendre l'<b>emboîtement</b> de la classification (les Spermaphytes contiennent les Gymnospermes et les Angiospermes ; les Angiospermes contiennent les Monocotylédones et les Dicotylédones) ;</li>
+      <li><b>distinguer</b> les grands groupes (algues, mousses, fougères, conifères, plantes à fleurs) ;</li>
+      <li>expliquer que cette histoire est celle d'une <b>expérience accumulée</b> : s'adapter, se défendre, se reproduire.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="k">Ressources de la leçon</div>
+  <h2>Support &amp; vidéo</h2>
+  <div class="cards c3">
+    <a class="card" href="Cours_Ch1_Evolution.pptx" style="text-decoration:none;display:block"><h4>📊 Présentation</h4><p>La leçon en diapositives (PowerPoint) — à projeter en classe ou à télécharger.</p></a>
+    <div class="card" style="border-top-color:var(--grey)"><h4>🎬 Vidéo</h4><p>Une vidéo explicative accompagnera bientôt cette leçon.</p></div>
+    <a class="card" href="Cours_Ch1_Evolution.docx" style="text-decoration:none;display:block;border-top-color:var(--orange)"><h4>📄 Version Word</h4><p>Le chapitre en document imprimable.</p></a>
+  </div>
+</section>
+
+<section>
+  <div class="k">Le graphique · l'âge</div>
+  <h2>Depuis quand chaque groupe existe-t-il&nbsp;?</h2>
+  <p>Chaque colonne montre l'<b>âge</b> du groupe (millions d'années). Plus la barre est haute, plus le groupe est ancien.</p>
+  <div class="fig"><div class="figcap">Âge des grands groupes — en millions d'années (Ma)</div>
+  <svg viewBox="0 0 900 370" role="img" aria-label="Graphique de l'âge des groupes de plantes">
+    <text x="16" y="28" font-family="Poppins" font-size="11" font-weight="600" fill="#5a6b62">Âge (Ma)</text>
+    <line x1="58" y1="40" x2="58" y2="280" stroke="#8fa39a"/>
+    <g font-family="Lato" font-size="10" fill="#5a6b62">
+    <line x1="54" y1="280" x2="58" y2="280" stroke="#8fa39a"/><text x="50" y="284" text-anchor="end">0</text>
+    <line x1="54" y1="232" x2="58" y2="232" stroke="#8fa39a"/><text x="50" y="236" text-anchor="end">100</text>
+    <line x1="54" y1="184" x2="58" y2="184" stroke="#8fa39a"/><text x="50" y="188" text-anchor="end">200</text>
+    <line x1="54" y1="136" x2="58" y2="136" stroke="#8fa39a"/><text x="50" y="140" text-anchor="end">300</text>
+    <line x1="54" y1="88"  x2="58" y2="88"  stroke="#8fa39a"/><text x="50" y="92"  text-anchor="end">400</text>
+    <line x1="54" y1="40"  x2="58" y2="40"  stroke="#8fa39a"/><text x="50" y="44"  text-anchor="end">500</text>
+    </g>
+    <line x1="58" y1="280" x2="882" y2="280" stroke="#8fa39a"/>
+    <g font-family="Poppins">
+    <rect x="90"  y="50"  width="70" height="230" rx="4" fill="#4CAF50"/><text x="125" y="44"  text-anchor="middle" font-size="11" font-weight="700" fill="#2E7D32">480</text>
+    <rect x="218" y="54"  width="70" height="226" rx="4" fill="#3f9d54"/><text x="253" y="48"  text-anchor="middle" font-size="11" font-weight="700" fill="#2E7D32">470</text>
+    <rect x="346" y="78"  width="70" height="202" rx="4" fill="#2E7D32"/><text x="381" y="72"  text-anchor="middle" font-size="11" font-weight="700" fill="#2E7D32">420</text>
+    <rect x="474" y="117" width="70" height="163" rx="4" fill="#0a6b7a"/><text x="509" y="111" text-anchor="middle" font-size="11" font-weight="700" fill="#0a5b6a">340</text>
+    <rect x="602" y="213" width="70" height="67"  rx="4" fill="#0a4f7a"/><text x="637" y="207" text-anchor="middle" font-size="11" font-weight="700" fill="#0a4f7a">140</text>
+    <rect x="730" y="275" width="70" height="5"   rx="2" fill="#F47C20"/><text x="765" y="269" text-anchor="middle" font-size="11" font-weight="700" fill="#b85e12">0,3</text>
+    </g>
+    <g font-family="Poppins" font-size="11.5" font-weight="600" fill="#003366">
+    <text transform="rotate(-30 125 300)" x="125" y="300" text-anchor="end">Thallophytes</text>
+    <text transform="rotate(-30 253 300)" x="253" y="300" text-anchor="end">Bryophytes</text>
+    <text transform="rotate(-30 381 300)" x="381" y="300" text-anchor="end">Ptéridophytes</text>
+    <text transform="rotate(-30 509 300)" x="509" y="300" text-anchor="end">Gymnospermes</text>
+    <text transform="rotate(-30 637 300)" x="637" y="300" text-anchor="end">Angiospermes</text>
+    <text transform="rotate(-30 765 300)" x="765" y="300" text-anchor="end" fill="#b85e12">L'Homme</text>
+    </g>
+    <text x="765" y="255" text-anchor="middle" font-family="Lato" font-size="10" fill="#b85e12" font-style="italic">300 000 ans</text>
+    <!-- spermaphytes bracket over gymno + angio -->
+    <path d="M474 348 L672 348" stroke="#2E7D32" stroke-width="1.5"/><path d="M474 348 L474 342 M672 348 L672 342" stroke="#2E7D32" stroke-width="1.5"/>
+    <text x="573" y="362" text-anchor="middle" font-family="Poppins" font-size="11" font-weight="600" fill="#2E7D32">Spermaphytes (plantes à graines) · ~360 Ma</text>
+  </svg>
+  </div>
+  <p class="note">La barre de l'Homme (~0,3 Ma) est presque invisible : à l'échelle des plantes, nous venons tout juste d'arriver. « Spermaphytes » n'est pas un groupe à part : c'est l'<b>ensemble</b> Gymnospermes + Angiospermes.</p>
+</section>
+
+<section>
+  <div class="k">L'arbre de parenté · les liens</div>
+  <h2>Toutes les plantes sont reliées</h2>
+  <p>Elles descendent d'un même ancêtre et se ramifient. Chaque branche est un <b>lien de parenté</b> : suivez-les de la racine (à gauche) jusqu'aux groupes actuels (à droite).</p>
+  <div class="fig"><div class="figcap">Arbre de parenté des plantes</div>
+  <div style="overflow-x:auto"><svg viewBox="0 0 1000 540" role="img" aria-label="Arbre de parenté des plantes" style="min-width:640px;width:100%;height:auto">
+    <g stroke="#8bb49b" stroke-width="2.6" fill="none" stroke-linecap="round">
+      <line x1="30" y1="132" x2="65" y2="132"/>
+      <line x1="65" y1="55" x2="65" y2="210"/><line x1="65" y1="55" x2="720" y2="55"/><line x1="65" y1="210" x2="175" y2="210"/>
+      <line x1="175" y1="130" x2="175" y2="291"/><line x1="175" y1="130" x2="720" y2="130"/><line x1="175" y1="291" x2="300" y2="291"/>
+      <line x1="300" y1="205" x2="300" y2="378"/><line x1="300" y1="205" x2="720" y2="205"/><line x1="300" y1="378" x2="430" y2="378"/>
+      <line x1="430" y1="300" x2="430" y2="457"/><line x1="430" y1="300" x2="720" y2="300"/><line x1="430" y1="457" x2="560" y2="457"/>
+      <line x1="560" y1="420" x2="560" y2="495"/><line x1="560" y1="420" x2="720" y2="420"/><line x1="560" y1="495" x2="720" y2="495"/>
+    </g>
+    <g font-family="Poppins,sans-serif" font-weight="700" font-size="13" fill="#0a4f7a">
+      <circle cx="65" cy="132" r="5" fill="#003366"/><text x="30" y="120" font-size="12" fill="#5a6b62" font-weight="400">Ancêtre commun</text>
+      <circle cx="175" cy="210" r="4.5" fill="#0a4f7a"/><text x="175" y="118" text-anchor="middle">Plantes terrestres</text>
+      <circle cx="300" cy="291" r="4.5" fill="#1f7a6a"/><text x="300" y="193" text-anchor="middle" fill="#1f7a6a">Plantes à vaisseaux</text>
+      <circle cx="430" cy="378" r="4.5" fill="#2E7D32"/><text x="430" y="288" text-anchor="middle" fill="#2E7D32">Spermaphytes (à graines)</text>
+      <circle cx="560" cy="457" r="4.5" fill="#F47C20"/><text x="560" y="408" text-anchor="middle" fill="#c96412">Angiospermes (à fleurs)</text>
+    </g>
+    <g font-family="Poppins,sans-serif">
+      <g><circle cx="720" cy="55" r="7" fill="#6CC24A"/><text x="740" y="52" font-size="15" font-weight="700" fill="#003366">🌊 Thallophytes</text><text x="740" y="70" font-size="12.5" fill="#5a6b62">algues</text></g>
+      <g><circle cx="720" cy="130" r="7" fill="#3f9d54"/><text x="740" y="127" font-size="15" font-weight="700" fill="#003366">🌿 Bryophytes</text><text x="740" y="145" font-size="12.5" fill="#5a6b62">mousses</text></g>
+      <g><circle cx="720" cy="205" r="7" fill="#2E7D32"/><text x="740" y="202" font-size="15" font-weight="700" fill="#003366">🌾 Ptéridophytes</text><text x="740" y="220" font-size="12.5" fill="#5a6b62">fougères</text></g>
+      <g><circle cx="720" cy="300" r="7" fill="#1f7a6a"/><text x="740" y="297" font-size="15" font-weight="700" fill="#003366">🌲 Gymnospermes</text><text x="740" y="315" font-size="12.5" fill="#5a6b62">conifères</text></g>
+      <g><circle cx="720" cy="420" r="7" fill="#0a4f7a"/><text x="740" y="417" font-size="15" font-weight="700" fill="#003366">🌾 Monocotylédones</text><text x="740" y="435" font-size="12.5" fill="#5a6b62">1 cotylédon</text></g>
+      <g><circle cx="720" cy="495" r="7" fill="#003366"/><text x="740" y="492" font-size="15" font-weight="700" fill="#003366">🍃 Dicotylédones</text><text x="740" y="510" font-size="12.5" fill="#5a6b62">2 cotylédons</text></g>
+    </g>
+  </svg></div>
+  </div>
+  <div class="callout"><b>À lire ainsi :</b> les groupes les plus proches partagent un ancêtre commun plus récent — ex. Monocotylédones et Dicotylédones se rejoignent dans « Angiospermes ». Spermaphytes = Gymnospermes + Angiospermes.</div>
+</section>
+
+<section>
+  <div class="k">Les grands groupes</div>
+  <h2>Reconnaître chacun — et combien d'espèces&nbsp;?</h2>
+  <p><b>Les cercles accueilleront de vraies photos</b> — les vôtres, prises sur le terrain.</p>
+  <div class="pgal">
+    <div class="prow"><div class="pimg"><svg viewBox="0 0 60 60" width="66" height="66"><ellipse cx="30" cy="40" rx="20" ry="12" fill="#7fbf8a"/><path d="M14 40 q4 -14 6 0 M24 40 q3 -18 5 0 M34 40 q3 -16 5 0 M44 40 q3 -12 5 0" stroke="#2E7D32" stroke-width="2.5" fill="none"/></svg><span class="lab">PHOTO RÉELLE</span></div>
+      <div class="ptxt"><h4>Thallophytes</h4><div class="tagline">algues · ~480 Ma · ~30 000+ espèces</div><p>Un simple « thalle » : pas de vraies racines, tiges ni feuilles. Vivent surtout dans l'eau. Grandes inventeuses de la photosynthèse.</p></div></div>
+    <div class="prow"><div class="pimg"><svg viewBox="0 0 60 60" width="66" height="66"><ellipse cx="30" cy="46" rx="22" ry="7" fill="#cfe8d3"/><path d="M16 46 q2 -18 4 0 M24 46 q2 -22 4 0 M32 46 q2 -20 4 0 M40 46 q2 -16 4 0" stroke="#2E7D32" stroke-width="3" fill="none"/></svg><span class="lab">PHOTO RÉELLE</span></div>
+      <div class="ptxt"><h4>Bryophytes</h4><div class="tagline">mousses · ~470 Ma · ~20 000 espèces</div><p>Premières plantes terrestres. Pas de vaisseaux ni de vraies racines (rhizoïdes). Besoin d'humidité, reproduction par spores.</p></div></div>
+    <div class="prow"><div class="pimg"><svg viewBox="0 0 60 60" width="66" height="66"><path d="M30 52 C30 28 30 14 30 8" stroke="#2E7D32" stroke-width="3" fill="none"/><g stroke="#3f9d54" stroke-width="2" fill="none"><path d="M30 46 q-14 -3 -18 -10 M30 46 q14 -3 18 -10"/><path d="M30 38 q-12 -3 -16 -9 M30 38 q12 -3 16 -9"/><path d="M30 30 q-10 -2 -13 -7 M30 30 q10 -2 13 -7"/></g></svg><span class="lab">PHOTO RÉELLE</span></div>
+      <div class="ptxt"><h4>Ptéridophytes</h4><div class="tagline">fougères · ~420 Ma · ~12 000 espèces</div><p>Premières à posséder des <b>vaisseaux</b> : vraies racines, tiges, feuilles (frondes). Toujours pas de graines ni de fleurs — spores.</p></div></div>
+    <div class="prow"><div class="pimg"><svg viewBox="0 0 60 60" width="66" height="66"><polygon points="30,8 46,50 14,50" fill="#2E7D32"/><rect x="26" y="50" width="8" height="7" fill="#8a5a2a"/><ellipse cx="41" cy="40" rx="4" ry="7" fill="#8a6d2a"/></svg><span class="lab">PHOTO RÉELLE</span></div>
+      <div class="ptxt"><h4>Gymnospermes</h4><div class="tagline">conifères · ~340 Ma · ~1 100 espèces</div><p>Inventent la <b>graine</b>, portée « nue » sur des cônes. Le pollen voyage par l'air. Pins, sapins, cèdres.</p></div></div>
+    <div class="prow"><div class="pimg"><svg viewBox="0 0 60 60" width="66" height="66"><ellipse cx="30" cy="30" rx="7" ry="13" fill="#e05a7a"/><ellipse cx="30" cy="30" rx="13" ry="7" fill="#e05a7a"/><ellipse cx="30" cy="30" rx="10" ry="10" fill="#ec89a1" transform="rotate(45 30 30)"/><circle cx="30" cy="30" r="6" fill="#F4C430"/></svg><span class="lab">PHOTO RÉELLE</span></div>
+      <div class="ptxt"><h4>Angiospermes</h4><div class="tagline">plantes à fleurs · ~140 Ma · ~300 000 espèces</div><p>La <b>fleur</b> et le <b>fruit</b> qui enferme la graine. ~9 plantes sur 10 aujourd'hui. Se divisent en Monocotylédones (~70 000) et Dicotylédones (~230 000).</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="k">Pour bien comprendre</div>
+  <h2>Comment les distinguer&nbsp;?</h2>
+  <p>Un tableau pour faire la différence — avec l'ordre des « inventions » et le nombre d'espèces.</p>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>Groupe</th><th>Vaisseaux</th><th>Racines / feuilles vraies</th><th>Graine</th><th>Fleur</th><th>Reproduction</th><th>Espèces (~)</th></tr>
+    <tr><td>Thallophytes (algues)</td><td class="n">✗</td><td class="n">✗ (thalle)</td><td class="n">✗</td><td class="n">✗</td><td>spores</td><td class="sp">30 000+</td></tr>
+    <tr><td>Bryophytes (mousses)</td><td class="n">✗</td><td class="n">✗ (rhizoïdes)</td><td class="n">✗</td><td class="n">✗</td><td>spores</td><td class="sp">20 000</td></tr>
+    <tr><td>Ptéridophytes (fougères)</td><td class="y">✓</td><td class="y">✓</td><td class="n">✗</td><td class="n">✗</td><td>spores</td><td class="sp">12 000</td></tr>
+    <tr><td>Gymnospermes (conifères)</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓ (nue)</td><td class="n">✗ (cônes)</td><td>graines</td><td class="sp">1 100</td></tr>
+    <tr><td>Angiospermes (à fleurs)</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓ (fruit)</td><td class="y">✓</td><td>graines</td><td class="sp">300 000</td></tr>
+  </table></div>
+  <p class="note">Un paradoxe utile : les angiospermes sont les plus <b>récentes</b> (~140 Ma) mais de loin les plus <b>nombreuses</b> (~300 000 espèces) — la fleur a été une invention gagnante. Chiffres approximatifs.</p>
+</section>
+
+<section>
+  <div class="k">La diversité</div>
+  <h2>Pourquoi les angiospermes dominent-elles&nbsp;?</h2>
+  <p>Comparez le <b>nombre d'espèces</b> : les plantes à fleurs écrasent tous les autres groupes réunis — environ <b>8 plantes sur 10</b>.</p>
+  <div class="fig"><div class="figcap">Nombre d'espèces par groupe (échelle réelle)</div>
+  <svg viewBox="0 0 900 290" role="img" aria-label="Nombre d'espèces par groupe">
+    <g font-family="Poppins" font-size="13" font-weight="600" fill="#003366">
+    <text x="150" y="51"  text-anchor="end">Angiospermes</text>
+    <text x="150" y="101" text-anchor="end">Thallophytes</text>
+    <text x="150" y="151" text-anchor="end">Bryophytes</text>
+    <text x="150" y="201" text-anchor="end">Ptéridophytes</text>
+    <text x="150" y="251" text-anchor="end">Gymnospermes</text>
+    </g>
+    <rect x="160" y="30"  width="680" height="32" rx="4" fill="#0a4f7a"/><text x="174" y="51" font-family="Poppins" font-size="13" font-weight="700" fill="#fff">≈ 300 000 espèces</text>
+    <rect x="160" y="80"  width="68"  height="32" rx="4" fill="#4CAF50"/><text x="236" y="101" font-family="Lato" font-size="12" fill="#2E7D32">~30 000</text>
+    <rect x="160" y="130" width="45"  height="32" rx="4" fill="#3f9d54"/><text x="213" y="151" font-family="Lato" font-size="12" fill="#2E7D32">~20 000</text>
+    <rect x="160" y="180" width="27"  height="32" rx="4" fill="#2E7D32"/><text x="195" y="201" font-family="Lato" font-size="12" fill="#2E7D32">~12 000</text>
+    <rect x="160" y="230" width="4"   height="32" rx="2" fill="#0a6b7a"/><text x="172" y="251" font-family="Lato" font-size="12" fill="#0a5b6a">~1 100</text>
+    <line x1="160" y1="24" x2="160" y2="270" stroke="#8fa39a"/>
+  </svg>
+  </div>
+  <p class="note">Total ≈ 360 000 espèces de plantes ; les angiospermes en représentent à elles seules ~8 sur 10. Chiffres approximatifs.</p>
+
+  <div class="obj" style="border-left-color:#F47C20;background:#fff8f1;margin-top:14px">
+    <h3 style="color:#b85e12;margin-top:0">🐝 La clé : la co-évolution fleur–insecte</h3>
+    <p>Les angiospermes apparaissent il y a ~140 millions d'années, au moment même où les <b>insectes</b> se diversifient. La fleur offre nectar et pollen&nbsp;; l'insecte transporte le pollen d'une fleur à l'autre, avec précision. Chaque fleur se spécialise pour son pollinisateur, chaque insecte pour sa fleur — et les deux groupes se divisent en une multitude d'espèces. Cette alliance a été un formidable <b>moteur de diversité</b> : plus de fleurs, plus d'insectes, encore plus de fleurs…</p>
+  </div>
+  <div class="cards c3" style="margin-top:12px">
+    <div class="card" style="border-top-color:#F47C20"><h4>~87–90&nbsp;%</h4><p>des plantes à fleurs sont pollinisées par des animaux — surtout des insectes.</p></div>
+    <div class="card"><h4>~1 000 000</h4><p>d'espèces d'insectes décrites : le groupe animal le plus divers.</p></div>
+    <div class="card"><h4>~140 Ma</h4><p>fleurs et insectes se diversifient ensemble — même moment, même histoire.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="k">Le sens de l'histoire</div>
+  <h2>Une longue expérience : s'adapter, se défendre, se reproduire</h2>
+  <p>Sortir de l'eau fut un défi immense : ne pas se dessécher, tenir debout, transporter l'eau, se reproduire hors de l'eau. À chaque étape, les plantes ont inventé une solution. Ce n'est pas une échelle du « moins bon vers le meilleur » : c'est un <b>buisson d'innovations</b>, où chaque groupe est parfaitement adapté à son monde.</p>
+  <div class="cards c3">
+    <div class="card"><h4>🌱 S'adapter</h4><p>Vaisseaux pour conduire l'eau, racines, tiges rigides, feuilles réduites en aiguilles ou en épines selon le milieu.</p></div>
+    <div class="card"><h4>🛡️ Se défendre</h4><p>Épines, écorces, et surtout une chimie puissante (amertume, toxines) — immobiles, les plantes se défendent par les molécules.</p></div>
+    <div class="card"><h4>🌸 Se reproduire</h4><p>Des spores (mousses, fougères) à la graine (conifères), puis à la fleur et au fruit (angiospermes).</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="k">Exercices</div>
+  <h2>À vous de jouer</h2>
+
+  <div class="ex">
+    <span class="tag">EXERCICE 1 · CLASSER</span>
+    <h3>Remettez les groupes dans l'ordre d'apparition</h3>
+    <div class="chips"><span class="c">Angiospermes</span><span class="c">Thallophytes</span><span class="c">Gymnospermes</span><span class="c">Bryophytes</span><span class="c">Ptéridophytes</span></div>
+    <button class="btn" onclick="document.getElementById('a1').classList.toggle('show')">Voir la réponse</button>
+    <div id="a1" class="answer"><b>Ordre :</b> Thallophytes → Bryophytes → Ptéridophytes → Gymnospermes → Angiospermes. (Gymnospermes + Angiospermes = les Spermaphytes.)</div>
+  </div>
+
+  <div class="ex">
+    <span class="tag">EXERCICE 2 · EMBOÎTEMENT</span>
+    <h3>Les Spermaphytes, ce sont…</h3>
+    <div class="mcq" id="q2">
+      <button class="opt" data-ok="0">un synonyme des Angiospermes.</button>
+      <button class="opt" data-ok="1">l'ensemble des plantes à graines : Gymnospermes + Angiospermes.</button>
+      <button class="opt" data-ok="0">un groupe de fougères.</button>
+    </div>
+    <div class="note">Cliquez une réponse. Indice : voyez le schéma d'emboîtement.</div>
+  </div>
+
+  <div class="ex">
+    <span class="tag">EXERCICE 3 · TERRAIN 🌿</span>
+    <h3>Mission photo : mousse &amp; fougère</h3>
+    <p>Trouvez une <b>mousse</b> et une <b>fougère</b>, photographiez-les et déposez vos images. Ont-elles des fleurs&nbsp;? (Réponse : non — spores.)</p>
+    <div class="up"><label for="up1">📷 Choisir / prendre une photo</label><input id="up1" type="file" accept="image/*"><img id="im1" alt="aperçu"></div>
+  </div>
+
+  <div class="ex">
+    <span class="tag">EXERCICE 4 · OBSERVER &amp; DESSINER ✏️</span>
+    <h3>La feuille sur papier</h3>
+    <p>Posez une feuille sur du papier, tracez son contour, annotez les parties connues (limbe, nervures, pétiole…), photographiez et déposez. <span class="note">On approfondira au Chapitre 3.</span></p>
+    <div class="up"><label for="up2">📷 Déposer mon dessin annoté</label><input id="up2" type="file" accept="image/*"><img id="im2" alt="aperçu"></div>
+  </div>
+
+  <div class="mfoot"><a href="#">Chapitre 2 : La morphologie →</a></div>
+</section>
+
+<div class="foot">Botapreneurs · Botany Made Simple · Chapitre 1 — L'évolution des plantes</div>
+</div>
+
+<script>
+document.querySelectorAll('#q2 .opt').forEach(function(b){b.addEventListener('click',function(){
+ document.querySelectorAll('#q2 .opt').forEach(function(x){x.classList.remove('ok','no')});
+ this.classList.add(this.dataset.ok==='1'?'ok':'no');
+ if(this.dataset.ok!=='1')document.querySelector('#q2 .opt[data-ok="1"]').classList.add('ok');});});
+['up1','up2'].forEach(function(id,i){var el=document.getElementById(id);if(el)el.addEventListener('change',function(){var f=this.files&&this.files[0];if(!f)return;var im=document.getElementById('im'+(i+1));im.src=URL.createObjectURL(f);im.style.display='block';});});
+</script>
+</body>
+</html>

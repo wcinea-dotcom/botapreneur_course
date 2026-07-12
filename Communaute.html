@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#003366">
+<title>Communauté & Échange — Apprendre la botanique ensemble · Botapreneurs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2E7D32;--green2:#6CC24A;--blue:#003366;--blue2:#0a4f7a;--orange:#F47C20;--beige:#F8F8F4;--sky:#E6F0F8;--sage:#E7F0E4;--ink:#2B2B2B;--grey:#5a6b62;--line:#e4eae6;--head:'Poppins',-apple-system,Segoe UI,Roboto,sans-serif;--body:'Lato',-apple-system,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--beige);line-height:1.6;font-size:17px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.2;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;max-width:1080px;margin:0 auto;flex-wrap:wrap}
+.logo{font-family:var(--head);font-weight:800;font-size:18px;color:var(--blue);letter-spacing:.3px;text-decoration:none}.logo .b2{color:var(--green)}
+.hd nav{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.hd nav a{color:var(--blue);text-decoration:none;font-family:var(--head);font-weight:600;font-size:13px;padding:6px 10px;border-radius:8px}.hd nav a:hover{background:var(--sage)}.hd nav a.on{color:var(--orange)}
+.cta{background:var(--orange);color:#fff!important;border-radius:20px;padding:8px 15px!important}
+.hero{background:linear-gradient(150deg,#00284f,#0a4f7a);color:#fff;padding:52px 20px}
+.hero .in{max-width:1080px;margin:0 auto}
+.hero .badge{display:inline-block;background:rgba(108,194,74,.2);color:#bff0c8;font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:1px;border-radius:16px;padding:5px 14px}
+.hero h1{font-size:40px;margin:16px 0 10px;max-width:740px}.hero p{color:#dbe7f2;font-size:19px;max-width:640px;margin:0 0 22px}
+.btn{display:inline-block;text-decoration:none;font-family:var(--head);font-weight:600;border-radius:26px;padding:13px 26px;font-size:16px;cursor:pointer}
+.btn.primary{background:var(--orange);color:#fff;box-shadow:0 6px 18px rgba(244,124,32,.35)}
+.btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55);margin-left:8px}
+section{padding:46px 0}
+.k{font-family:var(--head);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-size:12px;text-align:center}
+h2.sec{font-size:29px;color:var(--blue);text-align:center;margin:6px 0 8px}
+.sub{color:var(--grey);text-align:center;max-width:640px;margin:0 auto 26px;font-size:16px}
+.steps{display:grid;grid-template-columns:1fr;gap:16px}@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center;border-top:4px solid var(--green)}
+.step .n{font-family:var(--head);font-weight:800;color:var(--green2);font-size:26px}.step .ic{font-size:32px;margin:4px 0}.step h3{color:var(--blue);font-size:18px;margin:2px 0 4px}.step p{font-size:14px;color:var(--grey);margin:0}
+.section-alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* défi */
+.defi{background:linear-gradient(150deg,#2E7D32,#1c5a22);color:#fff;border-radius:18px;padding:26px;display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:760px){.defi{grid-template-columns:1.3fr 1fr;align-items:center}}
+.defi .lab{font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:1px;color:#bff0c8}
+.defi h3{font-size:24px;margin:6px 0 8px}.defi p{color:#e6f2e8;margin:0 0 8px}
+.defi .up{background:rgba(255,255,255,.12);border:2px dashed rgba(255,255,255,.4);border-radius:14px;padding:18px;text-align:center}
+.defi .up label{cursor:pointer;color:#fff;font-family:var(--head);font-weight:700}.defi .up input{display:none}.defi .up img{max-width:100%;border-radius:10px;margin-top:12px;display:none}
+.defi .up .hint{display:block;color:#cfe6d3;font-size:12px;margin-top:6px}
+/* mur */
+.mur{display:grid;grid-template-columns:1fr;gap:14px}@media(min-width:640px){.mur{grid-template-columns:repeat(3,1fr)}}
+.obs{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.obs .ph{height:130px;background:#eef4ef;display:flex;align-items:center;justify-content:center;font-size:44px}
+.obs .bd{padding:12px 14px}
+.obs .who{display:flex;align-items:center;gap:8px}.obs .av{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--head);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+.obs .who b{font-size:13.5px;color:var(--blue)}.obs .who span{font-size:11.5px;color:var(--grey)}
+.obs p{font-size:13.5px;margin:8px 0 0;color:var(--ink)}
+.share{background:#fff;border:2px dashed #bcd6c4;border-radius:16px;padding:20px;text-align:center;margin-top:16px}
+.share label{cursor:pointer;color:var(--green);font-family:var(--head);font-weight:700;font-size:16px}.share input{display:none}.share img{max-width:260px;border-radius:12px;margin-top:12px;display:none}.share .hint{display:block;color:var(--grey);font-size:12.5px;margin-top:6px}
+/* badges */
+.badges{display:grid;grid-template-columns:1fr;gap:14px}@media(min-width:760px){.badges{grid-template-columns:repeat(3,1fr)}}
+.bdg{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center;border-top:4px solid var(--green)}
+.bdg.b2{border-top-color:var(--blue)}.bdg.b3{border-top-color:var(--orange)}
+.bdg .ic{font-size:34px}.bdg h4{color:var(--blue);font-size:17px;margin:4px 0 2px}.bdg p{font-size:13px;color:var(--grey);margin:0}
+/* join */
+.join{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:720px;margin:0 auto}
+@media(min-width:600px){.join{grid-template-columns:repeat(4,1fr)}}
+.jbtn{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 12px;color:var(--blue);font-family:var(--head);font-weight:600;font-size:13px;transition:transform .2s,box-shadow .2s}
+.jbtn:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.08);border-color:var(--orange)}
+.jbtn .ic{font-size:30px}
+.costnote{max-width:720px;margin:24px auto 0;background:var(--sage);border-radius:12px;padding:14px 18px;font-size:14px;color:#2b4a30;text-align:center}
+.costnote b{color:var(--green)}
+.final{background:var(--sage);text-align:center}.final h2{font-size:27px;color:var(--blue)}.final p{color:var(--grey);max-width:600px;margin:8px auto 20px}
+footer{background:#00284f;color:#cfe0ee;padding:34px 20px 22px}
+.ft{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:18px}@media(min-width:700px){.ft{grid-template-columns:2fr 1fr 1fr}}
+.ft h4{color:#fff;font-size:15px;margin-bottom:8px}.ft a{color:#cfe0ee;text-decoration:none;font-size:14px;display:block;margin:4px 0}.ft .brand{font-family:var(--head);font-weight:800;color:#fff;font-size:18px}.ft .brand span{color:#8fd39a}.ft .tag{font-size:13px;color:#9fc4e0;margin-top:6px}
+.copy{max-width:1080px;margin:20px auto 0;border-top:1px solid rgba(255,255,255,.12);padding-top:14px;font-size:12.5px;color:#9fc4e0;text-align:center}
+</style>
+<link rel="manifest" href="manifest.webmanifest"></head>
+<body>
+<header><div class="hd">
+  <a class="logo" href="index.html">BOTA<span class="b2">PRENEURS</span></a>
+  <nav>
+    <a href="index.html">Formation</a>
+    <a class="on" href="Communaute.html">Communauté</a>
+    <a href="https://botapreneurs.com/fr/plant-mastery/" target="_blank">Plant Mastery</a>
+    <a class="cta" href="#rejoindre">Rejoindre</a>
+  </nav>
+</div></header>
+
+<div class="hero"><div class="in">
+  <span class="badge">COMMUNAUTÉ · PASSIONNÉS DES PLANTES</span>
+  <h1>Apprendre la botanique, ensemble</h1>
+  <p>Un cours ne suffit pas : on progresse plus loin quand on observe, partage et s'entraide. Rejoignez un groupe de passionnés qui apprennent et travaillent la botanique ensemble, partout dans le monde.</p>
+  <a class="btn primary" href="#rejoindre">Rejoindre l'échange →</a>
+  <a class="btn ghost" href="index.html">Voir la formation</a>
+</div></div>
+
+<section>
+  <div class="wrap">
+    <div class="k">Comment ça marche</div>
+    <h2 class="sec">Apprendre · Observer · Partager</h2>
+    <p class="sub">Un cycle simple qui transforme des apprenants isolés en une communauté vivante.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div class="ic">📘</div><h3>Apprends</h3><p>Suis les chapitres gratuits de « Botany Made Simple », à ton rythme.</p></div>
+      <div class="step"><div class="n">2</div><div class="ic">🌿</div><h3>Observe & partage</h3><p>Va sur le terrain, photographie, dessine — puis partage tes trouvailles au groupe.</p></div>
+      <div class="step"><div class="n">3</div><div class="ic">🤝</div><h3>Progresse ensemble</h3><p>Relève les défis, pose tes questions, aide les autres, gagne des badges.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="wrap">
+    <div class="k">Chaque semaine</div>
+    <h2 class="sec">Le défi de la semaine</h2>
+    <p class="sub">Un petit défi d'observation pour sortir, regarder vraiment, et comparer avec le groupe.</p>
+    <div class="defi">
+      <div>
+        <div class="lab">🎯 DÉFI EN COURS</div>
+        <h3>Trouvez trois dispositions de feuilles</h3>
+        <p>Cette semaine : trouvez et photographiez une plante à feuilles <b>opposées</b>, une à feuilles <b>alternes</b>, et une à feuilles <b>verticillées</b>. Notez où chacune pousse.</p>
+        <p style="font-size:14px;color:#cfe6d3">💬 Publiez vos photos dans le groupe et commentez celles des autres.</p>
+      </div>
+      <div class="up">
+        <label for="defiup">📷 Déposer ma participation</label>
+        <input class="uin" id="defiup" type="file" accept="image/*" data-t="defiimg">
+        <img id="defiimg" alt="ma participation">
+        <span class="hint">Aperçu sur votre appareil · le partage se fait dans le groupe.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="k">Le mur d'observations</div>
+    <h2 class="sec">Ce que partage la communauté</h2>
+    <p class="sub">Photos de terrain, dessins annotés, trouvailles régionales — chacun apprend des yeux des autres. (Exemples ci-dessous.)</p>
+    <div class="mur">
+      <div class="obs"><div class="ph">🍃</div><div class="bd"><div class="who"><span class="av">MJ</span><span><b>Marie-Jeanne</b><span> · Cayes, Haïti</span></span></div><p>Feuille composée trouvée près de la rivière — pétiole très long, folioles opposées.</p></div></div>
+      <div class="obs"><div class="ph">🌸</div><div class="bd"><div class="who"><span class="av">KD</span><span><b>Kevin</b><span> · Dakar</span></span></div><p>Fleur à 5 pétales soudés en tube — un papillon la visitait. Dicotylédone ?</p></div></div>
+      <div class="obs"><div class="ph">🌿</div><div class="bd"><div class="who"><span class="av">AL</span><span><b>Ana-Lucía</b><span> · Bogotá</span></span></div><p>Mousse sur un mur humide, à l'ombre. Pas de fleurs — bryophyte, comme au Chapitre 1 !</p></div></div>
+    </div>
+    <div class="share">
+      <label for="shareup">📷 Partager mon observation</label>
+      <input class="uin" id="shareup" type="file" accept="image/*" data-t="shareimg">
+      <img id="shareimg" alt="mon observation">
+      <span class="hint">Aperçu local. Sur le groupe communautaire, votre observation est visible par tous.</span>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="wrap">
+    <div class="k">Progression</div>
+    <h2 class="sec">Gagnez vos badges</h2>
+    <p class="sub">Chaque étape franchie vous rapproche du niveau suivant du parcours Botapreneurs.</p>
+    <div class="badges">
+      <div class="bdg"><div class="ic">🌱</div><h4>Passionné des plantes</h4><p>Vous avez commencé : premières observations partagées.</p></div>
+      <div class="bdg b2"><div class="ic">🌿</div><h4>Plant Creator / Master</h4><p>Vous savez décrire, dessiner et identifier des motifs.</p></div>
+      <div class="bdg b3"><div class="ic">🌍</div><h4>Botapreneur</h4><p>Vous transformez votre savoir en projets et en impact.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rejoindre">
+  <div class="wrap">
+    <div class="k">L'échange</div>
+    <h2 class="sec">Rejoignez la communauté</h2>
+    <p class="sub">L'échange se passe sur des espaces gratuits — choisissez le vôtre et venez vous présenter.</p>
+    <div class="join">
+      <a class="jbtn" href="https://botapreneurs.com/fr/communities/" target="_blank"><span class="ic">🌐</span>Communauté Botapreneurs</a>
+      <a class="jbtn" href="https://wa.me/18452489803" target="_blank"><span class="ic">💬</span>WhatsApp</a>
+      <a class="jbtn" href="https://www.facebook.com/wcinea" target="_blank"><span class="ic">📘</span>Facebook</a>
+      <a class="jbtn" href="https://www.instagram.com/botapreneurs/" target="_blank"><span class="ic">📸</span>Instagram</a>
+      <a class="jbtn" href="https://www.youtube.com/@Botanistentrepreneur" target="_blank"><span class="ic">▶️</span>YouTube</a>
+      <a class="jbtn" href="https://www.linkedin.com/in/william-cinea-7a900534" target="_blank"><span class="ic">💼</span>LinkedIn</a>
+      <a class="jbtn" href="mailto:info@botapreneurs.com"><span class="ic">📧</span>Nous écrire</a>
+      <a class="jbtn" href="index.html"><span class="ic">📘</span>Suivre le cours</a>
+    </div>
+    <div class="costnote">💡 <b>Sans coût, sans entretien.</b> Le cours reste un site gratuit ; l'échange se fait sur des canaux gratuits (WhatsApp, réseaux, communauté Botapreneurs). Quand la communauté grandira, on pourra intégrer un espace membres dédié directement dans le site.</div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>La botanique se vit mieux à plusieurs.</h2>
+    <p>Commencez le cours, partagez votre première observation, et rencontrez des passionnés du monde entier.</p>
+    <a class="btn primary" href="Cours_Ch1_Evolution.html">Commencer le Chapitre 1 →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">
+    <div><div class="brand">BOTA<span>PRENEURS</span></div>
+      <div class="tag">La plateforme des botanistes et des entrepreneurs.</div>
+      <div class="tag">Basé à Naples, Floride — opérant à l'international.</div></div>
+    <div><h4>Nos communautés</h4>
+      <a href="https://botapreneurs.com/fr/communities/" target="_blank">Passionnés des plantes</a>
+      <a href="https://botapreneurs.com/fr/plant-mastery/" target="_blank">Plant Masters</a>
+      <a href="https://botapreneurs.com/fr/communities/" target="_blank">Botapreneurs</a></div>
+    <div><h4>Explorer</h4>
+      <a href="index.html">Formation</a>
+      <a href="Communaute.html">Communauté</a>
+      <a href="https://botapreneurs.com/fr/contact/" target="_blank">Contact</a></div>
+  </div>
+  <div class="copy">© 2026 Botapreneurs · Where Botany Meets Business · Communauté « Botany Made Simple »</div>
+</footer>
+
+<script>
+document.querySelectorAll('.uin').forEach(function(el){el.addEventListener('change',function(){var f=this.files&&this.files[0];if(!f)return;var im=document.getElementById(this.dataset.t);im.src=URL.createObjectURL(f);im.style.display='block';});});
+</script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("service-worker.js").catch(function(){});});}</script></body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Le fruit · Botany Made Simple</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2E7D32;--green2:#6CC24A;--blue:#003366;--orange:#F47C20;--beige:#F8F8F4;--sky:#E6F0F8;--sage:#E7F0E4;--ink:#2B2B2B;--grey:#5a6b62;--line:#e4eae6;--head:'Poppins',-apple-system,Segoe UI,Roboto,sans-serif;--body:'Lato',-apple-system,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--beige);line-height:1.6;font-size:17px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.22;margin:0}
+.wrap{max-width:940px;margin:0 auto;padding:0 18px}
+.top{background:linear-gradient(150deg,#00284f,#0a4f7a);color:#fff;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+.top .brand{font-family:var(--head);font-weight:800;letter-spacing:.5px;font-size:15px}.top .brand .b2{color:#8fd39a}
+.top .nav{display:flex;gap:8px;flex-wrap:wrap}.top .nav a{color:#fff;text-decoration:none;font-family:var(--head);font-weight:600;font-size:12.5px;border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:5px 11px}
+.top .nav a.on{background:var(--orange);border-color:var(--orange)}.top .nav a:hover{background:var(--orange);border-color:var(--orange)}
+.hero{background:var(--sage);border-bottom:1px solid var(--line);padding:24px 0}
+.hero .chaptag{display:inline-block;background:var(--blue);color:#fff;font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:1px;border-radius:14px;padding:4px 13px;margin-bottom:6px}
+.hero h1{font-size:32px;color:var(--blue);margin:6px 0 2px}.hero .role{font-family:var(--head);font-weight:600;color:var(--orange);font-size:16px}
+section{padding:28px 0;border-bottom:1px solid var(--line)}
+.k{font-family:var(--head);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-size:12px}
+h2{font-size:23px;color:var(--blue);margin:6px 0 12px}h2 span{color:var(--orange)}
+h3{font-size:19px;color:var(--green);margin:16px 0 6px}
+p{margin:0 0 14px}
+.photo{border:2px dashed #bcd6c4;border-radius:16px;background:#fff;padding:26px 16px;text-align:center;margin:8px 0}
+.photo label{cursor:pointer;color:var(--green);font-family:var(--head);font-weight:700;font-size:16px}
+.photo .hint{display:block;color:var(--grey);font-size:12.5px;margin-top:6px}
+.photo input{display:none}.photo img{max-width:100%;border-radius:12px;margin-top:14px;display:none}
+.fig{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 10px;margin:10px 0;overflow-x:auto}
+.figcap{font-family:var(--head);font-weight:600;color:var(--blue);text-align:center;font-size:15px;margin:2px 0 6px}
+.rows{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 16px;border-left:6px solid var(--green)}
+.row{font-size:15px;margin:9px 0;border-bottom:1px solid #eef3f0;padding-bottom:8px}.row:last-child{border-bottom:none}
+.row b{color:var(--green);font-family:var(--head);font-size:12.5px;text-transform:uppercase;letter-spacing:.4px;display:block}
+.ex{background:#eaf5ec;border:1px solid #bfe0c8;border-radius:14px;padding:18px;margin:14px 0}
+.ex.field{background:#fff8f1;border-color:#f3d5b8}
+.ex .tag{display:inline-block;background:var(--green);color:#fff;font-family:var(--head);font-weight:700;font-size:11px;letter-spacing:1px;border-radius:12px;padding:3px 11px}
+.ex.field .tag{background:var(--orange)}
+.ex h3{color:var(--blue);margin:8px 0 6px}
+.up{border:2px dashed #bcd6c4;border-radius:12px;padding:14px;text-align:center;background:#fff;margin-top:10px}
+.up input{display:none}.up label{cursor:pointer;color:var(--green);font-family:var(--head);font-weight:600}.up img{max-width:100%;border-radius:10px;margin-top:12px;display:none}
+.pager{display:flex;justify-content:space-between;gap:10px;margin:22px 0 8px;flex-wrap:wrap}
+.pager a{font-family:var(--head);font-weight:600;font-size:14px;text-decoration:none;color:var(--blue);background:#fff;border:1px solid var(--line);border-radius:22px;padding:11px 18px}
+.pager a.next{background:var(--green);color:#fff;border-color:var(--green)}
+.foot{text-align:center;color:var(--grey);font-size:13px;padding:22px 0}
+.partsgrid{display:grid;grid-template-columns:1fr;gap:14px;margin:12px 0}
+@media(min-width:640px){.partsgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:920px){.partsgrid{grid-template-columns:1fr 1fr 1fr}}
+.pcard{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;border-top:4px solid var(--green);transition:transform .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,.08);border-color:var(--orange)}
+.pcard .emoji{font-size:34px}.pcard h4{color:var(--blue);font-size:18px;margin:4px 0 2px}.pcard .role{color:var(--orange);font-family:var(--head);font-weight:600;font-size:13px}.pcard .go{color:var(--green);font-family:var(--head);font-weight:600;font-size:13px;margin-top:8px}
+</style><link rel="manifest" href="manifest.webmanifest"></head><body><div class="top"><div class="brand">BOTA<span class="b2">PRENEURS</span> · Botany Made Simple</div><div class="nav">
+<a href="Cours_Ch1_Evolution.html">Ch.1</a>
+<a href="Cours_Ch2_Morphologie.html">Ch.2</a>
+<a href="Cours_Ch3_Parties.html" class="on">Ch.3</a></div></div><div class="hero"><div class="wrap"><div class="chaptag">CHAPITRE 3 · 5/6</div><h1>🍎 Le fruit</h1><div class="role">Le protecteur voyageur</div></div></div>
+ <div class="wrap">
+ <section>
+   <p style="font-size:19px">Le fruit protège la graine et l'aide à voyager loin du pied-mère.</p>
+   <div class="photo"><label for="ph_fruit">📷 Déposez une vraie photo de « le fruit »</label>
+     <span class="hint">La vôtre, prise sur le terrain. Sur la plateforme, elle sera partagée avec la communauté.</span>
+     <input class="uin" id="ph_fruit" type="file" accept="image/*" data-t="phimg_fruit"><img id="phimg_fruit" alt="photo fruit"></div>
+   <div class="fig"><div class="figcap">Fruit sec ou fruit charnu</div><svg viewBox="0 0 470 210" role="img">
+  <g transform="translate(0,0)"><rect x="0" y="8" width="150" height="150" rx="12" fill="#efe7d6"/><ellipse cx="75" cy="83" rx="55" ry="16" fill="#c9a24b"/><circle cx="45" cy="83" r="6" fill="#8a6d2a"/><circle cx="75" cy="83" r="6" fill="#8a6d2a"/><circle cx="105" cy="83" r="6" fill="#8a6d2a"/><text x="75" y="182" text-anchor="middle" font-family="Poppins" font-size="14" font-weight="700" fill="#003366">Fruit sec</text><text x="75" y="132" text-anchor="middle" font-size="11" fill="#6b5a2a">gousse · capsule · noix</text></g>
+  <g transform="translate(160,0)"><rect x="0" y="8" width="150" height="150" rx="12" fill="#f6dfe6"/><circle cx="75" cy="83" r="46" fill="#e05a7a"/><circle cx="75" cy="83" r="14" fill="#7a2a3a"/><text x="75" y="182" text-anchor="middle" font-family="Poppins" font-size="14" font-weight="700" fill="#003366">Fruit charnu</text><text x="75" y="140" text-anchor="middle" font-size="11" fill="#7a2a3a">baie · drupe</text></g></svg></div>
+   <div class="rows"><div class="row"><b>Structure</b>Charnu (baie, drupe) ou sec (gousse, capsule, noix) ; déhiscent (s'ouvre) ou non.</div><div class="row"><b>Rôle</b>Protéger la graine et assurer sa dispersion (vent, eau, animaux).</div><div class="row"><b>Importance</b>Il éloigne la descendance du parent — moins de concurrence, plus de chances.</div><div class="row"><b>Stratégie</b>Couleur et goût (animaux), ailes (vent), crochets (auto-stop sur les poils).</div><div class="row"><b>Innovation</b>L'alliance avec les animaux qui mangent le fruit et sèment la graine plus loin.</div></div>
+ </section>
+ <section>
+   <div class="k">Exercices</div><h2>À vous de jouer</h2>
+   <div class="ex"><span class="tag">EXERCICE TECHNIQUE ✏️</span><h3>Sec ou charnu ?</h3><p>Ouvrez un fruit charnu et un fruit sec. Dessinez où se trouvent les graines dans chacun. Photographiez.</p>
+     <div class="up"><label for="tx_fruit">📷 Déposer mon travail</label><input class="uin" id="tx_fruit" type="file" accept="image/*" data-t="tximg_fruit"><img id="tximg_fruit" alt=""></div></div>
+   <div class="ex field"><span class="tag">EXERCICE TERRAIN 🌿</span><h3>Trois fruits, trois voyages</h3><p>Trouvez trois fruits différents. Classez-les charnu/sec et devinez leur mode de dispersion (mangé ? emporté par le vent ? accroché ?). Photographiez.</p>
+     <div class="up"><label for="fd_fruit">📷 Déposer ma photo de terrain</label><input class="uin" id="fd_fruit" type="file" accept="image/*" data-t="fdimg_fruit"><img id="fdimg_fruit" alt=""></div></div>
+   <div class="pager"><a href="Cours_Ch3_Fleur.html">← La fleur</a><a class="next" href="Cours_Ch3_Graine.html">La graine →</a></div>
+ </section>
+ <div class="foot">Botapreneurs · Botany Made Simple · Chapitre 3 — Le fruit</div>
+ </div><script>document.querySelectorAll('.uin').forEach(function(el){el.addEventListener('change',function(){var f=this.files&&this.files[0];if(!f)return;var im=document.getElementById(this.dataset.t);im.src=URL.createObjectURL(f);im.style.display='block';});});
+document.querySelectorAll('.mcq').forEach(function(q){q.querySelectorAll('.opt').forEach(function(b){b.addEventListener('click',function(){q.querySelectorAll('.opt').forEach(function(x){x.classList.remove('ok','no')});this.classList.add(this.dataset.ok==='1'?'ok':'no');if(this.dataset.ok!=='1'){var ok=q.querySelector('.opt[data-ok="1"]');if(ok)ok.classList.add('ok');}});});});</script><script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("service-worker.js").catch(function(){});});}</script></body></html>

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explorateur de Botanique Systématique · Angiosperm Phylogeny</title>
+<style>
+:root{--bg:#f7f9f8;--panel:#fff;--ink:#1f2a24;--muted:#6b7a72;--line:#e2e8e4;--accent:#1e8449;--accent2:#14663a}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+header.top{background:linear-gradient(180deg,#e8f4ec,#dbeede);border-bottom:1px solid var(--line);padding:14px 20px}
+.top h1{margin:0;font-size:22px;color:var(--accent2);letter-spacing:.3px}
+.top .sub{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:2px}
+.top .row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.langbtn{border:1px solid var(--accent);background:#fff;color:var(--accent2);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:600;cursor:pointer}
+.langbtn:hover{background:var(--accent);color:#fff}
+.wrap{max-width:1320px;margin:0 auto;padding:14px 16px 40px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:6px 0 10px}
+#search{flex:1;min-width:220px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;font-size:14px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.tools button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;font-size:12px;cursor:pointer}
+.tools button:hover{border-color:var(--accent)}
+.filterbar{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin-bottom:12px}
+.filterbar .grp{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:3px 0}
+.filterbar .glab{font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;min-width:96px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:16px;padding:4px 11px;font-size:12px;cursor:pointer;user-select:none;display:flex;align-items:center;gap:6px}
+.chip .dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.chip.off{opacity:.34}
+.chip.trait.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.layout{display:grid;grid-template-columns:1fr 1.15fr;gap:16px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.card h2{margin:0;padding:11px 14px;font-size:14px;border-bottom:1px solid var(--line);background:#fbfdfc;display:flex;justify-content:space-between;align-items:center}
+.card h2 .hint{font-weight:400;font-size:11px;color:var(--muted)}
+#tree{padding:8px 6px;max-height:76vh;overflow:auto}
+.node .lbl{display:flex;align-items:center;gap:7px;padding:3px 6px;border-radius:7px;cursor:pointer;font-size:13.5px}
+.node .lbl:hover{background:#eef5f0}
+.node.clade>.lbl{font-weight:700}
+.node.order>.lbl{font-weight:600}
+.node.family>.lbl{font-weight:400;font-size:13px}
+.node.genus>.lbl{font-weight:400;font-style:italic;font-size:12.5px;color:#3a4a41}
+.node .lbl .tw{width:14px;text-align:center;color:var(--muted);font-size:11px;flex:none}
+.node .lbl .swatch{width:9px;height:14px;border-radius:3px;flex:none;border:1px solid rgba(0,0,0,.12)}
+.node .lbl .count{color:var(--muted);font-size:11px}
+.children{margin-left:15px;border-left:1px dashed #d5e0d9;padding-left:4px;display:none}
+.node.open>.children{display:block}
+.node.sel>.lbl{background:#dff0e6;outline:2px solid var(--accent)}
+.node.hit>.lbl{background:#fff6d8}
+.node.dim{opacity:.26}
+.node.hide{display:none}
+#detail{padding:16px;max-height:76vh;overflow:auto}
+.empty{color:var(--muted);font-size:14px;text-align:center;padding:40px 10px}
+.crumb{font-size:11.5px;color:var(--muted);margin-bottom:8px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.crumb .b{background:#eef5f0;border-radius:12px;padding:2px 8px;cursor:pointer}
+.crumb .b:hover{background:#d9ece1}
+.dtitle{font-size:23px;font-weight:800;margin:2px 0;letter-spacing:.3px}
+.dtitle.ital{font-style:italic}
+.rank{display:inline-block;font-size:10.5px;text-transform:uppercase;letter-spacing:.7px;color:#fff;background:var(--accent);border-radius:10px;padding:2px 8px;vertical-align:middle;margin-left:8px}
+.sec{margin-top:15px}
+.sec .k{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:6px;font-weight:700}
+.body{font-size:13.5px}
+.pill{display:inline-block;font-size:12.5px;background:#f0f6f2;border:1px solid #dce9e1;border-radius:14px;padding:4px 10px;margin:3px 4px 3px 0;cursor:pointer}
+.pill:hover{background:#dcefe4;border-color:#bfe0cd}
+.pill.gen{font-style:italic}
+.pill.trait{background:#eef2ff;border-color:#d4ddff}
+.pill.trait:hover{background:#dde5ff}
+.note{font-size:12px;color:var(--muted);font-style:italic;margin-top:6px}
+.term{border-bottom:1px dotted var(--accent);cursor:pointer;color:var(--accent2)}
+.term:hover{background:#eef7f1}
+.callout{background:#f4f9f6;border:1px solid #dce9e1;border-radius:9px;padding:10px 12px;font-size:12.5px}
+.mapwrap{background:#fbfdfc;border:1px solid var(--line);border-radius:10px;padding:4px}
+.maplegend{font-size:11px;color:var(--muted);padding:2px 8px 6px}
+svg text{font-family:inherit}
+.cnode{cursor:pointer}
+.cnode:hover circle{stroke:#14663a;stroke-width:2.5}
+.modal{display:none;position:fixed;inset:0;background:rgba(20,40,30,.45);z-index:50;align-items:center;justify-content:center;padding:20px}
+.modalbox{background:#fff;border-radius:14px;width:min(760px,96vw);max-height:88vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.modalhead{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:linear-gradient(180deg,#e8f4ec,#dbeede);border-bottom:1px solid var(--line);font-weight:700;color:var(--accent2);font-size:16px}
+.xbtn{border:none;background:transparent;font-size:18px;cursor:pointer;color:var(--muted)}
+.glosssearch{margin:12px 18px 4px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;font-size:14px}
+.modalbody{overflow:auto;padding:6px 18px 20px}
+.gcat{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#fff;background:var(--accent);border-radius:6px;padding:3px 9px;display:inline-block;margin:16px 0 8px}
+.gitem{padding:7px 0;border-bottom:1px solid #eef3f0}
+.gterm{font-weight:700;color:var(--accent2);font-size:14px}
+.gdef{font-size:13px;margin-top:2px}
+.gnone{color:var(--muted);font-style:italic;padding:20px 0}
+footer{max-width:1320px;margin:0 auto;padding:6px 16px 30px;color:var(--muted);font-size:11.5px}
+</style>
+<link rel="manifest" href="manifest.webmanifest"></head>
+<body>
+<header class="top">
+  <div class="row">
+    <div>
+      <h1 id="apptitle">Explorateur de Botanique Systématique</h1>
+      <div class="sub" id="appsub">Phylogénie des Angiospermes — d'après le poster de Cole &amp; Hilger (APweb / APG III)</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="langbtn" id="glossBtn" onclick="openGloss()">📖 Glossaire</button>
+      <button class="langbtn" id="langbtn" onclick="toggleLang()">EN</button>
+    </div>
+  </div>
+</header>
+
+<div id="glossModal" class="modal" onclick="if(event.target===this)closeGloss()">
+  <div class="modalbox">
+    <div class="modalhead">
+      <span id="glossTitle">Glossaire — vocabulaire de la systématique</span>
+      <button class="xbtn" onclick="closeGloss()">✕</button>
+    </div>
+    <input id="glossSearch" class="glosssearch" placeholder="Filtrer les termes…" oninput="renderGloss()">
+    <div id="glossBody" class="modalbody"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="controls">
+    <input id="search" placeholder="Rechercher un ordre, une famille, un genre…" oninput="onSearch()">
+    <div class="tools">
+      <button onclick="expandAll(true)" id="btnExpand">Tout ouvrir</button>
+      <button onclick="expandAll(false)" id="btnCollapse">Tout fermer</button>
+      <button onclick="resetFilters()" id="btnReset">Réinitialiser</button>
+    </div>
+  </div>
+
+  <div class="filterbar">
+    <div class="grp"><span class="glab" id="labClades">Clades</span><span class="chips" id="cladeChips" style="display:flex;gap:8px;flex-wrap:wrap"></span></div>
+    <div class="grp"><span class="glab" id="labHabit">Port</span><span class="chips" id="habitChips" style="display:flex;gap:8px;flex-wrap:wrap"></span></div>
+    <div class="grp"><span class="glab" id="labChem">Marqueurs chimiques</span><span class="chips" id="chemChips" style="display:flex;gap:8px;flex-wrap:wrap"></span></div>
+    <div class="grp"><span class="glab" id="labShow">Afficher</span>
+      <label class="chip"><input type="checkbox" id="showFam" checked onchange="toggleRank()"> <span id="lbFam">Familles</span></label>
+      <label class="chip"><input type="checkbox" id="showGen" onchange="toggleRank()"> <span id="lbGen">Genres</span></label>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="card">
+      <h2><span id="treeTitle">🌳 Carte phylogénétique</span><span class="hint" id="treeHint">cliquez pour explorer</span></h2>
+      <div id="tree"></div>
+    </div>
+    <div class="card">
+      <h2><span id="detailTitle">Fiche &amp; connexions</span><span class="hint" id="detailHint">sélectionnez un taxon</span></h2>
+      <div id="detail"><div class="empty" id="emptyMsg">Cliquez un ordre, une famille ou un genre pour voir ses caractères et ses connexions (familles/genres apparentés).</div></div>
+    </div>
+  </div>
+</div>
+
+<footer id="foot">Source : Angiosperm Phylogeny Poster (Cole T.C.H. &amp; Hilger H.H., 2015) — classification d'après APweb (Stevens 2015) &amp; APG III. Les « connexions » représentent la parenté phylogénétique (familles sœurs d'un même ordre, ordres d'un même clade) et les caractères partagés. Outil pédagogique.</footer>
+
+<script>
+/* ===================== i18n ===================== */
+const UI={
+ fr:{title:"Explorateur de Botanique Systématique",sub:"Phylogénie des Angiospermes — d'après le poster de Cole & Hilger (APweb / APG III)",
+  search:"Rechercher un ordre, une famille, un genre…",expand:"Tout ouvrir",collapse:"Tout fermer",reset:"Réinitialiser",
+  treeTitle:"🌳 Carte phylogénétique",treeHint:"cliquez pour explorer",detailTitle:"Fiche & connexions",detailHint:"sélectionnez un taxon",
+  empty:"Cliquez un ordre, une famille ou un genre pour voir ses caractères et ses connexions (familles/genres apparentés).",
+  clade:"Clade",order:"Ordre",family:"Famille",genus:"Genre",langbtn:"EN",
+  kChar:"Caractères",kCharOrd:"Caractères (au niveau de l'ordre)",kFam:"Familles",kGen:"Genres représentatifs",
+  kSis:"Familles sœurs (même ordre)",kSisOrd:"Ordres voisins (même clade)",kSisGen:"Genres voisins (même famille)",
+  kShared:"Connexions par caractère partagé",kMap:"Carte des connexions",
+  labClades:"Clades",labHabit:"Port",labChem:"Marqueurs chimiques",labShow:"Afficher",lbFam:"Familles",lbGen:"Genres",
+  ofOrder:"de l'ordre",inFamily:"Famille",genhint:"Genres représentatifs (exemples, non exhaustif).",
+  noGen:"Aucun exemple de genre saisi pour cette famille.",
+  legendSame:"Trait plein = parenté directe (même ordre / clade).",
+  clickShared:t=>"Ordres partageant : "+t,ordersLabel:"ordre(s)",sharedNote:"Cliquez un marqueur pour voir tous les taxons qui le partagent.",
+  habit:{woody:"Ligneux",herb:"Herbacé",aquatic:"Aquatique",parasite:"Parasite",vine:"Lianes/vrilles",geophyte:"Géophyte"},
+  chem:{iridoids:"Iridoïdes",alkaloids:"Alcaloïdes",ellagic:"Acide ellagique",betalains:"Bétalaïnes",glucosinolates:"Glucosinolates",ethereal:"Huiles essentielles",tannins:"Tanins",saponins:"Saponines",silicic:"Acide silicique"}},
+ en:{title:"Systematic Botany Explorer",sub:"Angiosperm Phylogeny — after the Cole & Hilger poster (APweb / APG III)",
+  search:"Search an order, family or genus…",expand:"Expand all",collapse:"Collapse all",reset:"Reset",
+  treeTitle:"🌳 Phylogenetic map",treeHint:"click to explore",detailTitle:"Sheet & connections",detailHint:"select a taxon",
+  empty:"Click an order, family or genus to see its characters and connections (related families/genera).",
+  clade:"Clade",order:"Order",family:"Family",genus:"Genus",langbtn:"FR",
+  kChar:"Characters",kCharOrd:"Characters (order level)",kFam:"Families",kGen:"Representative genera",
+  kSis:"Sister families (same order)",kSisOrd:"Neighbouring orders (same clade)",kSisGen:"Neighbouring genera (same family)",
+  kShared:"Connections by shared character",kMap:"Connection map",
+  labClades:"Clades",labHabit:"Habit",labChem:"Chemical markers",labShow:"Show",lbFam:"Families",lbGen:"Genera",
+  ofOrder:"of the order",inFamily:"Family",genhint:"Representative genera (examples, non-exhaustive).",
+  noGen:"No example genera recorded for this family.",
+  legendSame:"Solid line = direct kinship (same order / clade).",
+  clickShared:t=>"Orders sharing: "+t,ordersLabel:"order(s)",sharedNote:"Click a marker to see all taxa that share it.",
+  habit:{woody:"Woody",herb:"Herbaceous",aquatic:"Aquatic",parasite:"Parasite",vine:"Vines/tendrils",geophyte:"Geophyte"},
+  chem:{iridoids:"Iridoids",alkaloids:"Alkaloids",ellagic:"Ellagic acid",betalains:"Betalains",glucosinolates:"Glucosinolates",ethereal:"Ethereal oils",tannins:"Tannins",saponins:"Saponins",silicic:"Silicic acid"}}
+};
+let LANG="fr";
+
+/* ===================== Representative genera ===================== */
+const GEN={
+ "Nymphaeaceae":["Nymphaea","Nuphar","Victoria"],"Magnoliaceae":["Magnolia","Liriodendron"],
+ "Lauraceae":["Laurus","Persea","Cinnamomum","Ocotea","Nectandra"],"Annonaceae":["Annona","Guatteria","Xylopia"],
+ "Araceae":["Anthurium","Philodendron","Xanthosoma","Colocasia"],"Arecaceae":["Cocos","Roystonea","Sabal","Phoenix","Attalea"],
+ "Poaceae":["Oryza","Zea","Saccharum","Bambusa","Andropogon"],"Cyperaceae":["Cyperus","Carex","Eleocharis"],
+ "Bromeliaceae":["Tillandsia","Bromelia","Ananas","Guzmania"],"Orchidaceae":["Vanilla","Epidendrum","Oncidium","Encyclia"],
+ "Zingiberaceae":["Zingiber","Curcuma","Alpinia"],"Ranunculaceae":["Ranunculus","Clematis","Anemone"],
+ "Cactaceae":["Opuntia","Cereus","Melocactus","Pilosocereus","Leptocereus"],"Polygonaceae":["Coccoloba","Polygonum","Rumex"],
+ "Rosaceae":["Rosa","Prunus","Malus","Fragaria","Rubus"],"Fabaceae":["Inga","Mimosa","Senna","Phaseolus","Erythrina","Prosopis"],
+ "Moraceae":["Ficus","Artocarpus","Cecropia"],"Euphorbiaceae":["Euphorbia","Manihot","Hevea","Ricinus","Croton"],
+ "Malpighiaceae":["Malpighia","Byrsonima","Bunchosia"],"Passifloraceae":["Passiflora"],"Rhizophoraceae":["Rhizophora"],
+ "Malvaceae":["Hibiscus","Ceiba","Gossypium","Theobroma","Sida"],"Sapindaceae":["Sapindus","Cupania","Melicoccus"],
+ "Anacardiaceae":["Mangifera","Anacardium","Spondias"],"Rutaceae":["Citrus","Zanthoxylum"],
+ "Meliaceae":["Cedrela","Swietenia","Melia","Trichilia"],"Myrtaceae":["Eugenia","Psidium","Syzygium","Myrcia"],
+ "Brassicaceae":["Brassica","Lepidium","Cakile"],"Cornaceae":["Cornus"],
+ "Sapotaceae":["Pouteria","Manilkara","Sideroxylon","Chrysophyllum"],"Ericaceae":["Vaccinium","Lyonia","Gaultheria"],
+ "Rubiaceae":["Coffea","Cinchona","Ixora","Psychotria"],"Apocynaceae":["Plumeria","Nerium","Catharanthus","Tabernaemontana"],
+ "Convolvulaceae":["Ipomoea","Convolvulus","Cuscuta"],"Solanaceae":["Solanum","Capsicum","Nicotiana","Cestrum"],
+ "Lamiaceae":["Ocimum","Salvia","Mentha","Lippia"],"Bignoniaceae":["Tabebuia","Jacaranda","Crescentia","Catalpa"],
+ "Acanthaceae":["Justicia","Ruellia","Thunbergia"],"Verbenaceae":["Lantana","Verbena","Petitia"],
+ "Asteraceae":["Vernonia","Bidens","Ageratum","Helianthus","Mikania"],"Apiaceae":["Apium","Daucus","Eryngium"],
+ "Araliaceae":["Schefflera","Dendropanax"],"Caprifoliaceae":["Lonicera","Valeriana"]
+};
+
+/* ===================== Orders (families + characters FR/EN) ===================== */
+const O={};
+function ord(id,fam,ce,cf){O[id]={id,name:id,fam,ce,cf};}
+ord("Amborellales",["Amborellaceae"],
+ "woody, vessels lacking; dioecious; flw T5–8, A∞, G5–8; 1 ovule/carpel; embryo sac 9-nucleate; 1 species (New Caledonia)",
+ "ligneux, vaisseaux absents ; dioïque ; fleur T5–8, A∞, G5–8 ; 1 ovule/carpelle ; sac embryonnaire à 9 noyaux ; 1 espèce (Nouvelle-Calédonie)");
+ord("Nymphaeales",["Cabombaceae","Hydatellaceae","Nymphaeaceae"],
+ "aquatic, herbaceous; cambium absent; aerenchyma; flw T4–12, A3–∞; embryo sac 4-nucleate; seeds operculate, perisperm; mucilage; alkaloids (no benzylisoquinolines)",
+ "aquatique, herbacé ; cambium absent ; aérenchyme ; fleur T4–12, A3–∞ ; sac embryonnaire à 4 noyaux ; graines operculées, périsperme ; mucilage ; alcaloïdes (pas de benzylisoquinoléines)");
+ord("Austrobaileyales",["Austrobaileyaceae","Schisandraceae (incl. Illiciaceae)","Trimeniaceae"],
+ "woody, vessels solitary; flw T>10, A∞, G ca.9; embryo sac 4-nucleate; tiglic acid, aromatic terpenoids",
+ "ligneux, vaisseaux solitaires ; fleur T>10, A∞, G ca.9 ; sac embryonnaire à 4 noyaux ; acide tiglique, terpénoïdes aromatiques");
+ord("Chloranthales",["Chloranthaceae"],
+ "lvs opposite, interpetiolar stipules; nodes swollen; flw small T0–3, A1–5, G1, 1 apical ovule/carpel",
+ "feuilles opposées, stipules interpétiolaires ; nœuds renflés ; fleur petite T0–3, A1–5, G1, 1 ovule apical/carpelle");
+ord("Canellales",["Canellaceae","Winteraceae"],
+ "woody; pollen uniporate; aromatic terpenoids","ligneux ; pollen uniporé ; terpénoïdes aromatiques");
+ord("Piperales",["Aristolochiaceae","Hydnoraceae","Piperaceae","Saururaceae"],
+ "± herbaceous; lvs two-ranked, leaf base sheathing, single adaxial prophyll; swollen nodes; nodes trilacunar",
+ "± herbacé ; feuilles distiques, base engainante, un prophylle adaxial ; nœuds renflés ; nœuds trilacunaires");
+ord("Laurales",["Calycanthaceae","Gomortegaceae","Hernandiaceae","Lauraceae","Monimiaceae","Siparunaceae"],
+ "woody; lvs opposite; flw with hypanthium, staminodes frequent, often valvate anthers; carpels with 1 ovule; embryo large",
+ "ligneux ; feuilles opposées ; fleur à hypanthium, staminodes fréquents, anthères souvent valvaires ; carpelles à 1 ovule ; grand embryon");
+ord("Magnoliales",["Annonaceae","Degeneriaceae","Eupomatiaceae","Himantandraceae","Magnoliaceae","Myristicaceae"],
+ "woody; pith septate; lvs two-ranked; ovules with obturator; endosperm ruminate",
+ "ligneux ; moelle cloisonnée ; feuilles distiques ; ovules à obturateur ; endosperme ruminé");
+ord("Acorales",["Acoraceae"],
+ "infl spadix with spathe; lvs axils with mucilaginous intravaginal squamules; ovules atropous, epidermal perisperm & copious endosperm; idioblasts with ethereal oils",
+ "inflorescence en spadice avec spathe ; aisselles à squamules intravaginales mucilagineuses ; ovules atropes, périsperme épidermique et endosperme abondant ; idioblastes à huiles essentielles");
+ord("Alismatales",["Alismataceae (incl. Limnocharitaceae)","Aponogetonaceae","Araceae","Butomaceae","Hydrocharitaceae","Juncaginaceae","Posidoniaceae","Potamogetonaceae","Ruppiaceae","Scheuchzeriaceae","Zosteraceae"],
+ "mostly herbs & aquatics; rhizomatous; hydrophilous; intravaginal squamules; flw G apocarpous; placentation often laminal; endosperm helobial; embryo large/green",
+ "surtout herbes et aquatiques ; rhizomateux ; hydrophile ; squamules intravaginales ; fleur G apocarpe ; placentation souvent laminale ; endosperme hélobial ; embryon grand/vert");
+ord("Petrosaviales",["Petrosaviaceae"],
+ "stem with ring of bundles; fr a follicle; East Asia","tige à anneau de faisceaux ; fruit un follicule ; Asie de l'Est");
+ord("Dioscoreales",["Burmanniaceae","Dioscoreaceae","Nartheciaceae","Taccaceae"],
+ "often twining vines; lvs often reticulate; ovary often inferior, style short, branched; steroid sapogenins/alkaloids",
+ "souvent lianes volubiles ; feuilles souvent réticulées ; ovaire souvent infère, style court, ramifié ; sapogénines/alcaloïdes stéroïdiens");
+ord("Pandanales",["Cyclanthaceae","Pandanaceae","Velloziaceae"],
+ "some woody (with terminally tufted leaves); flw spadix","certains ligneux (feuilles en touffe terminale) ; fleur en spadice");
+ord("Liliales",["Alstroemeriaceae","Colchicaceae","Corsiaceae","Liliaceae","Melanthiaceae","Petermanniaceae","Philesiaceae","Smilacaceae"],
+ "often geophytes (bulbs, tubers, rhizomes); tepals sometimes spotted, nectaries at tepals; testa cellular; phytomelan lacking; fructans, chelidonic acid, steroid saponins",
+ "souvent géophytes (bulbes, tubercules, rhizomes) ; tépales parfois tachetés, nectaires sur les tépales ; testa cellulaire ; phytomélane absent ; fructanes, acide chélidonique, saponines stéroïdiennes");
+ord("Asparagales",["Amaryllidaceae (incl. Agapanthaceae, Alliaceae)","Asparagaceae (incl. Agavaceae, Hyacinthaceae, Ruscaceae)","Hypoxidaceae","Iridaceae","Lanariaceae","Orchidaceae","Tecophilaeaceae","Xanthorrhoeaceae (incl. Asphodelaceae, Hemerocallidaceae)"],
+ "often geophytes; anomalous sec. growth; capsule or berry; seed coat obliterated or with phytomelan",
+ "souvent géophytes ; croissance secondaire anormale ; capsule ou baie ; testa oblitéré ou à phytomélane");
+ord("Arecales",["Arecaceae"],
+ "monopodial, woody; lvs pinnately pseudocompound, reduplicate-plicate; large apical meristem; infl with spathe; alkaloids",
+ "monopodial, ligneux ; feuilles pennées pseudocomposées, rédupliquées-plissées ; grand méristème apical ; inflorescence à spathe ; alcaloïdes");
+ord("Poales",["Bromeliaceae","Cyperaceae","Eriocaulaceae","Juncaceae","Poaceae","Rapateaceae","Restionaceae","Typhaceae (incl. Sparganiaceae)","Xyridaceae"],
+ "mostly herbaceous; epidermis siliceous; mycorrhiza mostly absent; lvs grassy; flw often anemophilous, minute, chaffy, without nectaries",
+ "surtout herbacé ; épiderme siliceux ; mycorhize souvent absente ; feuilles graminoïdes ; fleurs souvent anémophiles, minuscules, écailleuses, sans nectaires");
+ord("Commelinales",["Commelinaceae","Haemodoraceae","Pontederiaceae"],
+ "flw often irregular; few fertile stamens; infl thyrsus of scorpioid cymes; phenylphenalenones",
+ "fleurs souvent irrégulières ; peu d'étamines fertiles ; inflorescence en thyrse de cymes scorpioïdes ; phénylphénalénones");
+ord("Zingiberales",["Cannaceae","Costaceae","Heliconiaceae","Lowiaceae","Marantaceae","Musaceae","Strelitziaceae","Zingiberaceae"],
+ "rhizomatous, large-leafed herbs; pseudostem; flw irregular/monosymmetric, septal nectaries, G inferior, A often reduced; seeds arillate; silicic acid",
+ "herbes rhizomateuses à grandes feuilles ; pseudo-tronc ; fleurs irrégulières/monosymétriques, nectaires septaux, G infère, A souvent réduites ; graines arillées ; acide silicique");
+ord("Ceratophyllales",["Ceratophyllaceae"],
+ "aquatic, herbaceous; lvs whorled, no pellucid dots; vessels lacking; monoecious; flw T9–10, A∞, G1, pollen inaperturate, pollen tube branched; hydrophilous",
+ "aquatique, herbacé ; feuilles verticillées, sans points translucides ; vaisseaux absents ; monoïque ; fleur T9–10, A∞, G1, pollen inaperturé, tube pollinique ramifié ; hydrophile");
+ord("Ranunculales",["Berberidaceae","Circaeasteraceae","Eupteleaceae","Lardizabalaceae","Menispermaceae","Papaveraceae","Ranunculaceae"],
+ "lvs often divided; flw whorled, P single or multiple whorls; G apocarpous/paracarpous, superior; berberines",
+ "feuilles souvent divisées ; fleurs verticillées, P en un ou plusieurs verticilles ; G apocarpe/paracarpe, supère ; berbérines");
+ord("Sabiales",["Sabiaceae"],
+ "woody; flw 4–5-merous, nectary disk, A epipetalous, G syncarpous; pollen colporate; endosperm helobial; triterpenoids",
+ "ligneux ; fleur 4–5-mère, disque nectarifère, A épipétale, G syncarpe ; pollen colporé ; endosperme hélobial ; triterpénoïdes");
+ord("Proteales",["Nelumbonaceae","Platanaceae","Proteaceae"],
+ "mostly woody; tepals often 4-merous; A epipetalous, connectives sometimes with apical appendage",
+ "surtout ligneux ; tépales souvent 4-mères ; A épipétale, connectifs parfois à appendice apical");
+ord("Trochodendrales",["Trochodendraceae"],
+ "woody; vessels lacking; idioblasts in cortex; tepals missing, A∞, G>5 laterally connate with abaxial nectaries; fr aggregate of follicles",
+ "ligneux ; vaisseaux absents ; idioblastes dans le cortex ; tépales absents, A∞, G>5 connés latéralement à nectaires abaxiaux ; fruit en agrégat de follicules");
+ord("Buxales",["Buxaceae","Didymelaceae"],
+ "mostly woody; unisexual, dioecious; lvs evergreen, stoma cyclocytic; tepals uniform or missing; pregnan pseudoalkaloids",
+ "surtout ligneux ; unisexué, dioïque ; feuilles persistantes, stomates cyclocytiques ; tépales uniformes ou absents ; pseudo-alcaloïdes prégnanes");
+ord("Gunnerales",["Gunneraceae","Myrothamnaceae"],
+ "unisexual, dioecious; lvs toothed, sec. veins palmate; tepals small to lacking; ellagic acid",
+ "unisexué, dioïque ; feuilles dentées, nervures secondaires palmées ; tépales petits à absents ; acide ellagique");
+ord("Dilleniales",["Dilleniaceae"],
+ "mostly woody; flw K5–∞ persisting, mostly A∞, G slightly connate; seeds often with aril; fr ventrally/dorsally dehiscent",
+ "surtout ligneux ; fleur K5–∞ persistant, souvent A∞, G légèrement conné ; graines souvent arillées ; fruit à déhiscence ventrale/dorsale");
+ord("Saxifragales",["Altingiaceae","Cercidiphyllaceae","Crassulaceae","Daphniphyllaceae","Grossulariaceae","Haloragaceae","Hamamelidaceae","Paeoniaceae","Saxifragaceae"],
+ "lvs with glandular teeth; often hypanthium, apically unfused carpels, stigma decurrent; fr mostly dry, dehiscent; myricetin, flavonols",
+ "feuilles à dents glanduleuses ; souvent hypanthium, carpelles libres à l'apex, stigmate décurrent ; fruit surtout sec, déhiscent ; myricétine, flavonols");
+ord("Vitales",["Vitaceae"],
+ "often tendrillar vines; lvs often divided, glandular teeth; A epipetalous, 2 ovules/carpel; raphides, pearl glands; berries",
+ "souvent lianes à vrilles ; feuilles souvent divisées, dents glanduleuses ; A épipétale, 2 ovules/carpelle ; raphides, glandes perlées ; baies");
+ord("Zygophyllales",["Krameriaceae","Zygophyllaceae"],
+ "cork origin deep-seated; endosperm lacking","origine du liège profonde ; endosperme absent");
+ord("Celastrales",["Celastraceae (incl. Hippocrateaceae, Brexiaceae, Parnassiaceae)","Lepidobotryaceae"],
+ "flw small, G often 3-merous, intrastaminal nectary disk; seeds often with aril (red-orange); infl cymose",
+ "fleur petite, G souvent 3-mère, disque nectarifère intrastaminal ; graines souvent arillées (rouge-orangé) ; inflorescence cymeuse");
+ord("Oxalidales",["Brunelliaceae","Cephalotaceae","Connaraceae","Cunoniaceae","Elaeocarpaceae","Huaceae","Oxalidaceae"],
+ "lvs often compound, pulvini (sleep movement); A5 or multiple, branched style common; mucilage cells; oxalates",
+ "feuilles souvent composées, pulvinus (mouvements nyctinastiques) ; A5 ou multiples, style ramifié fréquent ; cellules à mucilage ; oxalates");
+ord("Malpighiales",["Achariaceae","Chrysobalanaceae","Clusiaceae","Erythroxylaceae","Euphorbiaceae","Hypericaceae","Linaceae","Malpighiaceae","Rafflesiaceae","Passifloraceae","Phyllanthaceae","Picrodendraceae","Ochnaceae","Podostemaceae","Rhizophoraceae","Salicaceae","Violaceae"],
+ "lvs margins toothed; flw G often tricarpellate","marges foliaires dentées ; fleur G souvent tricarpellé");
+ord("Fabales",["Fabaceae","Polygalaceae","Quillajaceae","Surianaceae"],
+ "flw often \"papilionaceous\": standard, wings, keel, mostly G1; mostly A10; fr a pod; symbiosis with root-nodule bacteria; diverse alkaloids, NP amino acids, lectins (Fabaceae)",
+ "fleur souvent « papilionacée » : étendard, ailes, carène, souvent G1 ; souvent A10 ; fruit une gousse ; symbiose avec bactéries des nodosités ; alcaloïdes variés, acides aminés non protéiques, lectines (Fabaceae)");
+ord("Rosales",["Barbeyaceae","Cannabaceae","Dirachmaceae","Elaeagnaceae","Moraceae","Rhamnaceae","Rosaceae","Ulmaceae","Urticaceae (incl. Cecropiaceae)"],
+ "lvs mostly simple, stipulate; K valvate (and hypanthium) persisting; carpels 1 ovule, stigma dry; dihydroflavonols",
+ "feuilles surtout simples stipulées ; K valvaire (et hypanthium) persistant ; carpelles à 1 ovule, stigmate sec ; dihydroflavonols");
+ord("Cucurbitales",["Anisophylleaceae","Begoniaceae","Coriariaceae","Corynocarpaceae","Cucurbitaceae","Datiscaceae","Tetramelaceae"],
+ "lvs mostly alternate; flw often unisexual, G mostly inferior, parietal placentation; cucurbitacins",
+ "feuilles surtout alternes ; fleurs souvent unisexuées, G surtout infère, placentation pariétale ; cucurbitacines");
+ord("Fagales",["Betulaceae","Casuarinaceae","Fagaceae","Juglandaceae","Myricaceae","Nothofagaceae","Rhoipteleaceae","Ticodendraceae"],
+ "lvs undivided; flw small, unisexual, anemophilous, T reduced/lacking, G mostly inferior; spikes/catkins; fr 1-seeded nuts; ectomycorrhiza; tannins, dihydroflavonols",
+ "feuilles entières ; fleurs petites, unisexuées, anémophiles, T réduit/absent, G surtout infère ; épis/chatons ; fruit à 1 graine, noix ; ectomycorhize ; tanins, dihydroflavonols");
+ord("Geraniales",["Francoaceae","Geraniaceae","Ledocarpaceae","Melianthaceae"],
+ "lvs with glandular teeth; stems jointed at nodes; ethereal oils, ellagic acid",
+ "feuilles à dents glanduleuses ; tiges articulées aux nœuds ; huiles essentielles, acide ellagique");
+ord("Myrtales",["Combretaceae","Lythraceae (incl. Punicaceae, Sonneratiaceae, Trapaceae)","Melastomataceae (incl. Memecylaceae)","Myrtaceae","Onagraceae","Penaeaceae (incl. Oliniaceae)","Vochysiaceae"],
+ "lvs opposite, colleters, stipules small/none; cork deep-seated; K valvate persisting, A incurved in bud, ovary inferior; ovules many; scaly bark; flavonols, myricetin",
+ "feuilles opposées, collétères, stipules petites/nulles ; liège profond ; K valvaire persistant, A recourbées dans le bouton, ovaire infère ; ovules nombreux ; écorce squameuse ; flavonols, myricétine");
+ord("Crossosomatales",["Crossosomataceae","Geissolomataceae","Stachyuraceae","Staphyleaceae","Strasburgeriaceae"],
+ "woody; K + C, stylodia free; hypanthium, nectary disk","ligneux ; K + C, stylodes libres ; hypanthium, disque nectarifère");
+ord("Picramniales",["Picramniaceae"],
+ "trees; lvs spiral; extrafloral nectaries; staminate flw A opposite C; bark bitter; anthraquinones",
+ "arbres ; feuilles spiralées ; nectaires extrafloraux ; fleurs staminées A opposées à C ; écorce amère ; anthraquinones");
+ord("Sapindales",["Anacardiaceae","Burseraceae","Meliaceae","Nitrariaceae","Rutaceae","Sapindaceae","Simaroubaceae"],
+ "mostly woody; lvs alternate, odd-pinnately compound; flw often imperfect, intrastaminal disk; ethereal oils",
+ "surtout ligneux ; feuilles alternes, imparipennées ; fleurs souvent imparfaites, disque intrastaminal ; huiles essentielles");
+ord("Huerteales",["Dipentodontaceae","Gerrardinaceae","Petenaeaceae","Tapisciaceae"],
+ "vessel elements scalariform; mucilage cells; flw small, A opposite K, ovules 1–2/carpel",
+ "vaisseaux à perforations scalariformes ; cellules à mucilage ; fleur petite, A opposées à K, 1–2 ovules/carpelle");
+ord("Malvales",["Bixaceae","Cistaceae","Dipterocarpaceae","Malvaceae (incl. Bombacaceae, Sterculiaceae, Tiliaceae)","Cytinaceae","Neuradaceae","Muntingiaceae","Sphaerosepalaceae","Sarcolaenaceae","Thymelaeaceae"],
+ "bark fibrous; hairs often stellate; K often valvate, petals contorted, A often ∞; mucilage; cyclopropenoid fatty acids, flavones",
+ "écorce fibreuse ; poils souvent étoilés ; K souvent valvaire, pétales contortés, A souvent ∞ ; mucilage ; acides gras cyclopropéniques, flavones");
+ord("Brassicales",["Bataceae","Brassicaceae","Capparaceae","Caricaceae","Cleomaceae","Koeberliniaceae","Limnanthaceae","Moringaceae","Resedaceae","Salvadoraceae","Tovariaceae","Tropaeolaceae"],
+ "lvs alternate; flw often 4-merous, clawed petals, A many, 2×K, hypogynous (often gynophore); infl racemose; myrosin cells, glucosinolates",
+ "feuilles alternes ; fleur souvent 4-mère, pétales onguiculés, A nombreuses, 2×K, hypogyne (souvent gynophore) ; grappe ; cellules à myrosine, glucosinolates");
+ord("Santalales",["Balanophoraceae","Loranthaceae","Misodendraceae","Olacaceae","Opiliaceae","Santalaceae","Schoepfiaceae","Viscaceae"],
+ "woody; (semi-)parasites; without mycorrhiza; lvs entire; A epipetalous; perianth simple, valvate, persisting; free-central pendulous placentation; fr one-seeded; polyacetylenes, triterpene sapogenins, silicic acid",
+ "ligneux ; (semi-)parasites ; sans mycorhize ; feuilles entières ; A épipétale ; périanthe simple, valvaire, persistant ; placentation pendante centrale ; fruit à 1 graine ; polyacétylènes, sapogénines triterpéniques, acide silicique");
+ord("Berberidopsidales",["Aextoxicaceae","Berberidopsidaceae"],
+ "woody; lvs stomata cyclocytic, petiole bundles annular; fr fleshy; calcium oxalate as crystals",
+ "ligneux ; stomates cyclocytiques, faisceaux pétiolaires en anneau ; fruit charnu ; oxalate de calcium en cristaux");
+ord("Caryophyllales",["Aizoaceae","Amaranthaceae [incl. Chenopodiaceae]","Basellaceae","Cactaceae","Caryophyllaceae","Didiereaceae","Droseraceae","Drosophyllaceae","Frankeniaceae","Molluginaceae","Nepenthaceae","Nyctaginaceae","Phytolaccaceae","Plumbaginaceae","Polygonaceae","Portulacaceae","Simmondsiaceae","Talinaceae","Tamaricaceae"],
+ "mostly herbaceous; without mycorrhiza; G often unilocular, central placentation, pollen colpate, surface spiny; betalains or anthocyanins (latter e.g. in Caryophyllaceae)",
+ "surtout herbacé ; sans mycorhize ; G souvent uniloculaire, placentation centrale, pollen colpé, surface épineuse ; bétalaïnes ou anthocyanes (ces derniers p. ex. chez Caryophyllaceae)");
+ord("Cornales",["Cornaceae","Curtisiaceae","Grubbiaceae","Hydrangeaceae","Loasaceae","Nyssaceae"],
+ "mostly woody; lvs mostly undivided, hydathode teeth; flw often 4-merous, K << C, persisting, intrastaminal disk, G inferior; fr drupaceous; diverse iridoids",
+ "surtout ligneux ; feuilles surtout entières, dents hydathodes ; fleur souvent 4-mère, K ≪ C, persistant, disque intrastaminal, G infère ; fruit drupacé ; iridoïdes variés");
+ord("Ericales",["Actinidiaceae","Balsaminaceae","Clethraceae","Ebenaceae","Ericaceae","Fouquieriaceae","Lecythidaceae","Myrsinaceae §","Polemoniaceae","Primulaceae","Roridulaceae","Sapotaceae","Sarraceniaceae","Styracaceae","Theaceae","Theophrastaceae §"],
+ "lvs teeth theoid; nodes unilacunar; flw 5-merous, pentacyclic; nonhydrolyzable tannins, ellagic acid, hydroquinones",
+ "feuilles dentées type théoïde ; nœuds unilacunaires ; fleur 5-mère, pentacyclique ; tanins non hydrolysables, acide ellagique, hydroquinones");
+ord("Garryales",["Eucommiaceae","Garryaceae (incl. Aucubaceae)"],
+ "woody; dioecious; flw small, C valvate, G unilocular; fruit indehiscent; iridoids (aucubin), gutta",
+ "ligneux ; dioïque ; fleur petite, C valvaire, G uniloculaire ; fruit indéhiscent ; iridoïdes (aucubine), gutta");
+ord("Gentianales",["Apocynaceae (incl. Asclepiadaceae)","Gentianaceae","Gelsemiaceae","Loganiaceae","Rubiaceae"],
+ "lvs opposite, colleters; corolla convolute in bud; indole alkaloids; iridoids",
+ "feuilles opposées, collétères ; corolle contortée dans le bouton ; alcaloïdes indoliques ; iridoïdes");
+ord("Solanales",["Convolvulaceae (incl. Cuscutaceae)","Hydroleaceae","Montiniaceae","Solanaceae (incl. Nolanaceae)","Sphenocleaceae"],
+ "lvs spiral, simple; nodes unilacunar; petals plicate; K persisting; diverse alkaloids, no iridoids",
+ "feuilles spiralées, simples ; nœuds unilacunaires ; pétales plissés ; K persistant ; alcaloïdes variés, pas d'iridoïdes");
+ord("Lamiales",["Acanthaceae","Bignoniaceae","Byblidaceae","Gesneriaceae","Lamiaceae","Lentibulariaceae","Martyniaceae","Hydrostachyaceae","Orobanchaceae","Paulowniaceae","Pedaliaceae","Oleaceae","Plantaginaceae","Scrophulariaceae","Stilbaceae","Phrymaceae","Verbenaceae"],
+ "lvs opposite; nodes 1:1; flw mostly monosymmetric, A often 2(+2); ethereal oils in gland-headed hairs; 6-oxygenated flavones, rosmarinic acid, cornoside, verbascoside (acetoside)",
+ "feuilles opposées ; nœuds 1:1 ; fleur surtout monosymétrique, A souvent 2(+2) ; huiles essentielles dans des poils glanduleux capités ; flavones 6-oxygénées, acide rosmarinique, cornoside, verbascoside (acétoside)");
+ord("Boraginales",["Boraginaceae","Codonaceae","Cordiaceae","Ehretiaceae (+ Lennoaceae)","Heliotropiaceae","Wellstediaceae","Hydrophyllaceae (Namaceae)"],
+ "lvs roughly hairy; nodes unilacunar; infl scorpioid; mostly 4 ovules; isokestose, higher inulins, pyrrolizidine alkaloids",
+ "feuilles rudes ; nœuds unilacunaires ; inflorescence scorpioïde ; souvent 4 ovules ; isokestose, inulines supérieures, alcaloïdes pyrrolizidiniques");
+ord("Aquifoliales",["Aquifoliaceae","Cardiopteridaceae","Stemonuraceae"],
+ "woody; lvs serrate; flw 1–2 ovules/carpel, C free, K slightly connate; fr drupe with broad stigma",
+ "ligneux ; feuilles serretées ; 1–2 ovules/carpelle, C libre, K légèrement conné ; fruit une drupe à large stigmate");
+ord("Asterales",["Asteraceae","Calyceraceae","Campanulaceae (incl. Lobeliaceae)","Goodeniaceae","Menyanthaceae","Pentaphragmataceae","Rousseaceae","Stylidiaceae"],
+ "flw often monosymmetric; plunger pollination (long style); nodes trilacunar; inulin, sesquiterpenes, acetylenes",
+ "fleurs souvent monosymétriques ; pollinisation à piston (long style) ; nœuds trilacunaires ; inuline, sesquiterpènes, acétylènes");
+ord("Escalloniales",["Escalloniaceae"],
+ "mostly woody; infl racemose, C free, anthers basifixed, nectary disc",
+ "surtout ligneux ; inflorescence en grappe, C libre, anthères basifixes, disque nectarifère");
+ord("Bruniales",["Bruniaceae","Columelliaceae (incl. Desfontainia)"],
+ "woody, evergreen; nodes 1:1; flw polysymmetric, anthers basifixed",
+ "ligneux, persistant ; nœuds 1:1 ; fleurs polysymétriques, anthères basifixes");
+ord("Apiales",["Apiaceae","Araliaceae","Griseliniaceae","Myodocarpaceae","Pennantiaceae","Pittosporaceae"],
+ "woody (except Apiaceae); lvs often divided; nodes multilacunar; infl mostly umbel; drupe or schizocarp (Apiaceae: mericarp/carpophore)",
+ "ligneux (sauf Apiaceae) ; feuilles souvent divisées ; nœuds multilacunaires ; inflorescence surtout en ombelle ; drupe ou schizocarpe (Apiaceae : méricarpe/carpophore)");
+ord("Paracryphiales",["Paracryphiaceae"],
+ "woody; lvs alternate; flw 4-merous, filaments stout, capsule septicidal",
+ "ligneux ; feuilles alternes ; fleur 4-mère, filets épais, capsule septicide");
+ord("Dipsacales",["Adoxaceae","Caprifoliaceae","Diervillaceae","Dipsacaceae","Linnaeaceae","Morinaceae","Valerianaceae"],
+ "lvs opposite, often with scales; flw often monosymmetric; nodes 3:3; buds with scales; K persistent in fruit; secoiridoids",
+ "feuilles opposées, souvent à écailles ; fleurs souvent monosymétriques ; nœuds 3:3 ; bourgeons à écailles ; K persistant sur le fruit ; sécoiridoïdes");
+
+/* ===================== Nested tree topology ===================== */
+const COL={anita:"#bfe0ee",magno:"#8fcce4",monocot:"#7fd08a",commel:"#4fb865",eudicot:"#f2e94e",gunnera:"#c8e06a",
+ coreeu:"#f6c9de",rosid:"#f29ecb",fabid:"#ee7cb8",malvid:"#e86ab0",santal:"#f3d3ae",asterid:"#f6bd82",lamiid:"#f0975a",campan:"#ee8a49"};
+function C(id,en,fr,color,ne,nf,children){return{t:"clade",id,en,fr,color,ne,nf,children};}
+function n(id){return{t:"order",id};}
+const TREE=C("angio","Angiosperms","Angiospermes","#dfeee5",
+ "The flowering plants; below, the major clades in phylogenetic sequence.",
+ "Les plantes à fleurs ; ci-dessous, les grands clades en séquence phylogénétique.",[
+ C("anita","ANITA grade & Early Angiosperms","Grade ANITA & premiers angiospermes",COL.anita,
+  "Basal grade. Woody; vessels absent; lvs simple entire; flw strobilar, perfect, parts free, often in threes; pollen monosulcate; G apocarpous; nectaries absent; embryo very small.",
+  "Grade basal. Ligneux ; vaisseaux absents ; feuilles simples entières ; fleurs strobilaires, parfaites, pièces libres, souvent par trois ; pollen monosulqué ; G apocarpe ; nectaires absents ; embryon très petit.",
+  [n("Amborellales"),n("Nymphaeales"),n("Austrobaileyales"),n("Chloranthales")]),
+ C("magno","Magnoliids","Magnoliidées",COL.magno,"Features as in the early angiosperms.","Caractères comme chez les premiers angiospermes.",
+  [n("Canellales"),n("Piperales"),n("Laurales"),n("Magnoliales")]),
+ C("mono","Monocots","Monocotylédones",COL.monocot,
+  "Atactostele (scattered bundles); no secondary thickening; pollen monosulcate; parallel-veined entire lvs; flw P 3-merous; septal nectary; single cotyledon; adventitious roots.",
+  "Atactostèle (faisceaux dispersés) ; pas d'épaississement secondaire ; pollen monosulqué ; feuilles à nervation parallèle, entières ; fleur P 3-mère ; nectaire septal ; un seul cotylédon ; racines adventives.",
+  [n("Acorales"),n("Alismatales"),n("Petrosaviales"),n("Dioscoreales"),n("Pandanales"),n("Liliales"),n("Asparagales"),
+   C("commel","Commelinids","Commélinidées",COL.commel,
+    "UV-fluorescing cell walls (ferulic/coumaric acids); silicic acid in leaves; cuticular waxes in rodlets.",
+    "Parois fluorescentes aux UV (acides féruliques/coumariques) ; acide silicique dans les feuilles ; cires cuticulaires en bâtonnets.",
+    [n("Arecales"),n("Poales"),n("Commelinales"),n("Zingiberales")])]),
+ C("eudi","Eudicots","Eudicotylédones",COL.eudicot,
+  "Pollen tricolpate; K/C/P opp A; anthers basifixed; nodes trilacunar; stomata anomocytic; ethereal oils absent.",
+  "Pollen tricolpé ; K/C/P opp. A ; anthères basifixes ; nœuds trilacunaires ; stomates anomocytiques ; huiles essentielles absentes.",
+  [n("Ceratophyllales"),n("Ranunculales"),n("Sabiales"),n("Proteales"),n("Trochodendrales"),n("Buxales"),n("Gunnerales"),
+   C("core","Core Eudicots","Eudicotylédones nucléaires",COL.coreeu,
+    "Flw pentacyclic, parts alternating; G connate; K + C free; pollen tricolpate; trihydroxy-flavonols.",
+    "Fleur pentacyclique, pièces alternées ; G conné ; K + C libres ; pollen tricolpé ; trihydroxy-flavonols.",
+    [n("Dilleniales"),n("Saxifragales"),n("Vitales"),
+     C("rosid","Rosids","Rosidées",COL.rosid,
+      "Stipules; nodes 3:3; ellagic acid, resins, lignans/neolignans, harman alkaloids.",
+      "Stipules ; nœuds 3:3 ; acide ellagique, résines, lignanes/néolignanes, alcaloïdes harmane.",
+      [n("Zygophyllales"),n("Celastrales"),
+       C("fabid","Fabids (Eurosids I)","Fabidées (Eurosidées I)",COL.fabid,
+        "Nitrogen fixation (N-fixing clade); embryo large, endosperm scanty.",
+        "Fixation de l'azote (clade fixateur) ; embryon grand, endosperme rare.",
+        [n("Oxalidales"),n("Malpighiales"),n("Fabales"),n("Rosales"),n("Cucurbitales"),n("Fagales")]),
+       C("malvid","Malvids (Eurosids II)","Malvidées (Eurosidées II)",COL.malvid,
+        "Embryo large; endosperm scanty.","Embryon grand ; endosperme rare.",
+        [n("Geraniales"),n("Myrtales"),n("Crossosomatales"),n("Picramniales"),n("Sapindales"),n("Huerteales"),n("Malvales"),n("Brassicales")])]),
+     C("santgrp","Santalales · Caryophyllales","Santalales · Caryophyllales",COL.santal,
+      "Superasterid grade below the asterids.","Grade des super-astéridées sous les astéridées.",
+      [n("Santalales"),n("Berberidopsidales"),n("Caryophyllales")]),
+     C("asterid","Asterids","Astéridées",COL.asterid,
+      "Mostly sympetalous; nectary gynoecial; ovules unitegmic; endosperm cellular; iridoids common.",
+      "Corolle souvent gamopétale ; nectaire gynoécial ; ovules unitegminés ; endosperme cellulaire ; iridoïdes fréquents.",
+      [n("Cornales"),n("Ericales"),
+       C("lamiid","Lamiids (Euasterids I)","Lamiidées (Euastéridées I)",COL.lamiid,
+        "A = C, epipetalous; polyandry rare, G(2); late sympetaly.","A = C, épipétale ; polyandrie rare, G(2) ; gamopétalie tardive.",
+        [n("Garryales"),n("Gentianales"),n("Solanales"),n("Lamiales"),n("Boraginales")]),
+       C("campan","Campanulids (Euasterids II)","Campanulidées (Euastéridées II)",COL.campan,
+        "Early sympetaly; flw small; embryo short; G inferior; 1 ovule/carpel; infl often reduced.",
+        "Gamopétalie précoce ; fleur petite ; embryon court ; G infère ; 1 ovule/carpelle ; inflorescence souvent réduite.",
+        [n("Aquifoliales"),n("Asterales"),n("Escalloniales"),n("Bruniales"),n("Apiales"),n("Paracryphiales"),n("Dipsacales")])])])])
+]);
+
+/* ===================== Indices ===================== */
+const CLADEBYID={}, ORDER_PARENT={}, ORDERMETA={}, ORDER_TOP={};
+(function walk(node,path){
+  if(node.t==="clade"){
+    CLADEBYID[node.id]=node;
+    node.directOrders=node.children.filter(c=>c.t==="order").map(c=>c.id);
+    const p=path.concat([node]);
+    node.children.forEach(c=>walk(c,p));
+  } else {
+    const parent=path[path.length-1];
+    ORDER_PARENT[node.id]=parent;
+    ORDERMETA[node.id]={path:path.slice(1)}; // drop root
+    ORDER_TOP[node.id]=path[1]?path[1].id:null; // top-level clade
+  }
+})(TREE,[]);
+const TOPCLADES=TREE.children.map(c=>c.id);
+
+/* family index */
+function baseName(raw){return raw.replace(/\s*[\(\[].*$/,'').replace(/\s*§.*/,'').trim();}
+const FAM={}; // base -> {order, raw}
+Object.values(O).forEach(o=>o.fam.forEach(raw=>{const b=baseName(raw);FAM[b]={order:o.id,raw};}));
+
+/* ===================== Traits ===================== */
+const TRAITDEF={
+ woody:{g:"habit",rx:/woody|trees/i}, herb:{g:"habit",rx:/herbaceous|herbs/i}, aquatic:{g:"habit",rx:/aquatic|hydrophilous/i},
+ parasite:{g:"habit",rx:/parasit/i}, vine:{g:"habit",rx:/vine|twining|tendril|climb|liana/i}, geophyte:{g:"habit",rx:/geophyte/i},
+ iridoids:{g:"chem",rx:/iridoid/i}, alkaloids:{g:"chem",rx:/alkaloid/i}, ellagic:{g:"chem",rx:/ellagic/i},
+ betalains:{g:"chem",rx:/betalain/i}, glucosinolates:{g:"chem",rx:/glucosinolate/i}, ethereal:{g:"chem",rx:/ethereal oil/i},
+ tannins:{g:"chem",rx:/tannin/i}, saponins:{g:"chem",rx:/sapogenin|saponin/i}, silicic:{g:"chem",rx:/silicic/i}
+};
+Object.values(O).forEach(o=>{o.traits=Object.keys(TRAITDEF).filter(k=>TRAITDEF[k].rx.test(o.ce));});
+function ordersWithTrait(k){return Object.values(O).filter(o=>o.traits.includes(k)).map(o=>o.id);}
+
+/* ===================== State ===================== */
+let activeClades=new Set(TOPCLADES), activeTraits=new Set(), showFam=true, showGen=false, selKind=null, selId=null, selFam=null;
+
+/* ===================== Tree render ===================== */
+const treeEl=document.getElementById("tree");
+function orderCount(node){return node.t==="order"?1:node.children.reduce((s,c)=>s+orderCount(c),0);}
+function build(node,depth){
+  const w=document.createElement("div");
+  if(node.t==="clade"){
+    w.className="node clade"+(depth<2?" open":"");
+    w.dataset.kind="clade";w.dataset.id=node.id;w.dataset.top=node.id===TREE.id?"":ORDER_TOP_forClade(node);
+    const l=document.createElement("div");l.className="lbl";
+    l.innerHTML=`<span class="tw">▸</span><span class="swatch" style="background:${node.color}"></span><span class="nm">${node[LANG]}</span><span class="count">· ${orderCount(node)}</span>`;
+    l.onclick=e=>{e.stopPropagation();w.classList.toggle("open");tw(w);showClade(node.id);};
+    w.appendChild(l);
+    const ch=document.createElement("div");ch.className="children";
+    node.children.forEach(c=>ch.appendChild(build(c,depth+1)));
+    w.appendChild(ch);tw(w);
+  } else {
+    const o=O[node.id],col=cladeColorOf(node.id);
+    w.className="node order";w.dataset.kind="order";w.dataset.id=node.id;w.dataset.top=ORDER_TOP[node.id];
+    const l=document.createElement("div");l.className="lbl";
+    l.innerHTML=`<span class="tw">▸</span><span class="swatch" style="background:${col}"></span><span class="nm">${o.name}</span><span class="count">· ${o.fam.length}</span>`;
+    l.onclick=e=>{e.stopPropagation();w.classList.toggle("open");tw(w);selectOrder(node.id);};
+    w.appendChild(l);
+    const ch=document.createElement("div");ch.className="children";
+    o.fam.forEach(raw=>{const b=baseName(raw);ch.appendChild(buildFam(b,raw,col));});
+    w.appendChild(ch);tw(w);
+  }
+  return w;
+}
+function buildFam(b,raw,col){
+  const w=document.createElement("div");
+  w.className="node family";w.dataset.kind="family";w.dataset.id=b;w.dataset.top=ORDER_TOP[FAM[b].order];
+  const hasGen=!!GEN[b];
+  const l=document.createElement("div");l.className="lbl";
+  l.innerHTML=`<span class="tw">${hasGen?'▸':''}</span><span class="swatch" style="background:${col};opacity:.55"></span><span class="nm">${raw}</span>${hasGen?`<span class="count">· ${GEN[b].length}</span>`:''}`;
+  l.onclick=e=>{e.stopPropagation();if(hasGen){w.classList.toggle("open");tw(w);}selectFamily(b);};
+  w.appendChild(l);
+  if(hasGen){
+    const ch=document.createElement("div");ch.className="children";
+    GEN[b].forEach(g=>{
+      const gw=document.createElement("div");gw.className="node genus";gw.dataset.kind="genus";gw.dataset.id=g;gw.dataset.fam=b;gw.dataset.top=ORDER_TOP[FAM[b].order];
+      const gl=document.createElement("div");gl.className="lbl";
+      gl.innerHTML=`<span class="tw"></span><span class="nm">${g}</span>`;
+      gl.onclick=e=>{e.stopPropagation();selectGenus(b,g);};
+      gw.appendChild(gl);ch.appendChild(gw);
+    });
+    w.appendChild(ch);
+  }
+  return w;
+}
+function ORDER_TOP_forClade(node){ // top clade id containing this clade
+  for(const tc of TREE.children){let f=false;(function s(nd){if(nd===node)f=true;if(nd.children)nd.children.forEach(s)})(tc);if(f)return tc.id;}
+  return "";
+}
+function cladeColorOf(orderId){const p=ORDERMETA[orderId].path;return p[p.length-1].color;}
+function tw(w){const t=w.querySelector(":scope > .lbl .tw");if(t&&w.classList.contains("clade")||t&&w.classList.contains("order")||t&&w.classList.contains("family")){if(w.querySelector(":scope > .children"))t.textContent=w.classList.contains("open")?"▾":"▸";}}
+function renderTree(){treeEl.innerHTML="";treeEl.appendChild(build(TREE,0));applyFilters();}
+
+/* ===================== Filters ===================== */
+function orderPasses(id){
+  if(!activeClades.has(ORDER_TOP[id]))return false;
+  if(activeTraits.size){const o=O[id];if(![...activeTraits].some(t=>o.traits.includes(t)))return false;}
+  return true;
+}
+function applyFilters(){
+  // orders
+  document.querySelectorAll('#tree .node.order').forEach(nd=>{nd.classList.toggle("hide",!orderPasses(nd.dataset.id));});
+  // families
+  document.querySelectorAll('#tree .node.family').forEach(nd=>{
+    const ord=FAM[nd.dataset.id].order;nd.classList.toggle("hide",!showFam||!orderPasses(ord));
+  });
+  // genera
+  document.querySelectorAll('#tree .node.genus').forEach(nd=>{
+    const ord=FAM[nd.dataset.fam].order;nd.classList.toggle("hide",!showGen||!orderPasses(ord));
+  });
+  // clades: hide top clade if off
+  document.querySelectorAll('#tree .node.clade').forEach(nd=>{
+    if(!nd.dataset.top){nd.classList.remove("hide");return;}
+    nd.classList.toggle("hide",!activeClades.has(nd.dataset.top));
+  });
+}
+/* chips */
+function renderChips(){
+  const cc=document.getElementById("cladeChips");cc.innerHTML="";
+  TREE.children.forEach(c=>{
+    const el=document.createElement("div");el.className="chip"+(activeClades.has(c.id)?"":" off");
+    el.innerHTML=`<span class="dot" style="background:${c.color}"></span>${c[LANG]}`;
+    el.onclick=()=>{activeClades.has(c.id)?activeClades.delete(c.id):activeClades.add(c.id);renderChips();applyFilters();};
+    cc.appendChild(el);
+  });
+  const hc=document.getElementById("habitChips");hc.innerHTML="";
+  Object.keys(TRAITDEF).filter(k=>TRAITDEF[k].g==="habit").forEach(k=>hc.appendChild(traitChip(k,"habit")));
+  const ch=document.getElementById("chemChips");ch.innerHTML="";
+  Object.keys(TRAITDEF).filter(k=>TRAITDEF[k].g==="chem").forEach(k=>ch.appendChild(traitChip(k,"chem")));
+}
+function traitChip(k,grp){
+  const el=document.createElement("div");el.className="chip trait"+(activeTraits.has(k)?" on":"");
+  el.textContent=UI[LANG][grp][k];
+  el.onclick=()=>{activeTraits.has(k)?activeTraits.delete(k):activeTraits.add(k);renderChips();applyFilters();};
+  return el;
+}
+function toggleRank(){showFam=document.getElementById("showFam").checked;showGen=document.getElementById("showGen").checked;applyFilters();}
+function resetFilters(){activeClades=new Set(TOPCLADES);activeTraits=new Set();document.getElementById("search").value="";
+  document.querySelectorAll('#tree .node').forEach(nd=>nd.classList.remove("hit","dim"));renderChips();applyFilters();}
+
+/* ===================== Selection & detail ===================== */
+const detailEl=document.getElementById("detail");
+function clearSel(){document.querySelectorAll('#tree .node.sel').forEach(n=>n.classList.remove("sel"));}
+function openAncestors(el){let p=el&&el.parentElement;while(p){if(p.classList&&p.classList.contains("node")){p.classList.add("open");tw(p);}p=p.parentElement;}}
+function selectOrder(id){selKind="order";selId=id;selFam=null;clearSel();
+  const el=[...document.querySelectorAll('#tree .node.order')].find(n=>n.dataset.id===id);if(el){el.classList.add("sel");openAncestors(el);el.scrollIntoView({block:"nearest"});}
+  renderOrder(id);}
+function selectFamily(b){selKind="family";selId=b;selFam=b;clearSel();
+  if(showGen){}
+  const el=[...document.querySelectorAll('#tree .node.family')].find(n=>n.dataset.id===b);if(el){el.classList.add("sel");openAncestors(el);el.scrollIntoView({block:"nearest"});}
+  renderFamily(b);}
+function selectGenus(b,g){selKind="genus";selId=g;selFam=b;clearSel();
+  document.getElementById("showGen").checked=true;showGen=true;applyFilters();
+  const el=[...document.querySelectorAll('#tree .node.genus')].find(n=>n.dataset.id===g&&n.dataset.fam===b);if(el){el.classList.add("sel");openAncestors(el);el.scrollIntoView({block:"nearest"});}
+  renderGenus(b,g);}
+
+function crumbOrder(id){const p=ORDERMETA[id].path;let s=p.map(c=>`<span class="b" onclick="showClade('${c.id}')">${c[LANG]}</span>`).join(' › ');return s;}
+function esc(s){return(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function renderOrder(id){
+  const o=O[id],t=UI[LANG];document.getElementById("detailHint").textContent="";
+  const sibs=ORDER_PARENT[id].directOrders.filter(x=>x!==id);
+  const parent=ORDER_PARENT[id];
+  const fams=o.fam.map(raw=>{const b=baseName(raw);return `<span class="pill" onclick="selectFamily('${b}')">${raw}</span>`;}).join("");
+  const traits=o.traits.map(k=>`<span class="pill trait" onclick="filterByTrait('${k}')">${UI[LANG][TRAITDEF[k].g][k]}</span>`).join("")||`<span class="note">—</span>`;
+  const mapNodes=sibs.slice(0,10).map(s=>({label:O[s].name,call:`selectOrder('${s}')`}));
+  detailEl.innerHTML=`
+   <div class="crumb">${crumbOrder(id)}</div>
+   <div><span class="dtitle">${o.name}</span><span class="rank">${t.order}</span></div>
+   <div class="sec"><div class="k">${t.kChar}</div><div class="body">${linkify(LANG==="fr"?o.cf:o.ce)}</div></div>
+   <div class="sec"><div class="k">${t.kSisOrd} · ${parent[LANG]}</div><div>${sibs.map(s=>`<span class="pill" onclick="selectOrder('${s}')">${O[s].name}</span>`).join("")||'<span class="note">—</span>'}</div></div>
+   <div class="sec"><div class="k">${t.kMap}</div><div class="mapwrap">${connMap(o.name,cladeColorOf(id),mapNodes)}</div><div class="maplegend">${t.legendSame}</div></div>
+   <div class="sec"><div class="k">${t.kFam} (${o.fam.length})</div><div>${fams}</div></div>
+   <div class="sec"><div class="k">${t.kShared}</div><div>${traits}</div><div class="note">${t.sharedNote}</div></div>`;
+}
+function renderFamily(b){
+  const t=UI[LANG],ordId=FAM[b].order,o=O[ordId];document.getElementById("detailHint").textContent="";
+  const sibs=o.fam.map(baseName).filter(x=>x!==b);
+  const gen=GEN[b];
+  const mapNodes=sibs.slice(0,10).map(s=>({label:s,call:`selectFamily('${s}')`}));
+  detailEl.innerHTML=`
+   <div class="crumb">${crumbOrder(ordId)} › <span class="b" onclick="selectOrder('${ordId}')">${o.name}</span></div>
+   <div><span class="dtitle">${FAM[b].raw}</span><span class="rank">${t.family}</span></div>
+   <div class="sec"><div class="k">${t.kSis} — ${o.name}</div><div>${sibs.map(s=>`<span class="pill" onclick="selectFamily('${s}')">${s}</span>`).join("")||'<span class="note">—</span>'}</div></div>
+   <div class="sec"><div class="k">${t.kMap}</div><div class="mapwrap">${connMap(b,cladeColorOf(ordId),mapNodes)}</div><div class="maplegend">${t.legendSame}</div></div>
+   <div class="sec"><div class="k">${t.kGen}</div><div>${gen?gen.map(g=>`<span class="pill gen" onclick="selectGenus('${b}','${g}')">${g}</span>`).join(""):`<span class="note">${t.noGen}</span>`}</div>${gen?`<div class="note">${t.genhint}</div>`:''}</div>
+   <div class="sec"><div class="k">${t.kCharOrd} — ${o.name}</div><div class="body">${linkify(LANG==="fr"?o.cf:o.ce)}</div></div>`;
+}
+function renderGenus(b,g){
+  const t=UI[LANG],ordId=FAM[b].order,o=O[ordId];document.getElementById("detailHint").textContent="";
+  const sibs=(GEN[b]||[]).filter(x=>x!==g);
+  const mapNodes=sibs.slice(0,10).map(s=>({label:s,call:`selectGenus('${b}','${s}')`,ital:true}));
+  detailEl.innerHTML=`
+   <div class="crumb">${crumbOrder(ordId)} › <span class="b" onclick="selectOrder('${ordId}')">${o.name}</span> › <span class="b" onclick="selectFamily('${b}')">${b}</span></div>
+   <div><span class="dtitle ital">${g}</span><span class="rank">${t.genus}</span></div>
+   <div class="sec"><div class="k">${t.inFamily}</div><div><span class="pill" onclick="selectFamily('${b}')">${b}</span></div></div>
+   <div class="sec"><div class="k">${t.kSisGen} — ${b}</div><div>${sibs.map(s=>`<span class="pill gen" onclick="selectGenus('${b}','${s}')">${s}</span>`).join("")||'<span class="note">—</span>'}</div></div>
+   <div class="sec"><div class="k">${t.kMap}</div><div class="mapwrap">${connMap(g,cladeColorOf(ordId),mapNodes,true)}</div><div class="maplegend">${t.legendSame}</div></div>
+   <div class="sec"><div class="k">${t.kCharOrd} — ${o.name}</div><div class="body">${linkify(LANG==="fr"?o.cf:o.ce)}</div></div>`;
+}
+function showClade(id){
+  const node=CLADEBYID[id],t=UI[LANG];document.getElementById("detailHint").textContent="";clearSel();
+  const subOrders=[];(function w(nd){if(nd.t==="order")subOrders.push(nd.id);else nd.children.forEach(w)})(node);
+  detailEl.innerHTML=`
+   <div><span class="dtitle">${node[LANG]}</span><span class="rank">${t.clade}</span></div>
+   <div class="note">${orderCount(node)} ${t.ordersLabel}</div>
+   <div class="sec"><div class="k">${t.kChar}</div><div class="body">${linkify(LANG==="fr"?node.nf:node.ne)}</div></div>
+   <div class="sec"><div class="k">${t.order}s</div><div>${subOrders.map(s=>`<span class="pill" onclick="selectOrder('${s}')">${O[s].name}</span>`).join("")}</div></div>`;
+}
+function filterByTrait(k){activeTraits=new Set([k]);renderChips();applyFilters();
+  // reveal
+  document.querySelectorAll('#tree .node.clade').forEach(nd=>{nd.classList.add("open");tw(nd);});}
+
+/* ===================== Connection map (SVG) ===================== */
+function connMap(center,color,nodes,ital){
+  const W=420,H=Math.max(200,120+nodes.length*10),cx=W/2,cy=H/2,r=Math.min(150,60+nodes.length*8);
+  let edges="",pts="";
+  const N=nodes.length;
+  nodes.forEach((nd,i)=>{
+    const ang=(-Math.PI/2)+(2*Math.PI*i/Math.max(N,1));
+    const x=cx+r*Math.cos(ang),y=cy+r*Math.sin(ang);
+    edges+=`<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#9fc4b0" stroke-width="1.4"/>`;
+    const anchor=x<cx-4?"end":(x>cx+4?"start":"middle");
+    const lx=x+(anchor==="end"?-9:anchor==="start"?9:0);
+    pts+=`<g class="cnode" onclick="${nd.call}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6" fill="#fff" stroke="${color}" stroke-width="2"/>`+
+      `<text x="${lx.toFixed(1)}" y="${(y+3).toFixed(1)}" font-size="10.5" text-anchor="${anchor}" ${nd.ital?'font-style="italic"':''} fill="#2b3a32">${esc(nd.label)}</text></g>`;
+  });
+  const centerLabel=`<circle cx="${cx}" cy="${cy}" r="9" fill="${color}" stroke="#14663a" stroke-width="1.5"/>`+
+    `<text x="${cx}" y="${cy-14}" font-size="12" font-weight="700" text-anchor="middle" ${ital?'font-style="italic"':''} fill="#14663a">${esc(center)}</text>`;
+  if(N===0)return `<svg viewBox="0 0 ${W} 120" width="100%"><text x="${cx}" y="60" font-size="12" text-anchor="middle" fill="#6b7a72">${center}</text><text x="${cx}" y="80" font-size="11" text-anchor="middle" fill="#9aa8a0">${LANG==="fr"?"aucun taxon voisin":"no neighbouring taxa"}</text></svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%">${edges}${pts}${centerLabel}</svg>`;
+}
+
+/* ===================== Search ===================== */
+function onSearch(){
+  const q=document.getElementById("search").value.trim().toLowerCase();
+  document.querySelectorAll('#tree .node').forEach(nd=>nd.classList.remove("hit","dim"));
+  if(!q){applyFilters();return;}
+  const hitOrders=new Set(),hitFams=new Set(),hitGen=new Set();
+  Object.values(O).forEach(o=>{if(o.name.toLowerCase().includes(q))hitOrders.add(o.id);});
+  Object.keys(FAM).forEach(b=>{if(b.toLowerCase().includes(q)||FAM[b].raw.toLowerCase().includes(q)){hitFams.add(b);hitOrders.add(FAM[b].order);}});
+  Object.keys(GEN).forEach(b=>GEN[b].forEach(g=>{if(g.toLowerCase().includes(q)){hitGen.add(b+"|"+g);hitFams.add(b);hitOrders.add(FAM[b].order);}}));
+  if(hitGen.size){document.getElementById("showGen").checked=true;showGen=true;}
+  applyFilters();
+  document.querySelectorAll('#tree .node.order').forEach(nd=>{const h=hitOrders.has(nd.dataset.id);nd.classList.toggle("hit",h);if(h)openAncestors(nd);if(!h)nd.classList.add("dim");});
+  document.querySelectorAll('#tree .node.family').forEach(nd=>{const h=hitFams.has(nd.dataset.id);nd.classList.toggle("hit",h);if(h)openAncestors(nd);});
+  document.querySelectorAll('#tree .node.genus').forEach(nd=>{const h=hitGen.has(nd.dataset.fam+"|"+nd.dataset.id);nd.classList.toggle("hit",h);if(h)openAncestors(nd);});
+}
+function expandAll(open){document.querySelectorAll('#tree .node.clade,#tree .node.order,#tree .node.family').forEach(nd=>{if(nd.querySelector(":scope > .children")){nd.classList.toggle("open",open);tw(nd);}});}
+
+/* ===================== Language ===================== */
+function toggleLang(){
+  LANG=LANG==="fr"?"en":"fr";document.documentElement.lang=LANG;const t=UI[LANG];
+  document.getElementById("apptitle").textContent=t.title;
+  document.getElementById("appsub").innerHTML=t.sub;
+  document.getElementById("search").placeholder=t.search;
+  document.getElementById("btnExpand").textContent=t.expand;
+  document.getElementById("btnCollapse").textContent=t.collapse;
+  document.getElementById("btnReset").textContent=t.reset;
+  document.getElementById("treeTitle").textContent=t.treeTitle;
+  document.getElementById("treeHint").textContent=t.treeHint;
+  document.getElementById("detailTitle").textContent=t.detailTitle;
+  document.getElementById("langbtn").textContent=t.langbtn;
+  document.getElementById("labClades").textContent=t.labClades;
+  document.getElementById("labHabit").textContent=t.labHabit;
+  document.getElementById("labChem").textContent=t.labChem;
+  document.getElementById("labShow").textContent=t.labShow;
+  document.getElementById("lbFam").textContent=t.lbFam;
+  document.getElementById("lbGen").textContent=t.lbGen;
+  const em=document.getElementById("emptyMsg");if(em)em.textContent=t.empty;
+  document.getElementById("glossBtn").textContent=GUI[LANG].btn;
+  document.getElementById("glossTitle").textContent=GUI[LANG].title;
+  document.getElementById("glossSearch").placeholder=GUI[LANG].search;
+  if(document.getElementById("glossModal").style.display==="flex")renderGloss();
+  renderTree();renderChips();
+  if(selKind==="order")selectOrder(selId);else if(selKind==="family")selectFamily(selId);else if(selKind==="genus")selectGenus(selFam,selId);
+}
+
+/* ===================== Glossary ===================== */
+const GUI={
+ fr:{btn:"📖 Glossaire",title:"Glossaire — vocabulaire de la systématique",search:"Filtrer les termes…",
+   groups:{concept:"Concepts & phylogénie",morph:"Morphologie",formula:"Formule florale (symboles)",chem:"Chimie & marqueurs"}},
+ en:{btn:"📖 Glossary",title:"Glossary — systematics vocabulary",search:"Filter terms…",
+   groups:{concept:"Concepts & phylogeny",morph:"Morphology",formula:"Floral formula (symbols)",chem:"Chemistry & markers"}}};
+const GLOSS=[
+ {t:"ANITA",g:"concept",en:"Acronym for the earliest-branching angiosperm lineages — Amborellales, Nymphaeales and the Austrobaileyales (Illiciaceae, Trimeniaceae, Austrobaileyaceae). A 'grade' (not a clade) at the very base of the flowering-plant tree.",fr:"Acronyme des toutes premières lignées d'angiospermes — Amborellales, Nymphaeales et les Austrobaileyales (Illiciaceae, Trimeniaceae, Austrobaileyaceae). C'est un « grade » (et non un clade) à la base même de l'arbre des plantes à fleurs."},
+ {t:"Clade",g:"concept",en:"A group containing an ancestor and ALL its descendants (monophyletic) — the natural unit of classification.",fr:"Groupe réunissant un ancêtre et TOUS ses descendants (monophylétique) — l'unité naturelle de la classification."},
+ {t:"Grade",g:"concept",en:"An assemblage of lineages that does NOT include all descendants of a common ancestor (paraphyletic), e.g. the ANITA grade — a step on the tree, not a natural group.",fr:"Ensemble de lignées qui n'inclut PAS tous les descendants d'un ancêtre commun (paraphylétique), p. ex. le grade ANITA — une étape de l'arbre, pas un groupe naturel."},
+ {t:"Synapomorphie / Synapomorphy",g:"concept",en:"A shared, derived (novel) character that defines a clade and is evidence for it, e.g. tricolpate pollen in eudicots.",fr:"Caractère dérivé (nouveau) partagé qui définit un clade et en témoigne, p. ex. le pollen tricolpé des eudicotylédones."},
+ {t:"Phylogénie / Phylogeny",g:"concept",en:"The evolutionary history and kinship among lineages, usually drawn as a branching tree.",fr:"Histoire évolutive et parenté entre lignées, représentée par un arbre ramifié."},
+ {t:"Cladogramme / Cladogram",g:"concept",en:"A branching diagram of hypothesised relationships; the order of branching matters, branch length usually does not.",fr:"Diagramme ramifié des relations supposées ; l'ordre de branchement compte, la longueur des branches généralement non."},
+ {t:"Ordre / Order (-ales)",g:"concept",en:"A rank above family; angiosperm order names end in -ales (e.g. Asparagales).",fr:"Rang au-dessus de la famille ; les noms d'ordres d'angiospermes se terminent en -ales (p. ex. Asparagales)."},
+ {t:"Famille / Family (-aceae)",g:"concept",en:"A rank grouping related genera; family names end in -aceae (e.g. Orchidaceae).",fr:"Rang regroupant des genres apparentés ; les noms de familles se terminent en -aceae (p. ex. Orchidaceae)."},
+ {t:"Genre / Genus",g:"concept",en:"A group of closely related species; the first word of a scientific name (italicised, e.g. Rosa).",fr:"Groupe d'espèces très proches ; premier mot du nom scientifique (en italique, p. ex. Rosa)."},
+ {t:"APG / APweb",g:"concept",en:"Angiosperm Phylogeny Group and its Website — the consensus DNA-based classification of flowering plants that this poster follows.",fr:"Angiosperm Phylogeny Group et son site (APweb) — la classification consensuelle des plantes à fleurs, fondée sur l'ADN, suivie par ce poster."},
+ {t:"Angiosperme / Angiosperm",g:"concept",en:"A flowering plant: seeds enclosed in a carpel/fruit, with flowers and double fertilisation.",fr:"Plante à fleurs : graines enfermées dans un carpelle/fruit, avec fleurs et double fécondation."},
+ {t:"Gymnosperme / Gymnosperm",g:"concept",en:"A seed plant with 'naked' ovules — conifers, cycads, Ginkgo, Gnetales; the angiosperms' relatives.",fr:"Plante à graines aux ovules « nus » — conifères, cycas, Ginkgo, Gnétales ; parentes des angiospermes."},
+ {t:"Monocotylédone / Monocot",g:"concept",en:"Clade with one seed leaf (cotyledon), parallel-veined leaves, flower parts in 3s, scattered vascular bundles.",fr:"Clade à un seul cotylédon, feuilles à nervation parallèle, pièces florales par 3, faisceaux dispersés."},
+ {t:"Eudicotylédone / Eudicot",g:"concept",en:"The 'true dicots': clade marked by tricolpate pollen; flower parts often in 4s or 5s.",fr:"Les « vraies dicotylédones » : clade marqué par le pollen tricolpé ; pièces florales souvent par 4 ou 5."},
+ {t:"Magnoliidées / Magnoliids",g:"concept",en:"Clade of woody, often aromatic early angiosperms (Magnoliales, Laurales, Piperales, Canellales).",fr:"Clade d'angiospermes primitifs ligneux, souvent aromatiques (Magnoliales, Laurales, Piperales, Canellales)."},
+ {t:"Commélinidées / Commelinids",g:"concept",en:"A monocot clade (palms, grasses, gingers…) with silica-rich, UV-fluorescent cell walls.",fr:"Clade de monocotylédones (palmiers, graminées, gingembres…) à parois riches en silice, fluorescentes aux UV."},
+ {t:"Rosidées / Rosids",g:"concept",en:"One of the two big eudicot clades (with fabids + malvids); free petals common.",fr:"L'un des deux grands clades d'eudicotylédones (avec fabidées + malvidées) ; pétales souvent libres."},
+ {t:"Astéridées / Asterids",g:"concept",en:"Big eudicot clade with mostly fused petals (sympetaly), often iridoids; includes lamiids + campanulids.",fr:"Grand clade d'eudicotylédones à pétales souvent soudés (gamopétalie), souvent des iridoïdes ; comprend lamiidées + campanulidées."},
+
+ {t:"Ligneux / Woody · Herbacé / Herbaceous",g:"morph",en:"Woody = producing wood, persistent stems (trees, shrubs). Herbaceous = soft, non-woody, often dying back.",fr:"Ligneux = produisant du bois, tiges persistantes (arbres, arbustes). Herbacé = tendre, non ligneux, disparaissant souvent."},
+ {t:"Feuilles opposées / alternes / distiques / verticillées",g:"morph",en:"Opposite = two leaves per node; alternate = one per node; two-ranked (distichous) = in two rows; whorled = 3+ per node.",fr:"Opposées = deux par nœud ; alternes = une par nœud ; distiques = sur deux rangs ; verticillées = 3+ par nœud."},
+ {t:"Stipules",g:"morph",en:"Small appendages at a leaf base, sometimes fused or turned into spines/tendrils.",fr:"Petits appendices à la base de la feuille, parfois soudés ou transformés en épines/vrilles."},
+ {t:"Vaisseaux / Vessels",g:"morph",en:"Water-conducting xylem tubes; their presence/absence and type is phylogenetically informative.",fr:"Tubes conducteurs de sève du xylème ; leur présence/absence et type sont informatifs en phylogénie."},
+ {t:"Nœuds (lacunaires) / Nodes",g:"morph",en:"Node anatomy by leaf-gap number: unilacunar (1), trilacunar (3), multilacunar (many); written e.g. 3:3.",fr:"Anatomie du nœud selon le nombre de lacunes foliaires : unilacunaire (1), trilacunaire (3), multilacunaire ; noté p. ex. 3:3."},
+ {t:"Hypanthium",g:"morph",en:"A cup or tube formed by fused bases of sepals, petals and stamens, around or above the ovary.",fr:"Coupe ou tube formé par la soudure des bases des sépales, pétales et étamines, autour ou au-dessus de l'ovaire."},
+ {t:"Carpelle / Carpel",g:"morph",en:"The basic female unit of a flower (ovary + style + stigma); one or several form the gynoecium (G).",fr:"Unité femelle de base de la fleur (ovaire + style + stigmate) ; un ou plusieurs forment le gynécée (G)."},
+ {t:"Ovaire supère / infère · Superior / inferior ovary",g:"morph",en:"Superior = ovary above the attachment of other parts; inferior = ovary below them (other parts on top).",fr:"Supère = ovaire au-dessus de l'insertion des autres pièces ; infère = ovaire en dessous (autres pièces au sommet)."},
+ {t:"Apocarpe / Syncarpe · Apocarpous / Syncarpous",g:"morph",en:"Apocarpous = carpels free/separate; syncarpous = carpels fused into one pistil.",fr:"Apocarpe = carpelles libres/séparés ; syncarpe = carpelles soudés en un seul pistil."},
+ {t:"Placentation",g:"morph",en:"Where ovules attach inside the ovary: parietal (wall), axile (central column), free-central, laminal (on surfaces).",fr:"Point d'attache des ovules dans l'ovaire : pariétale (paroi), axile (colonne centrale), centrale libre, laminale (sur les faces)."},
+ {t:"Ovule",g:"morph",en:"The structure that becomes a seed after fertilisation; unitegmic = one integument, atropous = straight.",fr:"Structure qui devient la graine après fécondation ; unitegminé = un tégument, atrope = droit."},
+ {t:"Étamine / Staminode · Stamen / Staminode",g:"morph",en:"Stamen = male organ (filament + anther), together the androecium (A); staminode = sterile stamen.",fr:"Étamine = organe mâle (filet + anthère), ensemble l'androcée (A) ; staminode = étamine stérile."},
+ {t:"Périanthe / Tépale · Perianth / Tepal",g:"morph",en:"Perianth = all sepals + petals; tepal = a perianth part when sepals and petals look alike (symbol T).",fr:"Périanthe = ensemble des sépales + pétales ; tépale = pièce du périanthe quand sépales et pétales se ressemblent (symbole T)."},
+ {t:"Nectaire / Nectary",g:"morph",en:"Nectar-secreting gland; septal (in ovary walls), gynoecial (on the ovary), or a disk around it.",fr:"Glande sécrétant le nectar ; septal (dans les cloisons de l'ovaire), gynoécial (sur l'ovaire) ou en disque."},
+ {t:"Spadice / Spathe · Spadix / Spathe",g:"morph",en:"Spadix = fleshy spike of tiny flowers; spathe = the large bract enclosing it (aroids, palms).",fr:"Spadice = épi charnu de petites fleurs ; spathe = grande bractée qui l'enveloppe (aracées, palmiers)."},
+ {t:"Cyme scorpioïde / Scorpioid cyme",g:"morph",en:"A coiled, one-sided branching inflorescence unrolling as it flowers (e.g. Boraginaceae).",fr:"Inflorescence ramifiée enroulée d'un seul côté, se déroulant à la floraison (p. ex. Boraginaceae)."},
+ {t:"Ombelle / Grappe / Chaton · Umbel / Raceme / Catkin",g:"morph",en:"Umbel = stalks from one point (Apiaceae); raceme = stalked flowers along an axis; catkin = pendulous spike of tiny wind-flowers.",fr:"Ombelle = pédicelles d'un même point (Apiaceae) ; grappe = fleurs pédicellées le long d'un axe ; chaton = épi pendant de petites fleurs anémophiles."},
+ {t:"Follicule / Gousse / Capsule · Follicle / Legume / Capsule",g:"morph",en:"Follicle = dry fruit splitting on one side; legume/pod = splitting on two sides (Fabaceae); capsule = dry, many-seeded, several splits.",fr:"Follicule = fruit sec s'ouvrant d'un côté ; gousse = s'ouvrant des deux côtés (Fabaceae) ; capsule = sèche, à nombreuses graines, plusieurs fentes."},
+ {t:"Drupe / Baie / Noix · Drupe / Berry / Nut",g:"morph",en:"Drupe = fleshy with a stony pit (mango, olive); berry = fleshy, several seeds (tomato); nut = dry, hard, 1-seeded.",fr:"Drupe = charnue à noyau dur (mangue, olive) ; baie = charnue à plusieurs graines (tomate) ; noix = sèche, dure, à 1 graine."},
+ {t:"Schizocarpe / Méricarpe · Schizocarp / Mericarp",g:"morph",en:"Schizocarp = fruit splitting into 1-seeded units (mericarps), as in Apiaceae.",fr:"Schizocarpe = fruit se fragmentant en unités à 1 graine (méricarpes), comme chez Apiaceae."},
+ {t:"Endosperme / Endosperm",g:"morph",en:"Seed nutritive tissue; helobial/nuclear/cellular describe how it forms; ruminate = infolded/mottled.",fr:"Tissu nourricier de la graine ; hélobial/nucléaire/cellulaire décrivent sa formation ; ruminé = plissé/marbré."},
+ {t:"Périsperme / Perisperm",g:"morph",en:"Nutritive tissue from the nucellus (not endosperm), storing food in some seeds.",fr:"Tissu nourricier issu du nucelle (et non de l'endosperme), réserve dans certaines graines."},
+ {t:"Phytomélane / Phytomelan",g:"morph",en:"A hard black carbon crust on many monocot seeds (e.g. Asparagales); a useful diagnostic.",fr:"Croûte noire carbonée dure sur beaucoup de graines de monocotylédones (p. ex. Asparagales) ; utile pour l'identification."},
+ {t:"Idioblaste / Idioblast",g:"morph",en:"A specialised cell differing from its neighbours, e.g. holding ethereal oils or crystals.",fr:"Cellule spécialisée différant de ses voisines, p. ex. contenant des huiles essentielles ou des cristaux."},
+ {t:"Aérenchyme / Aerenchyma",g:"morph",en:"Air-filled spongy tissue that helps aquatic plants float and breathe.",fr:"Tissu spongieux rempli d'air aidant les plantes aquatiques à flotter et respirer."},
+ {t:"Pulvinus",g:"morph",en:"A swollen joint at the leaf base enabling movement (e.g. 'sleep' movements in legumes).",fr:"Renflement articulé à la base de la feuille permettant des mouvements (nyctinastie des légumineuses)."},
+ {t:"Géophyte / Geophyte",g:"morph",en:"A plant surviving harsh seasons via underground buds — bulbs, corms, tubers, rhizomes.",fr:"Plante survivant aux saisons difficiles grâce à des bourgeons souterrains — bulbes, cormes, tubercules, rhizomes."},
+ {t:"Mycorhize / Mycorrhiza",g:"morph",en:"A symbiosis between roots and fungi aiding nutrient uptake; ectomycorrhiza wraps root tips (e.g. Fagales).",fr:"Symbiose entre racines et champignons facilitant l'absorption ; l'ectomycorhize enveloppe l'extrémité des racines (p. ex. Fagales)."},
+ {t:"Monoïque / Dioïque · Monoecious / Dioecious",g:"morph",en:"Monoecious = male and female flowers on the same plant; dioecious = on separate plants.",fr:"Monoïque = fleurs mâles et femelles sur le même pied ; dioïque = sur des pieds séparés."},
+ {t:"Pollen : monosulqué / tricolpé / uniporé / inaperturé",g:"morph",en:"Monosulcate = one furrow (monocots, early angiosperms); tricolpate = three furrows (eudicots); uniporate/inaperturate = one pore / no aperture.",fr:"Monosulqué = un sillon (monocotylédones, angiospermes primitifs) ; tricolpé = trois sillons (eudicotylédones) ; uniporé/inaperturé = un pore / sans ouverture."},
+ {t:"Sac embryonnaire / Embryo sac",g:"morph",en:"The female gametophyte inside the ovule; the number of nuclei (e.g. 8-nucleate) is phylogenetically informative.",fr:"Gamétophyte femelle dans l'ovule ; le nombre de noyaux (p. ex. à 8 noyaux) est informatif en phylogénie."},
+
+ {t:"T",g:"formula",en:"Tepals — perianth parts when sepals and petals look alike.",fr:"Tépales — pièces du périanthe quand sépales et pétales se ressemblent."},
+ {t:"K",g:"formula",en:"Calyx — the sepals of a flower.",fr:"Calice — les sépales de la fleur."},
+ {t:"C",g:"formula",en:"Corolla — the petals of a flower.",fr:"Corolle — les pétales de la fleur."},
+ {t:"P",g:"formula",en:"Perianth / perigone — sepals + petals taken together.",fr:"Périanthe / périgone — sépales + pétales ensemble."},
+ {t:"A",g:"formula",en:"Androecium — the stamens (male parts).",fr:"Androcée — les étamines (partie mâle)."},
+ {t:"G",g:"formula",en:"Gynoecium — the carpels (female parts); a line above/below G marks an inferior/superior ovary.",fr:"Gynécée — les carpelles (partie femelle) ; un trait au-dessus/en dessous de G indique un ovaire infère/supère."},
+ {t:"∞",g:"formula",en:"Numerous / an indefinite high number of parts.",fr:"Nombreux / nombre élevé indéfini de pièces."},
+ {t:"± et ×",g:"formula",en:"± = more or less; × = times (e.g. 2×K = twice the number of sepals).",fr:"± = plus ou moins ; × = fois (p. ex. 2×K = deux fois le nombre de sépales)."},
+
+ {t:"Alcaloïdes / Alkaloids",g:"chem",en:"Nitrogen-containing plant compounds, often bitter/bioactive (e.g. benzylisoquinoline in magnoliids, indole in Gentianales).",fr:"Composés végétaux azotés, souvent amers/bioactifs (p. ex. benzylisoquinoléiques chez les magnoliidées, indoliques chez les Gentianales)."},
+ {t:"Iridoïdes / Sécoiridoïdes · Iridoids",g:"chem",en:"Bitter terpenoid compounds typical of asterids; secoiridoids are 'opened' iridoids (e.g. Dipsacales).",fr:"Composés terpéniques amers typiques des astéridées ; les sécoiridoïdes sont des iridoïdes « ouverts » (p. ex. Dipsacales)."},
+ {t:"Bétalaïnes vs anthocyanes · Betalains vs anthocyanins",g:"chem",en:"Betalains = red/yellow nitrogen pigments unique to most Caryophyllales (they replace anthocyanins); anthocyanins = the usual red/blue pigments elsewhere.",fr:"Bétalaïnes = pigments azotés rouges/jaunes propres à la plupart des Caryophyllales (ils remplacent les anthocyanes) ; anthocyanes = pigments rouges/bleus habituels ailleurs."},
+ {t:"Acide ellagique / Tanins · Ellagic acid / Tannins",g:"chem",en:"Phenolic compounds; astringent, common in rosids (defence, tanning).",fr:"Composés phénoliques ; astringents, fréquents chez les rosidées (défense, tannage)."},
+ {t:"Glucosinolates",g:"chem",en:"Sulphur/nitrogen 'mustard-oil' compounds giving the pungency of Brassicales; released by myrosin cells.",fr:"Composés soufrés/azotés (« huiles de moutarde ») donnant le piquant des Brassicales ; libérés par les cellules à myrosine."},
+ {t:"Huiles essentielles / Terpénoïdes · Ethereal oils / Terpenoids",g:"chem",en:"Volatile aromatic oils (often terpenoids) stored in idioblasts or glands; scent of laurels, citrus, mints.",fr:"Huiles aromatiques volatiles (souvent terpéniques) stockées dans des idioblastes ou glandes ; parfum des lauriers, agrumes, menthes."},
+ {t:"Saponines / Sapogénines · Saponins",g:"chem",en:"Soap-like glycosides that foam in water; steroidal sapogenins occur in many monocots (Liliales, Dioscoreales).",fr:"Glycosides moussant dans l'eau comme du savon ; les sapogénines stéroïdiennes abondent chez des monocotylédones (Liliales, Dioscoreales)."},
+ {t:"Acide silicique / Silice · Silicic acid / Silica",g:"chem",en:"Silica deposited in cell walls (grasses, sedges, gingers), stiffening tissues and deterring herbivores.",fr:"Silice déposée dans les parois (graminées, cypéracées, gingembres), rigidifiant les tissus et dissuadant les herbivores."},
+ {t:"Mucilage",g:"chem",en:"Slimy polysaccharide gel; aids water storage, seed dispersal and protection (e.g. Malvales, water lilies).",fr:"Gel polysaccharidique visqueux ; stockage d'eau, dispersion des graines et protection (p. ex. Malvales, nénuphars)."},
+ {t:"Flavonols / Myricétine · Flavonols / Myricetin",g:"chem",en:"Flavonoid pigments and UV-protectants; myricetin is a flavonol used as a chemical marker in several clades.",fr:"Pigments flavonoïdes et protecteurs UV ; la myricétine est un flavonol utilisé comme marqueur chimique dans plusieurs clades."},
+ {t:"Raphides",g:"chem",en:"Needle-shaped calcium-oxalate crystals bundled in cells; a defence, common in monocots (Araceae).",fr:"Cristaux d'oxalate de calcium en aiguilles groupés dans des cellules ; défense, fréquents chez les monocotylédones (Araceae)."}
+];
+/* clickable technical terms inside character sheets */
+const GLOSSKEYS=["ovaire infère","ovaire supère","sac embryonnaire","embryo sac","huiles essentielles","ethereal oils","ethereal oil","cyme scorpioïde",
+"hypanthium","carpelle","carpel","apocarpe","apocarpous","syncarpe","syncarpous","placentation","staminodes","staminode","tépales","tépale","tepals","tepal",
+"nectaires","nectaire","nectaries","nectary","spadice","spadix","spathe","scorpioïde","scorpioid","ombelle","umbel","follicule","follicle","drupacé","drupaceous","drupe",
+"baies","baie","berries","berry","capsule","schizocarpe","schizocarp","méricarpe","mericarp","endosperme","endosperm","périsperme","perisperm","phytomélane","phytomelan",
+"idioblastes","idioblaste","idioblasts","aérenchyme","aerenchyma","pulvini","pulvinus","géophytes","géophyte","geophytes","geophyte","ectomycorhize","ectomycorrhiza","mycorhize","mycorrhiza",
+"dioïque","dioecious","monoïque","monoecious","monosulqué","monosulcate","tricolpé","tricolpate","uniporé","uniporate","inaperturé","inaperturate",
+"alcaloïdes","alcaloïde","alkaloids","alkaloid","sécoiridoïde","secoiridoid","iridoïdes","iridoïde","iridoids","iridoid","bétalaïnes","bétalaïne","betalains","betalain",
+"anthocyanes","anthocyane","anthocyanins","anthocyanin","glucosinolates","glucosinolate","terpénoïdes","terpénoïde","terpenoids","terpenoid",
+"saponines","saponine","saponins","saponin","sapogénines","sapogénine","sapogenins","sapogenin","silicique","silicic","silice","mucilage",
+"flavonols","flavonol","myricétine","myricetin","raphides","raphide","ellagique","ellagic","tanins","tanin","tannins","tannin","stipules","stipule",
+"hydrophile","hydrophilous","aquatique","aquatic","ligneux","woody","herbacé","herbaceous","rhizomateux","rhizomatous","rhizome"];
+const _glossRx=new RegExp("("+GLOSSKEYS.slice().sort((a,b)=>b.length-a.length).map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|")+")","gi");
+function linkify(s){return esc(s).replace(_glossRx,m=>`<span class="term" onclick="openGlossTerm('${m.replace(/'/g,"\\'")}')">${m}</span>`);}
+function openGlossTerm(q){openGloss();const box=document.getElementById("glossSearch");box.value=q;renderGloss();}
+function openGloss(){document.getElementById("glossModal").style.display="flex";renderGloss();document.getElementById("glossSearch").focus();}
+function closeGloss(){document.getElementById("glossModal").style.display="none";}
+function renderGloss(){
+  const q=(document.getElementById("glossSearch").value||"").trim().toLowerCase();
+  const body=document.getElementById("glossBody");const gl=GUI[LANG].groups;
+  const order=["concept","morph","formula","chem"];let html="";let any=false;
+  order.forEach(gr=>{
+    const items=GLOSS.filter(x=>x.g===gr).filter(x=>{const txt=(x.t+" "+x[LANG]).toLowerCase();return !q||txt.includes(q);});
+    if(!items.length)return;any=true;
+    html+=`<div class="gcat">${gl[gr]}</div>`;
+    items.forEach(x=>{html+=`<div class="gitem"><div class="gterm">${esc(x.t)}</div><div class="gdef">${esc(x[LANG])}</div></div>`;});
+  });
+  body.innerHTML=any?html:`<div class="gnone">${LANG==="fr"?"Aucun terme trouvé.":"No term found."}</div>`;
+}
+
+/* ===================== Init ===================== */
+renderTree();renderChips();
+</script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("service-worker.js").catch(function(){});});}</script></body>
+</html>

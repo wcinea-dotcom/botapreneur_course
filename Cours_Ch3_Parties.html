@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chapitre 3 — Les parties de la plante · Botany Made Simple</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2E7D32;--green2:#6CC24A;--blue:#003366;--orange:#F47C20;--beige:#F8F8F4;--sky:#E6F0F8;--sage:#E7F0E4;--ink:#2B2B2B;--grey:#5a6b62;--line:#e4eae6;--head:'Poppins',-apple-system,Segoe UI,Roboto,sans-serif;--body:'Lato',-apple-system,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--beige);line-height:1.6;font-size:17px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.22;margin:0}
+.wrap{max-width:940px;margin:0 auto;padding:0 18px}
+.top{background:linear-gradient(150deg,#00284f,#0a4f7a);color:#fff;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+.top .brand{font-family:var(--head);font-weight:800;letter-spacing:.5px;font-size:15px}.top .brand .b2{color:#8fd39a}
+.top .nav{display:flex;gap:8px;flex-wrap:wrap}.top .nav a{color:#fff;text-decoration:none;font-family:var(--head);font-weight:600;font-size:12.5px;border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:5px 11px}
+.top .nav a.on{background:var(--orange);border-color:var(--orange)}.top .nav a:hover{background:var(--orange);border-color:var(--orange)}
+.hero{background:var(--sage);border-bottom:1px solid var(--line);padding:24px 0}
+.hero .chaptag{display:inline-block;background:var(--blue);color:#fff;font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:1px;border-radius:14px;padding:4px 13px;margin-bottom:6px}
+.hero h1{font-size:32px;color:var(--blue);margin:6px 0 2px}.hero .role{font-family:var(--head);font-weight:600;color:var(--orange);font-size:16px}
+section{padding:28px 0;border-bottom:1px solid var(--line)}
+.k{font-family:var(--head);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-size:12px}
+h2{font-size:23px;color:var(--blue);margin:6px 0 12px}h2 span{color:var(--orange)}
+h3{font-size:19px;color:var(--green);margin:16px 0 6px}
+p{margin:0 0 14px}
+.photo{border:2px dashed #bcd6c4;border-radius:16px;background:#fff;padding:26px 16px;text-align:center;margin:8px 0}
+.photo label{cursor:pointer;color:var(--green);font-family:var(--head);font-weight:700;font-size:16px}
+.photo .hint{display:block;color:var(--grey);font-size:12.5px;margin-top:6px}
+.photo input{display:none}.photo img{max-width:100%;border-radius:12px;margin-top:14px;display:none}
+.fig{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 10px;margin:10px 0;overflow-x:auto}
+.figcap{font-family:var(--head);font-weight:600;color:var(--blue);text-align:center;font-size:15px;margin:2px 0 6px}
+.rows{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 16px;border-left:6px solid var(--green)}
+.row{font-size:15px;margin:9px 0;border-bottom:1px solid #eef3f0;padding-bottom:8px}.row:last-child{border-bottom:none}
+.row b{color:var(--green);font-family:var(--head);font-size:12.5px;text-transform:uppercase;letter-spacing:.4px;display:block}
+.ex{background:#eaf5ec;border:1px solid #bfe0c8;border-radius:14px;padding:18px;margin:14px 0}
+.ex.field{background:#fff8f1;border-color:#f3d5b8}
+.ex .tag{display:inline-block;background:var(--green);color:#fff;font-family:var(--head);font-weight:700;font-size:11px;letter-spacing:1px;border-radius:12px;padding:3px 11px}
+.ex.field .tag{background:var(--orange)}
+.ex h3{color:var(--blue);margin:8px 0 6px}
+.up{border:2px dashed #bcd6c4;border-radius:12px;padding:14px;text-align:center;background:#fff;margin-top:10px}
+.up input{display:none}.up label{cursor:pointer;color:var(--green);font-family:var(--head);font-weight:600}.up img{max-width:100%;border-radius:10px;margin-top:12px;display:none}
+.pager{display:flex;justify-content:space-between;gap:10px;margin:22px 0 8px;flex-wrap:wrap}
+.pager a{font-family:var(--head);font-weight:600;font-size:14px;text-decoration:none;color:var(--blue);background:#fff;border:1px solid var(--line);border-radius:22px;padding:11px 18px}
+.pager a.next{background:var(--green);color:#fff;border-color:var(--green)}
+.foot{text-align:center;color:var(--grey);font-size:13px;padding:22px 0}
+.partsgrid{display:grid;grid-template-columns:1fr;gap:14px;margin:12px 0}
+@media(min-width:640px){.partsgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:920px){.partsgrid{grid-template-columns:1fr 1fr 1fr}}
+.pcard{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;border-top:4px solid var(--green);transition:transform .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,.08);border-color:var(--orange)}
+.pcard .emoji{font-size:34px}.pcard h4{color:var(--blue);font-size:18px;margin:4px 0 2px}.pcard .role{color:var(--orange);font-family:var(--head);font-weight:600;font-size:13px}.pcard .go{color:var(--green);font-family:var(--head);font-weight:600;font-size:13px;margin-top:8px}
+</style><link rel="manifest" href="manifest.webmanifest"></head><body><div class="top"><div class="brand">BOTA<span class="b2">PRENEURS</span> · Botany Made Simple</div><div class="nav">
+<a href="Cours_Ch1_Evolution.html">Ch.1</a>
+<a href="Cours_Ch2_Morphologie.html">Ch.2</a>
+<a href="Cours_Ch3_Parties.html" class="on">Ch.3</a></div></div><div class="hero"><div class="wrap"><div class="chaptag">CHAPITRE 3</div><h1>Les parties de la <span>plante</span></h1><div class="role" style="color:var(--grey);font-weight:400">Une page par organe — avec vraie photo et exercices. Cliquez une carte.</div></div></div>
+ <div class="wrap">
+ <section>
+   <div class="fig"><div class="figcap">Une plante et ses organes</div><svg viewBox="0 0 520 360" role="img"><line x1="20" y1="250" x2="500" y2="250" stroke="#d8cbb6" stroke-width="2" stroke-dasharray="4 4"/>
+  <g stroke="#a97d4a" stroke-width="3" fill="none"><path d="M210 250 q-4 40 -30 66 M210 250 q0 46 2 74 M210 250 q6 40 34 62 M210 250 q-16 26 -44 34 M210 250 q18 26 44 30"/></g>
+  <line x1="210" y1="250" x2="210" y2="96" stroke="#3f7a44" stroke-width="6"/>
+  <path d="M210 190 q-46 -8 -66 -34 q40 -6 66 34" fill="#4a9b57"/><path d="M210 156 q46 -8 66 -34 q-40 -6 -66 34" fill="#4a9b57"/>
+  <g transform="translate(210,86)"><g fill="#e05a7a"><ellipse cx="0" cy="-14" rx="8" ry="13"/><ellipse cx="13" cy="-4" rx="8" ry="13" transform="rotate(72)"/><ellipse cx="8" cy="11" rx="8" ry="13" transform="rotate(144)"/><ellipse cx="-8" cy="11" rx="8" ry="13" transform="rotate(216)"/><ellipse cx="-13" cy="-4" rx="8" ry="13" transform="rotate(288)"/></g><circle r="7" fill="#F4C430"/></g>
+  <circle cx="266" cy="150" r="12" fill="#e0663a"/>
+  <g font-family="Poppins" font-size="13" font-weight="600" fill="#003366">
+  <line x1="222" y1="86" x2="360" y2="70" stroke="#c9d8cf"/><text x="366" y="74">Fleur</text>
+  <line x1="278" y1="150" x2="360" y2="140" stroke="#c9d8cf"/><text x="366" y="144">Fruit</text>
+  <line x1="150" y1="176" x2="360" y2="192" stroke="#c9d8cf"/><text x="366" y="196">Feuille</text>
+  <line x1="213" y1="220" x2="360" y2="238" stroke="#c9d8cf"/><text x="366" y="242">Tige</text>
+  <line x1="212" y1="300" x2="360" y2="300" stroke="#c9d8cf"/><text x="366" y="304">Racine</text></g></svg></div>
+   <div class="partsgrid">
+   <a class="pcard" href="Cours_Ch3_Racine.html"><div class="emoji">🌱</div><h4>La racine</h4><div class="role">Le chercheur souterrain</div><div class="go">Voir la page →</div></a><a class="pcard" href="Cours_Ch3_Tige.html"><div class="emoji">🌿</div><h4>La tige</h4><div class="role">Le pilier et l'autoroute</div><div class="go">Voir la page →</div></a><a class="pcard" href="Cours_Ch3_Feuille.html"><div class="emoji">🍃</div><h4>La feuille</h4><div class="role">Le panneau solaire</div><div class="go">Voir la page →</div></a><a class="pcard" href="Cours_Ch3_Fleur.html"><div class="emoji">🌸</div><h4>La fleur</h4><div class="role">L'organe de la reproduction</div><div class="go">Voir la page →</div></a><a class="pcard" href="Cours_Ch3_Fruit.html"><div class="emoji">🍎</div><h4>Le fruit</h4><div class="role">Le protecteur voyageur</div><div class="go">Voir la page →</div></a><a class="pcard" href="Cours_Ch3_Graine.html"><div class="emoji">🌰</div><h4>La graine</h4><div class="role">La vie en réserve</div><div class="go">Voir la page →</div></a>
+   </div>
+ </section>
+ <section>
+   <div class="k">Exercice de synthèse</div><h2>La plante entière</h2>
+   <div class="ex field"><span class="tag">EXERCICE TERRAIN 🌿</span><h3>Arrachez, étiquetez, décrivez</h3>
+     <p>Quand vous aurez parcouru les 6 organes : arrachez délicatement une petite plante <b>entière</b>. Rincez-la. Posez-la sur une feuille de papier et <b>étiquetez</b> chaque partie visible (racine, tige, feuille, fleur si présente). Décrivez la plante en quelques lignes, puis photographiez et déposez.</p>
+     <div class="up"><label for="fd_whole">📷 Déposer ma plante étiquetée</label><input class="uin" id="fd_whole" type="file" accept="image/*" data-t="fdimg_whole"><img id="fdimg_whole" alt=""></div></div>
+   <div class="pager"><a href="Cours_Ch2_Morphologie.html">← Chapitre 2 : Morphologie</a><a class="next" href="Cours_Ch3_Racine.html">Commencer : La racine →</a></div>
+ </section>
+ <div class="foot">Botapreneurs · Botany Made Simple · Chapitre 3 — Sommaire</div>
+ </div><script>document.querySelectorAll('.uin').forEach(function(el){el.addEventListener('change',function(){var f=this.files&&this.files[0];if(!f)return;var im=document.getElementById(this.dataset.t);im.src=URL.createObjectURL(f);im.style.display='block';});});
+document.querySelectorAll('.mcq').forEach(function(q){q.querySelectorAll('.opt').forEach(function(b){b.addEventListener('click',function(){q.querySelectorAll('.opt').forEach(function(x){x.classList.remove('ok','no')});this.classList.add(this.dataset.ok==='1'?'ok':'no');if(this.dataset.ok!=='1'){var ok=q.querySelector('.opt[data-ok="1"]');if(ok)ok.classList.add('ok');}});});});</script><script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("service-worker.js").catch(function(){});});}</script></body></html>
