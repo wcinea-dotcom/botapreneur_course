@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Identifier les plantes · Botany Made Simple</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2E7D32;--green2:#6CC24A;--blue:#003366;--blue2:#0a4f7a;--orange:#F47C20;--beige:#F8F8F4;--sky:#E6F0F8;--sage:#E7F0E4;--ink:#2B2B2B;--grey:#5a6b62;--line:#e4eae6;--head:'Poppins',-apple-system,Segoe UI,Roboto,sans-serif;--body:'Lato',-apple-system,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--beige);line-height:1.6;font-size:17px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.22;margin:0}
+.wrap{max-width:940px;margin:0 auto;padding:0 18px}
+.top{background:linear-gradient(150deg,#00284f,#0a4f7a);color:#fff;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+.top .brand{font-family:var(--head);font-weight:800;letter-spacing:.5px;font-size:15px}.top .brand .b2{color:#8fd39a}
+.top .nav{display:flex;gap:8px}.top .nav a{color:#fff;text-decoration:none;font-family:var(--head);font-weight:600;font-size:12.5px;border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:5px 11px}
+.top .nav a.on{background:var(--orange);border-color:var(--orange)}.top .nav a:hover{background:var(--orange);border-color:var(--orange)}
+.hero{background:var(--sage);border-bottom:1px solid var(--line);padding:26px 0}
+.hero .chaptag{display:inline-block;background:var(--blue);color:#fff;font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:1px;border-radius:14px;padding:4px 13px;margin-bottom:6px}
+.hero h1{font-size:31px;color:var(--blue);margin:6px 0 4px}.hero h1 span{color:var(--orange)}.hero .sub{color:var(--grey);font-size:16px}
+section{padding:30px 0;border-bottom:1px solid var(--line)}
+.k{font-family:var(--head);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-size:12px}
+h2{font-size:24px;color:var(--blue);margin:6px 0 12px}
+h3{font-size:19px;color:var(--green);margin:18px 0 6px}
+p{margin:0 0 14px}
+.obj{background:#fff;border:1px solid var(--line);border-left:6px solid var(--green);border-radius:12px;padding:16px 18px;margin-bottom:8px}
+.obj h3{margin-top:0;color:var(--blue)}.obj ul{margin:8px 0 0;padding-left:20px}.obj li{margin:6px 0}
+.fig{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 10px;margin:10px 0;overflow-x:auto}
+.figcap{font-family:var(--head);font-weight:600;color:var(--blue);text-align:center;font-size:15px;margin:2px 0 6px}
+.note{font-size:13px;color:var(--grey);font-style:italic}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin:12px 0}
+@media(min-width:640px){.grid.g4{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.grid.g4{grid-template-columns:repeat(4,1fr)}}
+.form{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;border-top:4px solid var(--green);text-align:center}
+.form .ic{font-size:34px}.form h4{color:var(--blue);font-size:17px;margin:4px 0}.form .imp{font-size:13.5px;color:var(--grey);margin:0}
+.callout{background:#fff8f1;border:1px solid #f3d5b8;border-left:6px solid var(--orange);border-radius:12px;padding:14px 16px;margin:12px 0}.callout b{color:#b85e12}
+.ex{background:#eaf5ec;border:1px solid #bfe0c8;border-radius:14px;padding:18px;margin:14px 0}
+.ex .tag{display:inline-block;background:var(--green);color:#fff;font-family:var(--head);font-weight:700;font-size:11px;letter-spacing:1px;border-radius:12px;padding:3px 11px}.ex h3{color:var(--blue);margin:8px 0 6px}
+.up{border:2px dashed #bcd6c4;border-radius:12px;padding:16px;text-align:center;background:#fff;margin-top:10px}
+.up input{display:none}.up label{cursor:pointer;color:var(--green);font-family:var(--head);font-weight:600}.up img{max-width:100%;border-radius:10px;margin-top:12px;display:none}
+.pager{display:flex;justify-content:space-between;gap:10px;margin:22px 0 8px}
+.pager a{font-family:var(--head);font-weight:600;font-size:14px;text-decoration:none;color:var(--blue);background:#fff;border:1px solid var(--line);border-radius:22px;padding:11px 18px}
+.pager a.next{background:var(--green);color:#fff;border-color:var(--green)}
+.foot{text-align:center;color:var(--grey);font-size:13px;padding:22px 0}
+</style>
+<link rel="manifest" href="manifest.webmanifest"></head>
+<body>
+<div class="top">
+  <div class="brand">BOTA<span class="b2">PRENEURS</span> · Botany Made Simple</div>
+  <div class="nav"><a href="Cours_Ch1_Evolution.html">Ch.1</a><a href="Cours_Ch2_Morphologie.html">Ch.2</a><a href="Cours_Ch3_Parties.html">Ch.3</a><a href="Cours_Ch4_Terrain.html">Ch.4</a><a class="on" href="Cours_Ch5_Identification.html">Ch.5</a><a href="Cours_Ch6_Chimiotaxonomie.html">Ch.6</a></div>
+</div>
+<div class="hero"><div class="wrap">
+  <div class="chaptag">CHAPITRE 5</div>
+  <h1>Identifier les <span>plantes</span></h1>
+  <div class="sub">Taxonomie physique : utiliser une clé, construire une fiche, identifier de vraies plantes.</div>
+</div></div>
+<div class="wrap">
+<section>
+<div class="k">Le cours en détail · sources fiables</div>
+<h2>Le contenu à connaître</h2>
+<h3>6.1 — Utiliser une clé</h3>
+<p>Une clé dichotomique est un outil d'identification qui repose sur une succession de choix, étape par étape. À chaque étape, on lit un couplet : deux propositions opposées (par exemple « feuilles opposées » / « feuilles alternes »). On observe le spécimen, on choisit l'affirmation qui lui correspond, puis la clé renvoie vers un numéro ou directement vers un nom de taxon. On répète jusqu'à aboutir à une seule possibilité. En pratique : travaillez sur un échantillon complet et frais, munissez-vous d'une loupe, et ne cochez que les caractères réellement visibles. Si un caractère est inaccessible (fruit demandé alors que la plante est en fleur), notez-le et cherchez une clé alternative. Procédez toujours du plus général (famille) au plus précis (genre, espèce), sans sauter d'étape.</p>
+<div style="background:#fff;border:1px solid #e4eae6;border-left:6px solid #6CC24A;border-radius:12px;padding:12px 16px;margin:0 0 12px"><b style="font-family:Poppins,sans-serif;color:#003366">Vocabulaire clé</b><ul style="margin:8px 0 0;padding-left:20px;font-size:15px"><li><b>Clé dichotomique</b> — clé d'identification à deux choix par étape</li><li><b>Couplet</b> — paire d'alternatives opposées à trancher</li><li><b>Taxon</b> — groupe classé et nommé (famille, genre, espèce)</li><li><b>Caractère</b> — attribut observable servant au choix</li><li><b>Dichotomie</b> — division en deux options</li></ul></div>
+<p style="font-size:14px;color:#5a6b62;margin:0 0 22px"><b style="color:#F47C20">Laboratoire :</b> Suivre une clé à 3 étapes. &nbsp;·&nbsp; <b style="color:#2E7D32">Produit :</b> Résultat de la clé sur 1 plante.</p>
+<h3>6.2 — Fiche d'identification</h3>
+<p>Une fiche d'identification rassemble, sur une même page, tout ce qui permet de reconnaître une plante et de retrouver l'observation plus tard. Structurez-la en rubriques claires : nom présumé (français et latin), date, lieu précis (coordonnées GPS ou point sur carte) et habitat. Décrivez ensuite les organes : port, tige, feuilles (forme, disposition), fleurs (couleur, nombre de pièces), fruits, odeur éventuelle. Mettez en avant les caractères discriminants, ceux qui distinguent votre plante des espèces voisines (feuille dentée ou non, tige carrée, latex). Complétez par des notes de terrain : observations sur le vif que vous ne retrouverez pas sur photo (parfum, texture, taille réelle, milieu). Joignez plusieurs photos montrant les détails. Une bonne fiche est datée, localisée et assez complète pour permettre une vérification ultérieure par vous-même ou par un autre botaniste.</p>
+<div style="background:#fff;border:1px solid #e4eae6;border-left:6px solid #6CC24A;border-radius:12px;padding:12px 16px;margin:0 0 12px"><b style="font-family:Poppins,sans-serif;color:#003366">Vocabulaire clé</b><ul style="margin:8px 0 0;padding-left:20px;font-size:15px"><li><b>Fiche d'identification</b> — document synthétisant les données d'une plante</li><li><b>Caractère discriminant</b> — trait qui sépare une espèce des proches</li><li><b>Notes de terrain</b> — observations prises sur place</li><li><b>Habitat</b> — milieu où pousse la plante</li><li><b>Port</b> — allure générale de la plante</li></ul></div>
+<p style="font-size:14px;color:#5a6b62;margin:0 0 22px"><b style="color:#F47C20">Laboratoire :</b> Créer une fiche modèle. &nbsp;·&nbsp; <b style="color:#2E7D32">Produit :</b> Fiche d'identification modèle.</p>
+<h3>6.3 — Identifier 3 plantes</h3>
+<p>Pour vous entraîner, choisissez trois plantes que vous ne connaissez pas et déterminez-les une à une. Méthode : observez soigneusement la plante entière (loupe utile), puis suivez une flore fiable — par exemple la Petite Flore de Bonnier ou la Flore de Coste — en tranchant la bonne alternative à chaque couplet jusqu'à un nom d'espèce probable. Notez ce nom, le lieu (coordonnées GPS), la date, et prenez des photos des organes clés. L'étape essentielle est la vérification : comparez toujours votre résultat à une source de référence. Confrontez votre plante à la description et aux illustrations de la flore, vérifiez que l'aire de répartition et l'habitat concordent, puis demandez un second avis. La plateforme collaborative IdentiPlante de Tela Botanica permet de faire confirmer une détermination par le réseau. Une identification n'est fiable que lorsqu'elle est recoupée par au moins une source indépendante.</p>
+<div style="background:#fff;border:1px solid #e4eae6;border-left:6px solid #6CC24A;border-radius:12px;padding:12px 16px;margin:0 0 12px"><b style="font-family:Poppins,sans-serif;color:#003366">Vocabulaire clé</b><ul style="margin:8px 0 0;padding-left:20px;font-size:15px"><li><b>Flore</b> — ouvrage décrivant les plantes d'un territoire avec clés</li><li><b>Détermination</b> — fait d'attribuer un nom à un spécimen</li><li><b>Vérification</b> — confirmation par comparaison à une source fiable</li><li><b>IdentiPlante</b> — outil collaboratif de confirmation en ligne</li><li><b>Aire de répartition</b> — zone géographique où l'espèce est présente</li></ul></div>
+<p style="font-size:14px;color:#5a6b62;margin:0 0 22px"><b style="color:#F47C20">Laboratoire :</b> Identifier 3 plantes du quartier. &nbsp;·&nbsp; <b style="color:#2E7D32">Produit :</b> Trois fiches d'identification remplies.</p>
+<div style="background:#E6F0F8;border:1px solid #cfe0ee;border-radius:12px;padding:12px 16px;margin-top:6px"><b style="font-family:Poppins,sans-serif;color:#003366">Lectures de référence</b><ul style="margin:8px 0 0;padding-left:20px;font-size:14px"><li>Tela Botanica — Cahier de vacances #4 : Identifier une plante — <a href="https://www.tela-botanica.org/2019/08/cahier-de-vacances-4-identifier-une-plante/" target="_blank" rel="noopener" style="color:#0a4f7a">consulter</a></li><li>Wikipédia — Clé de détermination — <a href="https://fr.wikipedia.org/wiki/Cl%C3%A9_de_d%C3%A9termination" target="_blank" rel="noopener" style="color:#0a4f7a">consulter</a></li></ul></div>
+</section>
+<div class="pager">
+  <a href="Cours_Ch4_Terrain.html">← Chapitre 4 : Terrain</a>
+  <a class="next" href="Cours_Ch6_Chimiotaxonomie.html">Chapitre 6 : Chimiotaxonomie →</a>
+</div>
+<div class="foot">Botapreneurs · Botany Made Simple · Chapitre 5</div>
+</div>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("service-worker.js").catch(function(){});});}</script></body>
+</html>
