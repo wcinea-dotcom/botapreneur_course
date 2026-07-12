@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identification des fruits – Schémas & Photos</title>
+    <style>
+        *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Roboto, system-ui, sans-serif; background: #f4f0ea; color: #2d2a24; display: flex; min-height: 100vh; }
+        .sidebar { width: 280px; background: #5a3520; color: #f0e3d5; padding: 1.8rem 1.2rem; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; box-shadow: 2px 0 12px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
+        .sidebar h1 { font-size: 1.3rem; font-weight: 500; letter-spacing: 0.03em; border-bottom: 2px solid #8a6a4a; padding-bottom: 0.8rem; margin-bottom: 1.5rem; color: #e8d2b8; }
+        .sidebar h1 small { display: block; font-size: 0.7rem; font-weight: 300; color: #cdb096; margin-top: 0.2rem; }
+        .sidebar nav { display: flex; flex-direction: column; gap: 0.2rem; }
+        .sidebar nav a { color: #e8d2b8; text-decoration: none; padding: 0.45rem 0.8rem; border-radius: 6px; font-size: 0.88rem; transition: background 0.2s, color 0.2s; border-left: 3px solid transparent; cursor: pointer; }
+        .sidebar nav a:hover, .sidebar nav a.active { background: #6e4429; color: #fff; border-left-color: #d9a86a; }
+        .sidebar nav .cat-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #b0906f; padding: 0.8rem 0.8rem 0.2rem; font-weight: 600; }
+        .main { margin-left: 280px; flex: 1; padding: 2rem 2.5rem 4rem; max-width: 1300px; }
+        .main header { margin-bottom: 2.5rem; }
+        .main header h2 { font-size: 2rem; font-weight: 400; color: #5a3520; letter-spacing: -0.01em; }
+        .main header p { color: #5f5a52; font-size: 1.05rem; margin-top: 0.3rem; }
+        .main header .badge-count { font-size: 0.8rem; background: #efe3d5; color: #5a3520; padding: 0.15rem 0.9rem; border-radius: 20px; display: inline-block; margin-top: 0.3rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
+        .card { background: #fffcf9; border-radius: 16px; padding: 1.2rem 1.2rem 1.4rem; box-shadow: 0 4px 14px rgba(0,0,0,0.04); transition: box-shadow 0.2s; border: 1px solid #e4ddd4; display: flex; flex-direction: column; }
+        .card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+        .card .term { font-weight: 600; font-size: 1.1rem; color: #4a2f18; margin-bottom: 0.2rem; }
+        .card .term small { font-weight: 400; font-size: 0.75rem; color: #7a6a58; margin-left: 0.4rem; }
+        .card .def { font-size: 0.88rem; color: #3f3a32; margin: 0.3rem 0 0.7rem; line-height: 1.5; flex: 0 0 auto; }
+        .card .svg-wrap { display: flex; align-items: center; justify-content: center; min-height: 100px; background: #fcf9f5; border-radius: 10px; border: 1px solid #eae3d9; padding: 0.3rem; cursor: zoom-in; }
+        .card .svg-wrap svg { display: block; width: 100%; height: auto; max-height: 160px; }
+        .card .tag { display: inline-block; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; background: #efe3d5; color: #5a3520; padding: 0.1rem 0.6rem; border-radius: 12px; margin-top: 0.6rem; align-self: flex-start; }
+        .card .media-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: #a78a6a; font-weight: 600; margin: 0.55rem 0 0.2rem; }
+        .photo-area { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+        .photo-add { cursor: pointer; font-size: 0.74rem; color: #5a3520; background: #efe3d5; border: 1px dashed #c5a583; border-radius: 9px; padding: 0.5rem 0.7rem; text-align: center; width: 100%; transition: background 0.15s; }
+        .photo-add:hover { background: #e6d6c4; }
+        .photo-thumb { position: relative; }
+        .photo-thumb .rm { position: absolute; top: -6px; right: -6px; background: #c0523f; color: #fff; border: none; border-radius: 50%; width: 18px; height: 18px; font-size: 12px; line-height: 16px; padding: 0; cursor: pointer; display: none; }
+        .photo-thumb:hover .rm { display: block; }
+        .photo-gallery { display: flex; gap: 5px; flex-wrap: wrap; justify-content: center; }
+        .photo-gallery img { width: 64px; height: 64px; object-fit: cover; border-radius: 7px; cursor: zoom-in; border: 1px solid #e4ddd4; transition: transform 0.15s; }
+        .photo-gallery img:hover { transform: scale(1.06); }
+        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 2rem; }
+        .lightbox.open { display: flex; }
+        .lightbox img { max-width: 92%; max-height: 92%; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .lightbox .lb-svg { display: none; background: #fffdf9; border-radius: 12px; padding: 26px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .lightbox .lb-svg svg { width: min(70vw, 560px); height: auto; display: block; }
+        .lightbox .close { position: absolute; top: 1rem; right: 1.6rem; color: #fff; font-size: 2.4rem; line-height: 1; cursor: pointer; }
+        @media (max-width: 820px) {
+            .sidebar { transform: translateX(-100%); width: 260px; }
+            .sidebar.open { transform: translateX(0); }
+            .main { margin-left: 0; padding: 1.2rem 1rem; }
+            .menu-toggle { display: inline-block; background: #5a3520; color: #fff; border: none; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 1rem; margin-bottom: 1rem; cursor: pointer; }
+            .grid { grid-template-columns: 1fr; }
+        }
+        @media (min-width: 821px) { .menu-toggle { display: none; } }
+        .sidebar::-webkit-scrollbar { width: 4px; }
+        .sidebar::-webkit-scrollbar-track { background: #3a2312; }
+        .sidebar::-webkit-scrollbar-thumb { background: #8a6a4a; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <h1>🍎 Identification des fruits <small>Schémas &amp; photos réelles</small></h1>
+        <nav id="nav">
+            <div class="cat-label">Grands types</div>
+            <a data-section="types" class="active">Types de fruits</a>
+
+            <div class="cat-label">Fruits charnus</div>
+            <a data-section="fleshy">Fruits charnus</a>
+
+            <div class="cat-label">Fruits secs</div>
+            <a data-section="dehiscent">Secs déhiscents</a>
+            <a data-section="indehiscent">Secs indéhiscents</a>
+        </nav>
+    </aside>
+
+    <main class="main" id="mainContent">
+        <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+        <header>
+            <h2 id="sectionTitle">Types de fruits</h2>
+            <p id="sectionDesc">Selon l'origine du fruit (nombre de fleurs et de carpelles).</p>
+            <span class="badge-count" id="countBadge">0 termes</span>
+        </header>
+        <div class="grid" id="gridContainer"></div>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close" id="lbClose">&times;</span>
+        <img id="lbImg" alt="Photo agrandie" />
+        <div id="lbSvg" class="lb-svg"></div>
+    </div>
+
+    <script>
+        // Palette : chair orange, paroi brune, graine brun foncé, tige verte.
+        const FR = '#d98a4a';   // fruit / chair
+        const FS = '#96521f';   // paroi (contour)
+        const FL = '#f0d6b0';   // chair claire
+        const SD = '#5a3a1e';   // graine
+        const ST = '#3d5a3d';   // tige
+        const RED = '#c0453a';  // fraise / drupéoles
+        function seed(cx, cy, r) { r = r || 5; return `<ellipse cx="${cx}" cy="${cy}" rx="${r*0.7}" ry="${r}" fill="${SD}"/>`; }
+
+        const data = {
+
+            // ─── GRANDS TYPES ───────────────────────────────────────────
+            types: {
+                title: 'Types de fruits',
+                desc: 'Selon l’origine du fruit : nombre de fleurs et de carpelles à l’origine.',
+                cards: [
+                    { term: 'Simple <small>(Simple fruit)</small>', def: 'Issu d’un seul ovaire d’une seule fleur (la grande majorité des fruits).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="12" x2="100" y2="55" stroke="${ST}" stroke-width="3"/><circle cx="100" cy="85" r="34" fill="${FR}" stroke="${FS}" stroke-width="1.8"/><path d="M100,55 Q92,68 100,80" fill="none" stroke="${FS}" stroke-width="1.2"/></svg>` },
+                    { term: 'Agrégé <small>(Aggregate)</small>', def: 'Issu de plusieurs carpelles libres d’une même fleur, groupés (framboise, mûre).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="12" x2="100" y2="45" stroke="${ST}" stroke-width="3"/><g fill="${RED}" stroke="#8a2f28" stroke-width="1">${[[85,58],[100,54],[115,58],[78,72],[93,68],[108,68],[122,72],[85,86],[100,84],[115,86],[93,100],[108,100]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="9"/>`).join('')}</g></svg>` },
+                    { term: 'Multiple / Composé <small>(Multiple)</small>', def: 'Issu de plusieurs fleurs soudées d’une inflorescence entière (ananas, figue, mûrier).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="10" x2="100" y2="30" stroke="${ST}" stroke-width="3"/><path d="M66,40 Q100,30 134,40 L128,110 Q100,122 72,110 Z" fill="${FR}" stroke="${FS}" stroke-width="1.8"/><g stroke="${FS}" stroke-width="1" fill="none"><line x1="66" y1="60" x2="134" y2="60"/><line x1="70" y1="85" x2="130" y2="85"/><line x1="88" y1="40" x2="84" y2="110"/><line x1="112" y1="40" x2="116" y2="110"/></g></svg>` },
+                    { term: 'Accessoire / Faux-fruit <small>(Accessory)</small>', def: 'Une partie de la chair provient d’un autre organe que l’ovaire (réceptacle de la fraise, chair de la pomme).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="10" x2="100" y2="34" stroke="${ST}" stroke-width="3"/><path d="M70,40 Q100,32 130,40 Q126,90 100,120 Q74,90 70,40Z" fill="${RED}" stroke="#8a2f28" stroke-width="1.8"/><g fill="#f2d24a">${[[86,52],[100,48],[114,52],[82,68],[98,64],[114,68],[90,84],[106,84],[100,100]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="2.6"/>`).join('')}</g></svg>` }
+                ]
+            },
+
+            // ─── FRUITS CHARNUS ─────────────────────────────────────────
+            fleshy: {
+                title: 'Fruits charnus',
+                desc: 'Fruits dont la paroi (péricarpe) est charnue à maturité (coupe transversale).',
+                cards: [
+                    { term: 'Baie <small>(Berry)</small>', def: 'Entièrement charnue, avec une à plusieurs graines noyées dans la pulpe (tomate, raisin, kiwi).',
+                      svg: `<svg viewBox="0 0 200 140"><circle cx="100" cy="70" r="48" fill="${FL}" stroke="${FS}" stroke-width="2"/><circle cx="100" cy="70" r="48" fill="${FR}" opacity="0.35"/>${[[90,55],[112,58],[80,76],[104,80],[120,74],[94,92],[112,96]].map(p=>seed(p[0],p[1],5)).join('')}</svg>` },
+                    { term: 'Drupe <small>(Drupe)</small>', def: 'Charnue à l’extérieur, avec un noyau dur (endocarpe) renfermant la graine (mangue, pêche, olive).',
+                      svg: `<svg viewBox="0 0 200 140"><circle cx="100" cy="70" r="48" fill="${FR}" stroke="${FS}" stroke-width="2"/><circle cx="100" cy="70" r="24" fill="#7a5230" stroke="#4a3018" stroke-width="2"/><ellipse cx="100" cy="70" rx="11" ry="15" fill="${FL}"/>${seed(100,70,9)}</svg>` },
+                    { term: 'Piride / Pome <small>(Pome)</small>', def: 'Chair provenant surtout du réceptacle ; cœur cartilagineux central contenant les pépins (pomme, poire).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M100,26 Q150,26 150,74 Q150,116 100,116 Q50,116 50,74 Q50,26 100,26Z" fill="${FR}" stroke="${FS}" stroke-width="2"/><path d="M78,58 L100,50 L122,58 L118,92 L100,100 L82,92Z" fill="${FL}" stroke="${FS}" stroke-width="1.2"/>${seed(92,74,5)}${seed(108,74,5)}<line x1="100" y1="26" x2="100" y2="14" stroke="${ST}" stroke-width="2.5"/></svg>` },
+                    { term: 'Hespéride <small>(Hesperidium)</small>', def: 'Baie à peau épaisse et coriace, chair divisée en quartiers (agrumes : orange, citron).',
+                      svg: `<svg viewBox="0 0 200 140"><circle cx="100" cy="70" r="50" fill="${FR}" stroke="${FS}" stroke-width="3"/><circle cx="100" cy="70" r="42" fill="${FL}" stroke="${FS}" stroke-width="1"/><g stroke="${FS}" stroke-width="1.4">${Array.from({length:8}).map((_,i)=>{var a=i*Math.PI/4;return `<line x1="100" y1="70" x2="${(100+42*Math.cos(a)).toFixed(1)}" y2="${(70+42*Math.sin(a)).toFixed(1)}"/>`}).join('')}</g><circle cx="100" cy="70" r="6" fill="${FR}"/></svg>` },
+                    { term: 'Péponide <small>(Pepo)</small>', def: 'Baie à écorce dure et épaisse, chair et placentas charnus (courge, melon, concombre).',
+                      svg: `<svg viewBox="0 0 200 140"><circle cx="100" cy="70" r="50" fill="#4a7a3a" stroke="#2d4a24" stroke-width="3"/><circle cx="100" cy="70" r="40" fill="${FR}" opacity="0.6"/><circle cx="100" cy="70" r="26" fill="${FL}"/><g>${[[100,55],[90,66],[110,66],[94,80],[106,80],[100,90]].map(p=>seed(p[0],p[1],5)).join('')}</g></svg>` }
+                ]
+            },
+
+            // ─── SECS DÉHISCENTS ────────────────────────────────────────
+            dehiscent: {
+                title: 'Fruits secs déhiscents',
+                desc: 'Fruits secs qui s’ouvrent spontanément à maturité pour libérer les graines.',
+                cards: [
+                    { term: 'Follicule <small>(Follicle)</small>', def: 'Issu d’un seul carpelle, s’ouvrant par UNE seule fente (asclépiade, ancolie).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M100,15 Q70,45 74,90 Q78,120 96,128" fill="none" stroke="${FS}" stroke-width="2.5"/><path d="M100,15 Q130,45 126,90 Q122,120 104,128" fill="none" stroke="${FS}" stroke-width="2.5"/><path d="M100,20 Q84,45 86,88 L100,96 L100,20Z" fill="${FR}" opacity="0.4"/>${[[92,55],[92,75],[92,95]].map(p=>seed(p[0],p[1],5)).join('')}</svg>` },
+                    { term: 'Gousse / Légume <small>(Legume)</small>', def: 'Issu d’un seul carpelle, s’ouvrant par DEUX fentes (Fabacées : pois, haricot).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M40,60 Q100,30 160,60 Q158,68 152,72 Q100,46 48,72 Q42,68 40,60Z" fill="${FR}" stroke="${FS}" stroke-width="1.8"/><path d="M40,80 Q100,110 160,80 Q158,72 152,68 Q100,94 48,68 Q42,72 40,80Z" fill="${FR}" stroke="${FS}" stroke-width="1.8" opacity="0.85"/><g>${[[70,70],[92,70],[114,70],[136,70]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="7" fill="${FL}" stroke="${FS}" stroke-width="1"/>`).join('')}</g></svg>` },
+                    { term: 'Capsule <small>(Capsule)</small>', def: 'Issu de plusieurs carpelles soudés, s’ouvrant par des fentes, des pores ou des dents (pavot, coton).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="10" x2="100" y2="34" stroke="${ST}" stroke-width="3"/><path d="M70,40 Q70,110 100,120 Q130,110 130,40 Q100,50 70,40Z" fill="${FR}" stroke="${FS}" stroke-width="2"/><g stroke="${FS}" stroke-width="1.2"><line x1="100" y1="46" x2="100" y2="118"/><line x1="85" y1="42" x2="80" y2="112"/><line x1="115" y1="42" x2="120" y2="112"/></g><path d="M80,44 L100,52 L120,44 L118,58 L100,64 L82,58Z" fill="#2d2a24" opacity="0.25"/></svg>` },
+                    { term: 'Silique <small>(Silique)</small>', def: 'Fruit allongé à deux valves séparées par une fausse cloison ; long (Brassicacées : moutarde).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="10" x2="100" y2="24" stroke="${ST}" stroke-width="3"/><rect x="86" y="26" width="28" height="98" rx="12" fill="${FR}" stroke="${FS}" stroke-width="1.8"/><line x1="100" y1="30" x2="100" y2="120" stroke="${FL}" stroke-width="3"/><g>${[[93,44],[107,44],[93,66],[107,66],[93,88],[107,88],[93,108],[107,108]].map(p=>seed(p[0],p[1],4)).join('')}</g></svg>` },
+                    { term: 'Silicule <small>(Silicle)</small>', def: 'Comme la silique mais courte, presque aussi large que longue (bourse-à-pasteur).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="14" x2="100" y2="34" stroke="${ST}" stroke-width="3"/><path d="M100,36 L134,74 L100,118 L66,74 Z" fill="${FR}" stroke="${FS}" stroke-width="1.8"/><line x1="100" y1="40" x2="100" y2="112" stroke="${FL}" stroke-width="3"/>${seed(88,72,4)}${seed(112,72,4)}${seed(90,90,4)}${seed(110,90,4)}</svg>` },
+                    { term: 'Pyxide <small>(Pyxis)</small>', def: 'Capsule s’ouvrant par un couvercle circulaire (déhiscence transversale ; plantain, pourpier).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M72,60 Q72,116 100,120 Q128,116 128,60 Z" fill="${FR}" stroke="${FS}" stroke-width="2"/><path d="M72,60 Q100,44 128,60 Q100,72 72,60Z" fill="${FL}" stroke="${FS}" stroke-width="1.8"/><line x1="70" y1="60" x2="130" y2="60" stroke="${FS}" stroke-width="1.2" stroke-dasharray="4,3"/><line x1="100" y1="44" x2="100" y2="30" stroke="${ST}" stroke-width="2.5"/></svg>` }
+                ]
+            },
+
+            // ─── SECS INDÉHISCENTS ──────────────────────────────────────
+            indehiscent: {
+                title: 'Fruits secs indéhiscents',
+                desc: 'Fruits secs qui ne s’ouvrent pas ; la graine reste enfermée et se disperse avec le fruit.',
+                cards: [
+                    { term: 'Akène <small>(Achene)</small>', def: 'Sec, à une seule graine non soudée à la paroi ; s’ouvre pas (tournesol, renoncule).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M100,24 Q126,60 118,104 Q100,120 82,104 Q74,60 100,24Z" fill="${FR}" stroke="${FS}" stroke-width="2"/><ellipse cx="100" cy="80" rx="14" ry="22" fill="none" stroke="${SD}" stroke-width="1.4" stroke-dasharray="3,3"/>${seed(100,80,9)}</svg>` },
+                    { term: 'Caryopse <small>(Caryopsis / grain)</small>', def: 'Comme un akène, mais le tégument de la graine est SOUDÉ à la paroi du fruit (graminées : blé, maïs, riz).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M100,20 Q128,55 122,100 Q100,124 78,100 Q72,55 100,20Z" fill="${FR}" stroke="${FS}" stroke-width="2"/><path d="M100,30 Q100,70 100,110" stroke="${FS}" stroke-width="1.4"/><path d="M92,58 Q100,66 108,58" fill="none" stroke="${FS}" stroke-width="1.2"/></svg>` },
+                    { term: 'Samare <small>(Samara)</small>', def: 'Fruit sec pourvu d’une aile membraneuse pour la dispersion par le vent (érable, frêne, orme).',
+                      svg: `<svg viewBox="0 0 200 140"><circle cx="66" cy="90" r="16" fill="${FR}" stroke="${FS}" stroke-width="1.8"/>${seed(66,90,7)}<path d="M78,82 Q140,40 172,60 Q150,86 92,98 Z" fill="${FL}" stroke="${FS}" stroke-width="1.5"/><g stroke="${FS}" stroke-width="0.8"><path d="M90,88 Q130,66 160,64" fill="none"/><path d="M96,94 Q134,78 158,72" fill="none"/></g></svg>` },
+                    { term: 'Noix <small>(Nut)</small>', def: 'Fruit sec à une graine, entouré d’une paroi dure et ligneuse (gland, noisette, châtaigne).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M70,50 Q70,120 100,124 Q130,120 130,50 Z" fill="#a9743e" stroke="#6a4423" stroke-width="2"/><path d="M62,44 Q100,24 138,44 Q140,58 128,62 Q100,48 72,62 Q60,58 62,44Z" fill="#7a5230" stroke="#4a3018" stroke-width="1.8"/><path d="M62,44 Q66,34 72,42 M80,40 Q84,30 90,40 M100,36 Q104,28 110,38 M120,40 Q124,32 130,42" fill="none" stroke="#4a3018" stroke-width="1"/></svg>` },
+                    { term: 'Schizocarpe <small>(Schizocarp)</small>', def: 'Fruit qui se fragmente à maturité en plusieurs méricarpes à une graine (Apiacées ; érable = double samare).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="118" x2="100" y2="70" stroke="${ST}" stroke-width="2.5"/><path d="M96,70 Q60,60 52,30 Q78,26 96,52 Z" fill="${FR}" stroke="${FS}" stroke-width="1.8"/><path d="M104,70 Q140,60 148,30 Q122,26 104,52 Z" fill="${FR}" stroke="${FS}" stroke-width="1.8"/>${seed(84,52,5)}${seed(116,52,5)}</svg>` }
+                ]
+            }
+
+        };
+
+        function slugify(term) {
+            var t = term.replace(/<[^>]*>/g, '');
+            var m = t.match(/\(([^)]+)\)/);
+            if (m) t = m[1].split('/')[0];
+            return t.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+        }
+
+        let _db;
+        function openDB() { return new Promise((res, rej) => { if (_db) return res(_db); const r = indexedDB.open('fruitPhotos', 1); r.onupgradeneeded = () => r.result.createObjectStore('photos'); r.onsuccess = () => { _db = r.result; res(_db); }; r.onerror = () => rej(r.error); }); }
+        async function getStored(slug) { try { const d = await openDB(); return await new Promise(res => { const q = d.transaction('photos','readonly').objectStore('photos').get(slug); q.onsuccess = () => res(q.result || []); q.onerror = () => res([]); }); } catch (e) { return []; } }
+        async function setStored(slug, arr) { try { const d = await openDB(); await new Promise(res => { const q = d.transaction('photos','readwrite').objectStore('photos').put(arr, slug); q.onsuccess = () => res(); q.onerror = () => res(); }); } catch (e) {} }
+        function fileToDataURL(file, maxDim, quality) { maxDim = maxDim || 1400; quality = quality || 0.85; return new Promise(res => { const fr = new FileReader(); fr.onload = () => { const img = new Image(); img.onload = () => { let w = img.width, h = img.height; if (Math.max(w, h) > maxDim) { const s = maxDim / Math.max(w, h); w = Math.round(w*s); h = Math.round(h*s); } const c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').drawImage(img, 0, 0, w, h); try { res(c.toDataURL('image/jpeg', quality)); } catch (e) { res(fr.result); } }; img.onerror = () => res(fr.result); img.src = fr.result; }; fr.readAsDataURL(file); }); }
+        function setupPhotos(area, slug) {
+            const gallery = document.createElement('div'); gallery.className = 'photo-gallery';
+            const add = document.createElement('label'); add.className = 'photo-add'; add.innerHTML = '＋ Ajouter une photo';
+            const inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*'; inp.multiple = true; inp.style.display = 'none';
+            add.appendChild(inp); area.appendChild(gallery); area.appendChild(add);
+            let stored = [];
+            function drawThumb(src, removable, idx) { const wrap = document.createElement('div'); wrap.className = 'photo-thumb'; const im = document.createElement('img'); im.src = src; im.loading = 'lazy'; im.addEventListener('click', () => openLightbox(src)); wrap.appendChild(im); if (removable) { const rm = document.createElement('button'); rm.className = 'rm'; rm.textContent = '×'; rm.title = 'Retirer'; rm.addEventListener('click', async (e) => { e.stopPropagation(); stored.splice(idx, 1); await setStored(slug, stored); renderAll(); }); wrap.appendChild(rm); } gallery.appendChild(wrap); }
+            function renderAll() { gallery.innerHTML = ''; stored.forEach((src, idx) => drawThumb(src, true, idx)); ['jpg','jpeg','png','webp'].forEach(ext => { const url = 'images/' + slug + '.' + ext; const t = new Image(); t.onload = () => drawThumb(url, false); t.src = url; }); }
+            renderAll();
+            getStored(slug).then(arr => { if (arr && arr.length) { stored = arr; renderAll(); } }).catch(() => {});
+            inp.addEventListener('change', async () => { for (const file of inp.files) { const d = await fileToDataURL(file); stored.push(d); } await setStored(slug, stored); inp.value = ''; renderAll(); });
+        }
+
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lbImg');
+        const lbSvg = document.getElementById('lbSvg');
+        function openLightbox(src) { lbSvg.style.display = 'none'; lbSvg.innerHTML = ''; lbImg.style.display = 'block'; lbImg.src = src; lb.classList.add('open'); }
+        function openLightboxSVG(html) { lbImg.style.display = 'none'; lbImg.removeAttribute('src'); lbSvg.innerHTML = html; lbSvg.style.display = 'block'; lb.classList.add('open'); }
+        lb.addEventListener('click', (e) => { if (e.target.tagName !== 'IMG' && !e.target.closest('#lbSvg')) lb.classList.remove('open'); });
+        document.getElementById('lbClose').addEventListener('click', () => lb.classList.remove('open'));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.classList.remove('open'); });
+
+        const grid = document.getElementById('gridContainer');
+        const titleEl = document.getElementById('sectionTitle');
+        const descEl = document.getElementById('sectionDesc');
+        const countBadge = document.getElementById('countBadge');
+        const navLinks = document.querySelectorAll('#nav a');
+        function render(sectionKey) {
+            const section = data[sectionKey]; if (!section) return;
+            titleEl.innerHTML = section.title; descEl.innerHTML = section.desc; countBadge.textContent = section.cards.length + ' termes';
+            navLinks.forEach(a => a.classList.toggle('active', a.dataset.section === sectionKey));
+            grid.innerHTML = '';
+            section.cards.forEach(c => {
+                const slug = slugify(c.term);
+                const card = document.createElement('div'); card.className = 'card';
+                card.innerHTML = `<div class="term">${c.term}</div><div class="def">${c.def}</div><div class="media-label">Schéma</div><div class="svg-wrap">${c.svg}</div><div class="media-label">Photo réelle</div><div class="photo-area"></div><span class="tag">${section.title}</span>`;
+                grid.appendChild(card);
+                const sw = card.querySelector('.svg-wrap');
+                if (sw) sw.addEventListener('click', () => openLightboxSVG(c.svg));
+                setupPhotos(card.querySelector('.photo-area'), slug);
+            });
+        }
+        navLinks.forEach(a => a.addEventListener('click', (e) => { e.preventDefault(); render(a.dataset.section); document.getElementById('sidebar').classList.remove('open'); }));
+        document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('sidebar').classList.toggle('open'));
+        render('types');
+    </script>
+</body>
+</html>

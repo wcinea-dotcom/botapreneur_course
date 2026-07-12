@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identification des graines – Schémas & Photos</title>
+    <style>
+        *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Roboto, system-ui, sans-serif; background: #f4f0ea; color: #2d2a24; display: flex; min-height: 100vh; }
+        .sidebar { width: 280px; background: #2e4a4a; color: #e3f0ee; padding: 1.8rem 1.2rem; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; box-shadow: 2px 0 12px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
+        .sidebar h1 { font-size: 1.3rem; font-weight: 500; letter-spacing: 0.03em; border-bottom: 2px solid #4a6e6a; padding-bottom: 0.8rem; margin-bottom: 1.5rem; color: #d2e8e4; }
+        .sidebar h1 small { display: block; font-size: 0.7rem; font-weight: 300; color: #a0c9c2; margin-top: 0.2rem; }
+        .sidebar nav { display: flex; flex-direction: column; gap: 0.2rem; }
+        .sidebar nav a { color: #d2e8e4; text-decoration: none; padding: 0.45rem 0.8rem; border-radius: 6px; font-size: 0.88rem; transition: background 0.2s, color 0.2s; border-left: 3px solid transparent; cursor: pointer; }
+        .sidebar nav a:hover, .sidebar nav a.active { background: #3c5f5b; color: #fff; border-left-color: #7ec9c0; }
+        .sidebar nav .cat-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #7fa9a3; padding: 0.8rem 0.8rem 0.2rem; font-weight: 600; }
+        .main { margin-left: 280px; flex: 1; padding: 2rem 2.5rem 4rem; max-width: 1300px; }
+        .main header { margin-bottom: 2.5rem; }
+        .main header h2 { font-size: 2rem; font-weight: 400; color: #2e4a4a; letter-spacing: -0.01em; }
+        .main header p { color: #5f5a52; font-size: 1.05rem; margin-top: 0.3rem; }
+        .main header .badge-count { font-size: 0.8rem; background: #e3edeb; color: #2e4a4a; padding: 0.15rem 0.9rem; border-radius: 20px; display: inline-block; margin-top: 0.3rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
+        .card { background: #fffcf9; border-radius: 16px; padding: 1.2rem 1.2rem 1.4rem; box-shadow: 0 4px 14px rgba(0,0,0,0.04); transition: box-shadow 0.2s; border: 1px solid #e4ddd4; display: flex; flex-direction: column; }
+        .card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+        .card .term { font-weight: 600; font-size: 1.1rem; color: #1f3a37; margin-bottom: 0.2rem; }
+        .card .term small { font-weight: 400; font-size: 0.75rem; color: #6a7a77; margin-left: 0.4rem; }
+        .card .def { font-size: 0.88rem; color: #3f3a32; margin: 0.3rem 0 0.7rem; line-height: 1.5; flex: 0 0 auto; }
+        .card .svg-wrap { display: flex; align-items: center; justify-content: center; min-height: 100px; background: #fcf9f5; border-radius: 10px; border: 1px solid #eae3d9; padding: 0.3rem; cursor: zoom-in; }
+        .card .svg-wrap svg { display: block; width: 100%; height: auto; max-height: 160px; }
+        .card .tag { display: inline-block; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; background: #e3edeb; color: #2e4a4a; padding: 0.1rem 0.6rem; border-radius: 12px; margin-top: 0.6rem; align-self: flex-start; }
+        .card .media-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: #8fa9a5; font-weight: 600; margin: 0.55rem 0 0.2rem; }
+        .photo-area { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+        .photo-add { cursor: pointer; font-size: 0.74rem; color: #2e4a4a; background: #e3edeb; border: 1px dashed #9bbcb7; border-radius: 9px; padding: 0.5rem 0.7rem; text-align: center; width: 100%; transition: background 0.15s; }
+        .photo-add:hover { background: #d6e6e3; }
+        .photo-thumb { position: relative; }
+        .photo-thumb .rm { position: absolute; top: -6px; right: -6px; background: #c0523f; color: #fff; border: none; border-radius: 50%; width: 18px; height: 18px; font-size: 12px; line-height: 16px; padding: 0; cursor: pointer; display: none; }
+        .photo-thumb:hover .rm { display: block; }
+        .photo-gallery { display: flex; gap: 5px; flex-wrap: wrap; justify-content: center; }
+        .photo-gallery img { width: 64px; height: 64px; object-fit: cover; border-radius: 7px; cursor: zoom-in; border: 1px solid #e4ddd4; transition: transform 0.15s; }
+        .photo-gallery img:hover { transform: scale(1.06); }
+        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 2rem; }
+        .lightbox.open { display: flex; }
+        .lightbox img { max-width: 92%; max-height: 92%; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .lightbox .lb-svg { display: none; background: #fffdf9; border-radius: 12px; padding: 26px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .lightbox .lb-svg svg { width: min(70vw, 560px); height: auto; display: block; }
+        .lightbox .close { position: absolute; top: 1rem; right: 1.6rem; color: #fff; font-size: 2.4rem; line-height: 1; cursor: pointer; }
+        @media (max-width: 820px) {
+            .sidebar { transform: translateX(-100%); width: 260px; }
+            .sidebar.open { transform: translateX(0); }
+            .main { margin-left: 0; padding: 1.2rem 1rem; }
+            .menu-toggle { display: inline-block; background: #2e4a4a; color: #fff; border: none; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 1rem; margin-bottom: 1rem; cursor: pointer; }
+            .grid { grid-template-columns: 1fr; }
+        }
+        @media (min-width: 821px) { .menu-toggle { display: none; } }
+        .sidebar::-webkit-scrollbar { width: 4px; }
+        .sidebar::-webkit-scrollbar-track { background: #1f3330; }
+        .sidebar::-webkit-scrollbar-thumb { background: #4a6e6a; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <h1>🌱 Identification des graines <small>Schémas &amp; photos réelles</small></h1>
+        <nav id="nav">
+            <div class="cat-label">Anatomie</div>
+            <a data-section="parts" class="active">Parties de la graine</a>
+            <a data-section="reserves">Type de réserves</a>
+
+            <div class="cat-label">Dispersion</div>
+            <a data-section="appendages">Appendices</a>
+
+            <div class="cat-label">Aspect</div>
+            <a data-section="shape">Forme &amp; surface</a>
+        </nav>
+    </aside>
+
+    <main class="main" id="mainContent">
+        <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+        <header>
+            <h2 id="sectionTitle">Parties de la graine</h2>
+            <p id="sectionDesc">Les organes internes et externes d'une graine.</p>
+            <span class="badge-count" id="countBadge">0 termes</span>
+        </header>
+        <div class="grid" id="gridContainer"></div>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close" id="lbClose">&times;</span>
+        <img id="lbImg" alt="Photo agrandie" />
+        <div id="lbSvg" class="lb-svg"></div>
+    </div>
+
+    <script>
+        // Palette : tégument beige, intérieur crème, embryon vert, hile brun foncé.
+        const SC = '#c9a86a';   // tégument (coat)
+        const SS = '#8a6a3a';   // contour tégument
+        const IN = '#f0e2c0';   // intérieur crème
+        const EM = '#7f9b6f';   // embryon
+        const ES = '#3d5a3d';   // contour embryon
+        const HL = '#5a3a1e';   // hile / sombre
+        const AR = '#c0453a';   // arille (charnu coloré)
+        // graine générique (forme haricot) centrée en (100,70)
+        function bean(fill, stroke) {
+            return `<path d="M70,40 Q118,26 138,58 Q150,82 128,104 Q92,120 68,100 Q52,74 70,40Z" fill="${fill}" stroke="${stroke}" stroke-width="2"/>`;
+        }
+
+        const data = {
+
+            // ─── PARTIES DE LA GRAINE ───────────────────────────────────
+            parts: {
+                title: 'Parties de la graine',
+                desc: 'Les organes qui composent une graine (enveloppe, réserves, embryon).',
+                cards: [
+                    { term: 'Tégument <small>(Testa)</small>', def: 'L’enveloppe externe protectrice de la graine.',
+                      svg: `<svg viewBox="0 0 200 140">${bean(IN, SS)}<path d="M70,40 Q118,26 138,58 Q150,82 128,104 Q92,120 68,100 Q52,74 70,40Z" fill="none" stroke="${SC}" stroke-width="7"/><path d="M70,40 Q118,26 138,58 Q150,82 128,104 Q92,120 68,100 Q52,74 70,40Z" fill="none" stroke="${SS}" stroke-width="2"/></svg>` },
+                    { term: 'Hile <small>(Hilum)</small>', def: 'La cicatrice laissée par le point d’attache de la graine (au funicule).',
+                      svg: `<svg viewBox="0 0 200 140">${bean(SC, SS)}<ellipse cx="66" cy="76" rx="12" ry="6" fill="${HL}" transform="rotate(-25,66,76)"/></svg>` },
+                    { term: 'Micropyle <small>(Micropyle)</small>', def: 'Minuscule pore près du hile ; la radicule en sort à la germination.',
+                      svg: `<svg viewBox="0 0 200 140">${bean(SC, SS)}<ellipse cx="66" cy="76" rx="12" ry="6" fill="${HL}" transform="rotate(-25,66,76)"/><circle cx="54" cy="70" r="3.5" fill="#2d2a24"/><line x1="54" y1="70" x2="40" y2="66" stroke="#2d2a24" stroke-width="1"/></svg>` },
+                    { term: 'Raphé <small>(Raphe)</small>', def: 'Crête ou ligne sur le tégument, trace du funicule soudé à la graine.',
+                      svg: `<svg viewBox="0 0 200 140">${bean(SC, SS)}<path d="M66,76 Q100,70 132,66" fill="none" stroke="${HL}" stroke-width="2.5" stroke-dasharray="1,0"/></svg>` },
+                    { term: 'Embryon <small>(Embryo)</small>', def: 'La future plante en miniature, contenue dans la graine.',
+                      svg: `<svg viewBox="0 0 200 140">${bean(IN, SS)}<path d="M84,50 Q112,44 120,66 Q124,84 108,96 Q90,102 82,86 Q78,66 84,50Z" fill="${EM}" stroke="${ES}" stroke-width="1.6"/><path d="M70,88 Q80,96 92,92" fill="none" stroke="${ES}" stroke-width="2.4"/></svg>` },
+                    { term: 'Cotylédon <small>(Cotyledon)</small>', def: 'Feuille(s) de la graine ; stocke souvent les réserves (1 chez les monocots, 2 chez les dicots).',
+                      svg: `<svg viewBox="0 0 200 140">${bean(IN, SS)}<path d="M96,48 Q80,72 96,102 Q88,74 96,48Z" fill="${EM}" stroke="${ES}" stroke-width="1.5"/><path d="M104,48 Q120,72 104,102 Q112,74 104,48Z" fill="${EM}" stroke="${ES}" stroke-width="1.5"/><line x1="100" y1="48" x2="100" y2="102" stroke="${ES}" stroke-width="1"/></svg>` },
+                    { term: 'Radicule <small>(Radicle)</small>', def: 'La partie de l’embryon qui donnera la racine.',
+                      svg: `<svg viewBox="0 0 200 140">${bean(IN, SS)}<ellipse cx="108" cy="74" rx="20" ry="26" fill="${EM}" stroke="${ES}" stroke-width="1.5"/><path d="M92,86 Q76,96 62,92 Q72,84 84,82Z" fill="${SC}" stroke="${HL}" stroke-width="1.6"/><line x1="88" y1="88" x2="66" y2="92" stroke="${HL}" stroke-width="1"/></svg>` },
+                    { term: 'Plumule / Gemmule <small>(Plumule)</small>', def: 'Le bourgeon de l’embryon qui donnera la tige et les premières vraies feuilles.',
+                      svg: `<svg viewBox="0 0 200 140">${bean(IN, SS)}<ellipse cx="96" cy="82" rx="20" ry="24" fill="${EM}" stroke="${ES}" stroke-width="1.5"/><path d="M96,62 Q88,50 82,44 M96,62 Q104,50 110,44 M96,62 L96,42" fill="none" stroke="${ES}" stroke-width="2"/></svg>` },
+                    { term: 'Albumen / Endosperme <small>(Endosperm)</small>', def: 'Tissu de réserve qui nourrit l’embryon (abondant chez le ricin, le blé…).',
+                      svg: `<svg viewBox="0 0 200 140">${bean('#efe0b4', SS)}<g fill="${SC}" opacity="0.5"><circle cx="90" cy="62" r="4"/><circle cx="106" cy="60" r="4"/><circle cx="84" cy="80" r="4"/><circle cx="102" cy="82" r="4"/><circle cx="118" cy="74" r="4"/><circle cx="94" cy="96" r="4"/></g><path d="M118,58 Q130,72 120,90" fill="${EM}" stroke="${ES}" stroke-width="1.4"/></svg>` }
+                ]
+            },
+
+            // ─── TYPE DE RÉSERVES ───────────────────────────────────────
+            reserves: {
+                title: 'Type de réserves',
+                desc: 'Où la graine stocke ses réserves nutritives (coupe de la graine).',
+                cards: [
+                    { term: 'Albuminée <small>(Albuminous / Endospermic)</small>', def: 'Réserves stockées dans un albumen abondant ; l’embryon est petit (ricin, blé, maïs).',
+                      svg: `<svg viewBox="0 0 200 140">${bean('#efe0b4', SS)}<g fill="${SC}" opacity="0.5"><circle cx="88" cy="60" r="5"/><circle cx="106" cy="58" r="5"/><circle cx="120" cy="72" r="5"/><circle cx="84" cy="80" r="5"/><circle cx="102" cy="84" r="5"/><circle cx="94" cy="98" r="5"/></g><path d="M72,66 Q64,80 74,92" fill="${EM}" stroke="${ES}" stroke-width="1.6"/></svg>` },
+                    { term: 'Exalbuminée <small>(Exalbuminous)</small>', def: 'Pas d’albumen à maturité : les réserves sont dans les cotylédons charnus (haricot, pois, courge).',
+                      svg: `<svg viewBox="0 0 200 140">${bean(IN, SS)}<path d="M94,44 Q72,74 94,104 Q84,74 94,44Z" fill="${EM}" stroke="${ES}" stroke-width="1.6"/><path d="M106,44 Q128,74 106,104 Q116,74 106,44Z" fill="${EM}" stroke="${ES}" stroke-width="1.6"/></svg>` }
+                ]
+            },
+
+            // ─── APPENDICES / DISPERSION ────────────────────────────────
+            appendages: {
+                title: 'Appendices &amp; dispersion',
+                desc: 'Structures accessoires de la graine facilitant sa dispersion.',
+                cards: [
+                    { term: 'Ailée <small>(Winged)</small>', def: 'Graine munie d’une aile membraneuse pour être portée par le vent (Bignone, pin).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M92,70 Q150,36 176,58 Q152,84 100,84 Z" fill="#ece0c2" stroke="${SS}" stroke-width="1.5"/><ellipse cx="70" cy="74" rx="20" ry="14" fill="${SC}" stroke="${SS}" stroke-width="1.8"/></svg>` },
+                    { term: 'Arille <small>(Aril)</small>', def: 'Enveloppe charnue et souvent colorée entourant la graine, attirant les animaux (if, litchi, muscade).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M64,60 Q100,36 138,60 Q150,84 130,106 Q90,120 64,102 Q52,80 64,60Z" fill="${AR}" stroke="#8a2f28" stroke-width="2"/><ellipse cx="100" cy="80" rx="22" ry="26" fill="${SC}" stroke="${SS}" stroke-width="1.6"/></svg>` },
+                    { term: 'Caroncule <small>(Caruncle)</small>', def: 'Petite excroissance charnue près du micropyle (ricin, Euphorbes) ; souvent riche en huile.',
+                      svg: `<svg viewBox="0 0 200 140">${bean(SC, SS)}<path d="M132,58 Q100,66 74,72" fill="none" stroke="${HL}" stroke-width="1.4"/><ellipse cx="138" cy="56" rx="12" ry="9" fill="#f0d6a0" stroke="${SS}" stroke-width="1.5"/></svg>` },
+                    { term: 'Aigrette / Coma <small>(Coma)</small>', def: 'Touffe de poils soyeux fixée à la graine, permettant le vol au vent (asclépiade, coton, saule).',
+                      svg: `<svg viewBox="0 0 200 140"><ellipse cx="100" cy="102" rx="16" ry="24" fill="${SC}" stroke="${SS}" stroke-width="1.8"/><g stroke="#b7a98a" stroke-width="1.3" fill="none">${Array.from({length:11}).map((_,i)=>{var x=60+i*8;return `<path d="M100,82 Q${x},44 ${x-4},14"/>`}).join('')}</g></svg>` },
+                    { term: 'Élaïosome <small>(Elaiosome)</small>', def: 'Corps charnu et huileux attirant les fourmis, qui dispersent la graine (myrmécochorie).',
+                      svg: `<svg viewBox="0 0 200 140">${bean(SC, SS)}<ellipse cx="72" cy="98" rx="16" ry="11" fill="#f3e6b0" stroke="#c9a86a" stroke-width="1.6"/><path d="M72,92 Q78,84 84,88" fill="none" stroke="#c9a86a" stroke-width="1"/></svg>` }
+                ]
+            },
+
+            // ─── FORME & SURFACE ────────────────────────────────────────
+            shape: {
+                title: 'Forme &amp; surface',
+                desc: 'La forme générale et l’aspect du tégument de la graine.',
+                cards: [
+                    { term: 'Réniforme <small>(Reniform)</small>', def: 'En forme de rein ou de haricot (échancrée sur un côté).',
+                      svg: `<svg viewBox="0 0 200 140">${bean(SC, SS)}</svg>` },
+                    { term: 'Globuleuse <small>(Globose)</small>', def: 'À peu près sphérique, ronde (moutarde, pois).',
+                      svg: `<svg viewBox="0 0 200 140"><circle cx="100" cy="72" r="40" fill="${SC}" stroke="${SS}" stroke-width="2"/><ellipse cx="86" cy="58" rx="12" ry="8" fill="#e0c893" opacity="0.6"/></svg>` },
+                    { term: 'Lenticulaire <small>(Lenticular)</small>', def: 'Aplatie en forme de lentille (lentille, certains cactus).',
+                      svg: `<svg viewBox="0 0 200 140"><ellipse cx="100" cy="72" rx="48" ry="20" fill="${SC}" stroke="${SS}" stroke-width="2"/><line x1="55" y1="72" x2="145" y2="72" stroke="${SS}" stroke-width="1"/></svg>` },
+                    { term: 'Réticulée <small>(Reticulate)</small>', def: 'Tégument marqué d’un réseau de crêtes en mailles.',
+                      svg: `<svg viewBox="0 0 200 140"><ellipse cx="100" cy="72" rx="40" ry="34" fill="${SC}" stroke="${SS}" stroke-width="2"/><g stroke="${SS}" stroke-width="1" fill="none"><path d="M72,52 Q100,60 128,52 M66,72 Q100,80 134,72 M72,92 Q100,100 128,92"/><path d="M84,44 Q78,72 84,100 M100,42 Q100,72 100,102 M116,44 Q122,72 116,100"/></g></svg>` },
+                    { term: 'Tuberculée <small>(Tuberculate)</small>', def: 'Tégument couvert de petites bosses ou verrues.',
+                      svg: `<svg viewBox="0 0 200 140"><ellipse cx="100" cy="72" rx="40" ry="34" fill="${SC}" stroke="${SS}" stroke-width="2"/><g fill="#b08a4a">${[[84,56],[104,52],[120,66],[76,74],[98,72],[118,84],[86,90],[108,92]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="4.5"/>`).join('')}</g></svg>` }
+                ]
+            }
+
+        };
+
+        function slugify(term) { var t = term.replace(/<[^>]*>/g, ''); var m = t.match(/\(([^)]+)\)/); if (m) t = m[1].split('/')[0]; return t.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+
+        let _db;
+        function openDB() { return new Promise((res, rej) => { if (_db) return res(_db); const r = indexedDB.open('seedPhotos', 1); r.onupgradeneeded = () => r.result.createObjectStore('photos'); r.onsuccess = () => { _db = r.result; res(_db); }; r.onerror = () => rej(r.error); }); }
+        async function getStored(slug) { try { const d = await openDB(); return await new Promise(res => { const q = d.transaction('photos','readonly').objectStore('photos').get(slug); q.onsuccess = () => res(q.result || []); q.onerror = () => res([]); }); } catch (e) { return []; } }
+        async function setStored(slug, arr) { try { const d = await openDB(); await new Promise(res => { const q = d.transaction('photos','readwrite').objectStore('photos').put(arr, slug); q.onsuccess = () => res(); q.onerror = () => res(); }); } catch (e) {} }
+        function fileToDataURL(file, maxDim, quality) { maxDim = maxDim || 1400; quality = quality || 0.85; return new Promise(res => { const fr = new FileReader(); fr.onload = () => { const img = new Image(); img.onload = () => { let w = img.width, h = img.height; if (Math.max(w, h) > maxDim) { const s = maxDim / Math.max(w, h); w = Math.round(w*s); h = Math.round(h*s); } const c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').drawImage(img, 0, 0, w, h); try { res(c.toDataURL('image/jpeg', quality)); } catch (e) { res(fr.result); } }; img.onerror = () => res(fr.result); img.src = fr.result; }; fr.readAsDataURL(file); }); }
+        function setupPhotos(area, slug) {
+            const gallery = document.createElement('div'); gallery.className = 'photo-gallery';
+            const add = document.createElement('label'); add.className = 'photo-add'; add.innerHTML = '＋ Ajouter une photo';
+            const inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*'; inp.multiple = true; inp.style.display = 'none';
+            add.appendChild(inp); area.appendChild(gallery); area.appendChild(add);
+            let stored = [];
+            function drawThumb(src, removable, idx) { const wrap = document.createElement('div'); wrap.className = 'photo-thumb'; const im = document.createElement('img'); im.src = src; im.loading = 'lazy'; im.addEventListener('click', () => openLightbox(src)); wrap.appendChild(im); if (removable) { const rm = document.createElement('button'); rm.className = 'rm'; rm.textContent = '×'; rm.title = 'Retirer'; rm.addEventListener('click', async (e) => { e.stopPropagation(); stored.splice(idx, 1); await setStored(slug, stored); renderAll(); }); wrap.appendChild(rm); } gallery.appendChild(wrap); }
+            function renderAll() { gallery.innerHTML = ''; stored.forEach((src, idx) => drawThumb(src, true, idx)); ['jpg','jpeg','png','webp'].forEach(ext => { const url = 'images/' + slug + '.' + ext; const t = new Image(); t.onload = () => drawThumb(url, false); t.src = url; }); }
+            renderAll();
+            getStored(slug).then(arr => { if (arr && arr.length) { stored = arr; renderAll(); } }).catch(() => {});
+            inp.addEventListener('change', async () => { for (const file of inp.files) { const d = await fileToDataURL(file); stored.push(d); } await setStored(slug, stored); inp.value = ''; renderAll(); });
+        }
+
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lbImg');
+        const lbSvg = document.getElementById('lbSvg');
+        function openLightbox(src) { lbSvg.style.display = 'none'; lbSvg.innerHTML = ''; lbImg.style.display = 'block'; lbImg.src = src; lb.classList.add('open'); }
+        function openLightboxSVG(html) { lbImg.style.display = 'none'; lbImg.removeAttribute('src'); lbSvg.innerHTML = html; lbSvg.style.display = 'block'; lb.classList.add('open'); }
+        lb.addEventListener('click', (e) => { if (e.target.tagName !== 'IMG' && !e.target.closest('#lbSvg')) lb.classList.remove('open'); });
+        document.getElementById('lbClose').addEventListener('click', () => lb.classList.remove('open'));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.classList.remove('open'); });
+
+        const grid = document.getElementById('gridContainer');
+        const titleEl = document.getElementById('sectionTitle');
+        const descEl = document.getElementById('sectionDesc');
+        const countBadge = document.getElementById('countBadge');
+        const navLinks = document.querySelectorAll('#nav a');
+        function render(sectionKey) {
+            const section = data[sectionKey]; if (!section) return;
+            titleEl.innerHTML = section.title; descEl.innerHTML = section.desc; countBadge.textContent = section.cards.length + ' termes';
+            navLinks.forEach(a => a.classList.toggle('active', a.dataset.section === sectionKey));
+            grid.innerHTML = '';
+            section.cards.forEach(c => {
+                const slug = slugify(c.term);
+                const card = document.createElement('div'); card.className = 'card';
+                card.innerHTML = `<div class="term">${c.term}</div><div class="def">${c.def}</div><div class="media-label">Schéma</div><div class="svg-wrap">${c.svg}</div><div class="media-label">Photo réelle</div><div class="photo-area"></div><span class="tag">${section.title}</span>`;
+                grid.appendChild(card);
+                const sw = card.querySelector('.svg-wrap');
+                if (sw) sw.addEventListener('click', () => openLightboxSVG(c.svg));
+                setupPhotos(card.querySelector('.photo-area'), slug);
+            });
+        }
+        navLinks.forEach(a => a.addEventListener('click', (e) => { e.preventDefault(); render(a.dataset.section); document.getElementById('sidebar').classList.remove('open'); }));
+        document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('sidebar').classList.toggle('open'));
+        render('parts');
+    </script>
+</body>
+</html>

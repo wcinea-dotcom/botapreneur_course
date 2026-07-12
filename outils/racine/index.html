@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identification des racines – Schémas & Photos</title>
+    <style>
+        *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Roboto, system-ui, sans-serif; background: #f4f0ea; color: #2d2a24; display: flex; min-height: 100vh; }
+        .sidebar { width: 280px; background: #5a2e2e; color: #f0e0e0; padding: 1.8rem 1.2rem; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; box-shadow: 2px 0 12px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
+        .sidebar h1 { font-size: 1.3rem; font-weight: 500; letter-spacing: 0.03em; border-bottom: 2px solid #7e4a4a; padding-bottom: 0.8rem; margin-bottom: 1.5rem; color: #ead2d2; }
+        .sidebar h1 small { display: block; font-size: 0.7rem; font-weight: 300; color: #c9a0a0; margin-top: 0.2rem; }
+        .sidebar nav { display: flex; flex-direction: column; gap: 0.2rem; }
+        .sidebar nav a { color: #ead2d2; text-decoration: none; padding: 0.45rem 0.8rem; border-radius: 6px; font-size: 0.88rem; transition: background 0.2s, color 0.2s; border-left: 3px solid transparent; cursor: pointer; }
+        .sidebar nav a:hover, .sidebar nav a.active { background: #6e3a3a; color: #fff; border-left-color: #d98a8a; }
+        .sidebar nav .cat-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #a97f7f; padding: 0.8rem 0.8rem 0.2rem; font-weight: 600; }
+        .main { margin-left: 280px; flex: 1; padding: 2rem 2.5rem 4rem; max-width: 1300px; }
+        .main header { margin-bottom: 2.5rem; }
+        .main header h2 { font-size: 2rem; font-weight: 400; color: #5a2e2e; letter-spacing: -0.01em; }
+        .main header p { color: #5f5a52; font-size: 1.05rem; margin-top: 0.3rem; }
+        .main header .badge-count { font-size: 0.8rem; background: #efe3e3; color: #5a2e2e; padding: 0.15rem 0.9rem; border-radius: 20px; display: inline-block; margin-top: 0.3rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
+        .card { background: #fffcf9; border-radius: 16px; padding: 1.2rem 1.2rem 1.4rem; box-shadow: 0 4px 14px rgba(0,0,0,0.04); transition: box-shadow 0.2s; border: 1px solid #e4ddd4; display: flex; flex-direction: column; }
+        .card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+        .card .term { font-weight: 600; font-size: 1.1rem; color: #3a1f1f; margin-bottom: 0.2rem; }
+        .card .term small { font-weight: 400; font-size: 0.75rem; color: #7a6666; margin-left: 0.4rem; }
+        .card .def { font-size: 0.88rem; color: #3f3a32; margin: 0.3rem 0 0.7rem; line-height: 1.5; flex: 0 0 auto; }
+        .card .svg-wrap { display: flex; align-items: center; justify-content: center; min-height: 100px; background: #fcf9f5; border-radius: 10px; border: 1px solid #eae3d9; padding: 0.3rem; cursor: zoom-in; }
+        .card .svg-wrap svg { display: block; width: 100%; height: auto; max-height: 160px; }
+        .card .tag { display: inline-block; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; background: #efe3e3; color: #5a2e2e; padding: 0.1rem 0.6rem; border-radius: 12px; margin-top: 0.6rem; align-self: flex-start; }
+        .card .media-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: #a78a8a; font-weight: 600; margin: 0.55rem 0 0.2rem; }
+        .photo-area { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+        .photo-add { cursor: pointer; font-size: 0.74rem; color: #5a2e2e; background: #efe3e3; border: 1px dashed #c5a3a3; border-radius: 9px; padding: 0.5rem 0.7rem; text-align: center; width: 100%; transition: background 0.15s; }
+        .photo-add:hover { background: #e6d6d6; }
+        .photo-thumb { position: relative; }
+        .photo-thumb .rm { position: absolute; top: -6px; right: -6px; background: #c0523f; color: #fff; border: none; border-radius: 50%; width: 18px; height: 18px; font-size: 12px; line-height: 16px; padding: 0; cursor: pointer; display: none; }
+        .photo-thumb:hover .rm { display: block; }
+        .photo-gallery { display: flex; gap: 5px; flex-wrap: wrap; justify-content: center; }
+        .photo-gallery img { width: 64px; height: 64px; object-fit: cover; border-radius: 7px; cursor: zoom-in; border: 1px solid #e4ddd4; transition: transform 0.15s; }
+        .photo-gallery img:hover { transform: scale(1.06); }
+        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 2rem; }
+        .lightbox.open { display: flex; }
+        .lightbox img { max-width: 92%; max-height: 92%; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .lightbox .lb-svg { display: none; background: #fffdf9; border-radius: 12px; padding: 26px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .lightbox .lb-svg svg { width: min(70vw, 560px); height: auto; display: block; }
+        .lightbox .close { position: absolute; top: 1rem; right: 1.6rem; color: #fff; font-size: 2.4rem; line-height: 1; cursor: pointer; }
+        @media (max-width: 820px) {
+            .sidebar { transform: translateX(-100%); width: 260px; }
+            .sidebar.open { transform: translateX(0); }
+            .main { margin-left: 0; padding: 1.2rem 1rem; }
+            .menu-toggle { display: inline-block; background: #5a2e2e; color: #fff; border: none; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 1rem; margin-bottom: 1rem; cursor: pointer; }
+            .grid { grid-template-columns: 1fr; }
+        }
+        @media (min-width: 821px) { .menu-toggle { display: none; } }
+        .sidebar::-webkit-scrollbar { width: 4px; }
+        .sidebar::-webkit-scrollbar-track { background: #3a1f1f; }
+        .sidebar::-webkit-scrollbar-thumb { background: #7e4a4a; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <h1>🥕 Identification des racines <small>Schémas &amp; photos réelles</small></h1>
+        <nav id="nav">
+            <div class="cat-label">Organisation</div>
+            <a data-section="systems" class="active">Systèmes racinaires</a>
+
+            <div class="cat-label">Racines transformées</div>
+            <a data-section="storage">Racines de réserve</a>
+            <a data-section="aerial">Aériennes &amp; adaptations</a>
+            <a data-section="special">Spécialisées</a>
+        </nav>
+    </aside>
+
+    <main class="main" id="mainContent">
+        <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+        <header>
+            <h2 id="sectionTitle">Systèmes racinaires</h2>
+            <p id="sectionDesc">L'organisation d'ensemble des racines d'une plante.</p>
+            <span class="badge-count" id="countBadge">0 termes</span>
+        </header>
+        <div class="grid" id="gridContainer"></div>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close" id="lbClose">&times;</span>
+        <img id="lbImg" alt="Photo agrandie" />
+        <div id="lbSvg" class="lb-svg"></div>
+    </div>
+
+    <script>
+        // Palette : racine beige, pousse verte, sol pointillé, tronc/bois brun.
+        const RT = '#c9a86a';   // racine
+        const RS = '#8a6a3a';   // contour racine
+        const SG = '#6f8a5a';   // pousse verte
+        const SGS = '#4a6a3a';
+        const WD = '#a9825a';   // bois / tronc
+        const WDS = '#6a4a2a';
+        const DK = '#4a3a2a';
+        const SOIL = '#b7a98a';
+        const WATER = '#8fb0c9';
+        function ground(y) { return `<line x1="8" y1="${y}" x2="192" y2="${y}" stroke="${SOIL}" stroke-width="2" stroke-dasharray="6,4"/>`; }
+        function shoot(x, y1, y2) { return `<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="${SG}" stroke-width="5" stroke-linecap="round"/>`; }
+
+        const data = {
+
+            // ─── SYSTÈMES RACINAIRES ────────────────────────────────────
+            systems: {
+                title: 'Systèmes racinaires',
+                desc: 'L’organisation d’ensemble des racines selon leur origine et leur hiérarchie.',
+                cards: [
+                    { term: 'Pivotante <small>(Taproot)</small>', def: 'Une racine principale bien développée, verticale, portant des racines latérales plus fines (dicotylédones).',
+                      svg: `<svg viewBox="0 0 200 140">${ground(34)}${shoot(100,34,14)}<path d="M90,34 Q100,30 110,34 Q108,90 101,126 Q100,130 99,126 Q92,90 90,34Z" fill="${RT}" stroke="${RS}" stroke-width="1.8"/><g stroke="${RT}" stroke-width="2.4" fill="none" stroke-linecap="round"><path d="M104,52 Q124,56 136,48"/><path d="M96,72 Q76,78 64,70"/><path d="M103,92 Q122,98 132,92"/></g></svg>` },
+                    { term: 'Fasciculée / Fibreuse <small>(Fibrous)</small>', def: 'Nombreuses racines minces de taille semblable, partant toutes de la base ; pas de racine dominante (monocotylédones, graminées).',
+                      svg: `<svg viewBox="0 0 200 140">${ground(40)}${shoot(100,40,16)}<g stroke="${RT}" stroke-width="3" fill="none" stroke-linecap="round"><path d="M100,42 Q60,70 46,122"/><path d="M100,42 Q74,74 66,124"/><path d="M100,42 Q90,80 86,126"/><path d="M100,42 Q100,84 100,126"/><path d="M100,42 Q110,80 114,126"/><path d="M100,42 Q126,74 134,124"/><path d="M100,42 Q140,70 154,122"/></g></svg>` },
+                    { term: 'Adventive <small>(Adventitious)</small>', def: 'Racine ne provenant pas de la radicule, mais naissant d’une tige, d’un nœud ou d’une feuille.',
+                      svg: `<svg viewBox="0 0 200 140">${ground(70)}<path d="M100,10 Q94,50 100,72" fill="none" stroke="${SG}" stroke-width="6" stroke-linecap="round"/><ellipse cx="100" cy="60" rx="4" ry="3" fill="${DK}"/><g stroke="${RT}" stroke-width="2.6" fill="none" stroke-linecap="round"><path d="M100,60 Q70,80 60,120"/><path d="M100,60 Q100,90 96,124"/><path d="M100,60 Q130,80 142,120"/></g></svg>` },
+                    { term: 'Racine latérale <small>(Lateral root)</small>', def: 'Ramification issue d’une racine plus ancienne, augmentant l’ancrage et l’absorption.',
+                      svg: `<svg viewBox="0 0 200 140">${ground(30)}<path d="M96,30 L96,124 Q100,130 104,124 L104,30Z" fill="${RT}" stroke="${RS}" stroke-width="1.6"/><g stroke="${RT}" stroke-width="2.4" fill="none" stroke-linecap="round"><path d="M104,48 Q130,52 148,44"/><path d="M96,66 Q66,72 50,62"/><path d="M104,88 Q132,94 150,88"/><path d="M96,106 Q70,112 56,106"/></g></svg>` }
+                ]
+            },
+
+            // ─── RACINES DE RÉSERVE ─────────────────────────────────────
+            storage: {
+                title: 'Racines de réserve',
+                desc: 'Racines renflées par l’accumulation de réserves nutritives.',
+                cards: [
+                    { term: 'Napiforme <small>(Napiform)</small>', def: 'Racine renflée en boule au sommet, se rétrécissant brusquement en pointe (navet, betterave).',
+                      svg: `<svg viewBox="0 0 200 140">${ground(34)}${shoot(100,34,12)}<path d="M72,50 Q72,34 100,34 Q128,34 128,50 Q126,84 100,90 L98,122 L100,126 L102,122 L100,90 Q74,84 72,50Z" fill="${RT}" stroke="${RS}" stroke-width="1.8"/></svg>` },
+                    { term: 'Conique <small>(Conical)</small>', def: 'Racine large au sommet et se rétrécissant régulièrement jusqu’à la pointe (carotte).',
+                      svg: `<svg viewBox="0 0 200 140">${ground(38)}${shoot(94,38,16)}${shoot(106,38,18)}<path d="M76,40 Q100,46 124,40 L101,124 Q100,128 99,124 Z" fill="#df7a3a" stroke="#a85020" stroke-width="1.8"/><g stroke="#a85020" stroke-width="0.8" opacity="0.5"><line x1="86" y1="52" x2="112" y2="52"/><line x1="90" y1="72" x2="110" y2="72"/><line x1="94" y1="92" x2="106" y2="92"/></g></svg>` },
+                    { term: 'Fusiforme <small>(Fusiform)</small>', def: 'Racine en fuseau : renflée au milieu, rétrécie aux deux extrémités (radis).',
+                      svg: `<svg viewBox="0 0 200 140">${ground(34)}${shoot(100,34,14)}<path d="M100,36 Q126,66 114,96 Q104,120 100,128 Q96,120 86,96 Q74,66 100,36Z" fill="${RT}" stroke="${RS}" stroke-width="1.8"/></svg>` },
+                    { term: 'Tubéreuse <small>(Tuberous root)</small>', def: 'Racine renflée en tubercule, sans forme régulière ; souvent en groupe (patate douce, dahlia).',
+                      svg: `<svg viewBox="0 0 200 140">${ground(34)}${shoot(100,34,14)}<g fill="${RT}" stroke="${RS}" stroke-width="1.8"><path d="M92,38 Q60,52 58,84 Q60,110 82,110 Q98,104 96,74 Q96,50 92,38Z"/><path d="M104,38 Q136,50 140,82 Q140,112 116,112 Q100,104 102,72 Q104,50 104,38Z"/></g></svg>` },
+                    { term: 'Fasciculée tubérisée <small>(Fasciculated)</small>', def: 'Faisceau de plusieurs racines renflées partant du même point (Asparagus, certaines Dahlia).',
+                      svg: `<svg viewBox="0 0 200 140">${ground(36)}${shoot(100,36,16)}<g fill="${RT}" stroke="${RS}" stroke-width="1.6"><path d="M96,40 Q66,54 56,96 Q54,116 62,116 Q72,108 78,80 Q88,54 96,40Z"/><path d="M100,40 Q98,80 98,120 Q100,124 102,120 Q102,80 100,40Z"/><path d="M104,40 Q134,54 144,96 Q146,116 138,116 Q128,108 122,80 Q112,54 104,40Z"/></g></svg>` },
+                    { term: 'Nodosités <small>(Root nodules)</small>', def: 'Petites bosses sur les racines des légumineuses, abritant des bactéries fixatrices d’azote (Rhizobium).',
+                      svg: `<svg viewBox="0 0 200 140">${ground(30)}${shoot(100,30,12)}<g stroke="${RT}" stroke-width="2.6" fill="none" stroke-linecap="round"><path d="M100,32 Q100,80 96,124"/><path d="M100,52 Q124,60 140,52"/><path d="M100,84 Q76,92 60,86"/></g><g fill="#d98a8a" stroke="#8a4a4a" stroke-width="1"><circle cx="122" cy="58" r="6"/><circle cx="138" cy="52" r="5"/><circle cx="72" cy="90" r="6"/><circle cx="98" cy="108" r="5"/></g></svg>` }
+                ]
+            },
+
+            // ─── AÉRIENNES & ADAPTATIONS ────────────────────────────────
+            aerial: {
+                title: 'Racines aériennes &amp; adaptations',
+                desc: 'Racines poussant hors du sol ou adaptées à des milieux particuliers.',
+                cards: [
+                    { term: 'Échasses <small>(Prop / Stilt roots)</small>', def: 'Racines partant des nœuds inférieurs de la tige et plongeant en oblique dans le sol pour la soutenir (maïs, palétuvier).',
+                      svg: `<svg viewBox="0 0 200 140">${ground(108)}${shoot(100,108,14)}<g stroke="${RT}" stroke-width="4" fill="none" stroke-linecap="round"><path d="M100,60 L64,110"/><path d="M100,60 L136,110"/><path d="M100,80 L74,110"/><path d="M100,80 L126,110"/></g></svg>` },
+                    { term: 'Contreforts <small>(Buttress roots)</small>', def: 'Racines très aplaties, en forme d’ailerons, à la base des grands arbres tropicaux (fromager, figuiers).',
+                      svg: `<svg viewBox="0 0 200 140">${ground(112)}<rect x="90" y="20" width="20" height="92" fill="${WD}" stroke="${WDS}" stroke-width="1.8"/><path d="M90,60 Q66,96 44,112 L90,112Z" fill="${WD}" stroke="${WDS}" stroke-width="1.8"/><path d="M110,60 Q134,96 156,112 L110,112Z" fill="${WD}" stroke="${WDS}" stroke-width="1.8"/><path d="M90,84 Q78,104 70,112 L90,112Z" fill="${WD}" stroke="${WDS}" stroke-width="1.4"/></svg>` },
+                    { term: 'Aériennes <small>(Aerial roots)</small>', def: 'Racines pendant librement dans l’air, absorbant l’humidité (orchidées épiphytes, aracées).',
+                      svg: `<svg viewBox="0 0 200 140"><rect x="30" y="20" width="140" height="14" rx="6" fill="${WD}" stroke="${WDS}" stroke-width="1.6"/><g stroke="#bcd0a8" stroke-width="4" fill="none" stroke-linecap="round"><path d="M60,34 Q56,80 66,120"/><path d="M100,34 Q104,84 96,122"/><path d="M140,34 Q136,78 148,118"/></g><g stroke="#8aaa7a" stroke-width="1" fill="none"><path d="M60,34 Q56,80 66,120"/><path d="M100,34 Q104,84 96,122"/></g></svg>` },
+                    { term: 'Crampons grimpants <small>(Climbing roots)</small>', def: 'Petites racines adventives qui s’accrochent à un support pour la grimpe (lierre, vanille).',
+                      svg: `<svg viewBox="0 0 200 140"><rect x="140" y="10" width="26" height="120" fill="${SOIL}" opacity="0.5"/><path d="M100,130 Q112,80 118,40 Q120,24 128,16" fill="none" stroke="${SG}" stroke-width="5" stroke-linecap="round"/><g stroke="${RT}" stroke-width="2" fill="none" stroke-linecap="round"><path d="M116,50 L138,48"/><path d="M118,72 L140,74"/><path d="M112,96 L138,98"/><path d="M108,116 L138,118"/></g></svg>` },
+                    { term: 'Pneumatophores <small>(Pneumatophores)</small>', def: 'Racines poussant verticalement HORS de la vase pour respirer, en milieu inondé (palétuviers de mangrove).',
+                      svg: `<svg viewBox="0 0 200 140"><rect x="8" y="86" width="184" height="46" fill="${WATER}" opacity="0.35"/><line x1="8" y1="86" x2="192" y2="86" stroke="${WATER}" stroke-width="2"/>${shoot(100,20,14)}<path d="M100,20 L100,110" stroke="${WD}" stroke-width="5"/><path d="M30,110 Q100,100 170,110" fill="none" stroke="${RT}" stroke-width="6"/><g stroke="${RT}" stroke-width="5" fill="none" stroke-linecap="round"><path d="M50,106 L50,64"/><path d="M78,102 L78,58"/><path d="M122,102 L122,58"/><path d="M150,106 L150,64"/></g></svg>` }
+                ]
+            },
+
+            // ─── SPÉCIALISÉES ───────────────────────────────────────────
+            special: {
+                title: 'Racines spécialisées',
+                desc: 'Racines à fonctions particulières (parasitisme, symbiose, etc.).',
+                cards: [
+                    { term: 'Suçoirs / Haustorium <small>(Haustorial / Parasitic)</small>', def: 'Racines de plantes parasites qui pénètrent l’hôte pour y puiser sève et nutriments (gui, cuscute).',
+                      svg: `<svg viewBox="0 0 200 140"><rect x="46" y="10" width="16" height="120" fill="${SG}" stroke="${SGS}" stroke-width="1.6"/><path d="M62,40 Q100,34 120,50 Q140,66 150,50" fill="none" stroke="#b0653a" stroke-width="4" stroke-linecap="round"/><g stroke="#b0653a" stroke-width="3" fill="none" stroke-linecap="round"><path d="M62,58 L48,58"/><path d="M62,78 L48,78"/><path d="M62,98 L48,98"/></g><g fill="#b0653a"><circle cx="120" cy="50" r="6"/><circle cx="150" cy="50" r="6"/></g></svg>` },
+                    { term: 'Contractiles <small>(Contractile roots)</small>', def: 'Racines qui se contractent et se plissent pour tirer le bulbe ou le corme plus profond dans le sol.',
+                      svg: `<svg viewBox="0 0 200 140">${ground(34)}<path d="M78,44 Q78,74 100,78 Q122,74 122,44 Q100,36 78,44Z" fill="#eadfae" stroke="${WDS}" stroke-width="1.6"/><path d="M100,78 Q100,120 100,124" fill="none" stroke="${RT}" stroke-width="6"/><g stroke="${RS}" stroke-width="1" fill="none"><path d="M94,88 Q100,86 106,88"/><path d="M94,98 Q100,96 106,98"/><path d="M94,108 Q100,106 106,108"/></g><path d="M112,92 L124,92 M112,104 L124,104" stroke="${DK}" stroke-width="1.4"/><path d="M120,86 L124,92 L120,98" fill="none" stroke="${DK}" stroke-width="1.4"/></svg>` },
+                    { term: 'Mycorhize <small>(Mycorrhizal)</small>', def: 'Association symbiotique entre une racine et un champignon, qui étend l’absorption d’eau et de minéraux.',
+                      svg: `<svg viewBox="0 0 200 140">${ground(28)}<path d="M96,28 Q100,80 100,120 Q100,124 104,120 Q108,80 104,28Z" fill="${RT}" stroke="${RS}" stroke-width="1.6"/><g stroke="#9a7ab0" stroke-width="1.2" fill="none">${Array.from({length:14}).map((_,i)=>{var y=40+i*6;var s=(i%2?1:-1);return `<path d="M${100+s*4},${y} q${s*20},${-4} ${s*30},4"/>`}).join('')}</g></svg>` },
+                    { term: 'Piliers <small>(Pillar roots)</small>', def: 'Grosses racines aériennes descendant de branches horizontales jusqu’au sol, où elles s’épaississent en piliers (banian).',
+                      svg: `<svg viewBox="0 0 200 140">${ground(120)}<rect x="20" y="24" width="160" height="12" rx="6" fill="${WD}" stroke="${WDS}" stroke-width="1.6"/><g fill="${WD}" stroke="${WDS}" stroke-width="1.6"><path d="M50,36 L44,120 L60,120 L56,36Z"/><path d="M100,36 L94,120 L110,120 L106,36Z"/><path d="M150,36 L156,120 L140,120 L144,36Z"/></g></svg>` }
+                ]
+            }
+
+        };
+
+        function slugify(term) { var t = term.replace(/<[^>]*>/g, ''); var m = t.match(/\(([^)]+)\)/); if (m) t = m[1].split('/')[0]; return t.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+
+        let _db;
+        function openDB() { return new Promise((res, rej) => { if (_db) return res(_db); const r = indexedDB.open('rootPhotos', 1); r.onupgradeneeded = () => r.result.createObjectStore('photos'); r.onsuccess = () => { _db = r.result; res(_db); }; r.onerror = () => rej(r.error); }); }
+        async function getStored(slug) { try { const d = await openDB(); return await new Promise(res => { const q = d.transaction('photos','readonly').objectStore('photos').get(slug); q.onsuccess = () => res(q.result || []); q.onerror = () => res([]); }); } catch (e) { return []; } }
+        async function setStored(slug, arr) { try { const d = await openDB(); await new Promise(res => { const q = d.transaction('photos','readwrite').objectStore('photos').put(arr, slug); q.onsuccess = () => res(); q.onerror = () => res(); }); } catch (e) {} }
+        function fileToDataURL(file, maxDim, quality) { maxDim = maxDim || 1400; quality = quality || 0.85; return new Promise(res => { const fr = new FileReader(); fr.onload = () => { const img = new Image(); img.onload = () => { let w = img.width, h = img.height; if (Math.max(w, h) > maxDim) { const s = maxDim / Math.max(w, h); w = Math.round(w*s); h = Math.round(h*s); } const c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').drawImage(img, 0, 0, w, h); try { res(c.toDataURL('image/jpeg', quality)); } catch (e) { res(fr.result); } }; img.onerror = () => res(fr.result); img.src = fr.result; }; fr.readAsDataURL(file); }); }
+        function setupPhotos(area, slug) {
+            const gallery = document.createElement('div'); gallery.className = 'photo-gallery';
+            const add = document.createElement('label'); add.className = 'photo-add'; add.innerHTML = '＋ Ajouter une photo';
+            const inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*'; inp.multiple = true; inp.style.display = 'none';
+            add.appendChild(inp); area.appendChild(gallery); area.appendChild(add);
+            let stored = [];
+            function drawThumb(src, removable, idx) { const wrap = document.createElement('div'); wrap.className = 'photo-thumb'; const im = document.createElement('img'); im.src = src; im.loading = 'lazy'; im.addEventListener('click', () => openLightbox(src)); wrap.appendChild(im); if (removable) { const rm = document.createElement('button'); rm.className = 'rm'; rm.textContent = '×'; rm.title = 'Retirer'; rm.addEventListener('click', async (e) => { e.stopPropagation(); stored.splice(idx, 1); await setStored(slug, stored); renderAll(); }); wrap.appendChild(rm); } gallery.appendChild(wrap); }
+            function renderAll() { gallery.innerHTML = ''; stored.forEach((src, idx) => drawThumb(src, true, idx)); ['jpg','jpeg','png','webp'].forEach(ext => { const url = 'images/' + slug + '.' + ext; const t = new Image(); t.onload = () => drawThumb(url, false); t.src = url; }); }
+            renderAll();
+            getStored(slug).then(arr => { if (arr && arr.length) { stored = arr; renderAll(); } }).catch(() => {});
+            inp.addEventListener('change', async () => { for (const file of inp.files) { const d = await fileToDataURL(file); stored.push(d); } await setStored(slug, stored); inp.value = ''; renderAll(); });
+        }
+
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lbImg');
+        const lbSvg = document.getElementById('lbSvg');
+        function openLightbox(src) { lbSvg.style.display = 'none'; lbSvg.innerHTML = ''; lbImg.style.display = 'block'; lbImg.src = src; lb.classList.add('open'); }
+        function openLightboxSVG(html) { lbImg.style.display = 'none'; lbImg.removeAttribute('src'); lbSvg.innerHTML = html; lbSvg.style.display = 'block'; lb.classList.add('open'); }
+        lb.addEventListener('click', (e) => { if (e.target.tagName !== 'IMG' && !e.target.closest('#lbSvg')) lb.classList.remove('open'); });
+        document.getElementById('lbClose').addEventListener('click', () => lb.classList.remove('open'));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.classList.remove('open'); });
+
+        const grid = document.getElementById('gridContainer');
+        const titleEl = document.getElementById('sectionTitle');
+        const descEl = document.getElementById('sectionDesc');
+        const countBadge = document.getElementById('countBadge');
+        const navLinks = document.querySelectorAll('#nav a');
+        function render(sectionKey) {
+            const section = data[sectionKey]; if (!section) return;
+            titleEl.innerHTML = section.title; descEl.innerHTML = section.desc; countBadge.textContent = section.cards.length + ' termes';
+            navLinks.forEach(a => a.classList.toggle('active', a.dataset.section === sectionKey));
+            grid.innerHTML = '';
+            section.cards.forEach(c => {
+                const slug = slugify(c.term);
+                const card = document.createElement('div'); card.className = 'card';
+                card.innerHTML = `<div class="term">${c.term}</div><div class="def">${c.def}</div><div class="media-label">Schéma</div><div class="svg-wrap">${c.svg}</div><div class="media-label">Photo réelle</div><div class="photo-area"></div><span class="tag">${section.title}</span>`;
+                grid.appendChild(card);
+                const sw = card.querySelector('.svg-wrap');
+                if (sw) sw.addEventListener('click', () => openLightboxSVG(c.svg));
+                setupPhotos(card.querySelector('.photo-area'), slug);
+            });
+        }
+        navLinks.forEach(a => a.addEventListener('click', (e) => { e.preventDefault(); render(a.dataset.section); document.getElementById('sidebar').classList.remove('open'); }));
+        document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('sidebar').classList.toggle('open'));
+        render('systems');
+    </script>
+</body>
+</html>

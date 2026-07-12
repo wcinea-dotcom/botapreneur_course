@@ -1,0 +1,17 @@
+COMMENT AJOUTER TES VRAIES PHOTOS DE FRUITS
+=============================================
+
+MÉTHODE 1 (par clic, recommandée)
+- Clique « ＋ Ajouter une photo » sous un terme, choisis une image → elle apparaît
+  et reste enregistrée. Clic dessus = agrandir ; survole → × pour retirer.
+
+MÉTHODE 2 (par fichier)
+- Dépose une image dans images/, nommée d'après le terme ANGLAIS entre parenthèses :
+     berry.jpg      -> Baie (Berry)
+     drupe.jpg      -> Drupe
+     pome.jpg       -> Piride / Pome
+     legume.jpg     -> Gousse / Légume (Legume)
+     achene.jpg     -> Akène (Achene)
+     samara.jpg     -> Samare
+  (Pour les noms doubles comme « Legume », prends le 1er mot anglais.)
+- Plusieurs : berry-1.jpg, berry-2.jpg … Formats : jpg, jpeg, png, webp. Recharge (Cmd+R).

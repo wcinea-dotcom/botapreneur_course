@@ -1,0 +1,16 @@
+COMMENT AJOUTER TES VRAIES PHOTOS DE TIGES
+============================================
+
+MÉTHODE 1 (par clic, recommandée)
+- Clique « ＋ Ajouter une photo » sous un terme, choisis une image → elle apparaît
+  et reste enregistrée. Clic dessus = agrandir ; survole → × pour retirer.
+
+MÉTHODE 2 (par fichier)
+- Dépose une image dans images/, nommée d'après le terme ANGLAIS entre parenthèses :
+     woody.jpg      -> Ligneuse (Woody)
+     rhizome.jpg    -> Rhizome
+     tuber.jpg      -> Tubercule (Tuber)
+     bulb.jpg       -> Bulbe (Bulb)
+     thorn.jpg      -> Épine caulinaire (Thorn)
+  (Pour les noms doubles, prends le 1er mot anglais.)
+- Plusieurs : rhizome-1.jpg, rhizome-2.jpg … Formats : jpg, jpeg, png, webp. Recharge (Cmd+R).

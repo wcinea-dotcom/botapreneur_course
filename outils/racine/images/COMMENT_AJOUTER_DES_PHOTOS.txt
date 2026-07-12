@@ -1,0 +1,16 @@
+COMMENT AJOUTER TES VRAIES PHOTOS DE RACINES
+=============================================
+
+MÉTHODE 1 (par clic, recommandée)
+- Clique « ＋ Ajouter une photo » sous un terme, choisis une image → elle apparaît
+  et reste enregistrée. Clic dessus = agrandir ; survole → × pour retirer.
+
+MÉTHODE 2 (par fichier)
+- Dépose une image dans images/, nommée d'après le terme ANGLAIS entre parenthèses :
+     taproot.jpg    -> Pivotante (Taproot)
+     fibrous.jpg    -> Fasciculée / Fibreuse (Fibrous)
+     conical.jpg    -> Conique (Conical)
+     prop.jpg       -> Échasses (Prop / Stilt roots)
+     pneumatophores.jpg -> Pneumatophores
+  (Pour les noms doubles, prends le 1er mot anglais.)
+- Plusieurs : taproot-1.jpg, taproot-2.jpg … Formats : jpg, jpeg, png, webp. Recharge (Cmd+R).

@@ -1,0 +1,21 @@
+COMMENT AJOUTER TES VRAIES PHOTOS
+==================================
+
+1. Regarde le nom de fichier indiqué sous chaque terme dans l'outil
+   (ex. sous « Ovate » c'est écrit :  images/ovate.jpg ).
+
+2. Dépose simplement ta photo DANS CE DOSSIER (images/) avec ce nom exact.
+   Exemples :
+     ovate.jpg          -> apparaît sous le terme « Ovate »
+     lanceolate.jpg     -> apparaît sous « Lanceolate »
+     clasping.jpg       -> apparaît sous « Clasping (Amplexicaul) »
+
+3. Plusieurs photos pour un même terme ? Numérote-les :
+     ovate-1.jpg   ovate-2.jpg   ovate-3.jpg
+
+4. Formats acceptés : .jpg, .jpeg, .png, .webp
+
+5. Recharge la page (Cmd+R) et la photo apparaît toute seule.
+   Un clic sur la photo l'agrandit.
+
+Aucun code à toucher. Tu ne fais que déposer des fichiers image ici.

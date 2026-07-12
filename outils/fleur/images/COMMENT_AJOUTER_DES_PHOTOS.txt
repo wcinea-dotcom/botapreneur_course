@@ -1,0 +1,23 @@
+COMMENT AJOUTER TES VRAIES PHOTOS DE FLEURS
+=============================================
+
+Deux façons — la plus simple d'abord :
+
+MÉTHODE 1 (par clic, recommandée)
+1. Ouvre l'outil, va sur un terme.
+2. Clique le bouton « ＋ Ajouter une photo ».
+3. Choisis une photo sur ton ordinateur → elle apparaît et reste enregistrée.
+   (Clic sur la photo = agrandir ; survole → un × rouge pour la retirer.)
+
+MÉTHODE 2 (par fichier, comme pour les feuilles)
+- Dépose une image dans CE dossier (images/), nommée d'après le terme ANGLAIS
+  affiché entre parenthèses. Exemples :
+     raceme.jpg        -> Grappe (Raceme)
+     campanulate.jpg   -> Campanulée (Campanulate)
+     umbel.jpg         -> Ombelle (Umbel)
+     actinomorphic.jpg -> Actinomorphe
+     axile.jpg         -> Placentation axile
+- Plusieurs photos : raceme-1.jpg, raceme-2.jpg …
+- Formats : .jpg, .jpeg, .png, .webp — puis recharge la page (Cmd+R).
+
+Aucun code à toucher.

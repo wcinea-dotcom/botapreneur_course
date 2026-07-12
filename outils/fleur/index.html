@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identification des fleurs – Schémas & Photos</title>
+    <style>
+        *,
+        *::before,
+        *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            background: #f4f0ea; color: #2d2a24; display: flex; min-height: 100vh;
+        }
+        .sidebar {
+            width: 280px; background: #4a2d43; color: #f0e8ee; padding: 1.8rem 1.2rem;
+            position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100;
+            box-shadow: 2px 0 12px rgba(0,0,0,0.15); transition: transform 0.3s ease;
+        }
+        .sidebar h1 {
+            font-size: 1.3rem; font-weight: 500; letter-spacing: 0.03em;
+            border-bottom: 2px solid #7e5f74; padding-bottom: 0.8rem; margin-bottom: 1.5rem; color: #e6d4e0;
+        }
+        .sidebar h1 small { display: block; font-size: 0.7rem; font-weight: 300; color: #cdb0c6; margin-top: 0.2rem; }
+        .sidebar nav { display: flex; flex-direction: column; gap: 0.2rem; }
+        .sidebar nav a {
+            color: #e6d4e0; text-decoration: none; padding: 0.45rem 0.8rem; border-radius: 6px;
+            font-size: 0.88rem; transition: background 0.2s, color 0.2s; border-left: 3px solid transparent; cursor: pointer;
+        }
+        .sidebar nav a:hover, .sidebar nav a.active { background: #5f3c55; color: #fff; border-left-color: #d9b0cf; }
+        .sidebar nav .cat-label {
+            font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em;
+            color: #af8fa7; padding: 0.8rem 0.8rem 0.2rem; font-weight: 600;
+        }
+        .main { margin-left: 280px; flex: 1; padding: 2rem 2.5rem 4rem; max-width: 1300px; }
+        .main header { margin-bottom: 2.5rem; }
+        .main header h2 { font-size: 2rem; font-weight: 400; color: #4a2d43; letter-spacing: -0.01em; }
+        .main header p { color: #5f5a52; font-size: 1.05rem; margin-top: 0.3rem; }
+        .main header .badge-count {
+            font-size: 0.8rem; background: #ede6ec; color: #4a2d43; padding: 0.15rem 0.9rem;
+            border-radius: 20px; display: inline-block; margin-top: 0.3rem;
+        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
+        .card {
+            background: #fffcf9; border-radius: 16px; padding: 1.2rem 1.2rem 1.4rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04); transition: box-shadow 0.2s;
+            border: 1px solid #e4ddd4; display: flex; flex-direction: column;
+        }
+        .card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+        .card .term { font-weight: 600; font-size: 1.1rem; color: #3a1f33; margin-bottom: 0.2rem; }
+        .card .term small { font-weight: 400; font-size: 0.75rem; color: #7a6f76; margin-left: 0.4rem; }
+        .card .def { font-size: 0.88rem; color: #3f3a32; margin: 0.3rem 0 0.7rem; line-height: 1.5; flex: 0 0 auto; }
+        .card .svg-wrap {
+            display: flex; align-items: center; justify-content: center; min-height: 100px;
+            background: #fcf9f5; border-radius: 10px; border: 1px solid #eae3d9; padding: 0.3rem; cursor: zoom-in;
+        }
+        .card .svg-wrap svg { display: block; width: 100%; height: auto; max-height: 160px; }
+        .card .tag {
+            display: inline-block; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em;
+            background: #ede6ec; color: #4a2d43; padding: 0.1rem 0.6rem; border-radius: 12px; margin-top: 0.6rem; align-self: flex-start;
+        }
+        .card .media-label {
+            font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em;
+            color: #a78f9f; font-weight: 600; margin: 0.55rem 0 0.2rem;
+        }
+        .photo-area { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+        .photo-add {
+            cursor: pointer; font-size: 0.74rem; color: #4a2d43; background: #ede6ec;
+            border: 1px dashed #b59baf; border-radius: 9px; padding: 0.5rem 0.7rem; text-align: center; width: 100%; transition: background 0.15s;
+        }
+        .photo-add:hover { background: #e2d6e0; }
+        .photo-thumb { position: relative; }
+        .photo-thumb .rm {
+            position: absolute; top: -6px; right: -6px; background: #c0523f; color: #fff; border: none;
+            border-radius: 50%; width: 18px; height: 18px; font-size: 12px; line-height: 16px; padding: 0; cursor: pointer; display: none;
+        }
+        .photo-thumb:hover .rm { display: block; }
+        .photo-gallery { display: flex; gap: 5px; flex-wrap: wrap; justify-content: center; }
+        .photo-gallery img {
+            width: 64px; height: 64px; object-fit: cover; border-radius: 7px; cursor: zoom-in;
+            border: 1px solid #e4ddd4; transition: transform 0.15s;
+        }
+        .photo-gallery img:hover { transform: scale(1.06); }
+        .lightbox {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none;
+            align-items: center; justify-content: center; z-index: 1000; padding: 2rem;
+        }
+        .lightbox.open { display: flex; }
+        .lightbox img { max-width: 92%; max-height: 92%; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .lightbox .lb-svg { display: none; background: #fffdf9; border-radius: 12px; padding: 26px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .lightbox .lb-svg svg { width: min(70vw, 560px); height: auto; display: block; }
+        .lightbox .close { position: absolute; top: 1rem; right: 1.6rem; color: #fff; font-size: 2.4rem; line-height: 1; cursor: pointer; }
+        @media (max-width: 820px) {
+            .sidebar { transform: translateX(-100%); width: 260px; }
+            .sidebar.open { transform: translateX(0); }
+            .main { margin-left: 0; padding: 1.2rem 1rem; }
+            .menu-toggle {
+                display: inline-block; background: #4a2d43; color: #fff; border: none;
+                padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 1rem; margin-bottom: 1rem; cursor: pointer;
+            }
+            .grid { grid-template-columns: 1fr; }
+        }
+        @media (min-width: 821px) { .menu-toggle { display: none; } }
+        .sidebar::-webkit-scrollbar { width: 4px; }
+        .sidebar::-webkit-scrollbar-track { background: #33202e; }
+        .sidebar::-webkit-scrollbar-thumb { background: #7e5f74; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <h1>🌸 Identification des fleurs <small>Schémas &amp; photos réelles</small></h1>
+        <nav id="nav">
+            <div class="cat-label">Groupement des fleurs</div>
+            <a data-section="inflorescence" class="active">Inflorescences</a>
+
+            <div class="cat-label">La fleur entière</div>
+            <a data-section="symmetry">Symétrie</a>
+            <a data-section="insertion">Insertion de l'ovaire</a>
+            <a data-section="sexuality">Sexualité</a>
+
+            <div class="cat-label">Périanthe</div>
+            <a data-section="corolla">Formes de corolle</a>
+            <a data-section="perianth">Pétales &amp; sépales</a>
+            <a data-section="aestivation">Préfloraison</a>
+
+            <div class="cat-label">Organes reproducteurs</div>
+            <a data-section="androecium">Androcée (étamines)</a>
+            <a data-section="gynoecium">Gynécée (carpelles)</a>
+            <a data-section="placentation">Placentation</a>
+        </nav>
+    </aside>
+
+    <main class="main" id="mainContent">
+        <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+        <header>
+            <h2 id="sectionTitle">Inflorescences</h2>
+            <p id="sectionDesc">La disposition des fleurs sur l'axe floral.</p>
+            <span class="badge-count" id="countBadge">0 termes</span>
+        </header>
+        <div class="grid" id="gridContainer"></div>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close" id="lbClose">&times;</span>
+        <img id="lbImg" alt="Photo agrandie" />
+        <div id="lbSvg" class="lb-svg"></div>
+    </div>
+
+    <script>
+        // Palette schémas : tige verte, fleur mauve, centre jaune, coupe/ovaire gris-vert.
+        const ST = '#3d5a3d';   // tige / axe
+        const PC = '#cf8fb5';   // pétale (fond)
+        const PS = '#8f4f74';   // pétale (contour)
+        const CE = '#e6c15a';   // centre (jaune)
+        const OV = '#7f9b6f';   // ovaire / coupe
+        const OS = '#3d5a3d';   // contour organe
+
+        // petite fleur générique (cx,cy,r)
+        function fl(cx, cy, r) {
+            return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${PC}" stroke="${PS}" stroke-width="1.4"/><circle cx="${cx}" cy="${cy}" r="${r*0.34}" fill="${CE}"/>`;
+        }
+
+        const data = {
+
+            // ─── INFLORESCENCES ─────────────────────────────────────────
+            inflorescence: {
+                title: 'Inflorescences',
+                desc: 'La façon dont les fleurs sont groupées et disposées sur l’axe floral.',
+                cards: [
+                    { term: 'Solitaire <small>(Solitary)</small>', def: 'Une seule fleur, portée seule au sommet d’une tige.',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="55" stroke="${ST}" stroke-width="3"/>${fl(100,40,20)}</svg>` },
+                    { term: 'Grappe <small>(Raceme)</small>', def: 'Axe allongé portant des fleurs pédicellées ; les plus basses s’ouvrent en premier.',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="15" x2="100" y2="130" stroke="${ST}" stroke-width="3"/><line x1="100" y1="35" x2="70" y2="35" stroke="${ST}" stroke-width="2"/><line x1="100" y1="65" x2="70" y2="65" stroke="${ST}" stroke-width="2"/><line x1="100" y1="95" x2="70" y2="95" stroke="${ST}" stroke-width="2"/><line x1="100" y1="45" x2="130" y2="45" stroke="${ST}" stroke-width="2"/><line x1="100" y1="80" x2="130" y2="80" stroke="${ST}" stroke-width="2"/>${fl(62,35,11)}${fl(62,65,11)}${fl(62,95,11)}${fl(138,45,11)}${fl(138,80,11)}</svg>` },
+                    { term: 'Épi <small>(Spike)</small>', def: 'Comme une grappe, mais les fleurs sont sessiles (sans pédicelle), directement sur l’axe.',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="15" x2="100" y2="130" stroke="${ST}" stroke-width="3"/>${fl(84,32,11)}${fl(116,32,11)}${fl(84,60,11)}${fl(116,60,11)}${fl(84,88,11)}${fl(116,88,11)}${fl(100,112,11)}</svg>` },
+                    { term: 'Panicule <small>(Panicle)</small>', def: 'Grappe ramifiée : l’axe porte des branches qui portent elles-mêmes des fleurs.',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="15" x2="100" y2="130" stroke="${ST}" stroke-width="3"/><line x1="100" y1="40" x2="60" y2="30" stroke="${ST}" stroke-width="1.6"/><line x1="100" y1="40" x2="140" y2="30" stroke="${ST}" stroke-width="1.6"/><line x1="100" y1="75" x2="55" y2="70" stroke="${ST}" stroke-width="1.6"/><line x1="100" y1="75" x2="145" y2="70" stroke="${ST}" stroke-width="1.6"/><line x1="100" y1="105" x2="65" y2="108" stroke="${ST}" stroke-width="1.6"/><line x1="100" y1="105" x2="135" y2="108" stroke="${ST}" stroke-width="1.6"/>${fl(56,28,9)}${fl(144,28,9)}${fl(50,70,9)}${fl(150,70,9)}${fl(62,110,9)}${fl(138,110,9)}${fl(100,24,9)}</svg>` },
+                    { term: 'Corymbe <small>(Corymb)</small>', def: 'Fleurs pédicellées atteignant à peu près le même niveau (sommet plat) ; pédicelles du bas plus longs.',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="70" stroke="${ST}" stroke-width="3"/><line x1="100" y1="105" x2="45" y2="40" stroke="${ST}" stroke-width="1.8"/><line x1="100" y1="95" x2="72" y2="40" stroke="${ST}" stroke-width="1.8"/><line x1="100" y1="90" x2="100" y2="38" stroke="${ST}" stroke-width="1.8"/><line x1="100" y1="95" x2="128" y2="40" stroke="${ST}" stroke-width="1.8"/><line x1="100" y1="105" x2="155" y2="40" stroke="${ST}" stroke-width="1.8"/>${fl(45,35,11)}${fl(72,33,11)}${fl(100,32,11)}${fl(128,33,11)}${fl(155,35,11)}</svg>` },
+                    { term: 'Ombelle <small>(Umbel)</small>', def: 'Tous les pédicelles partent d’un même point, comme les baleines d’un parapluie.',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="80" stroke="${ST}" stroke-width="3"/><line x1="100" y1="82" x2="45" y2="38" stroke="${ST}" stroke-width="1.8"/><line x1="100" y1="82" x2="72" y2="32" stroke="${ST}" stroke-width="1.8"/><line x1="100" y1="82" x2="100" y2="30" stroke="${ST}" stroke-width="1.8"/><line x1="100" y1="82" x2="128" y2="32" stroke="${ST}" stroke-width="1.8"/><line x1="100" y1="82" x2="155" y2="38" stroke="${ST}" stroke-width="1.8"/>${fl(45,32,11)}${fl(72,26,11)}${fl(100,24,11)}${fl(128,26,11)}${fl(155,32,11)}</svg>` },
+                    { term: 'Ombelle composée <small>(Compound umbel)</small>', def: 'Une ombelle d’ombelles : chaque rayon porte une petite ombelle (ex. Apiacées).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="85" stroke="${ST}" stroke-width="3"/><line x1="100" y1="86" x2="50" y2="55" stroke="${ST}" stroke-width="1.6"/><line x1="100" y1="86" x2="100" y2="48" stroke="${ST}" stroke-width="1.6"/><line x1="100" y1="86" x2="150" y2="55" stroke="${ST}" stroke-width="1.6"/><g stroke="${ST}" stroke-width="1"><line x1="50" y1="55" x2="38" y2="40"/><line x1="50" y1="55" x2="50" y2="38"/><line x1="50" y1="55" x2="62" y2="40"/><line x1="100" y1="48" x2="88" y2="34"/><line x1="100" y1="48" x2="100" y2="32"/><line x1="100" y1="48" x2="112" y2="34"/><line x1="150" y1="55" x2="138" y2="40"/><line x1="150" y1="55" x2="150" y2="38"/><line x1="150" y1="55" x2="162" y2="40"/></g><g>${fl(38,38,6)}${fl(50,36,6)}${fl(62,38,6)}${fl(88,32,6)}${fl(100,30,6)}${fl(112,32,6)}${fl(138,38,6)}${fl(150,36,6)}${fl(162,38,6)}</g></svg>` },
+                    { term: 'Capitule <small>(Head / Capitulum)</small>', def: 'Nombreuses petites fleurs sessiles serrées sur un réceptacle élargi (ex. Astéracées).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="95" stroke="${ST}" stroke-width="3"/><ellipse cx="100" cy="90" rx="40" ry="12" fill="${OV}" stroke="${OS}" stroke-width="1.5"/><g>${fl(72,78,9)}${fl(92,74,9)}${fl(112,74,9)}${fl(130,78,9)}${fl(82,66,9)}${fl(102,63,9)}${fl(120,66,9)}</g></svg>` },
+                    { term: 'Cyme <small>(Cyme)</small>', def: 'La fleur terminale s’ouvre en premier ; la croissance se poursuit par des ramifications latérales.',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="45" stroke="${ST}" stroke-width="3"/><line x1="100" y1="70" x2="62" y2="55" stroke="${ST}" stroke-width="2"/><line x1="100" y1="70" x2="138" y2="55" stroke="${ST}" stroke-width="2"/>${fl(100,38,13)}${fl(58,50,11)}${fl(142,50,11)}</svg>` },
+                    { term: 'Chaton <small>(Catkin / Ament)</small>', def: 'Épi souple et pendant de petites fleurs unisexuées, sans pétales (ex. saule, noyer).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="60" y1="15" x2="70" y2="35" stroke="${ST}" stroke-width="3"/><path d="M70,35 Q100,55 95,95 Q92,120 105,132" fill="none" stroke="${ST}" stroke-width="3"/><g fill="${PC}" stroke="${PS}" stroke-width="1"><circle cx="82" cy="48" r="7"/><circle cx="93" cy="60" r="7"/><circle cx="98" cy="74" r="7"/><circle cx="96" cy="90" r="7"/><circle cx="99" cy="106" r="7"/><circle cx="106" cy="122" r="7"/><circle cx="70" cy="52" r="6"/><circle cx="82" cy="66" r="6"/><circle cx="86" cy="82" r="6"/><circle cx="85" cy="98" r="6"/><circle cx="88" cy="114" r="6"/></g></svg>` },
+                    { term: 'Spadice <small>(Spadix)</small>', def: 'Axe charnu et épais portant de nombreuses petites fleurs enfoncées, souvent entouré d’une spathe (ex. Aracées).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M120,20 Q160,40 150,90 Q140,130 100,132 Q135,110 130,75 Q126,40 120,20Z" fill="${PC}" stroke="${PS}" stroke-width="1.5" opacity="0.55"/><rect x="86" y="25" width="18" height="95" rx="9" fill="${OV}" stroke="${OS}" stroke-width="1.5"/><g fill="${CE}"><circle cx="92" cy="40" r="2.4"/><circle cx="99" cy="46" r="2.4"/><circle cx="92" cy="55" r="2.4"/><circle cx="99" cy="62" r="2.4"/><circle cx="92" cy="72" r="2.4"/><circle cx="99" cy="80" r="2.4"/><circle cx="92" cy="92" r="2.4"/><circle cx="99" cy="100" r="2.4"/></g></svg>` },
+                    { term: 'Verticillastre <small>(Verticillaster)</small>', def: 'Fleurs groupées en faux verticilles à chaque nœud le long de la tige (ex. menthes, Lamiacées).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="12" x2="100" y2="132" stroke="${ST}" stroke-width="3"/><g>${fl(66,45,9)}${fl(134,45,9)}${fl(74,58,8)}${fl(126,58,8)}${fl(66,95,9)}${fl(134,95,9)}${fl(74,108,8)}${fl(126,108,8)}</g></svg>` }
+                ]
+            },
+
+            // ─── SYMÉTRIE ───────────────────────────────────────────────
+            symmetry: {
+                title: 'Symétrie florale',
+                desc: 'Le type de symétrie de la fleur vue de face.',
+                cards: [
+                    { term: 'Actinomorphe <small>(Actinomorphic)</small>', def: 'Symétrie radiaire : plusieurs plans de symétrie, comme les rayons d’une roue (fleur régulière).',
+                      svg: `<svg viewBox="0 0 200 140"><g stroke="${PS}" stroke-width="1" stroke-dasharray="3,3"><line x1="100" y1="20" x2="100" y2="120"/><line x1="50" y1="70" x2="150" y2="70"/><line x1="65" y1="35" x2="135" y2="105"/><line x1="135" y1="35" x2="65" y2="105"/></g><g fill="${PC}" stroke="${PS}" stroke-width="1.4"><ellipse cx="100" cy="42" rx="14" ry="22"/><ellipse cx="100" cy="98" rx="14" ry="22"/><ellipse cx="58" cy="70" rx="22" ry="14"/><ellipse cx="142" cy="70" rx="22" ry="14"/><ellipse cx="72" cy="42" rx="18" ry="18" transform="rotate(45,72,42)"/><ellipse cx="128" cy="42" rx="18" ry="18" transform="rotate(-45,128,42)"/></g><circle cx="100" cy="70" r="14" fill="${CE}" stroke="${PS}" stroke-width="1"/></svg>` },
+                    { term: 'Zygomorphe <small>(Zygomorphic)</small>', def: 'Symétrie bilatérale : un seul plan de symétrie (fleur irrégulière, ex. orchidée, pois).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="15" x2="100" y2="125" stroke="${PS}" stroke-width="1" stroke-dasharray="3,3"/><path d="M100,30 Q70,30 68,55 Q66,72 100,72 Q134,72 132,55 Q130,30 100,30Z" fill="${PC}" stroke="${PS}" stroke-width="1.4"/><path d="M70,72 Q55,95 72,112 Q100,124 128,112 Q145,95 130,72 Z" fill="${PC}" stroke="${PS}" stroke-width="1.4"/><ellipse cx="100" cy="82" rx="12" ry="14" fill="${CE}" stroke="${PS}" stroke-width="1"/></svg>` },
+                    { term: 'Asymétrique <small>(Asymmetric)</small>', def: 'Aucun plan de symétrie ne divise la fleur en deux moitiés identiques.',
+                      svg: `<svg viewBox="0 0 200 140"><g fill="${PC}" stroke="${PS}" stroke-width="1.4"><path d="M100,70 Q95,35 120,30 Q140,40 128,60 Z"/><path d="M100,70 Q135,68 140,95 Q125,112 110,92 Z"/><path d="M100,70 Q80,105 55,98 Q45,78 72,72 Z"/><path d="M100,70 Q70,50 62,68 Q66,82 88,80 Z"/></g><circle cx="100" cy="70" r="11" fill="${CE}" stroke="${PS}" stroke-width="1"/></svg>` }
+                ]
+            },
+
+            // ─── INSERTION / POSITION DE L'OVAIRE ───────────────────────
+            insertion: {
+                title: 'Insertion de l’ovaire',
+                desc: 'Position de l’ovaire par rapport à l’insertion des sépales, pétales et étamines (coupe latérale).',
+                cards: [
+                    { term: 'Hypogyne <small>(Hypogynous)</small>', def: 'Ovaire supère : sépales, pétales et étamines s’insèrent SOUS l’ovaire, sur un réceptacle bombé.',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M70,110 Q100,120 130,110" fill="none" stroke="${ST}" stroke-width="2.5"/><ellipse cx="100" cy="70" rx="22" ry="30" fill="${OV}" stroke="${OS}" stroke-width="1.8"/><line x1="100" y1="40" x2="100" y2="20" stroke="${OS}" stroke-width="1.5"/><path d="M78,102 Q60,80 55,55" fill="none" stroke="${PS}" stroke-width="2.2"/><path d="M122,102 Q140,80 145,55" fill="none" stroke="${PS}" stroke-width="2.2"/><path d="M84,100 Q74,80 74,58" fill="none" stroke="${CE}" stroke-width="2.4"/><path d="M116,100 Q126,80 126,58" fill="none" stroke="${CE}" stroke-width="2.4"/></svg>` },
+                    { term: 'Périgyne <small>(Perigynous)</small>', def: 'Ovaire supère entouré d’une coupe (hypanthium) ; les pièces florales s’insèrent sur le bord de la coupe.',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M60,55 Q60,115 100,118 Q140,115 140,55" fill="none" stroke="${ST}" stroke-width="2.5"/><ellipse cx="100" cy="82" rx="18" ry="24" fill="${OV}" stroke="${OS}" stroke-width="1.8"/><line x1="100" y1="58" x2="100" y2="40" stroke="${OS}" stroke-width="1.5"/><path d="M60,55 Q45,45 40,30" fill="none" stroke="${PS}" stroke-width="2.2"/><path d="M140,55 Q155,45 160,30" fill="none" stroke="${PS}" stroke-width="2.2"/><path d="M70,55 Q64,44 66,32" fill="none" stroke="${CE}" stroke-width="2.4"/><path d="M130,55 Q136,44 134,32" fill="none" stroke="${CE}" stroke-width="2.4"/></svg>` },
+                    { term: 'Épigyne <small>(Epigynous)</small>', def: 'Ovaire infère : l’ovaire est enfoncé sous les autres pièces, qui s’insèrent AU-DESSUS de lui.',
+                      svg: `<svg viewBox="0 0 200 140"><ellipse cx="100" cy="95" rx="26" ry="28" fill="${OV}" stroke="${OS}" stroke-width="1.8"/><path d="M74,80 Q60,58 55,40" fill="none" stroke="${PS}" stroke-width="2.2"/><path d="M126,80 Q140,58 145,40" fill="none" stroke="${PS}" stroke-width="2.2"/><path d="M86,72 Q80,55 82,40" fill="none" stroke="${CE}" stroke-width="2.4"/><path d="M114,72 Q120,55 118,40" fill="none" stroke="${CE}" stroke-width="2.4"/><line x1="100" y1="70" x2="100" y2="34" stroke="${OS}" stroke-width="1.5"/></svg>` }
+                ]
+            },
+
+            // ─── SEXUALITÉ ──────────────────────────────────────────────
+            sexuality: {
+                title: 'Sexualité de la fleur',
+                desc: 'Présence des organes mâles (étamines) et femelles (pistil).',
+                cards: [
+                    { term: 'Hermaphrodite <small>(Perfect / Bisexual)</small>', def: 'Fleur portant à la fois les étamines (♂) et le pistil (♀).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="55" stroke="${ST}" stroke-width="3"/><path d="M100,60 L100,30" stroke="${OS}" stroke-width="2"/><ellipse cx="100" cy="26" rx="7" ry="5" fill="${OV}" stroke="${OS}" stroke-width="1.2"/><path d="M100,60 L78,34" stroke="${CE}" stroke-width="2"/><circle cx="76" cy="31" r="5" fill="${CE}"/><path d="M100,60 L122,34" stroke="${CE}" stroke-width="2"/><circle cx="124" cy="31" r="5" fill="${CE}"/><g fill="${PC}" stroke="${PS}" stroke-width="1.2" opacity="0.85"><ellipse cx="70" cy="70" rx="16" ry="9"/><ellipse cx="130" cy="70" rx="16" ry="9"/></g></svg>` },
+                    { term: 'Unisexuée <small>(Imperfect / Unisexual)</small>', def: 'Fleur ne portant qu’un seul type d’organe sexuel (soit ♂, soit ♀).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="70" y1="130" x2="70" y2="60" stroke="${ST}" stroke-width="3"/><path d="M70,64 L70,34" stroke="${OS}" stroke-width="2"/><ellipse cx="70" cy="30" rx="7" ry="5" fill="${OV}" stroke="${OS}" stroke-width="1.2"/><text x="60" y="118" font-size="16" fill="${PS}">♀</text><line x1="140" y1="130" x2="140" y2="60" stroke="${ST}" stroke-width="3"/><path d="M140,64 L126,40" stroke="${CE}" stroke-width="2"/><circle cx="124" cy="37" r="5" fill="${CE}"/><path d="M140,64 L154,40" stroke="${CE}" stroke-width="2"/><circle cx="156" cy="37" r="5" fill="${CE}"/><text x="132" y="118" font-size="16" fill="${PS}">♂</text></svg>` },
+                    { term: 'Staminée <small>(Staminate ♂)</small>', def: 'Fleur mâle : elle ne porte que des étamines (organe femelle absent ou stérile).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="60" stroke="${ST}" stroke-width="3"/><path d="M100,64 L72,34" stroke="${CE}" stroke-width="2.4"/><circle cx="69" cy="31" r="6" fill="${CE}"/><path d="M100,64 L100,28" stroke="${CE}" stroke-width="2.4"/><circle cx="100" cy="25" r="6" fill="${CE}"/><path d="M100,64 L128,34" stroke="${CE}" stroke-width="2.4"/><circle cx="131" cy="31" r="6" fill="${CE}"/><g fill="${PC}" stroke="${PS}" stroke-width="1.2" opacity="0.8"><ellipse cx="72" cy="74" rx="16" ry="9"/><ellipse cx="128" cy="74" rx="16" ry="9"/></g></svg>` },
+                    { term: 'Pistillée <small>(Pistillate ♀)</small>', def: 'Fleur femelle : elle ne porte que le pistil (étamines absentes ou stériles).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="55" stroke="${ST}" stroke-width="3"/><ellipse cx="100" cy="70" rx="16" ry="22" fill="${OV}" stroke="${OS}" stroke-width="1.6"/><line x1="100" y1="48" x2="100" y2="24" stroke="${OS}" stroke-width="2"/><ellipse cx="100" cy="20" rx="9" ry="6" fill="${OV}" stroke="${OS}" stroke-width="1.2"/><g fill="${PC}" stroke="${PS}" stroke-width="1.2" opacity="0.8"><ellipse cx="70" cy="80" rx="15" ry="9"/><ellipse cx="130" cy="80" rx="15" ry="9"/></g></svg>` },
+                    { term: 'Monoïque <small>(Monoecious)</small>', def: 'Fleurs mâles et femelles séparées, mais sur le MÊME pied (ex. maïs, courge).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="132" x2="100" y2="30" stroke="${ST}" stroke-width="3"/><line x1="100" y1="55" x2="66" y2="45" stroke="${ST}" stroke-width="2"/><line x1="100" y1="90" x2="134" y2="80" stroke="${ST}" stroke-width="2"/><g fill="${CE}"><circle cx="60" cy="43" r="8"/></g><text x="52" y="30" font-size="13" fill="${PS}">♂</text><ellipse cx="140" cy="78" rx="9" ry="12" fill="${OV}" stroke="${OS}" stroke-width="1.4"/><text x="150" y="72" font-size="13" fill="${PS}">♀</text></svg>` },
+                    { term: 'Dioïque <small>(Dioecious)</small>', def: 'Fleurs mâles et femelles sur des pieds SÉPARÉS (un pied ♂ et un pied ♀ distincts).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="60" y1="132" x2="60" y2="45" stroke="${ST}" stroke-width="3"/><circle cx="60" cy="38" r="10" fill="${CE}" stroke="${PS}" stroke-width="1"/><text x="52" y="118" font-size="15" fill="${PS}">♂</text><line x1="140" y1="132" x2="140" y2="45" stroke="${ST}" stroke-width="3"/><ellipse cx="140" cy="36" rx="10" ry="13" fill="${OV}" stroke="${OS}" stroke-width="1.4"/><text x="132" y="118" font-size="15" fill="${PS}">♀</text></svg>` },
+                    { term: 'Polygame <small>(Polygamous)</small>', def: 'Fleurs hermaphrodites ET unisexuées présentes sur le même pied ou sur des pieds différents.',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="132" x2="100" y2="28" stroke="${ST}" stroke-width="3"/><line x1="100" y1="50" x2="68" y2="42" stroke="${ST}" stroke-width="2"/><line x1="100" y1="82" x2="132" y2="74" stroke="${ST}" stroke-width="2"/>${fl(100,24,10)}<circle cx="62" cy="40" r="8" fill="${CE}" stroke="${PS}" stroke-width="1"/><ellipse cx="138" cy="72" rx="8" ry="11" fill="${OV}" stroke="${OS}" stroke-width="1.3"/></svg>` }
+                ]
+            },
+
+            // ─── FORMES DE COROLLE ──────────────────────────────────────
+            corolla: {
+                title: 'Formes de corolle',
+                desc: 'La forme d’ensemble de la corolle (les pétales soudés), vue de côté.',
+                cards: [
+                    { term: 'Rotacée <small>(Rotate)</small>', def: 'Pétales étalés à plat en roue, avec un tube très court (ex. pomme de terre).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="85" stroke="${ST}" stroke-width="3"/><path d="M40,80 Q70,55 100,80 Q130,55 160,80 Q130,95 100,86 Q70,95 40,80Z" fill="${PC}" stroke="${PS}" stroke-width="1.6"/><circle cx="100" cy="82" r="8" fill="${CE}"/></svg>` },
+                    { term: 'Campanulée <small>(Campanulate)</small>', def: 'En forme de cloche, s’élargissant progressivement (ex. campanule).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="105" stroke="${ST}" stroke-width="3"/><path d="M100,108 Q86,108 82,80 Q66,40 60,30 Q100,52 140,30 Q134,40 118,80 Q114,108 100,108Z" fill="${PC}" stroke="${PS}" stroke-width="1.6"/></svg>` },
+                    { term: 'Infundibuliforme <small>(Funnelform)</small>', def: 'En entonnoir : tube s’élargissant régulièrement jusqu’au sommet (ex. liseron).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="112" stroke="${ST}" stroke-width="3"/><path d="M100,114 L90,95 L58,32 Q100,50 142,32 L110,95 L100,114Z" fill="${PC}" stroke="${PS}" stroke-width="1.6"/></svg>` },
+                    { term: 'Hypocratériforme <small>(Salverform)</small>', def: 'Long tube étroit terminé par un limbe étalé brusquement à angle droit (ex. jasmin, phlox).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="132" x2="100" y2="118" stroke="${ST}" stroke-width="3"/><rect x="92" y="55" width="16" height="63" fill="${PC}" stroke="${PS}" stroke-width="1.4"/><path d="M50,52 Q100,30 150,52 Q100,64 50,52Z" fill="${PC}" stroke="${PS}" stroke-width="1.6"/><circle cx="100" cy="52" r="6" fill="${CE}"/></svg>` },
+                    { term: 'Tubuleuse <small>(Tubular)</small>', def: 'En tube cylindrique étroit, à côtés à peu près parallèles (ex. fleurs du centre des Astéracées).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="132" x2="100" y2="120" stroke="${ST}" stroke-width="3"/><path d="M84,120 L84,45 Q84,32 100,32 Q116,32 116,45 L116,120Z" fill="${PC}" stroke="${PS}" stroke-width="1.6"/><path d="M84,45 L78,34 M100,32 L100,24 M116,45 L122,34" stroke="${PS}" stroke-width="1.4"/></svg>` },
+                    { term: 'Urcéolée <small>(Urceolate)</small>', def: 'En forme d’urne : renflée puis resserrée à l’ouverture (ex. bruyère, myrtille).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="132" x2="100" y2="118" stroke="${ST}" stroke-width="3"/><path d="M90,40 Q60,50 62,80 Q64,112 100,116 Q136,112 138,80 Q140,50 110,40 Q100,44 90,40Z" fill="${PC}" stroke="${PS}" stroke-width="1.6"/><path d="M90,40 Q100,34 110,40" fill="none" stroke="${PS}" stroke-width="1.4"/></svg>` },
+                    { term: 'Bilabiée <small>(Bilabiate / 2-lipped)</small>', def: 'Corolle à deux lèvres, supérieure et inférieure (ex. Lamiacées, sauge).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="132" x2="100" y2="112" stroke="${ST}" stroke-width="3"/><path d="M86,112 Q80,80 82,66 Q60,58 55,40 Q100,54 100,66 Z" fill="${PC}" stroke="${PS}" stroke-width="1.5"/><path d="M114,112 Q120,80 118,66 Q140,58 145,40 Q100,54 100,66 Z" fill="${PC}" stroke="${PS}" stroke-width="1.5"/><path d="M82,66 Q100,88 118,66" fill="${PC}" stroke="${PS}" stroke-width="1.5"/></svg>` },
+                    { term: 'Papilionacée <small>(Papilionaceous)</small>', def: 'Type « pois » : un grand pétale dressé (étendard), deux ailes latérales et deux pétales en carène.',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="132" x2="100" y2="100" stroke="${ST}" stroke-width="3"/><path d="M60,30 Q100,15 140,30 Q142,55 100,58 Q58,55 60,30Z" fill="${PC}" stroke="${PS}" stroke-width="1.5"/><ellipse cx="70" cy="72" rx="20" ry="12" fill="${PC}" stroke="${PS}" stroke-width="1.4" opacity="0.9"/><ellipse cx="130" cy="72" rx="20" ry="12" fill="${PC}" stroke="${PS}" stroke-width="1.4" opacity="0.9"/><path d="M78,86 Q100,110 122,86 Q100,96 78,86Z" fill="${PC}" stroke="${PS}" stroke-width="1.4"/></svg>` },
+                    { term: 'Ligulée <small>(Ligulate)</small>', def: 'Corolle prolongée d’un côté en une languette plate (ex. fleurs du pourtour des Astéracées).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="132" x2="100" y2="110" stroke="${ST}" stroke-width="3"/><path d="M84,110 Q82,90 88,84 L82,30 Q100,24 118,30 L112,84 Q118,90 116,110Z" fill="${PC}" stroke="${PS}" stroke-width="1.5"/><path d="M90,40 L90,80 M100,36 L100,82 M110,40 L110,80" stroke="${PS}" stroke-width="0.8"/></svg>` },
+                    { term: 'Éperonnée <small>(Spurred / Calcarate)</small>', def: 'Un pétale (ou sépale) prolongé en un éperon creux vers l’arrière (ex. violette, ancolie).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="80" y1="132" x2="85" y2="95" stroke="${ST}" stroke-width="3"/><path d="M85,90 Q70,60 90,45 Q110,35 128,50 Q140,62 128,82 Q112,98 85,90Z" fill="${PC}" stroke="${PS}" stroke-width="1.5"/><path d="M128,60 Q160,66 168,92 Q160,96 150,86 Q135,74 128,72Z" fill="${PC}" stroke="${PS}" stroke-width="1.4"/><circle cx="104" cy="66" r="7" fill="${CE}"/></svg>` }
+                ]
+            },
+
+            // ─── PÉTALES & SÉPALES ──────────────────────────────────────
+            perianth: {
+                title: 'Pétales &amp; sépales',
+                desc: 'Comment les pièces du périanthe (pétales, sépales) sont libres, soudées ou indifférenciées.',
+                cards: [
+                    { term: 'Dialypétale <small>(Polypetalous)</small>', def: 'Pétales libres, séparés les uns des autres jusqu’à la base.',
+                      svg: `<svg viewBox="0 0 200 140"><g fill="${PC}" stroke="${PS}" stroke-width="1.5"><ellipse cx="100" cy="42" rx="13" ry="24"/><ellipse cx="140" cy="60" rx="24" ry="13"/><ellipse cx="124" cy="102" rx="13" ry="24" transform="rotate(35,124,102)"/><ellipse cx="76" cy="102" rx="13" ry="24" transform="rotate(-35,76,102)"/><ellipse cx="60" cy="60" rx="24" ry="13"/></g><circle cx="100" cy="70" r="12" fill="${CE}" stroke="${PS}" stroke-width="1"/></svg>` },
+                    { term: 'Gamopétale <small>(Sympetalous)</small>', def: 'Pétales soudés entre eux, au moins à la base, formant un tube ou une cloche.',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M100,70 m0,-42 a42,42 0 1,0 0.1,0Z" fill="${PC}" stroke="${PS}" stroke-width="1.6"/><g stroke="${PS}" stroke-width="1.2" fill="none"><path d="M100,28 Q108,50 100,70"/><path d="M139,55 Q116,60 100,70"/><path d="M124,108 Q110,86 100,70"/><path d="M76,108 Q90,86 100,70"/><path d="M61,55 Q84,60 100,70"/></g><circle cx="100" cy="70" r="11" fill="${CE}"/></svg>` },
+                    { term: 'Dialysépale <small>(Polysepalous)</small>', def: 'Sépales libres, séparés les uns des autres.',
+                      svg: `<svg viewBox="0 0 200 140"><g fill="${OV}" stroke="${OS}" stroke-width="1.5"><path d="M100,66 L88,26 Q100,18 112,26 Z"/><path d="M100,66 L142,52 Q148,66 140,78 Z"/><path d="M100,66 L124,106 Q112,114 102,104 Z"/><path d="M100,66 L76,106 Q66,100 68,86 Z"/><path d="M100,66 L58,58 Q56,44 68,42 Z"/></g><circle cx="100" cy="66" r="9" fill="${CE}"/></svg>` },
+                    { term: 'Gamosépale <small>(Gamosepalous)</small>', def: 'Sépales soudés entre eux, formant un calice en tube ou en coupe.',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M72,110 Q60,70 74,45 Q100,35 126,45 Q140,70 128,110 Z" fill="${OV}" stroke="${OS}" stroke-width="1.7"/><g stroke="${OS}" stroke-width="1.2" fill="none"><path d="M74,45 Q78,30 82,42"/><path d="M100,38 L100,30"/><path d="M126,45 Q122,30 118,42"/></g></svg>` },
+                    { term: 'Apétale <small>(Apetalous)</small>', def: 'Fleur sans pétales (seul le calice, ou aucun périanthe).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="70" stroke="${ST}" stroke-width="3"/><g fill="${OV}" stroke="${OS}" stroke-width="1.5"><path d="M100,66 L86,40 Q100,34 114,40 Z"/><path d="M100,66 L130,52 Q134,66 126,76 Z"/><path d="M100,66 L74,52 Q70,66 78,76 Z"/></g><path d="M100,66 L100,36" stroke="${CE}" stroke-width="2"/><circle cx="100" cy="33" r="5" fill="${CE}"/></svg>` },
+                    { term: 'Tépales <small>(Tepals — périanthe indifférencié)</small>', def: 'Sépales et pétales semblables, non distinguables (ex. tulipe, lis).',
+                      svg: `<svg viewBox="0 0 200 140"><g fill="${PC}" stroke="${PS}" stroke-width="1.5"><ellipse cx="100" cy="40" rx="12" ry="24"/><ellipse cx="138" cy="62" rx="24" ry="12"/><ellipse cx="122" cy="102" rx="12" ry="24" transform="rotate(35,122,102)"/><ellipse cx="78" cy="102" rx="12" ry="24" transform="rotate(-35,78,102)"/><ellipse cx="62" cy="62" rx="24" ry="12"/><ellipse cx="100" cy="70" rx="12" ry="24" opacity="0.5"/></g><circle cx="100" cy="70" r="10" fill="${CE}"/></svg>` }
+                ]
+            },
+
+            // ─── PRÉFLORAISON (ESTIVATION) ──────────────────────────────
+            aestivation: {
+                title: 'Préfloraison (estivation)',
+                desc: 'La disposition des pétales/sépales les uns par rapport aux autres dans le bouton (coupe transversale).',
+                cards: [
+                    { term: 'Valvaire <small>(Valvate)</small>', def: 'Les pièces se touchent par les bords sans se recouvrir.',
+                      svg: `<svg viewBox="0 0 200 140"><g fill="none" stroke="${PS}" stroke-width="2"><path d="M100,70 L100,28 A42,42 0 0,1 133,48 Z" fill="${PC}"/><path d="M100,70 L133,48 A42,42 0 0,1 130,98 Z" fill="${PC}" opacity="0.85"/><path d="M100,70 L130,98 A42,42 0 0,1 82,110 Z" fill="${PC}"/><path d="M100,70 L82,110 A42,42 0 0,1 62,52 Z" fill="${PC}" opacity="0.85"/><path d="M100,70 L62,52 A42,42 0 0,1 100,28 Z" fill="${PC}"/></g></svg>` },
+                    { term: 'Imbriquée <small>(Imbricate)</small>', def: 'Au moins une pièce recouvre ses voisines et une autre est recouverte, comme des tuiles.',
+                      svg: `<svg viewBox="0 0 200 140"><g stroke="${PS}" stroke-width="1.6"><path d="M100,70 L128,40 A40,40 0 0,1 138,74 Z" fill="${PC}"/><path d="M100,70 L138,74 A40,40 0 0,1 108,106 Z" fill="${PC}" opacity="0.9"/><path d="M100,70 L108,106 A40,40 0 0,1 68,96 Z" fill="${PC}"/><path d="M100,70 L68,96 A40,40 0 0,1 66,54 Z" fill="${PC}" opacity="0.9"/><path d="M100,70 L66,54 A40,40 0 0,1 128,40 Z" fill="${PC}"/></g></svg>` },
+                    { term: 'Tordue / Contournée <small>(Convolute / Contorted)</small>', def: 'Chaque pièce recouvre la suivante d’un seul côté, en tourniquet (ex. gombo, laurier-rose).',
+                      svg: `<svg viewBox="0 0 200 140"><g stroke="${PS}" stroke-width="1.6" fill="${PC}"><path d="M100,70 Q112,34 138,52 Q120,66 100,70Z"/><path d="M100,70 Q136,80 128,110 Q110,92 100,70Z"/><path d="M100,70 Q90,106 60,96 Q84,80 100,70Z"/><path d="M100,70 Q66,58 72,30 Q92,50 100,70Z"/></g><circle cx="100" cy="70" r="6" fill="${CE}"/></svg>` },
+                    { term: 'Quinconciale <small>(Quincuncial)</small>', def: 'Cinq pièces : deux entièrement externes, deux entièrement internes, une moitié dehors/moitié dedans.',
+                      svg: `<svg viewBox="0 0 200 140"><g stroke="${PS}" stroke-width="1.6"><path d="M100,70 L100,28 A42,42 0 0,1 133,48 Z" fill="${PC}"/><path d="M100,70 L62,52 A42,42 0 0,1 100,28 Z" fill="${PC}"/><path d="M100,70 L133,48 A42,42 0 0,1 130,98 Z" fill="${PC}" opacity="0.6"/><path d="M100,70 L82,110 A42,42 0 0,1 62,52 Z" fill="${PC}" opacity="0.6"/><path d="M100,70 L130,98 A42,42 0 0,1 82,110 Z" fill="${PC}" opacity="0.85"/></g></svg>` }
+                ]
+            },
+
+            // ─── ANDROCÉE ───────────────────────────────────────────────
+            androecium: {
+                title: 'Androcée (étamines)',
+                desc: 'La disposition et la soudure des étamines (organes mâles).',
+                cards: [
+                    { term: 'Étamines libres <small>(Distinct)</small>', def: 'Étamines séparées, ni soudées entre elles ni aux pétales.',
+                      svg: `<svg viewBox="0 0 200 140"><g><line x1="100" y1="125" x2="60" y2="45" stroke="${ST}" stroke-width="2"/><line x1="100" y1="125" x2="80" y2="38" stroke="${ST}" stroke-width="2"/><line x1="100" y1="125" x2="100" y2="34" stroke="${ST}" stroke-width="2"/><line x1="100" y1="125" x2="120" y2="38" stroke="${ST}" stroke-width="2"/><line x1="100" y1="125" x2="140" y2="45" stroke="${ST}" stroke-width="2"/><g fill="${CE}" stroke="${PS}" stroke-width="0.8"><ellipse cx="58" cy="40" rx="7" ry="5"/><ellipse cx="79" cy="33" rx="7" ry="5"/><ellipse cx="100" cy="29" rx="7" ry="5"/><ellipse cx="121" cy="33" rx="7" ry="5"/><ellipse cx="142" cy="40" rx="7" ry="5"/></g></g></svg>` },
+                    { term: 'Monadelphe <small>(Monadelphous)</small>', def: 'Filets de toutes les étamines soudés en un seul tube autour du pistil (ex. Malvacées, hibiscus).',
+                      svg: `<svg viewBox="0 0 200 140"><rect x="90" y="60" width="20" height="70" rx="8" fill="${OV}" stroke="${OS}" stroke-width="1.6"/><g stroke="${ST}" stroke-width="1.6"><line x1="100" y1="62" x2="66" y2="38"/><line x1="100" y1="62" x2="84" y2="30"/><line x1="100" y1="62" x2="100" y2="26"/><line x1="100" y1="62" x2="116" y2="30"/><line x1="100" y1="62" x2="134" y2="38"/></g><g fill="${CE}"><circle cx="64" cy="35" r="5"/><circle cx="83" cy="27" r="5"/><circle cx="100" cy="23" r="5"/><circle cx="117" cy="27" r="5"/><circle cx="136" cy="35" r="5"/></g></svg>` },
+                    { term: 'Diadelphe <small>(Diadelphous)</small>', def: 'Étamines soudées en deux groupes (souvent 9 soudées + 1 libre, ex. Fabacées).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M60,120 Q62,80 78,60" fill="none" stroke="${OV}" stroke-width="9" stroke-linecap="round"/><g stroke="${ST}" stroke-width="1.5"><line x1="72" y1="62" x2="55" y2="34"/><line x1="76" y1="60" x2="72" y2="30"/><line x1="80" y1="60" x2="92" y2="30"/></g><g fill="${CE}"><circle cx="53" cy="31" r="5"/><circle cx="71" cy="27" r="5"/><circle cx="94" cy="27" r="5"/></g><line x1="130" y1="120" x2="126" y2="60" stroke="${ST}" stroke-width="2.4"/><circle cx="125" cy="55" r="6" fill="${CE}" stroke="${PS}" stroke-width="0.8"/></svg>` },
+                    { term: 'Syngénèse <small>(Syngenesious)</small>', def: 'Anthères soudées en un tube autour du style, filets libres (ex. Astéracées).',
+                      svg: `<svg viewBox="0 0 200 140"><rect x="80" y="30" width="40" height="34" rx="6" fill="${CE}" stroke="${PS}" stroke-width="1.5"/><line x1="100" y1="64" x2="100" y2="130" stroke="${OS}" stroke-width="2.4"/><g stroke="${ST}" stroke-width="1.5"><line x1="86" y1="64" x2="80" y2="118"/><line x1="114" y1="64" x2="120" y2="118"/></g><path d="M84,34 L116,34 M84,44 L116,44 M84,54 L116,54" stroke="${PS}" stroke-width="0.7"/></svg>` },
+                    { term: 'Didyname <small>(Didynamous)</small>', def: 'Quatre étamines dont deux longues et deux courtes (ex. Lamiacées).',
+                      svg: `<svg viewBox="0 0 200 140"><g stroke="${ST}" stroke-width="2"><line x1="100" y1="125" x2="72" y2="34"/><line x1="100" y1="125" x2="128" y2="34"/><line x1="100" y1="125" x2="84" y2="66"/><line x1="100" y1="125" x2="116" y2="66"/></g><g fill="${CE}"><circle cx="70" cy="31" r="6"/><circle cx="130" cy="31" r="6"/><circle cx="83" cy="63" r="5"/><circle cx="117" cy="63" r="5"/></g></svg>` },
+                    { term: 'Tétradyname <small>(Tetradynamous)</small>', def: 'Six étamines dont quatre longues et deux courtes (ex. Brassicacées).',
+                      svg: `<svg viewBox="0 0 200 140"><g stroke="${ST}" stroke-width="2"><line x1="100" y1="125" x2="70" y2="34"/><line x1="100" y1="125" x2="88" y2="30"/><line x1="100" y1="125" x2="112" y2="30"/><line x1="100" y1="125" x2="130" y2="34"/><line x1="100" y1="125" x2="66" y2="70"/><line x1="100" y1="125" x2="134" y2="70"/></g><g fill="${CE}"><circle cx="68" cy="31" r="5"/><circle cx="88" cy="27" r="5"/><circle cx="112" cy="27" r="5"/><circle cx="132" cy="31" r="5"/><circle cx="65" cy="67" r="4.5"/><circle cx="135" cy="67" r="4.5"/></g></svg>` },
+                    { term: 'Épipétale <small>(Epipetalous)</small>', def: 'Étamines insérées sur la corolle (soudées aux pétales).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M55,70 Q55,35 100,32 Q145,35 145,70 Q100,60 55,70Z" fill="${PC}" stroke="${PS}" stroke-width="1.6" opacity="0.85"/><g stroke="${ST}" stroke-width="1.6"><line x1="78" y1="55" x2="78" y2="30"/><line x1="100" y1="52" x2="100" y2="26"/><line x1="122" y1="55" x2="122" y2="30"/></g><g fill="${CE}"><circle cx="78" cy="27" r="5"/><circle cx="100" cy="23" r="5"/><circle cx="122" cy="27" r="5"/></g></svg>` },
+                    { term: 'Basifixe <small>(Basifixed)</small>', def: 'Anthère attachée au filet par sa base (fixe, rigide).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="70" stroke="${ST}" stroke-width="3"/><rect x="90" y="30" width="20" height="40" rx="5" fill="${CE}" stroke="${PS}" stroke-width="1.4"/><line x1="94" y1="34" x2="94" y2="66" stroke="${PS}" stroke-width="0.8"/><line x1="106" y1="34" x2="106" y2="66" stroke="${PS}" stroke-width="0.8"/></svg>` },
+                    { term: 'Dorsifixe <small>(Dorsifixed)</small>', def: 'Anthère attachée au filet par son dos (souvent vers le milieu).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="52" stroke="${ST}" stroke-width="3"/><rect x="90" y="26" width="20" height="52" rx="5" fill="${CE}" stroke="${PS}" stroke-width="1.4"/><circle cx="100" cy="52" r="3" fill="${PS}"/></svg>` },
+                    { term: 'Versatile <small>(Versatile)</small>', def: 'Anthère attachée par un point de son dos et pouvant osciller (ex. graminées, lis).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="60" stroke="${ST}" stroke-width="3"/><g transform="rotate(-18,100,58)"><rect x="66" y="52" width="68" height="14" rx="7" fill="${CE}" stroke="${PS}" stroke-width="1.4"/></g><circle cx="100" cy="58" r="3" fill="${PS}"/></svg>` }
+                ]
+            },
+
+            // ─── GYNÉCÉE ────────────────────────────────────────────────
+            gynoecium: {
+                title: 'Gynécée (carpelles)',
+                desc: 'L’organe femelle : nombre et soudure des carpelles, style et stigmate.',
+                cards: [
+                    { term: 'Apocarpe <small>(Apocarpous)</small>', def: 'Carpelles libres, séparés les uns des autres (ex. renoncule, fraisier).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="105" stroke="${ST}" stroke-width="3"/><g fill="${OV}" stroke="${OS}" stroke-width="1.6"><ellipse cx="80" cy="72" rx="12" ry="22"/><ellipse cx="100" cy="66" rx="12" ry="24"/><ellipse cx="120" cy="72" rx="12" ry="22"/></g><g stroke="${OS}" stroke-width="1.4"><line x1="80" y1="50" x2="76" y2="34"/><line x1="100" y1="42" x2="100" y2="26"/><line x1="120" y1="50" x2="124" y2="34"/></g></svg>` },
+                    { term: 'Syncarpe <small>(Syncarpous)</small>', def: 'Carpelles soudés entre eux en un seul pistil composé.',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="105" stroke="${ST}" stroke-width="3"/><path d="M78,75 Q76,45 100,42 Q124,45 122,75 Q120,102 100,104 Q80,102 78,75Z" fill="${OV}" stroke="${OS}" stroke-width="1.7"/><line x1="88" y1="52" x2="90" y2="100" stroke="${OS}" stroke-width="0.8"/><line x1="112" y1="52" x2="110" y2="100" stroke="${OS}" stroke-width="0.8"/><line x1="100" y1="42" x2="100" y2="24" stroke="${OS}" stroke-width="1.6"/><circle cx="100" cy="22" r="6" fill="${OV}" stroke="${OS}" stroke-width="1"/></svg>` },
+                    { term: 'Style terminal <small>(Terminal style)</small>', def: 'Le style part du sommet de l’ovaire.',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="100" stroke="${ST}" stroke-width="3"/><ellipse cx="100" cy="82" rx="22" ry="24" fill="${OV}" stroke="${OS}" stroke-width="1.7"/><line x1="100" y1="58" x2="100" y2="22" stroke="${OS}" stroke-width="2.2"/><ellipse cx="100" cy="19" rx="9" ry="5" fill="${OV}" stroke="${OS}" stroke-width="1"/></svg>` },
+                    { term: 'Style gynobasique <small>(Gynobasic style)</small>', def: 'Le style s’insère à la base de l’ovaire, entre les lobes (ex. Lamiacées, Boraginacées).',
+                      svg: `<svg viewBox="0 0 200 140"><line x1="100" y1="130" x2="100" y2="110" stroke="${ST}" stroke-width="3"/><g fill="${OV}" stroke="${OS}" stroke-width="1.6"><circle cx="80" cy="88" r="15"/><circle cx="120" cy="88" r="15"/><circle cx="82" cy="66" r="13"/><circle cx="118" cy="66" r="13"/></g><line x1="100" y1="90" x2="100" y2="24" stroke="${OS}" stroke-width="2.4"/><ellipse cx="100" cy="21" rx="8" ry="5" fill="${OV}" stroke="${OS}" stroke-width="1"/></svg>` }
+                ]
+            },
+
+            // ─── PLACENTATION ───────────────────────────────────────────
+            placentation: {
+                title: 'Placentation',
+                desc: 'La disposition des ovules dans l’ovaire (coupe transversale).',
+                cards: [
+                    { term: 'Axile <small>(Axile)</small>', def: 'Ovaire à plusieurs loges ; les ovules sont portés sur l’axe central, à la jonction des cloisons.',
+                      svg: `<svg viewBox="0 0 200 140"><circle cx="100" cy="70" r="46" fill="#fff" stroke="${OS}" stroke-width="2"/><g stroke="${OS}" stroke-width="1.5"><line x1="100" y1="70" x2="100" y2="24"/><line x1="100" y1="70" x2="140" y2="93"/><line x1="100" y1="70" x2="60" y2="93"/></g><g fill="${OV}"><circle cx="100" cy="60" r="5"/><circle cx="108" cy="76" r="5"/><circle cx="92" cy="76" r="5"/></g></svg>` },
+                    { term: 'Pariétale <small>(Parietal)</small>', def: 'Ovaire à une seule loge ; les ovules sont portés sur la paroi interne (ex. violette).',
+                      svg: `<svg viewBox="0 0 200 140"><circle cx="100" cy="70" r="46" fill="#fff" stroke="${OS}" stroke-width="2"/><g fill="${OV}"><circle cx="100" cy="28" r="5"/><circle cx="139" cy="55" r="5"/><circle cx="124" cy="105" r="5"/><circle cx="76" cy="105" r="5"/><circle cx="61" cy="55" r="5"/></g></svg>` },
+                    { term: 'Centrale libre <small>(Free-central)</small>', def: 'Ovaire à une loge ; ovules sur une colonne centrale libre, sans cloisons (ex. Œillets).',
+                      svg: `<svg viewBox="0 0 200 140"><circle cx="100" cy="70" r="46" fill="#fff" stroke="${OS}" stroke-width="2"/><line x1="100" y1="98" x2="100" y2="46" stroke="${OS}" stroke-width="2.5"/><g fill="${OV}"><circle cx="100" cy="52" r="5"/><circle cx="110" cy="66" r="5"/><circle cx="90" cy="66" r="5"/><circle cx="108" cy="82" r="5"/><circle cx="92" cy="82" r="5"/></g></svg>` },
+                    { term: 'Basale <small>(Basal)</small>', def: 'Un seul (ou quelques) ovule(s) inséré(s) au fond de l’ovaire (ex. Astéracées).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M60,45 Q60,110 100,112 Q140,110 140,45" fill="#fff" stroke="${OS}" stroke-width="2"/><line x1="60" y1="45" x2="140" y2="45" stroke="${OS}" stroke-width="1.4" stroke-dasharray="3,3"/><circle cx="100" cy="96" r="9" fill="${OV}" stroke="${OS}" stroke-width="1"/></svg>` },
+                    { term: 'Apicale <small>(Apical)</small>', def: 'Ovule(s) suspendu(s) au sommet de la loge, pendant vers le bas.',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M60,95 Q60,30 100,28 Q140,30 140,95" fill="#fff" stroke="${OS}" stroke-width="2"/><line x1="100" y1="34" x2="100" y2="58" stroke="${OS}" stroke-width="1.6"/><circle cx="100" cy="68" r="9" fill="${OV}" stroke="${OS}" stroke-width="1"/></svg>` },
+                    { term: 'Marginale <small>(Marginal)</small>', def: 'Carpelle unique ; ovules alignés le long de la suture (bord) de l’ovaire (ex. Fabacées, gousse).',
+                      svg: `<svg viewBox="0 0 200 140"><path d="M55,70 Q100,20 150,60 Q152,72 148,80 Q100,44 60,80 Q54,76 55,70Z" fill="#fff" stroke="${OS}" stroke-width="2"/><g fill="${OV}"><circle cx="76" cy="58" r="5"/><circle cx="96" cy="50" r="5"/><circle cx="116" cy="52" r="5"/><circle cx="134" cy="62" r="5"/></g></svg>` }
+                ]
+            }
+
+        };
+
+        // ── UTILITAIRE : nom de fichier photo à partir du terme (anglais entre parenthèses) ──
+        function slugify(term) {
+            var t = term.replace(/<[^>]*>/g, '');
+            var m = t.match(/\(([^)]+)\)/);
+            if (m) t = m[1];
+            return t.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+        }
+
+        // ── PHOTOS : IndexedDB (ajout par clic) + fichiers images/<slug>.jpg ──
+        let _db;
+        function openDB() {
+            return new Promise((res, rej) => {
+                if (_db) return res(_db);
+                const r = indexedDB.open('flowerPhotos', 1);
+                r.onupgradeneeded = () => r.result.createObjectStore('photos');
+                r.onsuccess = () => { _db = r.result; res(_db); };
+                r.onerror = () => rej(r.error);
+            });
+        }
+        async function getStored(slug) {
+            try { const d = await openDB(); return await new Promise(res => { const q = d.transaction('photos','readonly').objectStore('photos').get(slug); q.onsuccess = () => res(q.result || []); q.onerror = () => res([]); }); }
+            catch (e) { return []; }
+        }
+        async function setStored(slug, arr) {
+            try { const d = await openDB(); await new Promise(res => { const q = d.transaction('photos','readwrite').objectStore('photos').put(arr, slug); q.onsuccess = () => res(); q.onerror = () => res(); }); }
+            catch (e) {}
+        }
+        function fileToDataURL(file, maxDim, quality) {
+            maxDim = maxDim || 1400; quality = quality || 0.85;
+            return new Promise(res => {
+                const fr = new FileReader();
+                fr.onload = () => {
+                    const img = new Image();
+                    img.onload = () => {
+                        let w = img.width, h = img.height;
+                        if (Math.max(w, h) > maxDim) { const s = maxDim / Math.max(w, h); w = Math.round(w*s); h = Math.round(h*s); }
+                        const c = document.createElement('canvas'); c.width = w; c.height = h;
+                        c.getContext('2d').drawImage(img, 0, 0, w, h);
+                        try { res(c.toDataURL('image/jpeg', quality)); } catch (e) { res(fr.result); }
+                    };
+                    img.onerror = () => res(fr.result);
+                    img.src = fr.result;
+                };
+                fr.readAsDataURL(file);
+            });
+        }
+        function setupPhotos(area, slug) {
+            const gallery = document.createElement('div'); gallery.className = 'photo-gallery';
+            const add = document.createElement('label'); add.className = 'photo-add'; add.innerHTML = '＋ Ajouter une photo';
+            const inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*'; inp.multiple = true; inp.style.display = 'none';
+            add.appendChild(inp); area.appendChild(gallery); area.appendChild(add);
+            let stored = [];
+            function drawThumb(src, removable, idx) {
+                const wrap = document.createElement('div'); wrap.className = 'photo-thumb';
+                const im = document.createElement('img'); im.src = src; im.loading = 'lazy';
+                im.addEventListener('click', () => openLightbox(src)); wrap.appendChild(im);
+                if (removable) {
+                    const rm = document.createElement('button'); rm.className = 'rm'; rm.textContent = '×'; rm.title = 'Retirer';
+                    rm.addEventListener('click', async (e) => { e.stopPropagation(); stored.splice(idx, 1); await setStored(slug, stored); renderAll(); });
+                    wrap.appendChild(rm);
+                }
+                gallery.appendChild(wrap);
+            }
+            function renderAll() {
+                gallery.innerHTML = '';
+                stored.forEach((src, idx) => drawThumb(src, true, idx));
+                ['jpg','jpeg','png','webp'].forEach(ext => { const url = 'images/' + slug + '.' + ext; const t = new Image(); t.onload = () => drawThumb(url, false); t.src = url; });
+            }
+            renderAll();
+            getStored(slug).then(arr => { if (arr && arr.length) { stored = arr; renderAll(); } }).catch(() => {});
+            inp.addEventListener('change', async () => {
+                for (const file of inp.files) { const d = await fileToDataURL(file); stored.push(d); }
+                await setStored(slug, stored); inp.value = ''; renderAll();
+            });
+        }
+
+        // ── LIGHTBOX ──
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lbImg');
+        const lbSvg = document.getElementById('lbSvg');
+        function openLightbox(src) { lbSvg.style.display = 'none'; lbSvg.innerHTML = ''; lbImg.style.display = 'block'; lbImg.src = src; lb.classList.add('open'); }
+        function openLightboxSVG(html) { lbImg.style.display = 'none'; lbImg.removeAttribute('src'); lbSvg.innerHTML = html; lbSvg.style.display = 'block'; lb.classList.add('open'); }
+        lb.addEventListener('click', (e) => { if (e.target.tagName !== 'IMG' && !e.target.closest('#lbSvg')) lb.classList.remove('open'); });
+        document.getElementById('lbClose').addEventListener('click', () => lb.classList.remove('open'));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.classList.remove('open'); });
+
+        // ── RENDU ──
+        const grid = document.getElementById('gridContainer');
+        const titleEl = document.getElementById('sectionTitle');
+        const descEl = document.getElementById('sectionDesc');
+        const countBadge = document.getElementById('countBadge');
+        const navLinks = document.querySelectorAll('#nav a');
+        function render(sectionKey) {
+            const section = data[sectionKey]; if (!section) return;
+            titleEl.innerHTML = section.title; descEl.innerHTML = section.desc; countBadge.textContent = section.cards.length + ' termes';
+            navLinks.forEach(a => a.classList.toggle('active', a.dataset.section === sectionKey));
+            grid.innerHTML = '';
+            section.cards.forEach(c => {
+                const slug = slugify(c.term);
+                const card = document.createElement('div'); card.className = 'card';
+                card.innerHTML = `
+                    <div class="term">${c.term}</div>
+                    <div class="def">${c.def}</div>
+                    <div class="media-label">Schéma</div>
+                    <div class="svg-wrap">${c.svg}</div>
+                    <div class="media-label">Photo réelle</div>
+                    <div class="photo-area"></div>
+                    <span class="tag">${section.title}</span>`;
+                grid.appendChild(card);
+                const sw = card.querySelector('.svg-wrap');
+                if (sw) sw.addEventListener('click', () => openLightboxSVG(c.svg));
+                setupPhotos(card.querySelector('.photo-area'), slug);
+            });
+        }
+        navLinks.forEach(a => a.addEventListener('click', (e) => { e.preventDefault(); render(a.dataset.section); document.getElementById('sidebar').classList.remove('open'); }));
+        document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('sidebar').classList.toggle('open'));
+        render('inflorescence');
+    </script>
+</body>
+</html>

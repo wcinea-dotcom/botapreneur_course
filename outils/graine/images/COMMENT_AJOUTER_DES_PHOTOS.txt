@@ -1,0 +1,16 @@
+COMMENT AJOUTER TES VRAIES PHOTOS DE GRAINES
+=============================================
+
+MÉTHODE 1 (par clic, recommandée)
+- Clique « ＋ Ajouter une photo » sous un terme, choisis une image → elle apparaît
+  et reste enregistrée. Clic dessus = agrandir ; survole → × pour retirer.
+
+MÉTHODE 2 (par fichier)
+- Dépose une image dans images/, nommée d'après le terme ANGLAIS entre parenthèses :
+     testa.jpg      -> Tégument (Testa)
+     hilum.jpg      -> Hile (Hilum)
+     aril.jpg       -> Arille (Aril)
+     coma.jpg       -> Aigrette / Coma
+     reniform.jpg   -> Réniforme
+  (Pour les noms doubles, prends le 1er mot anglais.)
+- Plusieurs : testa-1.jpg, testa-2.jpg … Formats : jpg, jpeg, png, webp. Recharge (Cmd+R).
