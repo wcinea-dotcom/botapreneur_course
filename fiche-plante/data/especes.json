@@ -1,0 +1,38 @@
+{
+ "organes": ["Feuille", "Fleur", "Fruit", "Tige", "Racine"],
+ "especes": [
+  {
+   "nom": "Manguier",
+   "sci": "Mangifera indica",
+   "fam": "Anacardiaceae",
+   "note": "Espèce pilote. Complète les organes manquants avec tes photos ; les caractères non vérifiés restent « À confirmer ».",
+   "organes": {
+    "Feuille": {
+     "photos": [],
+     "patterns": ["Simple", "Alterne", "Entière", "Coriace"],
+     "statut": "À confirmer — photo à ajouter"
+    },
+    "Fleur": {
+     "photos": [],
+     "patterns": ["Petites fleurs en panicule", "Pentamère"],
+     "statut": "À confirmer — photo à ajouter"
+    },
+    "Fruit": {
+     "photos": ["../plant-patterns/fruit-library-v1/fr-01-mangue.jpg"],
+     "patterns": ["Drupe", "Charnu", "Noyau (endocarpe dur)"],
+     "statut": ""
+    },
+    "Tige": {
+     "photos": [],
+     "patterns": [],
+     "statut": "Photo à ajouter"
+    },
+    "Racine": {
+     "photos": [],
+     "patterns": [],
+     "statut": "Photo à ajouter"
+    }
+   }
+  }
+ ]
+}

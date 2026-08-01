@@ -1,0 +1,80 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Botapreneurs — Fiche plante (tous les organes)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap');
+:root{--navy:#003366;--green:#2E7D32;--lime:#8BC34A;--orange:#F47C20;--beige:#F8F8F4;--ink:#2B2B2B;--line:#e2e6ea}
+*{box-sizing:border-box}body{margin:0;background:var(--beige);color:var(--ink);font-family:Lato,system-ui,Arial,sans-serif}
+.top{background:var(--navy);color:#fff;padding:16px 4vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.wm{font-family:Poppins;font-weight:800;font-size:22px}.wm .b{color:var(--lime)}
+.back{color:#cfe0f0;text-decoration:none;font-size:13px;border:1px solid #3a5a7a;border-radius:8px;padding:6px 12px}
+.back:hover{background:#0a4a86}
+.bar{padding:18px 4vw;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);background:#fff}
+.bar label{font-family:Poppins;font-weight:700;color:var(--green);font-size:13px;letter-spacing:1px;text-transform:uppercase}
+select{font-family:inherit;font-size:15px;padding:9px 12px;border:1px solid #c3ccd4;border-radius:10px;background:#fff;min-width:220px}
+.head{padding:22px 4vw 6px}
+.head h1{font-family:Poppins;font-weight:800;color:var(--navy);font-size:clamp(26px,4vw,40px);margin:0}
+.head .sci{font-style:italic;color:var(--green);font-size:18px;margin-top:2px}
+.head .fam{display:inline-block;background:#eef3ea;color:var(--green);border-radius:8px;padding:3px 10px;font-size:13px;margin-top:8px;font-family:Poppins;font-weight:700}
+.head .note{color:#7a8590;font-size:13px;max-width:720px;margin-top:10px;line-height:1.5}
+.row{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:18px 4vw 60px}
+@media(max-width:1000px){.row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+.org{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.org .oh{background:var(--green);color:#fff;font-family:Poppins;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:9px 12px;text-align:center}
+.org .im{aspect-ratio:4/3;background:#eef1f3;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:zoom-in}
+.org .im img{width:100%;height:100%;object-fit:cover;display:block}
+.empty{color:#9aa7b0;font-size:13px;text-align:center;padding:14px;font-family:Poppins;font-weight:600}
+.empty .plus{font-size:30px;color:#c7d2da;display:block;margin-bottom:4px}
+.org .bd{padding:11px 12px;flex:1}
+.tag{display:inline-block;background:#eef3ea;color:var(--green);border-radius:6px;padding:3px 8px;font-size:12px;margin:0 5px 5px 0}
+.statut{color:var(--orange);font-size:11px;font-family:Poppins;font-weight:700;margin-top:4px}
+.hint{color:#7a8590;font-size:12px}
+.modal{display:none;position:fixed;inset:0;z-index:60;background:rgba(7,20,30,.94)}
+.modal.open{display:flex;align-items:center;justify-content:center}
+.modal img{max-width:92vw;max-height:92vh;object-fit:contain}
+.modal .x{position:absolute;top:16px;right:20px;color:#fff;border:1px solid #4a6a86;background:transparent;padding:8px 12px;border-radius:8px;cursor:pointer}
+</style></head><body>
+<header class="top"><div class="wm">Bota<span class="b">preneurs</span> · Fiche plante</div>
+<a class="back" href="../index.html">← Retour au cours</a></header>
+
+<div class="bar"><label for="sel">Espèce</label>
+ <select id="sel"></select>
+ <span class="hint">Choisis une plante → vois tous ses organes en même temps.</span></div>
+
+<div class="head" id="head"></div>
+<div class="row" id="row"></div>
+
+<div class="modal" id="modal"><button class="x" onclick="closeM()">FERMER ×</button><img id="mImg" alt=""></div>
+
+<script>
+let DATA=null;
+function card(org, o){
+ const has=o.photos&&o.photos.length;
+ const im=has
+   ? `<div class="im" onclick="openM('${o.photos[0]}')"><img loading="lazy" src="${o.photos[0]}"></div>`
+   : `<div class="im"><div class="empty"><span class="plus">＋</span>Photo à ajouter</div></div>`;
+ const tags=(o.patterns||[]).map(p=>`<span class="tag">${p}</span>`).join("")||'<span class="hint">Caractères à documenter</span>';
+ const st=o.statut?`<div class="statut">${o.statut}</div>`:"";
+ return `<div class="org"><div class="oh">${org}</div>${im}<div class="bd">${tags}${st}</div></div>`;
+}
+function render(esp){
+ document.getElementById("head").innerHTML=
+  `<h1>${esp.nom}</h1><div class="sci">${esp.sci}</div><div class="fam">${esp.fam}</div>`+
+  (esp.note?`<div class="note">${esp.note}</div>`:"");
+ document.getElementById("row").innerHTML=DATA.organes.map(org=>card(org, esp.organes[org]||{photos:[],patterns:[],statut:"Photo à ajouter"})).join("");
+}
+function openM(src){document.getElementById("mImg").src=src;document.getElementById("modal").classList.add("open");}
+function closeM(){document.getElementById("modal").classList.remove("open");}
+document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")closeM();};
+document.onkeydown=e=>{if(e.key==="Escape")closeM();};
+
+fetch("data/especes.json").then(r=>r.json()).then(d=>{
+ DATA=d;
+ const sel=document.getElementById("sel");
+ sel.innerHTML=d.especes.map((e,i)=>`<option value="${i}">${e.nom} — ${e.sci}</option>`).join("");
+ sel.onchange=()=>render(d.especes[sel.value]);
+ render(d.especes[0]);
+}).catch(err=>{document.getElementById("row").innerHTML=`<p style="color:#b00">Erreur de chargement : ${err.message} (ouvre via un serveur).</p>`;});
+</script>
+</body></html>
