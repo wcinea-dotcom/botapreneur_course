@@ -1,0 +1,215 @@
+{
+ "dimensions": [
+  [
+   "phyllo",
+   "Phyllotaxie"
+  ],
+  [
+   "comp",
+   "Structure / Composition"
+  ],
+  [
+   "nerv",
+   "Nervation"
+  ],
+  [
+   "marge",
+   "Marge"
+  ],
+  [
+   "forme",
+   "Forme du limbe"
+  ],
+  [
+   "part",
+   "Particularité"
+  ],
+  [
+   "fam",
+   "Famille botanique"
+  ]
+ ],
+ "definitions": {
+  "Opposée": [
+   "Deux feuilles insérées face à face au même nœud.",
+   "Repérer une paire, puis confirmer la répétition sur plusieurs nœuds."
+  ],
+  "Alterne": [
+   "Une seule feuille par nœud, l'insertion alternant de côté.",
+   "Suivre la tige sur plusieurs nœuds : une feuille par niveau."
+  ],
+  "Verticillée": [
+   "Trois feuilles ou plus partent du même nœud.",
+   "Vérifier qu'elles partent réellement du même niveau de la tige."
+  ],
+  "Distique": [
+   "Feuilles sur deux rangs, dans un même plan.",
+   "Regarder la tige de profil : deux rangées opposées."
+  ],
+  "Spiralée": [
+   "Feuilles disposées en spirale autour de la tige.",
+   "Suivre l'enroulement autour de la tige (ex. Costus)."
+  ],
+  "Simple": [
+   "Un seul limbe, même lobé ou très découpé.",
+   "Chercher le bourgeon axillaire à la base de la feuille — jamais des lobes."
+  ],
+  "Composée pennée": [
+   "Limbe divisé en folioles le long d'un rachis.",
+   "Une foliole ne porte pas de bourgeon axillaire."
+  ],
+  "Paripennée": [
+   "Feuille pennée se terminant par une paire de folioles.",
+   "Observer le bout du rachis : pas de foliole terminale."
+  ],
+  "Imparipennée": [
+   "Feuille pennée avec une foliole terminale unique.",
+   "Suivre le rachis jusqu'à son extrémité."
+  ],
+  "Bipennée": [
+   "Folioles elles-mêmes redivisées (deux ordres de division).",
+   "Chercher un 2ᵉ niveau de découpe (mimosoïdes)."
+  ],
+  "Trifoliolée": [
+   "Feuille composée à trois folioles.",
+   "Compter les folioles ; le bourgeon axillaire est à la base de la feuille entière."
+  ],
+  "Palmée-composée": [
+   "Folioles partant toutes d'un même point.",
+   "Comme les doigts d'une main, à la base commune."
+  ],
+  "Pennée": [
+   "Une nervure médiane porte des latérales de chaque côté.",
+   "Ne pas confondre nervation pennée et feuille composée pennée."
+  ],
+  "Palmée": [
+   "Plusieurs nervures principales rayonnent depuis la base.",
+   "Repérer le point de départ commun des nervures."
+  ],
+  "Acrodrome": [
+   "Plusieurs nervures principales convergent vers l'apex.",
+   "Suivre 3-5 nervures de la base jusqu'au sommet."
+  ],
+  "Parallèle": [
+   "Nervures principales parallèles (souvent monocotylédones).",
+   "Des bandes parallèles du pétiole à l'apex."
+  ],
+  "Entière": [
+   "Bord du limbe lisse, sans dents.",
+   "Passer le doigt : aucun relief sur le bord."
+  ],
+  "Dentée": [
+   "Bord à petites pointes régulières.",
+   "Regarder l'orientation et la taille des dents."
+  ],
+  "Serrulée": [
+   "Fines dents dirigées vers l'avant (comme une scie).",
+   "Loupe utile pour voir le sens des dents."
+  ],
+  "Crénelée": [
+   "Bord à dents arrondies.",
+   "Distinguer des dents pointues (dentée)."
+  ],
+  "Lobée": [
+   "Bord à découpes profondes.",
+   "Vérifier qu'il reste un seul limbe (feuille simple)."
+  ],
+  "Épineuse": [
+   "Bord portant des épines ou aiguillons.",
+   "Attention en manipulant (ex. Aloe)."
+  ],
+  "Panachée": [
+   "Feuillage marbré/panaché (variégation).",
+   "La panachure est un caractère horticole, pas botanique de base."
+  ],
+  "Feuillage coloré": [
+   "Feuillage pigmenté (rouge, bronze, pourpre).",
+   "Comparer face supérieure et inférieure."
+  ],
+  "Feuillage rouge": [
+   "Feuillage coloré rouge/bronze.",
+   "Souvent horticole (Acalypha, Cordyline…)."
+  ],
+  "Poils (pubescente)": [
+   "Surface couverte de poils (trichomes).",
+   "Comparer densité, longueur et localisation."
+  ],
+  "Poils denses (hispide)": [
+   "Surface très poilue, parfois rêche.",
+   "Examiner tige et deux faces du limbe."
+  ],
+  "Râpeuse (papier de verre)": [
+   "Surface rugueuse comme du papier de verre.",
+   "Passer le doigt : effet abrasif (ex. « grage »)."
+  ],
+  "Sores (fougère)": [
+   "Amas de sporanges sous la fronde (fougères).",
+   "Regarder la face inférieure : points ou lignes bruns."
+  ],
+  "Sores linéaires": [
+   "Sores en lignes le long des nervures (fougères).",
+   "Distinguer des sores ronds."
+  ],
+  "Distique (faux-composé)": [
+   "Rameau à feuilles distiques imitant une feuille composée.",
+   "Chercher un vrai bourgeon : c'est un rameau, pas un rachis (Phyllanthus)."
+  ],
+  "Ponctuations pellucides": [
+   "Points translucides riches en huiles aromatiques.",
+   "Regarder la feuille à contre-jour (Rutacées)."
+  ],
+  "Vrille (tendrille)": [
+   "Organe filiforme d'accrochage des lianes.",
+   "Suivre la tige : la vrille naît près de la feuille."
+  ],
+  "Ochréa (gaine)": [
+   "Gaine membraneuse enveloppant la tige à la base (Polygonacées).",
+   "Regarder le nœud : une petite gaine translucide."
+  ],
+  "Gaine engainante": [
+   "Base de la feuille embrassant la tige.",
+   "Observer où la feuille rejoint la tige."
+  ],
+  "Pétiole développé": [
+   "Pétiole long et/ou épais reliant le limbe à la tige.",
+   "Observer la zone exacte entre le limbe et la tige."
+  ],
+  "Rosette": [
+   "Feuilles regroupées en rosette.",
+   "Regarder la disposition à la base de la plante."
+  ],
+  "Stipule (latex)": [
+   "Stipule à l'aisselle + présence de latex (Moracées).",
+   "Chercher la cicatrice de stipule et le suc laiteux."
+  ],
+  "Nervures blanches": [
+   "Nervures claires très contrastées (Aracées ornementales).",
+   "Le contraste est un caractère horticole."
+  ],
+  "Coriace / glabre": [
+   "Feuille ferme, cuir, sans poils.",
+   "Coriace n'est pas synonyme de charnu."
+  ],
+  "Feuille flottante (peltée)": [
+   "Feuille flottant sur l'eau, pétiole central (nénuphar).",
+   "Regarder où le pétiole s'attache au limbe."
+  ],
+  "Bractées colorées": [
+   "Feuilles modifiées colorées entourant les fleurs.",
+   "Distinguer la vraie fleur des bractées (bougainvillier)."
+  ],
+  "Succulente à marge épineuse": [
+   "Feuille charnue (réserve d'eau) à bord épineux (Aloe).",
+   "Comparer épaisseur réelle et bord."
+  ]
+ },
+ "familles_notes": {
+  "Fabaceae": "Feuilles souvent composées (pari/imparipennées), stipules fréquentes — mais aucun caractère isolé ne suffit ; relier aux fleurs et fruits.",
+  "Melastomataceae": "Souvent feuilles opposées + nervation acrodrome très visible ; comparer les trois caractères ensemble.",
+  "Rutaceae": "Ponctuations pellucides (points translucides aromatiques) fréquentes ; observer à contre-jour.",
+  "Araceae": "Feuilles souvent cordées/sagittées, nervation palmée ; beaucoup d'ornementales (Alocasia, Pothos).",
+  "Arecaceae": "Palmiers : feuilles en éventail (palmées) ou pennées, très grandes.",
+  "Zingiberaceae": "Gingembres : feuilles rubanées à nervation parallèle, souvent engainantes.",
+  "Polygonaceae": "Présence d'une ochréa (gaine) au nœud chez beaucoup d'espèces."
+ }
+}
