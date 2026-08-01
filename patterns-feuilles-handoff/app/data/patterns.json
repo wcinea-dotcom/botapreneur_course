@@ -1,0 +1,2087 @@
+[
+ {
+  "fe": "FE-01",
+  "nom": "Melastome (Melastomataceae)",
+  "fam": "Melastomataceae",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Serrulée",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "notion": "Nervation acrodrome + surface gaufrée",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-01.jpg"
+ },
+ {
+  "fe": "FE-02",
+  "nom": "Melastome",
+  "fam": "Melastomataceae",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Serrulée",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "notion": "Feuilles opposées acrodromes",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-02.jpg"
+ },
+ {
+  "fe": "FE-03",
+  "nom": "Melastome",
+  "fam": "Melastomataceae",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Serrulée",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "notion": "Nervures acrodromes marquées",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-03.jpg"
+ },
+ {
+  "fe": "FE-04",
+  "nom": "Lyonia microcarpa",
+  "fam": "Ericaceae",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "Alterne",
+  "notion": "Arbuste endémique (⚠ toxique)",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-04.jpg"
+ },
+ {
+  "fe": "FE-05",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Simple entière, pétiole rougeâtre",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-05.jpg"
+ },
+ {
+  "fe": "FE-06",
+  "nom": "Type vigne (Vitaceae)",
+  "fam": "Vitaceae",
+  "type": "Simple",
+  "forme": "Cordée",
+  "marge": "Dentée",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "notion": "Nervation PALMÉE, base cordée",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-06.jpg"
+ },
+ {
+  "fe": "FE-07",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Orbiculaire",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Forme orbiculaire (ronde)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-07.jpg"
+ },
+ {
+  "fe": "FE-08",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Composée",
+  "forme": "Composée (folioles)",
+  "marge": "Dentée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Composée imparipennée, folioles dentées",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Composée pennée",
+  "part": "",
+  "img": "images/FE-08.jpg"
+ },
+ {
+  "fe": "FE-09",
+  "nom": "Légumineuse (Fabaceae)",
+  "fam": "Fabaceae",
+  "type": "Composée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Composée paripennée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Composée pennée",
+  "part": "",
+  "img": "images/FE-09.jpg"
+ },
+ {
+  "fe": "FE-10",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Simple, entière, coriace",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-10.jpg"
+ },
+ {
+  "fe": "FE-11",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Simple entière (2e vue)",
+  "uses": [
+   "Formation"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-11.jpg"
+ },
+ {
+  "fe": "FE-12",
+  "nom": "cf. Coccoloba uvifera (raisinier)",
+  "fam": "Polygonaceae",
+  "type": "Simple",
+  "forme": "Orbiculaire",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Feuille ronde à nervures rouges",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-12.jpg"
+ },
+ {
+  "fe": "FE-13",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Dentée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Face dessous rugueuse, marge dentée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-13.jpg"
+ },
+ {
+  "fe": "FE-14",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Lancéolée, apex acuminé",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-14.jpg"
+ },
+ {
+  "fe": "FE-15",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Petite feuille simple",
+  "uses": [
+   "Formation"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-15.jpg"
+ },
+ {
+  "fe": "FE-16",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Obovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Obovale, apex arrondi",
+  "uses": [
+   "Formation"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-16.jpg"
+ },
+ {
+  "fe": "FE-17",
+  "nom": "cf. Calophyllum",
+  "fam": "Calophyllaceae",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Parallèle",
+  "phyllo": "",
+  "notion": "Nervures 2ndaires denses et parallèles",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-17.jpg"
+ },
+ {
+  "fe": "FE-18",
+  "nom": "À confirmer",
+  "fam": "Polygonaceae",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Face abaxiale à nervures roses",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-18.jpg"
+ },
+ {
+  "fe": "FE-19",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Composée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Composée imparipennée, folioles entières",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Composée pennée",
+  "part": "",
+  "img": "images/FE-19.jpg"
+ },
+ {
+  "fe": "FE-20",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Crénelée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Marge crénelée, pubescente",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-20.jpg"
+ },
+ {
+  "fe": "FE-21",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Dentée",
+  "nerv": "Pennée",
+  "phyllo": "Verticillée",
+  "notion": "Grandes feuilles à nervures imprimées",
+  "uses": [
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "Épineuse / irritante",
+  "img": "images/FE-21.jpg"
+ },
+ {
+  "fe": "FE-22",
+  "nom": "Melastome",
+  "fam": "Melastomataceae",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Serrulée",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "notion": "Phyllotaxie opposée + acrodrome",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-22.jpg"
+ },
+ {
+  "fe": "FE-23",
+  "nom": "Légumineuse (Fabaceae)",
+  "fam": "Fabaceae",
+  "type": "Composée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Composée type légumineuse",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Composée pennée",
+  "part": "",
+  "img": "images/FE-23.jpg"
+ },
+ {
+  "fe": "FE-24",
+  "nom": "Légumineuse (Fabaceae)",
+  "fam": "Fabaceae",
+  "type": "Composée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Composée paripennée (2e vue)",
+  "uses": [
+   "Article"
+  ],
+  "comp": "Composée pennée",
+  "part": "",
+  "img": "images/FE-24.jpg"
+ },
+ {
+  "fe": "FE-25",
+  "nom": "Légumineuse (Fabaceae)",
+  "fam": "Fabaceae",
+  "type": "Composée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Composée paripennée (3e vue)",
+  "uses": [
+   "Article"
+  ],
+  "comp": "Composée pennée",
+  "part": "",
+  "img": "images/FE-25.jpg"
+ },
+ {
+  "fe": "FE-26",
+  "nom": "Melastome",
+  "fam": "Melastomataceae",
+  "type": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Serrulée",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "notion": "Gros plan nervation acrodrome",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-26.jpg"
+ },
+ {
+  "fe": "FE-27",
+  "nom": "Melastome",
+  "fam": "Melastomataceae",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "notion": "Port, petites feuilles opposées",
+  "uses": [
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-27.jpg"
+ },
+ {
+  "fe": "FE-28",
+  "nom": "« gragrat » (à confirmer)",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Dentée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "notion": "Nervures imprimées, en rosette",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-28.jpg"
+ },
+ {
+  "fe": "FE-29",
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "forme": "Obovale",
+  "marge": "Entière",
+  "nerv": "Acrodrome",
+  "phyllo": "Verticillée",
+  "notion": "PHYLLOTAXIE VERTICILLÉE (rosette)",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Palmée-composée",
+  "part": "",
+  "img": "images/FE-29.jpg"
+ },
+ {
+  "fe": "FE-30",
+  "nom": "Melastome bicolore",
+  "fam": "Melastomataceae",
+  "type": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "notion": "Port bicolore (dessous rouge)",
+  "uses": [
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-30.jpg"
+ },
+ {
+  "fe": "FE-31",
+  "nom": "Melastome bicolore",
+  "fam": "Melastomataceae",
+  "type": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "notion": "Gros plan faces bicolores",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-31.jpg"
+ },
+ {
+  "fe": "FE-32",
+  "nom": "Melastome (fleur)",
+  "fam": "Melastomataceae",
+  "type": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Serrulée",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "notion": "Feuilles + fleur blanche",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-32.jpg"
+ },
+ {
+  "fe": "FE-33",
+  "nom": "Melastome bicolore",
+  "fam": "Melastomataceae",
+  "type": "Simple",
+  "forme": "Cordée",
+  "marge": "Entière",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "notion": "Faces argenté/rose spectaculaires",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "comp": "Simple",
+  "part": "",
+  "img": "images/FE-33.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Composée",
+  "comp": "Imparipennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Composée imparipennée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-34",
+  "img": "images/FE-34.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Obovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Grandes feuilles obovales en rosette",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-35",
+  "img": "images/FE-35.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Grande feuille simple, bourgeon terminal",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-36",
+  "img": "images/FE-36.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "Araceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Perforée/lobée",
+  "marge": "Lobée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Nervures perforées",
+  "notion": "Grande feuille perforée et lobée (Monstera)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-37",
+  "img": "images/FE-37.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "Zingiberaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Parallèle",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuilles rubanées à nervation parallèle",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-38",
+  "img": "images/FE-38.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Obovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuilles obovales en rosette",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-39",
+  "img": "images/FE-39.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuilles lancéolées",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-40",
+  "img": "images/FE-40.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Palmée (éventail)",
+  "marge": "Lobée",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille de palmier en éventail, nervation palmée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-41",
+  "img": "images/FE-41.jpg"
+ },
+ {
+  "nom": "Paripennée",
+  "fam": "À confirmer",
+  "type": "Composée",
+  "comp": "Paripennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Se termine par une paire de folioles",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "fe": "FE-42",
+  "img": "images/FE-42.jpg"
+ },
+ {
+  "nom": "Imparipennée",
+  "fam": "À confirmer",
+  "type": "Composée",
+  "comp": "Imparipennée",
+  "forme": "Composée (folioles)",
+  "marge": "Dentée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Foliole terminale unique, folioles dentées",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "fe": "FE-43",
+  "img": "images/FE-43.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Composée",
+  "comp": "Composée pennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille composée pennée",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "fe": "FE-44",
+  "img": "images/FE-44.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Composée",
+  "comp": "Composée pennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Composée à petites folioles",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "fe": "FE-45",
+  "img": "images/FE-45.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Composée",
+  "comp": "Composée pennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Composée pennée, folioles arrondies",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "fe": "FE-46",
+  "img": "images/FE-46.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Composée",
+  "comp": "Composée pennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Composée à nombreuses folioles",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-47",
+  "img": "images/FE-47.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille simple elliptique entière",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-48",
+  "img": "images/FE-48.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille simple lancéolée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-49",
+  "img": "images/FE-49.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille elliptique, nervure médiane marquée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-50",
+  "img": "images/FE-50.jpg"
+ },
+ {
+  "nom": "Hydrocotyle (marge crénelée)",
+  "fam": "Araliaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Orbiculaire",
+  "marge": "Crénelée",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille orbiculaire, marge crénelée, nervation palmée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-51",
+  "img": "images/FE-51.jpg"
+ },
+ {
+  "nom": "Vigne (nervation palmée)",
+  "fam": "Vitaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Dentée",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Nervation palmée, marge dentée (vigne)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-52",
+  "img": "images/FE-52.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Dentée",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Nervation palmée (face inférieure)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-53",
+  "img": "images/FE-53.jpg"
+ },
+ {
+  "nom": "Feuille cordée (palmée)",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Entière",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille cordée à nervation palmée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-54",
+  "img": "images/FE-54.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Entière",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille cordée/réniforme, nervation palmée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-55",
+  "img": "images/FE-55.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Orbiculaire",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille orbiculaire (raisinier), nervation pennée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-56",
+  "img": "images/FE-56.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Lobée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille simple profondément lobée (piège « composée »)",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "fe": "FE-57",
+  "img": "images/FE-57.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Lobée",
+  "nerv": "Pennée",
+  "phyllo": "Alterne",
+  "part": "",
+  "notion": "Feuilles découpées, disposition alterne sur la tige",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-58",
+  "img": "images/FE-58.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Obovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille obovale, marge entière",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-59",
+  "img": "images/FE-59.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille ovale à base asymétrique",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-60",
+  "img": "images/FE-60.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Dentée",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille cordée, nervation palmée, marge dentée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-61",
+  "img": "images/FE-61.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille étroite (linéaire-lancéolée)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-62",
+  "img": "images/FE-62.jpg"
+ },
+ {
+  "nom": "À confirmer",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Obovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille obovale entière",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-63",
+  "img": "images/FE-63.jpg"
+ },
+ {
+  "nom": "Schefflera (panaché)",
+  "fam": "Araliaceae",
+  "type": "Composée",
+  "comp": "Palmée-composée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Panachée",
+  "notion": "Feuille palmée-composée panachée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-64",
+  "img": "images/FE-64.jpg"
+ },
+ {
+  "nom": "Dracaena (panaché)",
+  "fam": "Asparagaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Parallèle",
+  "phyllo": "",
+  "part": "Panachée",
+  "notion": "Feuille rubanée panachée, nervation parallèle (monocotylédone)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-65",
+  "img": "images/FE-65.jpg"
+ },
+ {
+  "nom": "Cordyline",
+  "fam": "Asparagaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Parallèle",
+  "phyllo": "Alterne",
+  "part": "Feuillage coloré",
+  "notion": "Cordyline pourpre, monocotylédone",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-66",
+  "img": "images/FE-66.jpg"
+ },
+ {
+  "nom": "Composée pennée",
+  "fam": "À confirmer",
+  "type": "Composée",
+  "comp": "Composée pennée",
+  "forme": "Composée (folioles)",
+  "marge": "Serrulée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Grande feuille composée pennée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-67",
+  "img": "images/FE-67.jpg"
+ },
+ {
+  "nom": "Trifoliolée (légumineuse)",
+  "fam": "Fabaceae",
+  "type": "Composée",
+  "comp": "Trifoliolée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille trifoliolée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-68",
+  "img": "images/FE-68.jpg"
+ },
+ {
+  "nom": "Raisinier bord de mer",
+  "fam": "Polygonaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Orbiculaire",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Grande feuille orbiculaire (Coccoloba)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-69",
+  "img": "images/FE-69.jpg"
+ },
+ {
+  "nom": "Gingembre",
+  "fam": "Zingiberaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Parallèle",
+  "phyllo": "Distique",
+  "part": "",
+  "notion": "Feuilles de gingembre, nervation parallèle",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-70",
+  "img": "images/FE-70.jpg"
+ },
+ {
+  "nom": "Raisinier — feuille engainante",
+  "fam": "Polygonaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Orbiculaire",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "Alterne",
+  "part": "Gaine engainante",
+  "notion": "La feuille embrasse la tige (raisinier)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-71",
+  "img": "images/FE-71.jpg"
+ },
+ {
+  "nom": "Tige et gaine",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "—",
+  "marge": "Entière",
+  "nerv": "—",
+  "phyllo": "",
+  "part": "Gaine engainante",
+  "notion": "Gaine foliaire sur la tige",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-72",
+  "img": "images/FE-72.jpg"
+ },
+ {
+  "nom": "Zamia (cycade)",
+  "fam": "Zamiaceae",
+  "type": "Composée",
+  "comp": "Paripennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "Distique",
+  "part": "Distique",
+  "notion": "Fronde de cycade, folioles distiques (Zamia)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-73",
+  "img": "images/FE-73.jpg"
+ },
+ {
+  "nom": "Feuille pubescente",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Poils (pubescente)",
+  "notion": "Feuille couverte de poils",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-74",
+  "img": "images/FE-74.jpg"
+ },
+ {
+  "nom": "Liane",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "Opposée",
+  "part": "Liane",
+  "notion": "Feuilles le long d'une tige de liane",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-75",
+  "img": "images/FE-75.jpg"
+ },
+ {
+  "nom": "Fougère (sores)",
+  "fam": "Fougère (Polypodiopsida)",
+  "type": "Composée",
+  "comp": "Composée pennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Sores (fougère)",
+  "notion": "Fronde de fougère, sores oranges",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-76",
+  "img": "images/FE-76.jpg"
+ },
+ {
+  "nom": "Mélastome",
+  "fam": "Urticaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Serrulée",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "part": "",
+  "notion": "Nervation acrodrome (Urticacées)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-77",
+  "img": "images/FE-77.jpg"
+ },
+ {
+  "nom": "Alocasia",
+  "fam": "Araceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Sagittée",
+  "marge": "Sinuée",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "Nervures blanches",
+  "notion": "Feuille sagittée à nervures blanches (Aracée)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-78",
+  "img": "images/FE-78.jpg"
+ },
+ {
+  "nom": "Pothos (panaché)",
+  "fam": "Araceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Panachée",
+  "notion": "Feuille cordée panachée (Aracée)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-79",
+  "img": "images/FE-79.jpg"
+ },
+ {
+  "nom": "Ficus (grand pétiole)",
+  "fam": "Moraceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Pétiole développé",
+  "notion": "Grande feuille, long pétiole (Ficus)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-80",
+  "img": "images/FE-80.jpg"
+ },
+ {
+  "nom": "Croton",
+  "fam": "Euphorbiaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Feuillage coloré",
+  "notion": "Croton, feuillage coloré",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-81",
+  "img": "images/FE-81.jpg"
+ },
+ {
+  "nom": "Cycas",
+  "fam": "Cycadaceae",
+  "type": "Composée",
+  "comp": "Paripennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "Distique",
+  "part": "Distique",
+  "notion": "Fronde de Cycas",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-82",
+  "img": "images/FE-82.jpg"
+ },
+ {
+  "nom": "Agave",
+  "fam": "Asparagaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Parallèle",
+  "phyllo": "",
+  "part": "Rosette",
+  "notion": "Rosette d'Agave (succulente)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-83",
+  "img": "images/FE-83.jpg"
+ },
+ {
+  "nom": "Feuille lobée (type chêne)",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lobée",
+  "marge": "Lobée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille à lobes arrondis",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-84",
+  "img": "images/FE-84.jpg"
+ },
+ {
+  "nom": "Clusia",
+  "fam": "Clusiaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Obovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "Opposée",
+  "part": "Coriace / glabre",
+  "notion": "Feuille obovale coriace, opposée (Clusia)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-85",
+  "img": "images/FE-85.jpg"
+ },
+ {
+  "nom": "Feuille râpeuse (« grage »)",
+  "fam": "Dilleniaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Obovale",
+  "marge": "Serrulée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Râpeuse (papier de verre)",
+  "notion": "Feuille rugueuse comme du papier de verre",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "fe": "FE-86",
+  "img": "images/FE-86.jpg"
+ },
+ {
+  "nom": "Marge dentée",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Dentée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Bord à petites dents",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "fe": "FE-87",
+  "img": "images/FE-87.jpg"
+ },
+ {
+  "nom": "Feuille simple",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille simple à un seul limbe",
+  "uses": [
+   "Formation",
+   "Publication",
+   "Article"
+  ],
+  "fe": "FE-88",
+  "img": "images/FE-88.jpg"
+ },
+ {
+  "fe": "FE-89",
+  "nom": "Grande feuille cordée",
+  "fam": "Moraceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Entière",
+  "nerv": "Acrodrome",
+  "phyllo": "",
+  "part": "Stipule (latex)",
+  "notion": "Rôle : montrer la STIPULE — Moracée (latex)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-89.jpg"
+ },
+ {
+  "fe": "FE-90",
+  "nom": "Arbuste à feuilles opposées",
+  "fam": "Melastomataceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Serrulée",
+  "nerv": "Acrodrome",
+  "phyllo": "Opposée",
+  "part": "",
+  "notion": "Rôle : montrer la phyllotaxie OPPOSÉE",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-90.jpg"
+ },
+ {
+  "fe": "FE-91",
+  "nom": "Palmier en éventail",
+  "fam": "Arecaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Palmée (éventail)",
+  "marge": "Lobée",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Palme en éventail (flabellée)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-91.jpg"
+ },
+ {
+  "fe": "FE-92",
+  "nom": "Bougainvillier",
+  "fam": "Nyctaginaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Bractées colorées",
+  "notion": "Bractées colorées entourant les fleurs",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-92.jpg"
+ },
+ {
+  "fe": "FE-93",
+  "nom": "Nénuphar",
+  "fam": "Nymphaeaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Orbiculaire",
+  "marge": "Entière",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "Feuille flottante (peltée)",
+  "notion": "Feuilles flottantes de nénuphar",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-93.jpg"
+ },
+ {
+  "fe": "FE-94",
+  "nom": "Bégonia",
+  "fam": "Begoniaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Dentée",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "Feuillage bronze asymétrique",
+  "notion": "Feuille asymétrique lobée, bronze",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-94.jpg"
+ },
+ {
+  "fe": "FE-95",
+  "nom": "Costus",
+  "fam": "Costaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Parallèle",
+  "phyllo": "Spiralée",
+  "part": "Phyllotaxie spiralée",
+  "notion": "Tige à feuilles disposées en spirale",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-95.jpg"
+ },
+ {
+  "fe": "FE-96",
+  "nom": "Bananier / héliconia",
+  "fam": "Musaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Oblongue",
+  "marge": "Entière",
+  "nerv": "Parallèle",
+  "phyllo": "",
+  "part": "Grande feuille engainante",
+  "notion": "Grande feuille à nervures penni-parallèles",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-96.jpg"
+ },
+ {
+  "fe": "FE-97",
+  "nom": "Feuille palmatilobée",
+  "fam": "Euphorbiaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Palmatilobée",
+  "marge": "Lobée",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "Pétiole développé",
+  "notion": "Grande feuille palmatilobée, long pétiole",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-97.jpg"
+ },
+ {
+  "fe": "FE-98",
+  "nom": "Grande feuille (pétiole épais)",
+  "fam": "Moraceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Pétiole développé",
+  "notion": "Grande feuille, pétiole épais",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-98.jpg"
+ },
+ {
+  "fe": "FE-99",
+  "nom": "Légumineuse bipennée",
+  "fam": "Fabaceae",
+  "type": "Composée",
+  "comp": "Bipennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille bipennée (mimosoïde)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-99.jpg"
+ },
+ {
+  "fe": "FE-100",
+  "nom": "Feuilles verticillées",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "Verticillée",
+  "part": "",
+  "notion": "Feuilles disposées en verticille",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-100.jpg"
+ },
+ {
+  "fe": "FE-101",
+  "nom": "Feuille à pointe (drip tip)",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Pointe (drip tip)",
+  "notion": "Feuille acuminée à pointe d'égouttement",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-101.jpg"
+ },
+ {
+  "fe": "FE-102",
+  "nom": "Bipennée (mimosoïde)",
+  "fam": "Fabaceae",
+  "type": "Composée",
+  "comp": "Bipennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille finement bipennée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-102.jpg"
+ },
+ {
+  "fe": "FE-103",
+  "nom": "Liane cordée",
+  "fam": "Piperaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "Alterne",
+  "part": "Liane",
+  "notion": "Liane à feuilles cordées ALTERNES (Pipéracée)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-103.jpg"
+ },
+ {
+  "fe": "FE-104",
+  "nom": "Composée à pellucides (curry?)",
+  "fam": "Rutaceae",
+  "type": "Composée",
+  "comp": "Imparipennée",
+  "forme": "Composée (folioles)",
+  "marge": "Crénelée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Ponctuations pellucides",
+  "notion": "Composée imparipennée à ponctuations pellucides (Rutacée)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-104.jpg"
+ },
+ {
+  "fe": "FE-105",
+  "nom": "Phyllanthus",
+  "fam": "Phyllanthaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "Distique",
+  "part": "Distique (faux-composé)",
+  "notion": "Rameau à feuilles distiques imitant une composée",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-105.jpg"
+ },
+ {
+  "fe": "FE-106",
+  "nom": "Vitex (palmée-composée)",
+  "fam": "Lamiaceae",
+  "type": "Composée",
+  "comp": "Palmée-composée",
+  "forme": "Composée (folioles)",
+  "marge": "Dentée",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille palmée-composée à folioles dentées",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-106.jpg"
+ },
+ {
+  "fe": "FE-107",
+  "nom": "Aloe (succulente)",
+  "fam": "Asphodelaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Épineuse",
+  "nerv": "Parallèle",
+  "phyllo": "",
+  "part": "Succulente à marge épineuse",
+  "notion": "Feuille succulente à marge épineuse",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-107.jpg"
+ },
+ {
+  "fe": "FE-108",
+  "nom": "Cucurbitacée (vrille)",
+  "fam": "Cucurbitaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Palmatilobée",
+  "marge": "Lobée",
+  "nerv": "Palmée",
+  "phyllo": "Alterne",
+  "part": "Vrille (tendrille)",
+  "notion": "Feuille lobée avec vrille",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-108.jpg"
+ },
+ {
+  "fe": "FE-109",
+  "nom": "Liane à vrille",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Entière",
+  "nerv": "Palmée",
+  "phyllo": "Alterne",
+  "part": "Vrille (tendrille)",
+  "notion": "Feuille cordée avec vrille",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-109.jpg"
+ },
+ {
+  "fe": "FE-110",
+  "nom": "Renouée (herbacée)",
+  "fam": "Polygonaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Lancéolée",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "Alterne",
+  "part": "Ochréa (gaine)",
+  "notion": "Herbacée à ochréa (Polygonacée)",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-110.jpg"
+ },
+ {
+  "fe": "FE-111",
+  "nom": "Acalypha (feuillage rouge)",
+  "fam": "Euphorbiaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Dentée",
+  "nerv": "Pennée",
+  "phyllo": "Opposée",
+  "part": "Feuillage rouge",
+  "notion": "Feuillage coloré rouge/bronze",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-111.jpg"
+ },
+ {
+  "fe": "FE-112",
+  "nom": "Fougère (sores linéaires)",
+  "fam": "Fougère (Polypodiopsida)",
+  "type": "Composée",
+  "comp": "Composée pennée",
+  "forme": "Composée (folioles)",
+  "marge": "Entière",
+  "nerv": "Pennée",
+  "phyllo": "",
+  "part": "Sores linéaires",
+  "notion": "Fronde à sores linéaires",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-112.jpg"
+ },
+ {
+  "fe": "FE-113",
+  "nom": "Plante très poilue",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Serrulée",
+  "nerv": "Pennée",
+  "phyllo": "Opposée",
+  "part": "Poils denses (hispide)",
+  "notion": "Tige et feuilles très poilues",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-113.jpg"
+ },
+ {
+  "fe": "FE-114",
+  "nom": "Feuille dentée (ortie?)",
+  "fam": "Urticaceae",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Elliptique/ovale",
+  "marge": "Dentée",
+  "nerv": "Acrodrome",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille ovale dentée, 3 nervures",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-114.jpg"
+ },
+ {
+  "fe": "FE-115",
+  "nom": "Feuille cordée (igname?)",
+  "fam": "À confirmer",
+  "type": "Simple",
+  "comp": "Simple",
+  "forme": "Cordée",
+  "marge": "Entière",
+  "nerv": "Palmée",
+  "phyllo": "",
+  "part": "",
+  "notion": "Feuille cordée à nervation palmée, long pétiole",
+  "uses": [
+   "Formation",
+   "Article"
+  ],
+  "img": "images/FE-115.jpg"
+ }
+]
