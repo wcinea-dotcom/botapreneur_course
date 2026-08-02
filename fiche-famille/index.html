@@ -1,0 +1,80 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Botapreneurs — Fiche famille (patterns par famille)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Lato:wght@400;700&display=swap');
+:root{--navy:#003366;--green:#2E7D32;--lime:#8BC34A;--orange:#F47C20;--beige:#F8F8F4;--ink:#2B2B2B;--line:#e2e6ea}
+*{box-sizing:border-box}body{margin:0;background:var(--beige);color:var(--ink);font-family:Lato,system-ui,Arial,sans-serif}
+.top{background:var(--navy);color:#fff;padding:16px 4vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.wm{font-family:Poppins;font-weight:800;font-size:22px}.wm .b{color:var(--lime)}
+.back{color:#cfe0f0;text-decoration:none;font-size:13px;border:1px solid #3a5a7a;border-radius:8px;padding:6px 12px}
+.back:hover{background:#0a4a86}
+.bar{padding:18px 4vw;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);background:#fff}
+.bar label{font-family:Poppins;font-weight:700;color:var(--green);font-size:13px;letter-spacing:1px;text-transform:uppercase}
+select{font-family:inherit;font-size:15px;padding:9px 12px;border:1px solid #c3ccd4;border-radius:10px;background:#fff;min-width:240px}
+.hint{color:#7a8590;font-size:13px}
+.head{padding:22px 4vw 6px}
+.head h1{font-family:Poppins;font-weight:800;color:var(--navy);font-size:clamp(24px,4vw,38px);margin:0}
+.head .cnt{color:var(--green);font-family:Poppins;font-weight:700;font-size:14px;margin-top:4px}
+.sig{background:#eef3ea;border-left:4px solid var(--lime);padding:12px 16px;margin:12px 4vw 0;border-radius:8px;max-width:900px;font-size:14px;line-height:1.55}
+.sig b{font-family:Poppins;color:var(--green)}
+.organ{padding:16px 4vw 4px}
+.organ h3{font-family:Poppins;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--green);display:inline-block;padding:5px 12px;border-radius:8px;margin:0 0 10px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.ph{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in}
+.ph .im{aspect-ratio:1/1;background:#eef1f3;overflow:hidden}.ph .im img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .bd{padding:7px 9px}.ph .nm{font-size:12px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:3px}
+.tag{display:inline-block;background:#eef3ea;color:var(--green);border-radius:5px;padding:1px 6px;font-size:10px;margin:0 3px 3px 0}
+.void{color:#9aa7b0;font-size:13px;font-family:Poppins;font-weight:600;background:#fff;border:1px dashed #cdd6de;border-radius:12px;padding:16px;text-align:center}
+.void .plus{font-size:24px;color:#c7d2da;display:block}
+.modal{display:none;position:fixed;inset:0;z-index:60;background:rgba(7,20,30,.94)}
+.modal.open{display:flex;align-items:center;justify-content:center}
+.modal img{max-width:92vw;max-height:92vh;object-fit:contain}
+.modal .x{position:absolute;top:16px;right:20px;color:#fff;border:1px solid #4a6a86;background:transparent;padding:8px 12px;border-radius:8px;cursor:pointer}
+</style></head><body>
+<header class="top"><div class="wm">Bota<span class="b">preneurs</span> · Fiche famille</div>
+<a class="back" href="../index.html">← Retour au cours</a></header>
+
+<div class="bar"><label for="sel">Famille</label>
+ <select id="sel"></select>
+ <span class="hint">Choisis une famille → vois toutes ses photos par organe, pour apprendre sa signature.</span></div>
+
+<div class="head" id="head"></div>
+<div id="sig"></div>
+<div id="body"></div>
+
+<div class="modal" id="modal"><button class="x" onclick="closeM()">FERMER ×</button><img id="mImg" alt=""></div>
+
+<script>
+let DATA=null;
+function photo(p){
+ const tags=(p.patterns||[]).map(t=>`<span class="tag">${t}</span>`).join("");
+ return `<div class="ph" onclick="openM('${p.img}')"><div class="im"><img loading="lazy" src="${p.img}"></div><div class="bd"><div class="nm">${p.nom||""}</div>${tags}</div></div>`;
+}
+function render(f){
+ const total=DATA.organes.reduce((s,o)=>s+((f.organes[o]||[]).length),0);
+ document.getElementById("head").innerHTML=`<h1>${f.fam}</h1><div class="cnt">${total} photo(s) · ${DATA.organes.filter(o=>(f.organes[o]||[]).length).length} organe(s) documenté(s)</div>`;
+ document.getElementById("sig").innerHTML=f.note?`<div class="sig"><b>SIGNATURE DE LA FAMILLE — ce qu'il faut regarder</b><br>${f.note}</div>`:"";
+ let h="";
+ DATA.organes.forEach(o=>{
+  const arr=f.organes[o]||[];
+  h+=`<div class="organ"><h3>${o} · ${arr.length}</h3>`;
+  h+= arr.length ? `<div class="gal">${arr.map(photo).join("")}</div>` : `<div class="void"><span class="plus">＋</span>Aucune photo ${o.toLowerCase()} pour cette famille — à alimenter</div>`;
+  h+=`</div>`;
+ });
+ document.getElementById("body").innerHTML=h;
+}
+function openM(src){document.getElementById("mImg").src=src;document.getElementById("modal").classList.add("open");}
+function closeM(){document.getElementById("modal").classList.remove("open");}
+document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")closeM();};
+document.onkeydown=e=>{if(e.key==="Escape")closeM();};
+
+fetch("data/familles.json").then(r=>r.json()).then(d=>{
+ DATA=d;
+ const sel=document.getElementById("sel");
+ sel.innerHTML=d.familles.map((f,i)=>{const t=DATA.organes.reduce((s,o)=>s+((f.organes[o]||[]).length),0);return `<option value="${i}">${f.fam} (${t})</option>`;}).join("");
+ sel.onchange=()=>render(d.familles[sel.value]);
+ render(d.familles[0]);
+}).catch(err=>{document.getElementById("body").innerHTML=`<p style="color:#b00;padding:0 4vw">Erreur : ${err.message} (ouvre via un serveur).</p>`;});
+</script>
+</body></html>

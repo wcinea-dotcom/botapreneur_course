@@ -1,0 +1,980 @@
+{
+ "organes": [
+  "Feuille",
+  "Fleur",
+  "Fruit",
+  "Tige",
+  "Racine"
+ ],
+ "familles": [
+  {
+   "fam": "Melastomataceae",
+   "note": "Souvent feuilles opposées + nervation acrodrome très visible ; comparer les trois caractères ensemble.",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-01.jpg",
+      "nom": "Melastome (Melastomataceae)",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Elliptique/ovale"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-02.jpg",
+      "nom": "Melastome",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Elliptique/ovale"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-03.jpg",
+      "nom": "Melastome",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Elliptique/ovale"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-22.jpg",
+      "nom": "Melastome",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Elliptique/ovale"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-26.jpg",
+      "nom": "Melastome",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Lancéolée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-27.jpg",
+      "nom": "Melastome",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Elliptique/ovale"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-30.jpg",
+      "nom": "Melastome bicolore",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Lancéolée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-31.jpg",
+      "nom": "Melastome bicolore",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Lancéolée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-32.jpg",
+      "nom": "Melastome (fleur)",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Elliptique/ovale"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-33.jpg",
+      "nom": "Melastome bicolore",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Cordée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-90.jpg",
+      "nom": "Arbuste à feuilles opposées",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Elliptique/ovale"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Fabaceae",
+   "note": "Corolle papilionacée fréquente, un seul carpelle, placentation marginale.",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-09.jpg",
+      "nom": "Légumineuse (Fabaceae)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-23.jpg",
+      "nom": "Légumineuse (Fabaceae)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-24.jpg",
+      "nom": "Légumineuse (Fabaceae)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-25.jpg",
+      "nom": "Légumineuse (Fabaceae)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-68.jpg",
+      "nom": "Trifoliolée (légumineuse)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-99.jpg",
+      "nom": "Légumineuse bipennée",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-102.jpg",
+      "nom": "Bipennée (mimosoïde)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Entière"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Polygonaceae",
+   "note": "Présence d'une ochréa (gaine) au nœud chez beaucoup d'espèces.",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-12.jpg",
+      "nom": "cf. Coccoloba uvifera (raisinier)",
+      "patterns": [
+       "Pennée",
+       "Orbiculaire",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-18.jpg",
+      "nom": "À confirmer",
+      "patterns": [
+       "Pennée",
+       "Elliptique/ovale",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-69.jpg",
+      "nom": "Raisinier bord de mer",
+      "patterns": [
+       "Pennée",
+       "Orbiculaire",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-71.jpg",
+      "nom": "Raisinier — feuille engainante",
+      "patterns": [
+       "Pennée",
+       "Alterne",
+       "Orbiculaire"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-110.jpg",
+      "nom": "Renouée (herbacée)",
+      "patterns": [
+       "Pennée",
+       "Alterne",
+       "Lancéolée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Araceae",
+   "note": "Feuilles souvent cordées/sagittées, nervation palmée ; beaucoup d'ornementales (Alocasia, Pothos).",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-37.jpg",
+      "nom": "À confirmer",
+      "patterns": [
+       "Pennée",
+       "Perforée/lobée",
+       "Lobée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-78.jpg",
+      "nom": "Alocasia",
+      "patterns": [
+       "Palmée",
+       "Sagittée",
+       "Sinuée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-79.jpg",
+      "nom": "Pothos (panaché)",
+      "patterns": [
+       "Pennée",
+       "Cordée",
+       "Entière"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Asparagaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-65.jpg",
+      "nom": "Dracaena (panaché)",
+      "patterns": [
+       "Parallèle",
+       "Lancéolée",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-66.jpg",
+      "nom": "Cordyline",
+      "patterns": [
+       "Parallèle",
+       "Alterne",
+       "Lancéolée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-83.jpg",
+      "nom": "Agave",
+      "patterns": [
+       "Parallèle",
+       "Lancéolée",
+       "Entière"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Moraceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-80.jpg",
+      "nom": "Ficus (grand pétiole)",
+      "patterns": [
+       "Pennée",
+       "Cordée",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-89.jpg",
+      "nom": "Grande feuille cordée",
+      "patterns": [
+       "Acrodrome",
+       "Cordée",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-98.jpg",
+      "nom": "Grande feuille (pétiole épais)",
+      "patterns": [
+       "Pennée",
+       "Elliptique/ovale",
+       "Entière"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Euphorbiaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-81.jpg",
+      "nom": "Croton",
+      "patterns": [
+       "Pennée",
+       "Lancéolée",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-97.jpg",
+      "nom": "Feuille palmatilobée",
+      "patterns": [
+       "Palmée",
+       "Palmatilobée",
+       "Lobée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-111.jpg",
+      "nom": "Acalypha (feuillage rouge)",
+      "patterns": [
+       "Pennée",
+       "Opposée",
+       "Cordée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Vitaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-06.jpg",
+      "nom": "Type vigne (Vitaceae)",
+      "patterns": [
+       "Palmée",
+       "Cordée",
+       "Dentée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-52.jpg",
+      "nom": "Vigne (nervation palmée)",
+      "patterns": [
+       "Palmée",
+       "Cordée",
+       "Dentée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Zingiberaceae",
+   "note": "Labelle voyant (staminode pétaloïde), feuilles engainantes.",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-38.jpg",
+      "nom": "À confirmer",
+      "patterns": [
+       "Parallèle",
+       "Lancéolée",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-70.jpg",
+      "nom": "Gingembre",
+      "patterns": [
+       "Parallèle",
+       "Distique",
+       "Lancéolée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Araliaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-51.jpg",
+      "nom": "Hydrocotyle (marge crénelée)",
+      "patterns": [
+       "Palmée",
+       "Orbiculaire",
+       "Crénelée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-64.jpg",
+      "nom": "Schefflera (panaché)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Entière"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Fougère (Polypodiopsida)",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-76.jpg",
+      "nom": "Fougère (sores)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Entière"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-112.jpg",
+      "nom": "Fougère (sores linéaires)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Entière"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Urticaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-77.jpg",
+      "nom": "Mélastome",
+      "patterns": [
+       "Acrodrome",
+       "Opposée",
+       "Elliptique/ovale"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-114.jpg",
+      "nom": "Feuille dentée (ortie?)",
+      "patterns": [
+       "Acrodrome",
+       "Elliptique/ovale",
+       "Dentée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Ericaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-04.jpg",
+      "nom": "Lyonia microcarpa",
+      "patterns": [
+       "Pennée",
+       "Alterne",
+       "Elliptique/ovale"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Calophyllaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-17.jpg",
+      "nom": "cf. Calophyllum",
+      "patterns": [
+       "Parallèle",
+       "Elliptique/ovale",
+       "Entière"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Zamiaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-73.jpg",
+      "nom": "Zamia (cycade)",
+      "patterns": [
+       "Pennée",
+       "Distique",
+       "Composée (folioles)"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Cycadaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-82.jpg",
+      "nom": "Cycas",
+      "patterns": [
+       "Pennée",
+       "Distique",
+       "Composée (folioles)"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Clusiaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-85.jpg",
+      "nom": "Clusia",
+      "patterns": [
+       "Pennée",
+       "Opposée",
+       "Obovale"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Dilleniaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-86.jpg",
+      "nom": "Feuille râpeuse (« grage »)",
+      "patterns": [
+       "Pennée",
+       "Obovale",
+       "Serrulée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Arecaceae",
+   "note": "Palmiers : feuilles en éventail (palmées) ou pennées, très grandes.",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-91.jpg",
+      "nom": "Palmier en éventail",
+      "patterns": [
+       "Palmée",
+       "Palmée (éventail)",
+       "Lobée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Nyctaginaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-92.jpg",
+      "nom": "Bougainvillier",
+      "patterns": [
+       "Pennée",
+       "Elliptique/ovale",
+       "Entière"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Nymphaeaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-93.jpg",
+      "nom": "Nénuphar",
+      "patterns": [
+       "Palmée",
+       "Orbiculaire",
+       "Entière"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Begoniaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-94.jpg",
+      "nom": "Bégonia",
+      "patterns": [
+       "Palmée",
+       "Cordée",
+       "Dentée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Costaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-95.jpg",
+      "nom": "Costus",
+      "patterns": [
+       "Parallèle",
+       "Spiralée",
+       "Lancéolée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Musaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-96.jpg",
+      "nom": "Bananier / héliconia",
+      "patterns": [
+       "Parallèle",
+       "Oblongue",
+       "Entière"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Piperaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-103.jpg",
+      "nom": "Liane cordée",
+      "patterns": [
+       "Pennée",
+       "Alterne",
+       "Cordée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Rutaceae",
+   "note": "Ponctuations pellucides (points translucides aromatiques) fréquentes ; observer à contre-jour.",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-104.jpg",
+      "nom": "Composée à pellucides (curry?)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Crénelée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Phyllanthaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-105.jpg",
+      "nom": "Phyllanthus",
+      "patterns": [
+       "Pennée",
+       "Distique",
+       "Elliptique/ovale"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Lamiaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-106.jpg",
+      "nom": "Vitex (palmée-composée)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)",
+       "Dentée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Asphodelaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-107.jpg",
+      "nom": "Aloe (succulente)",
+      "patterns": [
+       "Parallèle",
+       "Lancéolée",
+       "Épineuse"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Cucurbitaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-108.jpg",
+      "nom": "Cucurbitacée (vrille)",
+      "patterns": [
+       "Palmée",
+       "Alterne",
+       "Palmatilobée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Asteraceae",
+   "note": "Fleurs en capitule (ligules + fleurons), anthères souvent soudées (syngénèse), calice réduit en pappus.",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "../patterns-fleurs/images/FL-02.jpg",
+      "nom": "Astéracée (type Wedelia) — espèce à confirmer",
+      "patterns": [
+       "Actinomorphe",
+       "Gamopétale",
+       "Jaune"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Moringaceae",
+   "note": "Fleurs blanc crème légèrement zygomorphes, 5 pétales + 5 étamines fertiles ; genre Moringa (Benzolive).",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "../patterns-fleurs/images/FL-03.jpg",
+      "nom": "Moringa / Benzolive (Moringaceae)",
+      "patterns": [
+       "Actinomorphe",
+       "Dialypétale",
+       "Blanc"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  }
+ ]
+}
