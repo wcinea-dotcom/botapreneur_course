@@ -249,6 +249,35 @@
       "patterns": [
        "Annona montana"
       ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-sp__fruit-mur-IMG-5997.jpg",
+      "nom": "Annona sp. — fruit mûr (identification à confirmer)",
+      "patterns": [
+       "fruit agrégé",
+       "fruit mûr",
+       "surface réticulée",
+       "identification à confirmer"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-squamosa__fruits-DSC-0439.jpg",
+      "nom": "Annona squamosa — fruits sur la plante",
+      "patterns": [
+       "fruit agrégé",
+       "carpelles distincts",
+       "plusieurs fruits sur une branche"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-cf-glabra__fruit-immature-IMG-9128.jpg",
+      "nom": "Annona cf. glabra — fruit immature",
+      "patterns": [
+       "fruit agrégé",
+       "fruit immature",
+       "surface presque lisse",
+       "identification probable"
+      ]
      }
     ],
     "Tige": [],
