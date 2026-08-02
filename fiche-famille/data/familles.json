@@ -8,6 +8,153 @@
  ],
  "familles": [
   {
+   "fam": "Annonaceae",
+   "note": "Angiospermes basales (magnoliidées). Feuilles alternes DISTIQUES (2 rangs), simples, entières, sans stipules, souvent aromatiques. Fleurs TRIMÈRES (pièces par 3), périanthe peu différencié (tépaloïde) ; nombreuses étamines + carpelles LIBRES (apocarpe) sur réceptacle bombé → caractère primitif. Fruits AGRÉGÉS/multiples charnus (corossol, cachiman). Plantes AROMATIQUES (huiles essentielles) ; chimie : alcaloïdes aporphines, acétogénines. Genres ici : Annona (corossol, cachiman, cœur de bœuf, annone des marais), Cananga (ylang-ylang).",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "media/Annonaceae__Annona-sp__ae-Annona-sp-feuille-001.jpg",
+      "nom": "Espece a identifier — Annona sp",
+      "patterns": [
+       "Annona sp"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Cananga-odorata__anga-odorata-feuille-001.jpg",
+      "nom": "Ylang ylang — Cananga odorata",
+      "patterns": [
+       "Cananga odorata"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Cananga-odorata__anga-odorata-feuille-002.jpg",
+      "nom": "Ylang ylang — Cananga odorata",
+      "patterns": [
+       "Cananga odorata"
+      ]
+     }
+    ],
+    "Fleur": [
+     {
+      "img": "media/Annonaceae__Cananga-odorata__dorata-fleur-feuille-001.jpg",
+      "nom": "Ylang ylang — Cananga odorata",
+      "patterns": [
+       "Cananga odorata"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-glabra__glabra-fleur-feuille-001.jpg",
+      "nom": "Annone des marais — Annona glabra",
+      "patterns": [
+       "Annona glabra"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Cananga-odorata__dorata-fleur-feuille-002.jpg",
+      "nom": "Ylang ylang — Cananga odorata",
+      "patterns": [
+       "Cananga odorata"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-glabra__glabra-fleur-feuille-002.jpg",
+      "nom": "Annone des marais — Annona glabra",
+      "patterns": [
+       "Annona glabra"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Cananga-odorata__dorata-fleur-feuille-003.jpg",
+      "nom": "Ylang ylang — Cananga odorata",
+      "patterns": [
+       "Cananga odorata"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-glabra__glabra-fleur-feuille-003.jpg",
+      "nom": "Annone des marais — Annona glabra",
+      "patterns": [
+       "Annona glabra"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Cananga-odorata__dorata-fleur-feuille-004.jpg",
+      "nom": "Ylang ylang — Cananga odorata",
+      "patterns": [
+       "Cananga odorata"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-glabra__glabra-fleur-feuille-004.jpg",
+      "nom": "Annone des marais — Annona glabra",
+      "patterns": [
+       "Annona glabra"
+      ]
+     }
+    ],
+    "Fruit": [
+     {
+      "img": "media/Annonaceae__Annona-montana__Annona-montana-fruit-001.jpg",
+      "nom": "Korosol zombi — Annona montana",
+      "patterns": [
+       "Annona montana"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-squamosa__nnona-squamosa-fruit-001.jpg",
+      "nom": "Cachiman — Annona squamosa",
+      "patterns": [
+       "Annona squamosa"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-sp__ceae-Annona-sp-fruit-001.jpg",
+      "nom": "Espece a identifier — Annona sp",
+      "patterns": [
+       "Annona sp"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-muricata__nnona-muricata-fruit-001.jpg",
+      "nom": "Corossol — Annona muricata",
+      "patterns": [
+       "Annona muricata"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-cf-montana__ontana-fruit-feuille-001.jpg",
+      "nom": "Korosol zombi a confirmer — Annona cf montana",
+      "patterns": [
+       "Annona cf montana"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-reticulata__culata-fruit-feuille-001.jpg",
+      "nom": "Coeur de boeuf — Annona reticulata",
+      "patterns": [
+       "Annona reticulata"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-glabra__glabra-fruit-feuille-001.jpg",
+      "nom": "Annone des marais — Annona glabra",
+      "patterns": [
+       "Annona glabra"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-montana__Annona-montana-fruit-002.jpg",
+      "nom": "Korosol zombi — Annona montana",
+      "patterns": [
+       "Annona montana"
+      ]
+     }
+    ],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
    "fam": "Fabaceae",
    "note": "Corolle papilionacée fréquente, un seul carpelle, placentation marginale.",
    "organes": {
@@ -1225,60 +1372,6 @@
       "nom": "Scadoxus multiflorus",
       "patterns": [
        "Pl@ntNet 59%"
-      ]
-     }
-    ],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Annonaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [],
-    "Fleur": [
-     {
-      "img": "fleurs/Annonaceae__IMG-0898.jpg",
-      "nom": "Cananga odorata",
-      "patterns": [
-       "Pl@ntNet 100%"
-      ]
-     },
-     {
-      "img": "fleurs/Annonaceae__IMG-0899.jpg",
-      "nom": "Cananga odorata",
-      "patterns": [
-       "Pl@ntNet 99%"
-      ]
-     },
-     {
-      "img": "fleurs/Annonaceae__IMG-2572.jpg",
-      "nom": "Cananga odorata",
-      "patterns": [
-       "Pl@ntNet 96%"
-      ]
-     },
-     {
-      "img": "fleurs/Annonaceae__IMG-2591-1.jpg",
-      "nom": "Cananga odorata",
-      "patterns": [
-       "Pl@ntNet 96%"
-      ]
-     },
-     {
-      "img": "fleurs/Annonaceae__IMG-2711.jpg",
-      "nom": "Cananga odorata",
-      "patterns": [
-       "Pl@ntNet 92%"
-      ]
-     },
-     {
-      "img": "fleurs/Annonaceae__IMG-0900.jpg",
-      "nom": "Cananga odorata",
-      "patterns": [
-       "Pl@ntNet 92%"
       ]
      }
     ],
