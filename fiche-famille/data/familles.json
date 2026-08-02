@@ -9,26 +9,26 @@
  "familles": [
   {
    "fam": "Annonaceae",
-   "note": "Angiospermes basales (magnoliidées). Feuilles alternes DISTIQUES (2 rangs), simples, entières, sans stipules, souvent aromatiques. Fleurs TRIMÈRES (pièces par 3), périanthe peu différencié (tépaloïde) ; nombreuses étamines + carpelles LIBRES (apocarpe) sur réceptacle bombé → caractère primitif. Fruits AGRÉGÉS/multiples charnus (corossol, cachiman). Plantes AROMATIQUES (huiles essentielles) ; chimie : alcaloïdes aporphines, acétogénines. Genres ici : Annona (corossol, cachiman, cœur de bœuf, annone des marais), Cananga (ylang-ylang).",
+   "note": "Angiospermes basales (magnoliidées). Feuilles alternes DISTIQUES (2 rangs), simples, entières, sans stipules, souvent aromatiques. Fleurs TRIMÈRES, périanthe peu différencié (tépaloïde) ; nombreuses étamines + carpelles LIBRES (apocarpe) sur réceptacle bombé. Fruits AGRÉGÉS/multiples charnus. FORMULE FLORALE : ✶ ⚥ K3 C3+3 A∞ G∞ (apocarpe, ovaire supère). CHIMIE : huiles essentielles aromatiques (parfum ylang-ylang : linalol, para-crésyl méthyl éther) ; alcaloïdes benzylisoquinoléiques surtout APORPHINES (anonaïne, asimilobine) ; ACÉTOGÉNINES d'Annonaceae (annonacine — bioactives : insecticides/cytotoxiques, neurotoxicité à considérer). Genres : Annona (corossol, cachiman, cœur de bœuf, chérimole, annone des marais), Cananga (ylang-ylang).",
    "organes": {
     "Feuille": [
      {
       "img": "media/Annonaceae__Annona-sp__ae-Annona-sp-feuille-001.jpg",
-      "nom": "Espece a identifier — Annona sp",
+      "nom": "Annona sp",
       "patterns": [
        "Annona sp"
       ]
      },
      {
       "img": "media/Annonaceae__Cananga-odorata__anga-odorata-feuille-001.jpg",
-      "nom": "Ylang ylang — Cananga odorata",
+      "nom": "Cananga odorata",
       "patterns": [
        "Cananga odorata"
       ]
      },
      {
       "img": "media/Annonaceae__Cananga-odorata__anga-odorata-feuille-002.jpg",
-      "nom": "Ylang ylang — Cananga odorata",
+      "nom": "Cananga odorata",
       "patterns": [
        "Cananga odorata"
       ]
@@ -37,56 +37,56 @@
     "Fleur": [
      {
       "img": "media/Annonaceae__Cananga-odorata__dorata-fleur-feuille-001.jpg",
-      "nom": "Ylang ylang — Cananga odorata",
+      "nom": "Cananga odorata",
       "patterns": [
        "Cananga odorata"
       ]
      },
      {
       "img": "media/Annonaceae__Annona-glabra__glabra-fleur-feuille-001.jpg",
-      "nom": "Annone des marais — Annona glabra",
+      "nom": "Annona glabra",
       "patterns": [
        "Annona glabra"
       ]
      },
      {
       "img": "media/Annonaceae__Cananga-odorata__dorata-fleur-feuille-002.jpg",
-      "nom": "Ylang ylang — Cananga odorata",
+      "nom": "Cananga odorata",
       "patterns": [
        "Cananga odorata"
       ]
      },
      {
       "img": "media/Annonaceae__Annona-glabra__glabra-fleur-feuille-002.jpg",
-      "nom": "Annone des marais — Annona glabra",
+      "nom": "Annona glabra",
       "patterns": [
        "Annona glabra"
       ]
      },
      {
       "img": "media/Annonaceae__Cananga-odorata__dorata-fleur-feuille-003.jpg",
-      "nom": "Ylang ylang — Cananga odorata",
+      "nom": "Cananga odorata",
       "patterns": [
        "Cananga odorata"
       ]
      },
      {
       "img": "media/Annonaceae__Annona-glabra__glabra-fleur-feuille-003.jpg",
-      "nom": "Annone des marais — Annona glabra",
+      "nom": "Annona glabra",
       "patterns": [
        "Annona glabra"
       ]
      },
      {
       "img": "media/Annonaceae__Cananga-odorata__dorata-fleur-feuille-004.jpg",
-      "nom": "Ylang ylang — Cananga odorata",
+      "nom": "Cananga odorata",
       "patterns": [
        "Cananga odorata"
       ]
      },
      {
       "img": "media/Annonaceae__Annona-glabra__glabra-fleur-feuille-004.jpg",
-      "nom": "Annone des marais — Annona glabra",
+      "nom": "Annona glabra",
       "patterns": [
        "Annona glabra"
       ]
@@ -95,56 +95,56 @@
     "Fruit": [
      {
       "img": "media/Annonaceae__Annona-montana__Annona-montana-fruit-001.jpg",
-      "nom": "Korosol zombi — Annona montana",
+      "nom": "Annona montana",
       "patterns": [
        "Annona montana"
       ]
      },
      {
       "img": "media/Annonaceae__Annona-squamosa__nnona-squamosa-fruit-001.jpg",
-      "nom": "Cachiman — Annona squamosa",
+      "nom": "Annona squamosa",
       "patterns": [
        "Annona squamosa"
       ]
      },
      {
       "img": "media/Annonaceae__Annona-sp__ceae-Annona-sp-fruit-001.jpg",
-      "nom": "Espece a identifier — Annona sp",
+      "nom": "Annona sp",
       "patterns": [
        "Annona sp"
       ]
      },
      {
       "img": "media/Annonaceae__Annona-muricata__nnona-muricata-fruit-001.jpg",
-      "nom": "Corossol — Annona muricata",
+      "nom": "Annona muricata",
       "patterns": [
        "Annona muricata"
       ]
      },
      {
       "img": "media/Annonaceae__Annona-cf-montana__ontana-fruit-feuille-001.jpg",
-      "nom": "Korosol zombi a confirmer — Annona cf montana",
+      "nom": "Annona cf montana",
       "patterns": [
        "Annona cf montana"
       ]
      },
      {
       "img": "media/Annonaceae__Annona-reticulata__culata-fruit-feuille-001.jpg",
-      "nom": "Coeur de boeuf — Annona reticulata",
+      "nom": "Annona reticulata",
       "patterns": [
        "Annona reticulata"
       ]
      },
      {
       "img": "media/Annonaceae__Annona-glabra__glabra-fruit-feuille-001.jpg",
-      "nom": "Annone des marais — Annona glabra",
+      "nom": "Annona glabra",
       "patterns": [
        "Annona glabra"
       ]
      },
      {
       "img": "media/Annonaceae__Annona-montana__Annona-montana-fruit-002.jpg",
-      "nom": "Korosol zombi — Annona montana",
+      "nom": "Annona montana",
       "patterns": [
        "Annona montana"
       ]
