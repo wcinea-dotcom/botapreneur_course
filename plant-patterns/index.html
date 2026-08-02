@@ -29,9 +29,21 @@ const newAnnonaceaeFlowers=[
  familyMedia('Annonaceae__Cananga-odorata__fleur-detachee-024.jpg'),
  familyMedia('Annonaceae__Cananga-odorata__petales-detaches-027.jpg')
 ];
+const annonaceaeLeaves=[
+ familyMedia('Annonaceae__Annona-sp__ae-Annona-sp-feuille-001.jpg'),
+ familyMedia('Annonaceae__Cananga-odorata__anga-odorata-feuille-001.jpg'),
+ familyMedia('Annonaceae__Cananga-odorata__anga-odorata-feuille-002.jpg')
+];
+const annonaceaeTrimerous=[
+ familyMedia('Annonaceae__Cananga-odorata__fleur-detachee-024.jpg'),
+ familyMedia('Annonaceae__Cananga-odorata__petales-detaches-027.jpg'),
+ familyMedia('Annonaceae__Annona-cherimola__fleur-proposee-010.jpg'),
+ familyMedia('Annonaceae__Annona-cherimola__fleur-proposee-011.jpg')
+];
 const alternate=['IMG_0195.JPG','IMG_0198.JPG','IMG_0205.JPG','IMG_0248.JPG','IMG_0295(1).JPG','IMG_0299.JPG','IMG_0430.JPG','IMG_0435.JPG','IMG_0436.JPG','IMG_0450.JPG','IMG_0452.JPG','IMG_0502.JPG','IMG_0612.JPG','IMG_1112.JPG','IMG_1189.JPG','IMG_1190.JPG','IMG_1223.JPG','IMG_1378.JPG','IMG_1380.JPG','IMG_1674.JPG'].map(source);
 const L={
  alternate:{o:'Feuille',g:'Phyllotaxie',t:'Alterne',d:'Une seule feuille est insérée à chaque nœud, puis l’insertion change de côté le long de la tige.',h:'Suivre la tige sur plusieurs nœuds. Chercher une feuille par nœud, sans se laisser distraire par la forme du limbe.',p:alternate},
+ distichous:{g:'Phyllotaxie',t:'Distique',d:'Les feuilles, généralement alternes, sont disposées dans un même plan et forment deux rangs opposés le long du rameau. Ce pattern est fréquent chez les Annonaceae.',h:'Regarder un rameau entier de côté. Vérifier une feuille par nœud, puis suivre l’alignement des insertions en deux rangs; ne pas confondre distique et opposée.',p:annonaceaeLeaves,sourceTitle:'Kew — Plants of the World Online : Annonaceae',sourceUrl:'https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30000342-2/general-information'},
  opposite:{g:'Phyllotaxie',t:'Opposée',d:'Deux feuilles sont insérées face à face au même nœud.',h:'Repérer une paire, puis confirmer la répétition sur plusieurs nœuds.',p:[23,28,31,32,33,34,1,2,3].map(leaf)},
  whorled:{g:'Phyllotaxie',t:'Verticillée',d:'Trois feuilles ou plus partent du même nœud.',h:'Vérifier que les feuilles partent réellement du même niveau de la tige.',p:[30,28,31,23].map(leaf)},
  decussate:{g:'Phyllotaxie',t:'Décussée',d:'Les paires opposées successives sont orientées à angle droit.',h:'Regarder l’axe depuis le sommet pour voir le changement d’orientation.',p:[23,31,32,33].map(leaf)},
@@ -73,7 +85,7 @@ const L={
  petaloidTepals:{o:'Fleur',g:'Calice et corolle',t:'Tépales pétaloïdes',d:'Tépales semblables, voyants et colorés comme des pétales.',h:'Vérifier que les pièces ne sont pas clairement séparables en sépales et pétales.',p:['0859','1178','1522','1524'].map(flowerPhoto)},
  tubularCorolla:{o:'Fleur',g:'Forme florale',t:'Corolle tubulaire',d:'Les pétales soudés forment un tube plus ou moins long avant de s’élargir en lobes.',h:'Comparer la longueur du tube, la gorge et l’ouverture terminale dans les séries 0840, 0852, 0896 et 0904.',p:['0611','0613','0617','0840','0841','0845','0848','0852','0853','0855','0896','0904','0976','0979','0982'].map(flowerPhoto)},
  labellum:{o:'Fleur',g:'Forme florale',t:'Labelle',d:'Pièce du périanthe fortement différenciée, souvent utilisée comme plateforme ou guide pour les pollinisateurs.',h:'Sur les Orchidaceae 0890–0892, repérer le labelle distinct des autres tépales.',p:['0890','0892'].map(flowerPhoto)},
- trimerous:{o:'Fleur',g:'Mérisie',t:'Trimère',d:'Les pièces florales sont organisées par trois ou par multiples de trois.',h:'Compter six tépales et distinguer deux verticilles de trois; ce caractère soutient une hypothèse de monocotylédone.',p:['0859','0890','0892','1178','1522','1524'].map(flowerPhoto)},
+ trimerous:{o:'Fleur',g:'Mérisie',t:'Trimère',d:'Les pièces florales sont organisées par trois ou par multiples de trois. Ce pattern existe notamment chez les Annonaceae, où les fleurs portent typiquement trois sépales et six pétales en deux verticilles.',h:'Compter séparément les sépales, les pétales et les autres verticilles. La trimérie est un indice comparatif, pas une preuve suffisante de monocotylédonie.',p:['0859','0890','0892','1178','1522','1524'].map(flowerPhoto).concat(annonaceaeTrimerous),sourceTitle:'Kew — Plants of the World Online : Annonaceae',sourceUrl:'https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30000342-2/general-information'},
  pentamerous:{o:'Fleur',g:'Mérisie',t:'Pentamère',d:'Un ou plusieurs verticilles floraux comportent cinq pièces.',h:'Compter les cinq lobes ou cinq pétales sans confondre lobes soudés et pétales libres.',p:['0840','0841','0896','0904','0976','0979','0982','1004','1005','1008','1009','1010','1011','1013','1018','1019','1116','1156','1201','1202','1220','1221','1222','1418','1420','1431','1434','1462','1467'].map(flowerPhoto)},
  numerousParts:{o:'Fleur',g:'Mérisie',t:'Pièces nombreuses',d:'Un verticille porte un nombre élevé de pièces, parfois augmenté par la sélection horticole.',h:'Comparer les pièces pétaloïdes nombreuses des fleurs doubles aux étamines indéfinies visibles dans la série 1265–1285.',p:['0843','0844','1265','1267','1271','1285'].map(flowerPhoto)},
  floralFormula:{o:'Fleur',g:'Formule florale et grands clades',t:'Lire une formule florale',d:'La formule florale condense l’architecture d’une fleur et aide à comparer les familles. Elle résume un pattern diagnostique, mais doit toujours être contrôlée sur la plante.',h:'Lire de gauche à droite : sexualité, symétrie, périanthe, étamines puis gynécée. Les parenthèses signalent des pièces soudées; + sépare les verticilles; ∞ signifie nombreuses pièces.',formula:'⚥  ✳  K(5)  C(5)  A5  G̲(2)',formulaNote:'Exemple de lecture : fleur bisexuée, actinomorphe, cinq sépales soudés, cinq pétales soudés, cinq étamines et deux carpelles soudés avec ovaire supère. K = calice · C = corolle · P = tépales · A = androcée · G = gynécée · ↑ = zygomorphe · ✳ = actinomorphe · G̲ = ovaire supère · G̅ = ovaire infère.',p:['1116','1156','1220','1221','1222'].map(flowerPhoto)},
