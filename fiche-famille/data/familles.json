@@ -3,8 +3,10 @@
   "Feuille",
   "Fleur",
   "Fruit",
+  "Semence",
   "Tige",
-  "Racine"
+  "Racine",
+  "Structures spécialisées"
  ],
  "familles": [
   {
@@ -85,13 +87,6 @@
       ]
      },
      {
-      "img": "media/Annonaceae__Annona-glabra__glabra-fleur-feuille-004.jpg",
-      "nom": "Annona glabra",
-      "patterns": [
-       "Annona glabra"
-      ]
-     },
-     {
       "img": "media/Annonaceae__Cananga-odorata__dorata-fleur-feuille-008.jpg",
       "nom": "Cananga odorata (pétales)",
       "patterns": [
@@ -148,9 +143,57 @@
       "patterns": [
        "Annona cherimola"
       ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-cherimola__fleur-proposee-010.jpg",
+      "nom": "Annona cherimola ? — fleur sur la plante",
+      "patterns": [
+       "identification proposée",
+       "fleur pendante",
+       "pétales libres",
+       "trois pétales externes charnus"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Annona-cherimola__fleur-proposee-011.jpg",
+      "nom": "Annona cherimola ? — fleur sur la plante",
+      "patterns": [
+       "identification proposée",
+       "fleur pendante",
+       "pétales libres",
+       "trois pétales externes charnus"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Cananga-odorata__fleur-detachee-024.jpg",
+      "nom": "Cananga odorata — fleur détachée",
+      "patterns": [
+       "fleur détachée",
+       "six pétales libres",
+       "pétales rubanés"
+      ]
+     },
+     {
+      "img": "media/Annonaceae__Cananga-odorata__petales-detaches-027.jpg",
+      "nom": "Cananga odorata — pétales détachés",
+      "patterns": [
+       "pétale",
+       "pièce de la corolle",
+       "pétales libres",
+       "pétales rubanés"
+      ]
      }
     ],
     "Fruit": [
+     {
+      "img": "media/Annonaceae__Annona-glabra__glabra-fruit-detache-002.jpg",
+      "nom": "Annona glabra",
+      "patterns": [
+       "fruit détaché",
+       "fruit entier",
+       "surface externe"
+      ]
+     },
      {
       "img": "media/Annonaceae__Annona-montana__Annona-montana-fruit-001.jpg",
       "nom": "Annona montana",

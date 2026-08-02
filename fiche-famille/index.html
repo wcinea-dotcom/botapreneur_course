@@ -25,6 +25,7 @@ select{font-family:inherit;font-size:15px;padding:9px 12px;border:1px solid #c3c
 .ph .im{aspect-ratio:1/1;background:#eef1f3;overflow:hidden}.ph .im img{width:100%;height:100%;object-fit:cover;display:block}
 .ph .bd{padding:7px 9px}.ph .nm{font-size:12px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:3px}
 .tag{display:inline-block;background:#eef3ea;color:var(--green);border-radius:5px;padding:1px 6px;font-size:10px;margin:0 3px 3px 0}
+.organTag{background:#e7eef7;color:var(--navy);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
 .void{color:#9aa7b0;font-size:13px;font-family:Poppins;font-weight:600;background:#fff;border:1px dashed #cdd6de;border-radius:12px;padding:16px;text-align:center}
 .void .plus{font-size:24px;color:#c7d2da;display:block}
 .modal{display:none;position:fixed;inset:0;z-index:60;background:rgba(7,20,30,.94)}
@@ -47,19 +48,20 @@ select{font-family:inherit;font-size:15px;padding:9px 12px;border:1px solid #c3c
 
 <script>
 let DATA=null;
-function photo(p){
+function photo(p,organ){
  const tags=(p.patterns||[]).map(t=>`<span class="tag">${t}</span>`).join("");
- return `<div class="ph" onclick="openM('${p.img}')"><div class="im"><img loading="lazy" src="${p.img}"></div><div class="bd"><div class="nm">${p.nom||""}</div>${tags}</div></div>`;
+ return `<div class="ph" onclick="openM('${p.img}')"><div class="im"><img loading="lazy" src="${p.img}"></div><div class="bd"><div class="nm">${p.nom||""}</div><span class="tag organTag">Organe : ${organ}</span>${tags}</div></div>`;
 }
+function detailScore(p){return (p.patterns||[]).some(t=>/pétale|détach|coupe|intérieur|dissection/i.test(t))?1:0;}
 function render(f){
  const total=DATA.organes.reduce((s,o)=>s+((f.organes[o]||[]).length),0);
  document.getElementById("head").innerHTML=`<h1>${f.fam}</h1><div class="cnt">${total} photo(s) · ${DATA.organes.filter(o=>(f.organes[o]||[]).length).length} organe(s) documenté(s)</div>`;
  document.getElementById("sig").innerHTML=f.note?`<div class="sig"><b>SIGNATURE DE LA FAMILLE — ce qu'il faut regarder</b><br>${f.note}</div>`:"";
  let h="";
  DATA.organes.forEach(o=>{
-  const arr=f.organes[o]||[];
+  const arr=[...(f.organes[o]||[])].sort((a,b)=>detailScore(b)-detailScore(a));
   h+=`<div class="organ"><h3>${o} · ${arr.length}</h3>`;
-  h+= arr.length ? `<div class="gal">${arr.map(photo).join("")}</div>` : `<div class="void"><span class="plus">＋</span>Aucune photo ${o.toLowerCase()} pour cette famille — à alimenter</div>`;
+  h+= arr.length ? `<div class="gal">${arr.map(p=>photo(p,o)).join("")}</div>` : `<div class="void"><span class="plus">＋</span>Aucune photo ${o.toLowerCase()} pour cette famille — à alimenter</div>`;
   h+=`</div>`;
  });
  document.getElementById("body").innerHTML=h;
