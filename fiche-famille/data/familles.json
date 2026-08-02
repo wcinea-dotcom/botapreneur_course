@@ -8,117 +8,6 @@
  ],
  "familles": [
   {
-   "fam": "Melastomataceae",
-   "note": "Souvent feuilles opposées + nervation acrodrome très visible ; comparer les trois caractères ensemble.",
-   "organes": {
-    "Feuille": [
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-01.jpg",
-      "nom": "Melastome (Melastomataceae)",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Elliptique/ovale"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-02.jpg",
-      "nom": "Melastome",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Elliptique/ovale"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-03.jpg",
-      "nom": "Melastome",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Elliptique/ovale"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-22.jpg",
-      "nom": "Melastome",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Elliptique/ovale"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-26.jpg",
-      "nom": "Melastome",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Lancéolée"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-27.jpg",
-      "nom": "Melastome",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Elliptique/ovale"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-30.jpg",
-      "nom": "Melastome bicolore",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Lancéolée"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-31.jpg",
-      "nom": "Melastome bicolore",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Lancéolée"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-32.jpg",
-      "nom": "Melastome (fleur)",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Elliptique/ovale"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-33.jpg",
-      "nom": "Melastome bicolore",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Cordée"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-90.jpg",
-      "nom": "Arbuste à feuilles opposées",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Elliptique/ovale"
-      ]
-     }
-    ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
    "fam": "Fabaceae",
    "note": "Corolle papilionacée fréquente, un seul carpelle, placentation marginale.",
    "organes": {
@@ -128,8 +17,7 @@
       "nom": "Légumineuse (Fabaceae)",
       "patterns": [
        "Pennée",
-       "Composée (folioles)",
-       "Entière"
+       "Composée (folioles)"
       ]
      },
      {
@@ -137,8 +25,7 @@
       "nom": "Légumineuse (Fabaceae)",
       "patterns": [
        "Pennée",
-       "Composée (folioles)",
-       "Entière"
+       "Composée (folioles)"
       ]
      },
      {
@@ -146,8 +33,7 @@
       "nom": "Légumineuse (Fabaceae)",
       "patterns": [
        "Pennée",
-       "Composée (folioles)",
-       "Entière"
+       "Composée (folioles)"
       ]
      },
      {
@@ -155,8 +41,7 @@
       "nom": "Légumineuse (Fabaceae)",
       "patterns": [
        "Pennée",
-       "Composée (folioles)",
-       "Entière"
+       "Composée (folioles)"
       ]
      },
      {
@@ -164,8 +49,7 @@
       "nom": "Trifoliolée (légumineuse)",
       "patterns": [
        "Pennée",
-       "Composée (folioles)",
-       "Entière"
+       "Composée (folioles)"
       ]
      },
      {
@@ -173,8 +57,7 @@
       "nom": "Légumineuse bipennée",
       "patterns": [
        "Pennée",
-       "Composée (folioles)",
-       "Entière"
+       "Composée (folioles)"
       ]
      },
      {
@@ -182,65 +65,150 @@
       "nom": "Bipennée (mimosoïde)",
       "patterns": [
        "Pennée",
-       "Composée (folioles)",
-       "Entière"
+       "Composée (folioles)"
       ]
      }
     ],
-    "Fleur": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Fabaceae__IMG-3395.jpg",
+      "nom": "Ebenopsis ebano",
+      "patterns": [
+       "Pl@ntNet 93%"
+      ]
+     },
+     {
+      "img": "fleurs/Fabaceae__IMG-1988.jpg",
+      "nom": "Delonix regia",
+      "patterns": [
+       "Pl@ntNet 83%"
+      ]
+     },
+     {
+      "img": "fleurs/Fabaceae__IMG-3390.jpg",
+      "nom": "Ebenopsis ebano",
+      "patterns": [
+       "Pl@ntNet 81%"
+      ]
+     },
+     {
+      "img": "fleurs/Fabaceae__IMG-1996.jpg",
+      "nom": "Delonix regia",
+      "patterns": [
+       "Pl@ntNet 78%"
+      ]
+     },
+     {
+      "img": "fleurs/Fabaceae__IMG-2495-1.jpg",
+      "nom": "Delonix regia",
+      "patterns": [
+       "Pl@ntNet 77%"
+      ]
+     },
+     {
+      "img": "fleurs/Fabaceae__IMG-2004.jpg",
+      "nom": "Delonix regia",
+      "patterns": [
+       "Pl@ntNet 75%"
+      ]
+     }
+    ],
     "Fruit": [],
     "Tige": [],
     "Racine": []
    }
   },
   {
-   "fam": "Polygonaceae",
-   "note": "Présence d'une ochréa (gaine) au nœud chez beaucoup d'espèces.",
+   "fam": "Melastomataceae",
+   "note": "Souvent feuilles opposées + nervation acrodrome très visible ; comparer les trois caractères ensemble.",
    "organes": {
     "Feuille": [
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-12.jpg",
-      "nom": "cf. Coccoloba uvifera (raisinier)",
+      "img": "../patterns-feuilles-handoff/app/images/FE-01.jpg",
+      "nom": "Melastome (Melastomataceae)",
       "patterns": [
-       "Pennée",
-       "Orbiculaire",
-       "Entière"
+       "Acrodrome",
+       "Opposée"
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-18.jpg",
-      "nom": "À confirmer",
+      "img": "../patterns-feuilles-handoff/app/images/FE-02.jpg",
+      "nom": "Melastome",
       "patterns": [
-       "Pennée",
-       "Elliptique/ovale",
-       "Entière"
+       "Acrodrome",
+       "Opposée"
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-69.jpg",
-      "nom": "Raisinier bord de mer",
+      "img": "../patterns-feuilles-handoff/app/images/FE-03.jpg",
+      "nom": "Melastome",
       "patterns": [
-       "Pennée",
-       "Orbiculaire",
-       "Entière"
+       "Acrodrome",
+       "Opposée"
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-71.jpg",
-      "nom": "Raisinier — feuille engainante",
+      "img": "../patterns-feuilles-handoff/app/images/FE-22.jpg",
+      "nom": "Melastome",
       "patterns": [
-       "Pennée",
-       "Alterne",
-       "Orbiculaire"
+       "Acrodrome",
+       "Opposée"
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-110.jpg",
-      "nom": "Renouée (herbacée)",
+      "img": "../patterns-feuilles-handoff/app/images/FE-26.jpg",
+      "nom": "Melastome",
       "patterns": [
-       "Pennée",
-       "Alterne",
-       "Lancéolée"
+       "Acrodrome",
+       "Opposée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-27.jpg",
+      "nom": "Melastome",
+      "patterns": [
+       "Acrodrome",
+       "Opposée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-30.jpg",
+      "nom": "Melastome bicolore",
+      "patterns": [
+       "Acrodrome",
+       "Opposée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-31.jpg",
+      "nom": "Melastome bicolore",
+      "patterns": [
+       "Acrodrome",
+       "Opposée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-32.jpg",
+      "nom": "Melastome (fleur)",
+      "patterns": [
+       "Acrodrome",
+       "Opposée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-33.jpg",
+      "nom": "Melastome bicolore",
+      "patterns": [
+       "Acrodrome",
+       "Opposée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-90.jpg",
+      "nom": "Arbuste à feuilles opposées",
+      "patterns": [
+       "Acrodrome",
+       "Opposée"
       ]
      }
     ],
@@ -260,8 +228,7 @@
       "nom": "À confirmer",
       "patterns": [
        "Pennée",
-       "Perforée/lobée",
-       "Lobée"
+       "Perforée/lobée"
       ]
      },
      {
@@ -269,8 +236,7 @@
       "nom": "Alocasia",
       "patterns": [
        "Palmée",
-       "Sagittée",
-       "Sinuée"
+       "Sagittée"
       ]
      },
      {
@@ -278,90 +244,54 @@
       "nom": "Pothos (panaché)",
       "patterns": [
        "Pennée",
-       "Cordée",
-       "Entière"
+       "Cordée"
       ]
      }
     ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Asparagaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
+    "Fleur": [
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-65.jpg",
-      "nom": "Dracaena (panaché)",
+      "img": "fleurs/Araceae__IMG-2591.jpg",
+      "nom": "Philodendron erubescens",
       "patterns": [
-       "Parallèle",
-       "Lancéolée",
-       "Entière"
+       "Pl@ntNet 48%"
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-66.jpg",
-      "nom": "Cordyline",
+      "img": "fleurs/Araceae__IMG-0988.jpg",
+      "nom": "Spathiphyllum friedrichsthalii",
       "patterns": [
-       "Parallèle",
-       "Alterne",
-       "Lancéolée"
+       "Pl@ntNet 47%"
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-83.jpg",
-      "nom": "Agave",
+      "img": "fleurs/Araceae__IMG-0987.jpg",
+      "nom": "Spathiphyllum friedrichsthalii",
       "patterns": [
-       "Parallèle",
-       "Lancéolée",
-       "Entière"
+       "Pl@ntNet 47%"
+      ]
+     },
+     {
+      "img": "fleurs/Araceae__IMG-0993.jpg",
+      "nom": "Spathiphyllum friedrichsthalii",
+      "patterns": [
+       "Pl@ntNet 46%"
+      ]
+     },
+     {
+      "img": "fleurs/Araceae__IMG-0990.jpg",
+      "nom": "Spathiphyllum friedrichsthalii",
+      "patterns": [
+       "Pl@ntNet 43%"
+      ]
+     },
+     {
+      "img": "fleurs/Araceae__IMG-2592.jpg",
+      "nom": "Philodendron erubescens",
+      "patterns": [
+       "Pl@ntNet 37%"
       ]
      }
     ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Moraceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-80.jpg",
-      "nom": "Ficus (grand pétiole)",
-      "patterns": [
-       "Pennée",
-       "Cordée",
-       "Entière"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-89.jpg",
-      "nom": "Grande feuille cordée",
-      "patterns": [
-       "Acrodrome",
-       "Cordée",
-       "Entière"
-      ]
-     },
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-98.jpg",
-      "nom": "Grande feuille (pétiole épais)",
-      "patterns": [
-       "Pennée",
-       "Elliptique/ovale",
-       "Entière"
-      ]
-     }
-    ],
-    "Fleur": [],
     "Fruit": [],
     "Tige": [],
     "Racine": []
@@ -377,8 +307,7 @@
       "nom": "Croton",
       "patterns": [
        "Pennée",
-       "Lancéolée",
-       "Entière"
+       "Lancéolée"
       ]
      },
      {
@@ -386,8 +315,7 @@
       "nom": "Feuille palmatilobée",
       "patterns": [
        "Palmée",
-       "Palmatilobée",
-       "Lobée"
+       "Palmatilobée"
       ]
      },
      {
@@ -395,183 +323,54 @@
       "nom": "Acalypha (feuillage rouge)",
       "patterns": [
        "Pennée",
-       "Opposée",
-       "Cordée"
+       "Opposée"
       ]
      }
     ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Vitaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
+    "Fleur": [
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-06.jpg",
-      "nom": "Type vigne (Vitaceae)",
+      "img": "fleurs/Euphorbiaceae__IMG-2483.jpg",
+      "nom": "Jatropha integerrima",
       "patterns": [
-       "Palmée",
-       "Cordée",
-       "Dentée"
+       "Pl@ntNet 99%"
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-52.jpg",
-      "nom": "Vigne (nervation palmée)",
+      "img": "fleurs/Euphorbiaceae__IMG-2482.jpg",
+      "nom": "Jatropha integerrima",
       "patterns": [
-       "Palmée",
-       "Cordée",
-       "Dentée"
-      ]
-     }
-    ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Zingiberaceae",
-   "note": "Labelle voyant (staminode pétaloïde), feuilles engainantes.",
-   "organes": {
-    "Feuille": [
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-38.jpg",
-      "nom": "À confirmer",
-      "patterns": [
-       "Parallèle",
-       "Lancéolée",
-       "Entière"
+       "Pl@ntNet 96%"
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-70.jpg",
-      "nom": "Gingembre",
+      "img": "fleurs/Euphorbiaceae__IMG-0831.jpg",
+      "nom": "Euphorbia geroldii",
       "patterns": [
-       "Parallèle",
-       "Distique",
-       "Lancéolée"
-      ]
-     }
-    ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Araliaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-51.jpg",
-      "nom": "Hydrocotyle (marge crénelée)",
-      "patterns": [
-       "Palmée",
-       "Orbiculaire",
-       "Crénelée"
+       "Pl@ntNet 92%"
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-64.jpg",
-      "nom": "Schefflera (panaché)",
+      "img": "fleurs/Euphorbiaceae__IMG-0832.jpg",
+      "nom": "Euphorbia geroldii",
       "patterns": [
-       "Pennée",
-       "Composée (folioles)",
-       "Entière"
-      ]
-     }
-    ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Fougère (Polypodiopsida)",
-   "note": "",
-   "organes": {
-    "Feuille": [
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-76.jpg",
-      "nom": "Fougère (sores)",
-      "patterns": [
-       "Pennée",
-       "Composée (folioles)",
-       "Entière"
+       "Pl@ntNet 89%"
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-112.jpg",
-      "nom": "Fougère (sores linéaires)",
+      "img": "fleurs/Euphorbiaceae__IMG-2480.jpg",
+      "nom": "Jatropha integerrima",
       "patterns": [
-       "Pennée",
-       "Composée (folioles)",
-       "Entière"
-      ]
-     }
-    ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Urticaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-77.jpg",
-      "nom": "Mélastome",
-      "patterns": [
-       "Acrodrome",
-       "Opposée",
-       "Elliptique/ovale"
+       "Pl@ntNet 87%"
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-114.jpg",
-      "nom": "Feuille dentée (ortie?)",
+      "img": "fleurs/Euphorbiaceae__IMG-0833.jpg",
+      "nom": "Euphorbia geroldii",
       "patterns": [
-       "Acrodrome",
-       "Elliptique/ovale",
-       "Dentée"
+       "Pl@ntNet 77%"
       ]
      }
     ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Ericaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-04.jpg",
-      "nom": "Lyonia microcarpa",
-      "patterns": [
-       "Pennée",
-       "Alterne",
-       "Elliptique/ovale"
-      ]
-     }
-    ],
-    "Fleur": [],
     "Fruit": [],
     "Tige": [],
     "Racine": []
@@ -587,96 +386,119 @@
       "nom": "cf. Calophyllum",
       "patterns": [
        "Parallèle",
-       "Elliptique/ovale",
-       "Entière"
+       "Elliptique/ovale"
       ]
      }
     ],
-    "Fleur": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Calophyllaceae__IMG-1285.jpg",
+      "nom": "Mammea americana",
+      "patterns": [
+       "Pl@ntNet 84%"
+      ]
+     },
+     {
+      "img": "fleurs/Calophyllaceae__IMG-1288.jpg",
+      "nom": "Mammea americana",
+      "patterns": [
+       "Pl@ntNet 81%"
+      ]
+     },
+     {
+      "img": "fleurs/Calophyllaceae__IMG-2753.jpg",
+      "nom": "Mammea americana",
+      "patterns": [
+       "Pl@ntNet 81%"
+      ]
+     },
+     {
+      "img": "fleurs/Calophyllaceae__IMG-1289.jpg",
+      "nom": "Mammea americana",
+      "patterns": [
+       "Pl@ntNet 79%"
+      ]
+     },
+     {
+      "img": "fleurs/Calophyllaceae__IMG-1287.jpg",
+      "nom": "Mammea americana",
+      "patterns": [
+       "Pl@ntNet 76%"
+      ]
+     },
+     {
+      "img": "fleurs/Calophyllaceae__IMG-1267.jpg",
+      "nom": "Mammea americana",
+      "patterns": [
+       "Pl@ntNet 75%"
+      ]
+     }
+    ],
     "Fruit": [],
     "Tige": [],
     "Racine": []
    }
   },
   {
-   "fam": "Zamiaceae",
+   "fam": "Asparagaceae",
    "note": "",
    "organes": {
     "Feuille": [
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-73.jpg",
-      "nom": "Zamia (cycade)",
+      "img": "../patterns-feuilles-handoff/app/images/FE-65.jpg",
+      "nom": "Dracaena (panaché)",
       "patterns": [
-       "Pennée",
-       "Distique",
-       "Composée (folioles)"
+       "Parallèle",
+       "Lancéolée"
       ]
-     }
-    ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Cycadaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
+     },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-82.jpg",
-      "nom": "Cycas",
+      "img": "../patterns-feuilles-handoff/app/images/FE-66.jpg",
+      "nom": "Cordyline",
       "patterns": [
-       "Pennée",
-       "Distique",
-       "Composée (folioles)"
+       "Parallèle",
+       "Alterne"
       ]
-     }
-    ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Clusiaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
+     },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-85.jpg",
-      "nom": "Clusia",
+      "img": "../patterns-feuilles-handoff/app/images/FE-83.jpg",
+      "nom": "Agave",
       "patterns": [
-       "Pennée",
-       "Opposée",
-       "Obovale"
+       "Parallèle",
+       "Lancéolée"
       ]
      }
     ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Dilleniaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
+    "Fleur": [
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-86.jpg",
-      "nom": "Feuille râpeuse (« grage »)",
+      "img": "fleurs/Asparagaceae__IMG-0463.jpg",
+      "nom": "Liriope spicata",
       "patterns": [
-       "Pennée",
-       "Obovale",
-       "Serrulée"
+       "Pl@ntNet 73%"
+      ]
+     },
+     {
+      "img": "fleurs/Asparagaceae__IMG-0470.jpg",
+      "nom": "Liriope spicata",
+      "patterns": [
+       "Pl@ntNet 71%"
+      ]
+     },
+     {
+      "img": "fleurs/Asparagaceae__IMG-0467.jpg",
+      "nom": "Liriope muscari",
+      "patterns": [
+       "Pl@ntNet 58%"
+      ]
+     },
+     {
+      "img": "fleurs/Asparagaceae__IMG-0465.jpg",
+      "nom": "Liriope muscari",
+      "patterns": [
+       "Pl@ntNet 54%"
       ]
      }
     ],
-    "Fleur": [],
     "Fruit": [],
     "Tige": [],
     "Racine": []
@@ -692,29 +514,1412 @@
       "nom": "Palmier en éventail",
       "patterns": [
        "Palmée",
-       "Palmée (éventail)",
-       "Lobée"
+       "Palmée (éventail)"
       ]
      }
     ],
-    "Fleur": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Arecaceae__IMG-3118.jpg",
+      "nom": "Cryosophila kalbreyeri",
+      "patterns": [
+       "Pl@ntNet 27%"
+      ]
+     },
+     {
+      "img": "fleurs/Arecaceae__IMG-3106.jpg",
+      "nom": "Cryosophila kalbreyeri",
+      "patterns": [
+       "Pl@ntNet 24%"
+      ]
+     },
+     {
+      "img": "fleurs/Arecaceae__IMG-3112.jpg",
+      "nom": "Cryosophila kalbreyeri",
+      "patterns": [
+       "Pl@ntNet 17%"
+      ]
+     },
+     {
+      "img": "fleurs/Arecaceae__IMG-2616-1.jpg",
+      "nom": "Arenga engleri",
+      "patterns": [
+       "Pl@ntNet 15%"
+      ]
+     },
+     {
+      "img": "fleurs/Arecaceae__IMG-3115.jpg",
+      "nom": "Cryosophila kalbreyeri",
+      "patterns": [
+       "Pl@ntNet 14%"
+      ]
+     },
+     {
+      "img": "fleurs/Arecaceae__IMG-3114.jpg",
+      "nom": "Phoenix dactylifera",
+      "patterns": [
+       "Pl@ntNet 11%"
+      ]
+     }
+    ],
     "Fruit": [],
     "Tige": [],
     "Racine": []
    }
   },
   {
-   "fam": "Nyctaginaceae",
+   "fam": "Costaceae",
    "note": "",
    "organes": {
     "Feuille": [
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-92.jpg",
-      "nom": "Bougainvillier",
+      "img": "../patterns-feuilles-handoff/app/images/FE-95.jpg",
+      "nom": "Costus",
+      "patterns": [
+       "Parallèle",
+       "Spiralée"
+      ]
+     }
+    ],
+    "Fleur": [
+     {
+      "img": "fleurs/Costaceae__IMG-0822.jpg",
+      "nom": "Costus woodsonii",
+      "patterns": [
+       "Pl@ntNet 83%"
+      ]
+     },
+     {
+      "img": "fleurs/Costaceae__IMG-0751.jpg",
+      "nom": "Costus comosus",
+      "patterns": [
+       "Pl@ntNet 65%"
+      ]
+     },
+     {
+      "img": "fleurs/Costaceae__IMG-0820.jpg",
+      "nom": "Costus woodsonii",
+      "patterns": [
+       "Pl@ntNet 63%"
+      ]
+     },
+     {
+      "img": "fleurs/Costaceae__IMG-0675.jpg",
+      "nom": "Costus lucanusianus",
+      "patterns": [
+       "Pl@ntNet 59%"
+      ]
+     },
+     {
+      "img": "fleurs/Costaceae__IMG-0681.jpg",
+      "nom": "Costus lucanusianus",
+      "patterns": [
+       "Pl@ntNet 52%"
+      ]
+     },
+     {
+      "img": "fleurs/Costaceae__IMG-0747.jpg",
+      "nom": "Costus comosus",
+      "patterns": [
+       "Pl@ntNet 47%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Asphodelaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-107.jpg",
+      "nom": "Aloe (succulente)",
+      "patterns": [
+       "Parallèle",
+       "Lancéolée"
+      ]
+     }
+    ],
+    "Fleur": [
+     {
+      "img": "fleurs/Asphodelaceae__IMG-1173.jpg",
+      "nom": "Bulbine frutescens",
+      "patterns": [
+       "Pl@ntNet 89%"
+      ]
+     },
+     {
+      "img": "fleurs/Asphodelaceae__IMG-1176.jpg",
+      "nom": "Bulbine frutescens",
+      "patterns": [
+       "Pl@ntNet 89%"
+      ]
+     },
+     {
+      "img": "fleurs/Asphodelaceae__IMG-1166.jpg",
+      "nom": "Bulbine frutescens",
+      "patterns": [
+       "Pl@ntNet 88%"
+      ]
+     },
+     {
+      "img": "fleurs/Asphodelaceae__IMG-1169.jpg",
+      "nom": "Bulbine frutescens",
+      "patterns": [
+       "Pl@ntNet 72%"
+      ]
+     },
+     {
+      "img": "fleurs/Asphodelaceae__IMG-1175.jpg",
+      "nom": "Bulbine frutescens",
+      "patterns": [
+       "Pl@ntNet 58%"
+      ]
+     },
+     {
+      "img": "fleurs/Asphodelaceae__IMG-1168.jpg",
+      "nom": "Bulbine frutescens",
+      "patterns": [
+       "Pl@ntNet 56%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Asteraceae",
+   "note": "Fleurs en capitule (ligules + fleurons), anthères souvent soudées (syngénèse), calice réduit en pappus.",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Asteraceae__IMG-0290.jpg",
+      "nom": "Sphagneticola trilobata",
+      "patterns": [
+       "Pl@ntNet 95%"
+      ]
+     },
+     {
+      "img": "fleurs/Asteraceae__IMG-0284.jpg",
+      "nom": "Sphagneticola trilobata",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     },
+     {
+      "img": "fleurs/Asteraceae__IMG-2644.jpg",
+      "nom": "Cosmos sulphureus",
+      "patterns": [
+       "Pl@ntNet 86%"
+      ]
+     },
+     {
+      "img": "fleurs/Asteraceae__IMG-2641.jpg",
+      "nom": "Cosmos sulphureus",
+      "patterns": [
+       "Pl@ntNet 86%"
+      ]
+     },
+     {
+      "img": "fleurs/Asteraceae__IMG-0288.jpg",
+      "nom": "Sphagneticola trilobata",
+      "patterns": [
+       "Pl@ntNet 81%"
+      ]
+     },
+     {
+      "img": "fleurs/Asteraceae__IMG-0243.jpg",
+      "nom": "Ambrosia artemisiifolia",
+      "patterns": [
+       "Pl@ntNet 75%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Verbenaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Verbenaceae__IMG-2656.jpg",
+      "nom": "Lantana involucrata",
+      "patterns": [
+       "Pl@ntNet 95%"
+      ]
+     },
+     {
+      "img": "fleurs/Verbenaceae__IMG-2657.jpg",
+      "nom": "Lantana involucrata",
+      "patterns": [
+       "Pl@ntNet 93%"
+      ]
+     },
+     {
+      "img": "fleurs/Verbenaceae__IMG-2943.jpg",
+      "nom": "Lantana involucrata",
+      "patterns": [
+       "Pl@ntNet 90%"
+      ]
+     },
+     {
+      "img": "fleurs/Verbenaceae__IMG-2658.jpg",
+      "nom": "Lantana involucrata",
+      "patterns": [
+       "Pl@ntNet 87%"
+      ]
+     },
+     {
+      "img": "fleurs/Verbenaceae__IMG-2946.jpg",
+      "nom": "Lantana involucrata",
+      "patterns": [
+       "Pl@ntNet 83%"
+      ]
+     },
+     {
+      "img": "fleurs/Verbenaceae__IMG-2617.jpg",
+      "nom": "Lantana depressa",
+      "patterns": [
+       "Pl@ntNet 82%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Moringaceae",
+   "note": "Fleurs blanc crème légèrement zygomorphes, 5 pétales + 5 étamines fertiles ; genre Moringa (Benzolive).",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Moringaceae__IMG-0495.jpg",
+      "nom": "Moringa oleifera",
+      "patterns": [
+       "Pl@ntNet 98%"
+      ]
+     },
+     {
+      "img": "fleurs/Moringaceae__IMG-0490.jpg",
+      "nom": "Moringa oleifera",
+      "patterns": [
+       "Pl@ntNet 97%"
+      ]
+     },
+     {
+      "img": "fleurs/Moringaceae__IMG-0492.jpg",
+      "nom": "Moringa oleifera",
+      "patterns": [
+       "Pl@ntNet 96%"
+      ]
+     },
+     {
+      "img": "fleurs/Moringaceae__IMG-0476.jpg",
+      "nom": "Moringa oleifera",
+      "patterns": [
+       "Pl@ntNet 95%"
+      ]
+     },
+     {
+      "img": "fleurs/Moringaceae__IMG-0474.jpg",
+      "nom": "Moringa oleifera",
+      "patterns": [
+       "Pl@ntNet 94%"
+      ]
+     },
+     {
+      "img": "fleurs/Moringaceae__IMG-0488.jpg",
+      "nom": "Moringa oleifera",
+      "patterns": [
+       "Pl@ntNet 94%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Apocynaceae",
+   "note": "Corolle gamopétale souvent contortée (préfloraison tordue), fréquemment à latex.",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Apocynaceae__IMG-1004.jpg",
+      "nom": "Wrightia antidysenterica",
+      "patterns": [
+       "Pl@ntNet 94%"
+      ]
+     },
+     {
+      "img": "fleurs/Apocynaceae__IMG-1018.jpg",
+      "nom": "Wrightia antidysenterica",
+      "patterns": [
+       "Pl@ntNet 91%"
+      ]
+     },
+     {
+      "img": "fleurs/Apocynaceae__IMG-2630.jpg",
+      "nom": "Catharanthus roseus",
+      "patterns": [
+       "Pl@ntNet 90%"
+      ]
+     },
+     {
+      "img": "fleurs/Apocynaceae__IMG-1221.jpg",
+      "nom": "Tabernaemontana divaricata",
+      "patterns": [
+       "Pl@ntNet 90%"
+      ]
+     },
+     {
+      "img": "fleurs/Apocynaceae__IMG-2638.jpg",
+      "nom": "Catharanthus roseus",
+      "patterns": [
+       "Pl@ntNet 89%"
+      ]
+     },
+     {
+      "img": "fleurs/Apocynaceae__IMG-1124.jpg",
+      "nom": "Catharanthus roseus",
+      "patterns": [
+       "Pl@ntNet 89%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Heliconiaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Heliconiaceae__IMG-0624.jpg",
+      "nom": "Heliconia rostrata",
+      "patterns": [
+       "Pl@ntNet 89%"
+      ]
+     },
+     {
+      "img": "fleurs/Heliconiaceae__IMG-0628.jpg",
+      "nom": "Heliconia rostrata",
+      "patterns": [
+       "Pl@ntNet 86%"
+      ]
+     },
+     {
+      "img": "fleurs/Heliconiaceae__IMG-2193.jpg",
+      "nom": "Heliconia × rauliniana",
+      "patterns": [
+       "Pl@ntNet 83%"
+      ]
+     },
+     {
+      "img": "fleurs/Heliconiaceae__IMG-2189.jpg",
+      "nom": "Heliconia × rauliniana",
+      "patterns": [
+       "Pl@ntNet 70%"
+      ]
+     },
+     {
+      "img": "fleurs/Heliconiaceae__IMG-2191.jpg",
+      "nom": "Heliconia × rauliniana",
+      "patterns": [
+       "Pl@ntNet 67%"
+      ]
+     },
+     {
+      "img": "fleurs/Heliconiaceae__IMG-0645.jpg",
+      "nom": "Heliconia librata",
+      "patterns": [
+       "Pl@ntNet 65%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Boraginaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Boraginaceae__IMG-2673.jpg",
+      "nom": "Bourreria succulenta",
+      "patterns": [
+       "Pl@ntNet 100%"
+      ]
+     },
+     {
+      "img": "fleurs/Boraginaceae__IMG-2675.jpg",
+      "nom": "Bourreria succulenta",
+      "patterns": [
+       "Pl@ntNet 99%"
+      ]
+     },
+     {
+      "img": "fleurs/Boraginaceae__IMG-2677.jpg",
+      "nom": "Bourreria succulenta",
+      "patterns": [
+       "Pl@ntNet 98%"
+      ]
+     },
+     {
+      "img": "fleurs/Boraginaceae__IMG-2678.jpg",
+      "nom": "Bourreria succulenta",
+      "patterns": [
+       "Pl@ntNet 96%"
+      ]
+     },
+     {
+      "img": "fleurs/Boraginaceae__IMG-1454.jpg",
+      "nom": "Cordia boissieri",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     },
+     {
+      "img": "fleurs/Boraginaceae__IMG-1350.jpg",
+      "nom": "Cordia lutea",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Malvaceae",
+   "note": "Colonne staminale (étamines monadelphes) très caractéristique.",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Malvaceae__IMG-2297.jpg",
+      "nom": "Hibiscus waimeae",
+      "patterns": [
+       "Pl@ntNet 88%"
+      ]
+     },
+     {
+      "img": "fleurs/Malvaceae__IMG-2299.jpg",
+      "nom": "Hibiscus waimeae",
+      "patterns": [
+       "Pl@ntNet 86%"
+      ]
+     },
+     {
+      "img": "fleurs/Malvaceae__IMG-0784.jpg",
+      "nom": "Hibiscus schizopetalus",
+      "patterns": [
+       "Pl@ntNet 79%"
+      ]
+     },
+     {
+      "img": "fleurs/Malvaceae__IMG-2294.jpg",
+      "nom": "Hibiscus waimeae",
+      "patterns": [
+       "Pl@ntNet 77%"
+      ]
+     },
+     {
+      "img": "fleurs/Malvaceae__IMG-2295.jpg",
+      "nom": "Hibiscus waimeae",
+      "patterns": [
+       "Pl@ntNet 77%"
+      ]
+     },
+     {
+      "img": "fleurs/Malvaceae__IMG-2296.jpg",
+      "nom": "Hibiscus waimeae",
+      "patterns": [
+       "Pl@ntNet 67%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Solanaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Solanaceae__IMG-2432.jpg",
+      "nom": "Brunfelsia densifolia",
+      "patterns": [
+       "Pl@ntNet 93%"
+      ]
+     },
+     {
+      "img": "fleurs/Solanaceae__IMG-2434.jpg",
+      "nom": "Brunfelsia densifolia",
+      "patterns": [
+       "Pl@ntNet 80%"
+      ]
+     },
+     {
+      "img": "fleurs/Solanaceae__IMG-0874.jpg",
+      "nom": "Brugmansia insignis",
+      "patterns": [
+       "Pl@ntNet 74%"
+      ]
+     },
+     {
+      "img": "fleurs/Solanaceae__IMG-0871.jpg",
+      "nom": "Brugmansia insignis",
+      "patterns": [
+       "Pl@ntNet 68%"
+      ]
+     },
+     {
+      "img": "fleurs/Solanaceae__IMG-2436.jpg",
+      "nom": "Brunfelsia densifolia",
+      "patterns": [
+       "Pl@ntNet 62%"
+      ]
+     },
+     {
+      "img": "fleurs/Solanaceae__IMG-0840.jpg",
+      "nom": "Brunfelsia densifolia",
+      "patterns": [
+       "Pl@ntNet 55%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Acanthaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Acanthaceae__IMG-2653-1.jpg",
+      "nom": "Avicennia germinans",
+      "patterns": [
+       "Pl@ntNet 98%"
+      ]
+     },
+     {
+      "img": "fleurs/Acanthaceae__IMG-1334.jpg",
+      "nom": "Justicia spicigera",
+      "patterns": [
+       "Pl@ntNet 97%"
+      ]
+     },
+     {
+      "img": "fleurs/Acanthaceae__IMG-2658-1.jpg",
+      "nom": "Avicennia germinans",
+      "patterns": [
+       "Pl@ntNet 97%"
+      ]
+     },
+     {
+      "img": "fleurs/Acanthaceae__IMG-2645.jpg",
+      "nom": "Avicennia germinans",
+      "patterns": [
+       "Pl@ntNet 96%"
+      ]
+     },
+     {
+      "img": "fleurs/Acanthaceae__IMG-1331.jpg",
+      "nom": "Justicia spicigera",
+      "patterns": [
+       "Pl@ntNet 93%"
+      ]
+     },
+     {
+      "img": "fleurs/Acanthaceae__IMG-2129.jpg",
+      "nom": "Pachystachys lutea",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Amaryllidaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Amaryllidaceae__IMG-1048.jpg",
+      "nom": "Scadoxus multiflorus",
+      "patterns": [
+       "Pl@ntNet 91%"
+      ]
+     },
+     {
+      "img": "fleurs/Amaryllidaceae__IMG-1050.jpg",
+      "nom": "Scadoxus multiflorus",
+      "patterns": [
+       "Pl@ntNet 91%"
+      ]
+     },
+     {
+      "img": "fleurs/Amaryllidaceae__IMG-1179.jpg",
+      "nom": "Zephyranthes robusta",
+      "patterns": [
+       "Pl@ntNet 76%"
+      ]
+     },
+     {
+      "img": "fleurs/Amaryllidaceae__IMG-1189.jpg",
+      "nom": "Zephyranthes robusta",
+      "patterns": [
+       "Pl@ntNet 74%"
+      ]
+     },
+     {
+      "img": "fleurs/Amaryllidaceae__IMG-1186.jpg",
+      "nom": "Zephyranthes robusta",
+      "patterns": [
+       "Pl@ntNet 62%"
+      ]
+     },
+     {
+      "img": "fleurs/Amaryllidaceae__IMG-1053.jpg",
+      "nom": "Scadoxus multiflorus",
+      "patterns": [
+       "Pl@ntNet 59%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Annonaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Annonaceae__IMG-0898.jpg",
+      "nom": "Cananga odorata",
+      "patterns": [
+       "Pl@ntNet 100%"
+      ]
+     },
+     {
+      "img": "fleurs/Annonaceae__IMG-0899.jpg",
+      "nom": "Cananga odorata",
+      "patterns": [
+       "Pl@ntNet 99%"
+      ]
+     },
+     {
+      "img": "fleurs/Annonaceae__IMG-2572.jpg",
+      "nom": "Cananga odorata",
+      "patterns": [
+       "Pl@ntNet 96%"
+      ]
+     },
+     {
+      "img": "fleurs/Annonaceae__IMG-2591-1.jpg",
+      "nom": "Cananga odorata",
+      "patterns": [
+       "Pl@ntNet 96%"
+      ]
+     },
+     {
+      "img": "fleurs/Annonaceae__IMG-2711.jpg",
+      "nom": "Cananga odorata",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     },
+     {
+      "img": "fleurs/Annonaceae__IMG-0900.jpg",
+      "nom": "Cananga odorata",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Rubiaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Rubiaceae__IMG-2588.jpg",
+      "nom": "Cubanola domingensis",
+      "patterns": [
+       "Pl@ntNet 100%"
+      ]
+     },
+     {
+      "img": "fleurs/Rubiaceae__IMG-0904.jpg",
+      "nom": "Cubanola domingensis",
+      "patterns": [
+       "Pl@ntNet 98%"
+      ]
+     },
+     {
+      "img": "fleurs/Rubiaceae__IMG-2583.jpg",
+      "nom": "Cubanola domingensis",
+      "patterns": [
+       "Pl@ntNet 98%"
+      ]
+     },
+     {
+      "img": "fleurs/Rubiaceae__IMG-2582.jpg",
+      "nom": "Cubanola domingensis",
+      "patterns": [
+       "Pl@ntNet 97%"
+      ]
+     },
+     {
+      "img": "fleurs/Rubiaceae__IMG-2574.jpg",
+      "nom": "Cubanola domingensis",
+      "patterns": [
+       "Pl@ntNet 96%"
+      ]
+     },
+     {
+      "img": "fleurs/Rubiaceae__IMG-0976.jpg",
+      "nom": "Pentas lanceolata",
+      "patterns": [
+       "Pl@ntNet 94%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Petiveriaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Petiveriaceae__IMG-1326.jpg",
+      "nom": "Rivina humilis",
+      "patterns": [
+       "Pl@ntNet 99%"
+      ]
+     },
+     {
+      "img": "fleurs/Petiveriaceae__IMG-1325.jpg",
+      "nom": "Rivina humilis",
+      "patterns": [
+       "Pl@ntNet 99%"
+      ]
+     },
+     {
+      "img": "fleurs/Petiveriaceae__IMG-1324.jpg",
+      "nom": "Rivina humilis",
+      "patterns": [
+       "Pl@ntNet 98%"
+      ]
+     },
+     {
+      "img": "fleurs/Petiveriaceae__IMG-1312.jpg",
+      "nom": "Rivina humilis",
+      "patterns": [
+       "Pl@ntNet 94%"
+      ]
+     },
+     {
+      "img": "fleurs/Petiveriaceae__IMG-1323.jpg",
+      "nom": "Rivina humilis",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     },
+     {
+      "img": "fleurs/Petiveriaceae__IMG-1321.jpg",
+      "nom": "Rivina humilis",
+      "patterns": [
+       "Pl@ntNet 76%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Bignoniaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Bignoniaceae__IMG-1398.jpg",
+      "nom": "Tecomaria capensis",
+      "patterns": [
+       "Pl@ntNet 53%"
+      ]
+     },
+     {
+      "img": "fleurs/Bignoniaceae__IMG-2599.jpg",
+      "nom": "Jacaranda puberula",
+      "patterns": [
+       "Pl@ntNet 50%"
+      ]
+     },
+     {
+      "img": "fleurs/Bignoniaceae__IMG-1382.jpg",
+      "nom": "Tecomaria capensis",
+      "patterns": [
+       "Pl@ntNet 50%"
+      ]
+     },
+     {
+      "img": "fleurs/Bignoniaceae__IMG-1384.jpg",
+      "nom": "Tecomaria capensis",
+      "patterns": [
+       "Pl@ntNet 49%"
+      ]
+     },
+     {
+      "img": "fleurs/Bignoniaceae__IMG-1392.jpg",
+      "nom": "Tecomaria capensis",
+      "patterns": [
+       "Pl@ntNet 49%"
+      ]
+     },
+     {
+      "img": "fleurs/Bignoniaceae__IMG-1391.jpg",
+      "nom": "Tecomaria capensis",
+      "patterns": [
+       "Pl@ntNet 47%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Plumbaginaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Plumbaginaceae__IMG-1438.jpg",
+      "nom": "Plumbago auriculata",
+      "patterns": [
+       "Pl@ntNet 99%"
+      ]
+     },
+     {
+      "img": "fleurs/Plumbaginaceae__IMG-1409.jpg",
+      "nom": "Plumbago auriculata",
+      "patterns": [
+       "Pl@ntNet 93%"
+      ]
+     },
+     {
+      "img": "fleurs/Plumbaginaceae__IMG-2744.jpg",
+      "nom": "Plumbago auriculata",
+      "patterns": [
+       "Pl@ntNet 93%"
+      ]
+     },
+     {
+      "img": "fleurs/Plumbaginaceae__IMG-1434.jpg",
+      "nom": "Plumbago auriculata",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     },
+     {
+      "img": "fleurs/Plumbaginaceae__IMG-1433.jpg",
+      "nom": "Plumbago auriculata",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     },
+     {
+      "img": "fleurs/Plumbaginaceae__IMG-1406.jpg",
+      "nom": "Plumbago auriculata",
+      "patterns": [
+       "Pl@ntNet 91%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Myrtaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Myrtaceae__IMG-2074.jpg",
+      "nom": "Pimenta dioica",
+      "patterns": [
+       "Pl@ntNet 98%"
+      ]
+     },
+     {
+      "img": "fleurs/Myrtaceae__IMG-2072.jpg",
+      "nom": "Pimenta dioica",
+      "patterns": [
+       "Pl@ntNet 94%"
+      ]
+     },
+     {
+      "img": "fleurs/Myrtaceae__IMG-2084.jpg",
+      "nom": "Pimenta dioica",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     },
+     {
+      "img": "fleurs/Myrtaceae__IMG-1651.jpg",
+      "nom": "Melaleuca viminalis",
+      "patterns": [
+       "Pl@ntNet 80%"
+      ]
+     },
+     {
+      "img": "fleurs/Myrtaceae__IMG-1664.jpg",
+      "nom": "Melaleuca viminalis",
+      "patterns": [
+       "Pl@ntNet 68%"
+      ]
+     },
+     {
+      "img": "fleurs/Myrtaceae__IMG-1653.jpg",
+      "nom": "Melaleuca viminalis",
+      "patterns": [
+       "Pl@ntNet 64%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Cactaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Cactaceae__IMG-2892.jpg",
+      "nom": "Cereus hexagonus",
+      "patterns": [
+       "Pl@ntNet 95%"
+      ]
+     },
+     {
+      "img": "fleurs/Cactaceae__IMG-2883.jpg",
+      "nom": "Cereus hexagonus",
+      "patterns": [
+       "Pl@ntNet 94%"
+      ]
+     },
+     {
+      "img": "fleurs/Cactaceae__IMG-1816.jpg",
+      "nom": "Cereus hexagonus",
+      "patterns": [
+       "Pl@ntNet 91%"
+      ]
+     },
+     {
+      "img": "fleurs/Cactaceae__IMG-1792.jpg",
+      "nom": "Cereus hexagonus",
+      "patterns": [
+       "Pl@ntNet 91%"
+      ]
+     },
+     {
+      "img": "fleurs/Cactaceae__IMG-2884.jpg",
+      "nom": "Cereus hexagonus",
+      "patterns": [
+       "Pl@ntNet 91%"
+      ]
+     },
+     {
+      "img": "fleurs/Cactaceae__IMG-2879.jpg",
+      "nom": "Cereus hexagonus",
+      "patterns": [
+       "Pl@ntNet 90%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Commelinaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Commelinaceae__IMG-2596.jpg",
+      "nom": "Gibasis pellucida",
+      "patterns": [
+       "Pl@ntNet 90%"
+      ]
+     },
+     {
+      "img": "fleurs/Commelinaceae__IMG-2350.jpg",
+      "nom": "Tradescantia zebrina",
+      "patterns": [
+       "Pl@ntNet 86%"
+      ]
+     },
+     {
+      "img": "fleurs/Commelinaceae__IMG-2351.jpg",
+      "nom": "Tradescantia zebrina",
+      "patterns": [
+       "Pl@ntNet 83%"
+      ]
+     },
+     {
+      "img": "fleurs/Commelinaceae__IMG-2352.jpg",
+      "nom": "Tradescantia zebrina",
+      "patterns": [
+       "Pl@ntNet 81%"
+      ]
+     },
+     {
+      "img": "fleurs/Commelinaceae__IMG-2597.jpg",
+      "nom": "Gibasis pellucida",
+      "patterns": [
+       "Pl@ntNet 80%"
+      ]
+     },
+     {
+      "img": "fleurs/Commelinaceae__IMG-2355.jpg",
+      "nom": "Tradescantia zebrina",
+      "patterns": [
+       "Pl@ntNet 77%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Primulaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Primulaceae__IMG-2459.jpg",
+      "nom": "Jacquinia keyensis",
+      "patterns": [
+       "Pl@ntNet 96%"
+      ]
+     },
+     {
+      "img": "fleurs/Primulaceae__IMG-2455.jpg",
+      "nom": "Jacquinia keyensis",
+      "patterns": [
+       "Pl@ntNet 94%"
+      ]
+     },
+     {
+      "img": "fleurs/Primulaceae__IMG-2468.jpg",
+      "nom": "Jacquinia keyensis",
+      "patterns": [
+       "Pl@ntNet 93%"
+      ]
+     },
+     {
+      "img": "fleurs/Primulaceae__IMG-2805-1.jpg",
+      "nom": "Ardisia elliptica",
+      "patterns": [
+       "Pl@ntNet 90%"
+      ]
+     },
+     {
+      "img": "fleurs/Primulaceae__IMG-2472.jpg",
+      "nom": "Jacquinia keyensis",
+      "patterns": [
+       "Pl@ntNet 84%"
+      ]
+     },
+     {
+      "img": "fleurs/Primulaceae__IMG-2802.jpg",
+      "nom": "Ardisia elliptica",
+      "patterns": [
+       "Pl@ntNet 83%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Combretaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Combretaceae__IMG-3174.jpg",
+      "nom": "Laguncularia racemosa",
+      "patterns": [
+       "Pl@ntNet 99%"
+      ]
+     },
+     {
+      "img": "fleurs/Combretaceae__IMG-3175.jpg",
+      "nom": "Laguncularia racemosa",
+      "patterns": [
+       "Pl@ntNet 99%"
+      ]
+     },
+     {
+      "img": "fleurs/Combretaceae__IMG-3145.jpg",
+      "nom": "Laguncularia racemosa",
+      "patterns": [
+       "Pl@ntNet 98%"
+      ]
+     },
+     {
+      "img": "fleurs/Combretaceae__IMG-2770.jpg",
+      "nom": "Terminalia buceras",
+      "patterns": [
+       "Pl@ntNet 98%"
+      ]
+     },
+     {
+      "img": "fleurs/Combretaceae__IMG-3180.jpg",
+      "nom": "Laguncularia racemosa",
+      "patterns": [
+       "Pl@ntNet 98%"
+      ]
+     },
+     {
+      "img": "fleurs/Combretaceae__IMG-2776.jpg",
+      "nom": "Terminalia buceras",
+      "patterns": [
+       "Pl@ntNet 98%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Plantaginaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Plantaginaceae__IMG-2611.jpg",
+      "nom": "Russelia equisetiformis",
+      "patterns": [
+       "Pl@ntNet 93%"
+      ]
+     },
+     {
+      "img": "fleurs/Plantaginaceae__IMG-2613.jpg",
+      "nom": "Russelia equisetiformis",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     },
+     {
+      "img": "fleurs/Plantaginaceae__IMG-2600.jpg",
+      "nom": "Russelia equisetiformis",
+      "patterns": [
+       "Pl@ntNet 91%"
+      ]
+     },
+     {
+      "img": "fleurs/Plantaginaceae__IMG-2610.jpg",
+      "nom": "Russelia equisetiformis",
+      "patterns": [
+       "Pl@ntNet 91%"
+      ]
+     },
+     {
+      "img": "fleurs/Plantaginaceae__IMG-2604.jpg",
+      "nom": "Russelia equisetiformis",
+      "patterns": [
+       "Pl@ntNet 90%"
+      ]
+     },
+     {
+      "img": "fleurs/Plantaginaceae__IMG-2615.jpg",
+      "nom": "Russelia equisetiformis",
+      "patterns": [
+       "Pl@ntNet 86%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Vitaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-06.jpg",
+      "nom": "Type vigne (Vitaceae)",
+      "patterns": [
+       "Palmée",
+       "Cordée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-52.jpg",
+      "nom": "Vigne (nervation palmée)",
+      "patterns": [
+       "Palmée",
+       "Cordée"
+      ]
+     }
+    ],
+    "Fleur": [
+     {
+      "img": "fleurs/Vitaceae__IMG-2628-1.jpg",
+      "nom": "Cissus verticillata",
+      "patterns": [
+       "Pl@ntNet 79%"
+      ]
+     },
+     {
+      "img": "fleurs/Vitaceae__IMG-2626.jpg",
+      "nom": "Cissus verticillata",
+      "patterns": [
+       "Pl@ntNet 75%"
+      ]
+     },
+     {
+      "img": "fleurs/Vitaceae__IMG-2630-1.jpg",
+      "nom": "Cissus verticillata",
+      "patterns": [
+       "Pl@ntNet 40%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Polygonaceae",
+   "note": "Présence d'une ochréa (gaine) au nœud chez beaucoup d'espèces.",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-12.jpg",
+      "nom": "cf. Coccoloba uvifera (raisinier)",
       "patterns": [
        "Pennée",
-       "Elliptique/ovale",
-       "Entière"
+       "Orbiculaire"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-18.jpg",
+      "nom": "À confirmer",
+      "patterns": [
+       "Pennée",
+       "Elliptique/ovale"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-69.jpg",
+      "nom": "Raisinier bord de mer",
+      "patterns": [
+       "Pennée",
+       "Orbiculaire"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-71.jpg",
+      "nom": "Raisinier — feuille engainante",
+      "patterns": [
+       "Pennée",
+       "Alterne"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-110.jpg",
+      "nom": "Renouée (herbacée)",
+      "patterns": [
+       "Pennée",
+       "Alterne"
       ]
      }
     ],
@@ -734,8 +1939,833 @@
       "nom": "Nénuphar",
       "patterns": [
        "Palmée",
-       "Orbiculaire",
-       "Entière"
+       "Orbiculaire"
+      ]
+     }
+    ],
+    "Fleur": [
+     {
+      "img": "fleurs/Nymphaeaceae__IMG-2051.jpg",
+      "nom": "Nymphaea elegans",
+      "patterns": [
+       "Pl@ntNet 60%"
+      ]
+     },
+     {
+      "img": "fleurs/Nymphaeaceae__IMG-2062.jpg",
+      "nom": "Nymphaea nouchali",
+      "patterns": [
+       "Pl@ntNet 58%"
+      ]
+     },
+     {
+      "img": "fleurs/Nymphaeaceae__IMG-2052.jpg",
+      "nom": "Nymphaea elegans",
+      "patterns": [
+       "Pl@ntNet 54%"
+      ]
+     },
+     {
+      "img": "fleurs/Nymphaeaceae__IMG-2058.jpg",
+      "nom": "Nymphaea nouchali",
+      "patterns": [
+       "Pl@ntNet 52%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Piperaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-103.jpg",
+      "nom": "Liane cordée",
+      "patterns": [
+       "Pennée",
+       "Alterne"
+      ]
+     }
+    ],
+    "Fleur": [
+     {
+      "img": "fleurs/Piperaceae__IMG-2099.jpg",
+      "nom": "Peperomia magnoliifolia",
+      "patterns": [
+       "Pl@ntNet 66%"
+      ]
+     },
+     {
+      "img": "fleurs/Piperaceae__IMG-2100.jpg",
+      "nom": "Peperomia magnoliifolia",
+      "patterns": [
+       "Pl@ntNet 64%"
+      ]
+     },
+     {
+      "img": "fleurs/Piperaceae__IMG-2096.jpg",
+      "nom": "Peperomia magnoliifolia",
+      "patterns": [
+       "Pl@ntNet 56%"
+      ]
+     },
+     {
+      "img": "fleurs/Piperaceae__IMG-2092.jpg",
+      "nom": "Peperomia magnoliifolia",
+      "patterns": [
+       "Pl@ntNet 56%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Lamiaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-106.jpg",
+      "nom": "Vitex (palmée-composée)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)"
+      ]
+     }
+    ],
+    "Fleur": [
+     {
+      "img": "fleurs/Lamiaceae__IMG-0345.jpg",
+      "nom": "Callicarpa americana",
+      "patterns": [
+       "Pl@ntNet 94%"
+      ]
+     },
+     {
+      "img": "fleurs/Lamiaceae__IMG-2497.jpg",
+      "nom": "Clerodendrum paniculatum",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     },
+     {
+      "img": "fleurs/Lamiaceae__IMG-0341.jpg",
+      "nom": "Callicarpa americana",
+      "patterns": [
+       "Pl@ntNet 77%"
+      ]
+     },
+     {
+      "img": "fleurs/Lamiaceae__IMG-2501.jpg",
+      "nom": "Clerodendrum paniculatum",
+      "patterns": [
+       "Pl@ntNet 53%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Pedaliaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Pedaliaceae__IMG-0800.jpg",
+      "nom": "Uncarina perrieri",
+      "patterns": [
+       "Pl@ntNet 74%"
+      ]
+     },
+     {
+      "img": "fleurs/Pedaliaceae__IMG-0802.jpg",
+      "nom": "Uncarina perrieri",
+      "patterns": [
+       "Pl@ntNet 58%"
+      ]
+     },
+     {
+      "img": "fleurs/Pedaliaceae__IMG-0540.jpg",
+      "nom": "Uncarina roeoesliana",
+      "patterns": [
+       "Pl@ntNet 51%"
+      ]
+     },
+     {
+      "img": "fleurs/Pedaliaceae__IMG-0542.jpg",
+      "nom": "Uncarina roeoesliana",
+      "patterns": [
+       "Pl@ntNet 50%"
+      ]
+     },
+     {
+      "img": "fleurs/Pedaliaceae__IMG-0541.jpg",
+      "nom": "Uncarina roeoesliana",
+      "patterns": [
+       "Pl@ntNet 45%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Poaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Poaceae__IMG-2856-1.jpg",
+      "nom": "Setaria parviflora",
+      "patterns": [
+       "Pl@ntNet 79%"
+      ]
+     },
+     {
+      "img": "fleurs/Poaceae__IMG-2857.jpg",
+      "nom": "Setaria parviflora",
+      "patterns": [
+       "Pl@ntNet 77%"
+      ]
+     },
+     {
+      "img": "fleurs/Poaceae__IMG-2850.jpg",
+      "nom": "Setaria parviflora",
+      "patterns": [
+       "Pl@ntNet 69%"
+      ]
+     },
+     {
+      "img": "fleurs/Poaceae__DJI-20260605042739-0152-D.jpg",
+      "nom": "Sorghum halepense",
+      "patterns": [
+       "Pl@ntNet 20%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Lecythidaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Lecythidaceae__IMG-2179.jpg",
+      "nom": "Couroupita nicaraguarensis",
+      "patterns": [
+       "Pl@ntNet 57%"
+      ]
+     },
+     {
+      "img": "fleurs/Lecythidaceae__IMG-2168.jpg",
+      "nom": "Couroupita nicaraguarensis",
+      "patterns": [
+       "Pl@ntNet 48%"
+      ]
+     },
+     {
+      "img": "fleurs/Lecythidaceae__IMG-2181.jpg",
+      "nom": "Couroupita guianensis",
+      "patterns": [
+       "Pl@ntNet 44%"
+      ]
+     },
+     {
+      "img": "fleurs/Lecythidaceae__IMG-2171.jpg",
+      "nom": "Couroupita nicaraguarensis",
+      "patterns": [
+       "Pl@ntNet 43%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Ochnaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Ochnaceae__IMG-2714.jpg",
+      "nom": "Ochna thomasiana",
+      "patterns": [
+       "Pl@ntNet 87%"
+      ]
+     },
+     {
+      "img": "fleurs/Ochnaceae__IMG-2713.jpg",
+      "nom": "Ochna thomasiana",
+      "patterns": [
+       "Pl@ntNet 85%"
+      ]
+     },
+     {
+      "img": "fleurs/Ochnaceae__IMG-2715.jpg",
+      "nom": "Ochna thomasiana",
+      "patterns": [
+       "Pl@ntNet 15%"
+      ]
+     },
+     {
+      "img": "fleurs/Ochnaceae__IMG-2716.jpg",
+      "nom": "Ochna thomasiana",
+      "patterns": [
+       "Pl@ntNet 11%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Bromeliaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Bromeliaceae__IMG-2954.jpg",
+      "nom": "Portea petropolitana",
+      "patterns": [
+       "Pl@ntNet 94%"
+      ]
+     },
+     {
+      "img": "fleurs/Bromeliaceae__IMG-2949.jpg",
+      "nom": "Portea petropolitana",
+      "patterns": [
+       "Pl@ntNet 93%"
+      ]
+     },
+     {
+      "img": "fleurs/Bromeliaceae__IMG-2951.jpg",
+      "nom": "Portea petropolitana",
+      "patterns": [
+       "Pl@ntNet 91%"
+      ]
+     },
+     {
+      "img": "fleurs/Bromeliaceae__IMG-2955.jpg",
+      "nom": "Portea petropolitana",
+      "patterns": [
+       "Pl@ntNet 88%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Moraceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-80.jpg",
+      "nom": "Ficus (grand pétiole)",
+      "patterns": [
+       "Pennée",
+       "Cordée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-89.jpg",
+      "nom": "Grande feuille cordée",
+      "patterns": [
+       "Acrodrome",
+       "Cordée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-98.jpg",
+      "nom": "Grande feuille (pétiole épais)",
+      "patterns": [
+       "Pennée",
+       "Elliptique/ovale"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Gesneriaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Gesneriaceae__IMG-0611.jpg",
+      "nom": "Episcia lilacina",
+      "patterns": [
+       "Pl@ntNet 44%"
+      ]
+     },
+     {
+      "img": "fleurs/Gesneriaceae__IMG-0617.jpg",
+      "nom": "Episcia cupreata",
+      "patterns": [
+       "Pl@ntNet 36%"
+      ]
+     },
+     {
+      "img": "fleurs/Gesneriaceae__IMG-0613.jpg",
+      "nom": "Episcia lilacina",
+      "patterns": [
+       "Pl@ntNet 34%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Alismataceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Alismataceae__IMG-0734.jpg",
+      "nom": "Sagittaria lancifolia",
+      "patterns": [
+       "Pl@ntNet 75%"
+      ]
+     },
+     {
+      "img": "fleurs/Alismataceae__IMG-0732.jpg",
+      "nom": "Sagittaria lancifolia",
+      "patterns": [
+       "Pl@ntNet 70%"
+      ]
+     },
+     {
+      "img": "fleurs/Alismataceae__IMG-0737.jpg",
+      "nom": "Sagittaria lancifolia",
+      "patterns": [
+       "Pl@ntNet 8%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Sapindaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Sapindaceae__IMG-2677-1.jpg",
+      "nom": "Dodonaea viscosa",
+      "patterns": [
+       "Pl@ntNet 89%"
+      ]
+     },
+     {
+      "img": "fleurs/Sapindaceae__IMG-0816.jpg",
+      "nom": "Dimocarpus longan",
+      "patterns": [
+       "Pl@ntNet 29%"
+      ]
+     },
+     {
+      "img": "fleurs/Sapindaceae__IMG-0818.jpg",
+      "nom": "Dimocarpus longan",
+      "patterns": [
+       "Pl@ntNet 4%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Orchidaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Orchidaceae__IMG-0889.jpg",
+      "nom": "Phalaenopsis × singuliflora",
+      "patterns": [
+       "Pl@ntNet 35%"
+      ]
+     },
+     {
+      "img": "fleurs/Orchidaceae__IMG-0890.jpg",
+      "nom": "Phalaenopsis × singuliflora",
+      "patterns": [
+       "Pl@ntNet 35%"
+      ]
+     },
+     {
+      "img": "fleurs/Orchidaceae__IMG-0892.jpg",
+      "nom": "Phalaenopsis × singuliflora",
+      "patterns": [
+       "Pl@ntNet 4%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Caricaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Caricaceae__IMG-2984.jpg",
+      "nom": "Carica papaya",
+      "patterns": [
+       "Pl@ntNet 93%"
+      ]
+     },
+     {
+      "img": "fleurs/Caricaceae__IMG-2986.jpg",
+      "nom": "Carica papaya",
+      "patterns": [
+       "Pl@ntNet 89%"
+      ]
+     },
+     {
+      "img": "fleurs/Caricaceae__IMG-2983.jpg",
+      "nom": "Carica papaya",
+      "patterns": [
+       "Pl@ntNet 86%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Zygophyllaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Zygophyllaceae__IMG-3313.jpg",
+      "nom": "Guaiacum sanctum",
+      "patterns": [
+       "Pl@ntNet 96%"
+      ]
+     },
+     {
+      "img": "fleurs/Zygophyllaceae__IMG-3309.jpg",
+      "nom": "Guaiacum sanctum",
+      "patterns": [
+       "Pl@ntNet 92%"
+      ]
+     },
+     {
+      "img": "fleurs/Zygophyllaceae__IMG-3310.jpg",
+      "nom": "Guaiacum sanctum",
+      "patterns": [
+       "Pl@ntNet 84%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Zingiberaceae",
+   "note": "Labelle voyant (staminode pétaloïde), feuilles engainantes.",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-38.jpg",
+      "nom": "À confirmer",
+      "patterns": [
+       "Parallèle",
+       "Lancéolée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-70.jpg",
+      "nom": "Gingembre",
+      "patterns": [
+       "Parallèle",
+       "Distique"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Araliaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-51.jpg",
+      "nom": "Hydrocotyle (marge crénelée)",
+      "patterns": [
+       "Palmée",
+       "Orbiculaire"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-64.jpg",
+      "nom": "Schefflera (panaché)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Fougère (Polypodiopsida)",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-76.jpg",
+      "nom": "Fougère (sores)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-112.jpg",
+      "nom": "Fougère (sores linéaires)",
+      "patterns": [
+       "Pennée",
+       "Composée (folioles)"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Urticaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-77.jpg",
+      "nom": "Mélastome",
+      "patterns": [
+       "Acrodrome",
+       "Opposée"
+      ]
+     },
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-114.jpg",
+      "nom": "Feuille dentée (ortie?)",
+      "patterns": [
+       "Acrodrome",
+       "Elliptique/ovale"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Rosaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [],
+    "Fleur": [
+     {
+      "img": "fleurs/Rosaceae__IMG-0843.jpg",
+      "nom": "Rosa × damascena",
+      "patterns": [
+       "Pl@ntNet 35%"
+      ]
+     },
+     {
+      "img": "fleurs/Rosaceae__IMG-0844.jpg",
+      "nom": "Rosa × damascena",
+      "patterns": [
+       "Pl@ntNet 27%"
+      ]
+     }
+    ],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Ericaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-04.jpg",
+      "nom": "Lyonia microcarpa",
+      "patterns": [
+       "Pennée",
+       "Alterne"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Zamiaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-73.jpg",
+      "nom": "Zamia (cycade)",
+      "patterns": [
+       "Pennée",
+       "Distique"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Cycadaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-82.jpg",
+      "nom": "Cycas",
+      "patterns": [
+       "Pennée",
+       "Distique"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Clusiaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-85.jpg",
+      "nom": "Clusia",
+      "patterns": [
+       "Pennée",
+       "Opposée"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Dilleniaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-86.jpg",
+      "nom": "Feuille râpeuse (« grage »)",
+      "patterns": [
+       "Pennée",
+       "Obovale"
+      ]
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Tige": [],
+    "Racine": []
+   }
+  },
+  {
+   "fam": "Nyctaginaceae",
+   "note": "",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-92.jpg",
+      "nom": "Bougainvillier",
+      "patterns": [
+       "Pennée",
+       "Elliptique/ovale"
       ]
      }
     ],
@@ -755,29 +2785,7 @@
       "nom": "Bégonia",
       "patterns": [
        "Palmée",
-       "Cordée",
-       "Dentée"
-      ]
-     }
-    ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Costaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-95.jpg",
-      "nom": "Costus",
-      "patterns": [
-       "Parallèle",
-       "Spiralée",
-       "Lancéolée"
+       "Cordée"
       ]
      }
     ],
@@ -797,29 +2805,7 @@
       "nom": "Bananier / héliconia",
       "patterns": [
        "Parallèle",
-       "Oblongue",
-       "Entière"
-      ]
-     }
-    ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Piperaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-103.jpg",
-      "nom": "Liane cordée",
-      "patterns": [
-       "Pennée",
-       "Alterne",
-       "Cordée"
+       "Oblongue"
       ]
      }
     ],
@@ -839,8 +2825,7 @@
       "nom": "Composée à pellucides (curry?)",
       "patterns": [
        "Pennée",
-       "Composée (folioles)",
-       "Crénelée"
+       "Composée (folioles)"
       ]
      }
     ],
@@ -860,50 +2845,7 @@
       "nom": "Phyllanthus",
       "patterns": [
        "Pennée",
-       "Distique",
-       "Elliptique/ovale"
-      ]
-     }
-    ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Lamiaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-106.jpg",
-      "nom": "Vitex (palmée-composée)",
-      "patterns": [
-       "Pennée",
-       "Composée (folioles)",
-       "Dentée"
-      ]
-     }
-    ],
-    "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Asphodelaceae",
-   "note": "",
-   "organes": {
-    "Feuille": [
-     {
-      "img": "../patterns-feuilles-handoff/app/images/FE-107.jpg",
-      "nom": "Aloe (succulente)",
-      "patterns": [
-       "Parallèle",
-       "Lancéolée",
-       "Épineuse"
+       "Distique"
       ]
      }
     ],
@@ -923,54 +2865,11 @@
       "nom": "Cucurbitacée (vrille)",
       "patterns": [
        "Palmée",
-       "Alterne",
-       "Palmatilobée"
+       "Alterne"
       ]
      }
     ],
     "Fleur": [],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Asteraceae",
-   "note": "Fleurs en capitule (ligules + fleurons), anthères souvent soudées (syngénèse), calice réduit en pappus.",
-   "organes": {
-    "Feuille": [],
-    "Fleur": [
-     {
-      "img": "../patterns-fleurs/images/FL-02.jpg",
-      "nom": "Astéracée (type Wedelia) — espèce à confirmer",
-      "patterns": [
-       "Actinomorphe",
-       "Gamopétale",
-       "Jaune"
-      ]
-     }
-    ],
-    "Fruit": [],
-    "Tige": [],
-    "Racine": []
-   }
-  },
-  {
-   "fam": "Moringaceae",
-   "note": "Fleurs blanc crème légèrement zygomorphes, 5 pétales + 5 étamines fertiles ; genre Moringa (Benzolive).",
-   "organes": {
-    "Feuille": [],
-    "Fleur": [
-     {
-      "img": "../patterns-fleurs/images/FL-03.jpg",
-      "nom": "Moringa / Benzolive (Moringaceae)",
-      "patterns": [
-       "Actinomorphe",
-       "Dialypétale",
-       "Blanc"
-      ]
-     }
-    ],
     "Fruit": [],
     "Tige": [],
     "Racine": []
