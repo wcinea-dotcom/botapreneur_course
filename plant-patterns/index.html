@@ -23,6 +23,65 @@
 <div class="modal" id="photoModal" role="dialog" aria-modal="true"><div class="zoomArea" id="zoomArea"><div class="zoomControls"><button id="zoomOut" aria-label="Réduire">−</button><span class="zoomLevel" id="zoomLevel">100 %</span><button id="zoomIn" aria-label="Agrandir">+</button><button id="zoomReset" aria-label="Réinitialiser">↺</button></div><button class="photoNav photoPrev" id="photoPrev" aria-label="Photo précédente">‹</button><img id="modalImage" alt=""><button class="photoNav photoNext" id="photoNext" aria-label="Photo suivante">›</button><span class="zoomHelp">Molette ou boutons pour zoomer · glisser pour se déplacer · flèches du clavier pour naviguer</span><span class="photoCounter" id="photoCounter"></span></div><div class="modalInfo"><button id="closeModal">FERMER ×</button><h3 id="modalTitle"></h3><p>Une même image peut documenter plusieurs caractères. Les valeurs non vérifiées restent indiquées comme inconnues plutôt que supposées.</p><div class="traits" id="modalTraits"></div><div class="traitGrid" id="traitGrid"></div></div></div>
 <script>
 const source=n=>`pattern-examples/${n}`;const leaf=n=>`leaf-library/fe-${String(n).padStart(2,'0')}.jpg`;const flowerPhoto=n=>`flower-library-v4/fl-${n}.jpg`;const familyMedia=n=>`../fiche-famille/media/${n}`;
+const moraceaeFruits=[
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_001.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_002.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_003.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_004.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_005.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_coupe_006.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_007.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_008.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_009.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_010.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_001.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_002.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_coupe_003.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_004.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_005.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_006.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_007.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_008.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_009.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_010.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_011.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_012.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_013.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_014.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_015.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_016.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_017.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_018.jpg'),
+ familyMedia('Moraceae_Artocarpus_heterophyllus_fruit_019.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_fruit_feuille_001.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_fruit_feuille_002.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_fruit_004.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_fruit_feuille_005.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_fruit_006.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_fruit_feuille_tige_007.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_fruit_feuille_009.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_fruit_feuille_012.jpg')
+];
+const moraceaeLeaves=[
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_001.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_002.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_003.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_005.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_009.jpg'),
+ familyMedia('Moraceae_Artocarpus_altilis_fruit_feuille_010.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_fruit_feuille_001.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_fruit_feuille_002.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_feuille_stipule_003.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_fruit_feuille_005.jpg')
+];
+const moraceaeStipules=[
+ familyMedia('Moraceae_Ficus_cf_benghalensis_feuille_stipule_003.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_stipule_tige_008.jpg'),
+ familyMedia('Moraceae_Ficus_cf_benghalensis_feuille_stipule_011.jpg')
+];
+const moraceaeLatex=[
+ familyMedia('Moraceae_Ficus_cf_benghalensis_latex_feuille_tige_010.jpg')
+];
 const newAnnonaceaeFlowers=[
  familyMedia('Annonaceae__Annona-cherimola__fleur-proposee-010.jpg'),
  familyMedia('Annonaceae__Annona-cherimola__fleur-proposee-011.jpg'),
@@ -42,12 +101,12 @@ const annonaceaeTrimerous=[
 ];
 const alternate=['IMG_0195.JPG','IMG_0198.JPG','IMG_0205.JPG','IMG_0248.JPG','IMG_0295(1).JPG','IMG_0299.JPG','IMG_0430.JPG','IMG_0435.JPG','IMG_0436.JPG','IMG_0450.JPG','IMG_0452.JPG','IMG_0502.JPG','IMG_0612.JPG','IMG_1112.JPG','IMG_1189.JPG','IMG_1190.JPG','IMG_1223.JPG','IMG_1378.JPG','IMG_1380.JPG','IMG_1674.JPG'].map(source);
 const L={
- alternate:{o:'Feuille',g:'Phyllotaxie',t:'Alterne',d:'Une seule feuille est insérée à chaque nœud, puis l’insertion change de côté le long de la tige.',h:'Suivre la tige sur plusieurs nœuds. Chercher une feuille par nœud, sans se laisser distraire par la forme du limbe.',p:alternate},
+ alternate:{o:'Feuille',g:'Phyllotaxie',t:'Alterne',d:'Une seule feuille est insérée à chaque nœud, puis l’insertion change de côté le long de la tige.',h:'Suivre la tige sur plusieurs nœuds. Chercher une feuille par nœud, sans se laisser distraire par la forme du limbe.',p:alternate.concat(moraceaeLeaves)},
  distichous:{g:'Phyllotaxie',t:'Distique',d:'Les feuilles, généralement alternes, sont disposées dans un même plan et forment deux rangs opposés le long du rameau. Ce pattern est fréquent chez les Annonaceae.',h:'Regarder un rameau entier de côté. Vérifier une feuille par nœud, puis suivre l’alignement des insertions en deux rangs; ne pas confondre distique et opposée.',p:annonaceaeLeaves,sourceTitle:'Kew — Plants of the World Online : Annonaceae',sourceUrl:'https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30000342-2/general-information'},
  opposite:{g:'Phyllotaxie',t:'Opposée',d:'Deux feuilles sont insérées face à face au même nœud.',h:'Repérer une paire, puis confirmer la répétition sur plusieurs nœuds.',p:[23,28,31,32,33,34,1,2,3].map(leaf)},
  whorled:{g:'Phyllotaxie',t:'Verticillée',d:'Trois feuilles ou plus partent du même nœud.',h:'Vérifier que les feuilles partent réellement du même niveau de la tige.',p:[30,28,31,23].map(leaf)},
  decussate:{g:'Phyllotaxie',t:'Décussée',d:'Les paires opposées successives sont orientées à angle droit.',h:'Regarder l’axe depuis le sommet pour voir le changement d’orientation.',p:[23,31,32,33].map(leaf)},
- simple:{g:'Structure',t:'Simple',d:'Le limbe forme une seule unité, même lorsqu’il est lobé.',h:'Chercher le bourgeon axillaire à la base de la feuille, pas à la base des lobes.',p:[6,7,11,13,14,15,16,17,18,19,21,22].map(leaf)},
+ simple:{g:'Structure',t:'Simple',d:'Le limbe forme une seule unité, même lorsqu’il est lobé.',h:'Chercher le bourgeon axillaire à la base de la feuille, pas à la base des lobes.',p:[6,7,11,13,14,15,16,17,18,19,21,22].map(leaf).concat(moraceaeLeaves)},
  compound:{g:'Structure',t:'Composée',d:'Le limbe est divisé en folioles distinctes.',h:'Les folioles ne portent normalement pas de bourgeon axillaire.',p:[8,9,10,20,24,25,26].map(leaf)},
  paripinnate:{g:'Structure',t:'Paripennée',d:'La feuille pennée se termine par une paire de folioles.',h:'Observer l’extrémité complète du rachis et confirmer l’absence de foliole terminale.',p:[10,25,26,24].map(leaf)},
  imparipinnate:{g:'Structure',t:'Imparipennée',d:'Une foliole terminale unique termine le rachis.',h:'Suivre le rachis jusqu’à son extrémité.',p:[8,9,20,24].map(leaf)},
@@ -129,6 +188,8 @@ const L={
  ,famAraceae:{o:'Fleur',g:'Familles florales',t:'Araceae — probable',d:'La série 0984–0993 montre le couple spathe–spadice caractéristique de nombreuses Araceae.',h:'La grande spathe blanche est une bractée; les fleurs véritables sont les nombreuses petites unités portées par le spadice.',p:['0984','0987','0988','0990','0993'].map(flowerPhoto),family:true,confidence:'probable'}
  ,famOrchidaceae:{o:'Fleur',g:'Familles florales',t:'Orchidaceae — probable',d:'Les images 0890–0892 montrent une fleur fortement zygomorphe avec un labelle spécialisé.',h:'Comparer le labelle, les autres tépales et la colonne centrale.',p:['0890','0892'].map(flowerPhoto),family:true,confidence:'probable'}
  ,famAnnonaceae:{o:'Fleur',g:'Familles florales',t:'Annonaceae',d:'Les exemples montrent des fleurs à pièces libres, souvent trimères, avec des pétales parfois épais ou très allongés. La famille doit être comprise par comparaison de plusieurs genres, notamment Annona et Cananga.',h:'Comparer la fleur sur la plante, la fleur détachée et les pétales isolés. Pour les deux fleurs attribuées à Annona cherimola, l’espèce reste une proposition à valider.',formula:'⚥  ✳  K3  C3+3  A∞  G∞',formulaNote:'Formule familiale simplifiée et fréquente : fleur bisexuée, souvent actinomorphe, trois sépales, généralement six pétales en deux verticilles, nombreuses étamines et nombreux carpelles libres. Des variations existent.',p:newAnnonaceaeFlowers,family:true,confidence:'probable'}
+
+ ,famMoraceae:{o:'Fruit',g:'Familles par leurs fruits',t:'Moraceae',d:'La signature familiale associe souvent latex blanc, stipule terminale laissant une cicatrice annulaire, feuilles simples généralement alternes, fleurs minuscules unisexuées et apétales réunies en inflorescences denses, puis fruits souvent multiples.',h:'Comparer Artocarpus et Ficus. Chez Artocarpus, observer la sorose ou le syncarpe; chez Ficus, le sycone creux. Les photos Ficus cf. benghalensis restent à confirmer au niveau de l’espèce.',p:moraceaeFruits.concat(moraceaeStipules,moraceaeLatex),family:true,confidence:'famille confirmée; Ficus cf. à confirmer'}
  ,famSolanaceae:{o:'Fleur',g:'Familles florales',t:'Solanaceae — probable',d:'La photo 0904 est compatible avec Brugmansia: longue corolle gamopétale pendante et cinq lobes.',h:'Cette identification reste probable tant que le nom de la plante ou d’autres caractères ne sont pas documentés.',p:['0904'].map(flowerPhoto),family:true,confidence:'probable'}
  ,famRubiaceae:{o:'Fleur',g:'Familles florales',t:'Rubiaceae — probable',d:'La série 0976–0982 montre de petites fleurs actinomorphes à corolle gamopétale, regroupées en inflorescence compacte.',h:'Associer ces fleurs aux feuilles opposées et rechercher les stipules interpétiolaires avant confirmation.',p:['0976','0979','0982'].map(flowerPhoto),family:true,confidence:'probable'}
  ,famApocynaceae:{o:'Fleur',g:'Familles florales',t:'Apocynaceae — probable',d:'Les séries 1116–1156 et 1220–1222 montrent une corolle gamopétale pentamère; la seconde série est une forme horticole double qui masque en partie l’architecture ordinaire.',h:'Comparer les cinq lobes, le tube basal, les feuilles opposées et les boutons contortés avant confirmation.',formula:'⚥  ✳  K(5)  C(5)  A5  G̲2',formulaNote:'Formule familiale simplifiée : ovaire généralement supère; deux carpelles souvent libres au niveau de l’ovaire mais réunis par la tête du style. Des variations existent.',p:['1116','1156','1220','1221','1222'].map(flowerPhoto),family:true,confidence:'probable'}
@@ -153,7 +214,7 @@ Object.assign(L,{
  placentaFruit:FS('Anatomie du fruit','Placenta et funicule','Le placenta porte les ovules puis les graines; le funicule relie chaque ovule ou graine au placenta.','Ouvrir un fruit jeune avec précaution et suivre le point d’attache de chaque graine.'),
  simpleFruit:FS('Origine et organisation','Fruit simple','Fruit formé à partir d’un seul ovaire d’une fleur, même si cet ovaire contient plusieurs carpelles soudés.','Reconstituer l’origine florale; le nombre de graines ne détermine pas si le fruit est simple.'),
  aggregateFruit:FS('Origine et organisation','Fruit agrégé','Ensemble formé par plusieurs carpelles libres d’une seule fleur.','Chercher plusieurs petites unités fruitières rassemblées sur un même réceptacle floral.'),
- multipleFruit:FS('Origine et organisation','Fruit multiple / infrutescence','Structure issue des fruits de plusieurs fleurs d’une inflorescence, souvent soudés ou étroitement associés.','Rechercher la trace des nombreuses fleurs et de l’axe floral; l’ananas est un exemple classique.'),
+ multipleFruit:{...FS('Origine et organisation','Fruit multiple / infrutescence','Structure issue des fruits de plusieurs fleurs d’une inflorescence, souvent soudés ou étroitement associés.','Rechercher la trace des nombreuses fleurs et de l’axe floral; l’ananas, le fruit à pain et le jacque sont des exemples classiques.'),p:moraceaeFruits},
  accessoryFruit:FS('Origine et organisation','Fruit accessoire','Fruit dont la partie visible ou charnue comprend une contribution importante du réceptacle, de l’hypanthium ou d’autres tissus non ovariens.','Identifier séparément le véritable ovaire mûr et les tissus accessoires qui l’entourent.'),
  berry:FS('Fruits charnus','Baie','Fruit charnu dans lequel le péricarpe reste généralement souple et les graines sont incluses dans la pulpe.','Couper plusieurs exemples; ne pas utiliser la définition culinaire du mot baie.'),
  drupe:FS('Fruits charnus','Drupe','Fruit charnu dont l’endocarpe dur forme un noyau autour d’une ou plusieurs graines.','Distinguer la chair, le noyau appartenant au fruit et la graine placée à l’intérieur.'),
@@ -428,6 +489,7 @@ const familyKeys={
  famAraceae:['Inflorescence formée d’un axe charnu entouré ou accompagné d’une grande bractée.','Les fleurs véritables, très petites, couvrent le spadice; la grande pièce est une spathe.','Confirmer par feuilles engainantes et organisation des zones mâles/femelles du spadice.'],
  famOrchidaceae:['Fleur monocotylédone fortement zygomorphe.','Un tépale forme un labelle très différencié; étamines et style sont réunis en colonne.','Ovaire infère et pollen souvent réuni en pollinies : orientation Orchidaceae.'],
  famAnnonaceae:['Fleur généralement trimère à pièces libres; comparer sépales et deux verticilles de pétales.','Étamines et carpelles souvent nombreux, insérés sur un réceptacle développé.','Feuilles simples, alternes et sans stipules; odeur aromatique fréquente à documenter sans goûter.'],
+ famMoraceae:['Latex blanc ou laiteux fréquent; observer sans toucher ni goûter.','Stipule terminale souvent caduque, laissant une cicatrice annulaire; feuilles généralement simples et alternes.','Fleurs minuscules unisexuées, apétales et regroupées; sycone chez Ficus, sorose/syncarpe chez Artocarpus.'],
  famSolanaceae:['Fleur ordinaire, souvent actinomorphe, à corolle gamopétale pentamère.','Cinq étamines alternent avec les lobes et sont insérées sur la corolle.','Ovaire supère bicarpellé et feuilles alternes sans stipules : orientation Solanaceae.'],
  famRubiaceae:['Corolle gamopétale généralement actinomorphe et ovaire souvent infère.','Feuilles opposées ou verticillées.','Présence de stipules interpétiolaires entre les pétioles : caractère décisif à confirmer.'],
  famApocynaceae:['Corolle gamopétale pentamère, souvent à boutons contortés.','Feuilles généralement opposées ou verticillées, simples et entières.','Latex fréquent et deux carpelles associés à une tête stylaire commune : orientation Apocynaceae.'],
