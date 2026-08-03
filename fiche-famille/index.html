@@ -11,7 +11,16 @@
 .back:hover{background:#0a4a86}
 .bar{padding:18px 4vw;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);background:#fff}
 .bar label{font-family:Poppins;font-weight:700;color:var(--green);font-size:13px;letter-spacing:1px;text-transform:uppercase}
-select{font-family:inherit;font-size:15px;padding:9px 12px;border:1px solid #c3ccd4;border-radius:10px;background:#fff;min-width:240px}
+.familySearch{position:relative;width:min(360px,100%)}
+.familySearch input{font-family:inherit;font-size:16px;width:100%;padding:11px 42px 11px 14px;border:1px solid #aebbc5;border-radius:10px;background:#fff;color:var(--ink);outline:none}
+.familySearch input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(46,125,50,.14)}
+.familySearch .searchIcon{position:absolute;right:13px;top:10px;color:var(--green);font-size:18px;pointer-events:none}
+.familyResults{display:none;position:absolute;z-index:30;left:0;right:0;top:calc(100% + 5px);max-height:280px;overflow-y:auto;background:#fff;border:1px solid #c3ccd4;border-radius:10px;box-shadow:0 10px 26px rgba(0,51,102,.15);padding:5px}
+.familyResults.open{display:block}
+.familyOption{display:flex;justify-content:space-between;gap:12px;width:100%;border:0;background:#fff;border-radius:7px;padding:9px 10px;text-align:left;color:var(--navy);font:600 14px Poppins,sans-serif;cursor:pointer}
+.familyOption:hover,.familyOption.active{background:#eef3ea;color:var(--green)}
+.familyOption small{font:400 12px Lato,sans-serif;color:#7a8590;white-space:nowrap}
+.noFamily{padding:12px;color:#7a8590;font-size:13px}
 .hint{color:#7a8590;font-size:13px}
 .head{padding:22px 4vw 6px}
 .head h1{font-family:Poppins;font-weight:800;color:var(--navy);font-size:clamp(24px,4vw,38px);margin:0}
@@ -36,8 +45,12 @@ select{font-family:inherit;font-size:15px;padding:9px 12px;border:1px solid #c3c
 <header class="top"><div class="wm">Bota<span class="b">preneurs</span> · Fiche famille</div>
 <a class="back" href="../index.html">← Retour au cours</a></header>
 
-<div class="bar"><label for="sel">Famille</label>
- <select id="sel"></select>
+<div class="bar"><label for="familySearchInput">Rechercher une famille</label>
+ <div class="familySearch" id="familySearchBox">
+  <input id="familySearchInput" type="search" placeholder="Ex. Moraceae, Annonaceae…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="familyResults">
+  <span class="searchIcon" aria-hidden="true">⌕</span>
+  <div class="familyResults" id="familyResults" role="listbox"></div>
+ </div>
  <span class="hint">Choisis une famille → vois toutes ses photos par organe, pour apprendre sa signature.</span></div>
 
 <div class="head" id="head"></div>
@@ -71,12 +84,66 @@ function closeM(){document.getElementById("modal").classList.remove("open");}
 document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")closeM();};
 document.onkeydown=e=>{if(e.key==="Escape")closeM();};
 
+function normalizeText(value){
+ return String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();
+}
+function familyTotal(f){
+ return DATA.organes.reduce((sum,organ)=>sum+((f.organes[organ]||[]).length),0);
+}
+function selectFamily(f){
+ document.getElementById("familySearchInput").value=f.fam;
+ closeFamilyResults();
+ render(f);
+}
+function closeFamilyResults(){
+ const results=document.getElementById("familyResults");
+ results.classList.remove("open");
+ document.getElementById("familySearchInput").setAttribute("aria-expanded","false");
+}
+function showFamilyResults(query=""){
+ const input=document.getElementById("familySearchInput");
+ const results=document.getElementById("familyResults");
+ const needle=normalizeText(query);
+ const matches=DATA.familles
+  .filter(f=>normalizeText(f.fam).includes(needle))
+  .sort((a,b)=>{
+   const aName=normalizeText(a.fam),bName=normalizeText(b.fam);
+   return Number(bName.startsWith(needle))-Number(aName.startsWith(needle))||aName.localeCompare(bName);
+  });
+ results.innerHTML=matches.length
+  ? matches.map((f,i)=>`<button class="familyOption${i===0?" active":""}" type="button" role="option" aria-selected="${i===0}" data-family="${f.fam}"><span>${f.fam}</span><small>${familyTotal(f)} photo(s)</small></button>`).join("")
+  : `<div class="noFamily">Aucune famille trouvée pour « ${query.replace(/[<>]/g,"")} ».</div>`;
+ results.classList.add("open");
+ input.setAttribute("aria-expanded","true");
+ results.querySelectorAll(".familyOption").forEach(button=>{
+  button.onclick=()=>selectFamily(DATA.familles.find(f=>f.fam===button.dataset.family));
+ });
+}
+
 fetch("data/familles.json").then(r=>r.json()).then(d=>{
  DATA=d;
- const sel=document.getElementById("sel");
- sel.innerHTML=d.familles.map((f,i)=>{const t=DATA.organes.reduce((s,o)=>s+((f.organes[o]||[]).length),0);return `<option value="${i}">${f.fam} (${t})</option>`;}).join("");
- sel.onchange=()=>render(d.familles[sel.value]);
- render(d.familles[0]);
+ const input=document.getElementById("familySearchInput");
+ input.addEventListener("focus",()=>showFamilyResults(input.value));
+ input.addEventListener("input",()=>showFamilyResults(input.value));
+ input.addEventListener("keydown",e=>{
+  const options=[...document.querySelectorAll(".familyOption")];
+  if(!options.length)return;
+  let active=options.findIndex(option=>option.classList.contains("active"));
+  if(e.key==="ArrowDown"||e.key==="ArrowUp"){
+   e.preventDefault();
+   options[active]?.classList.remove("active");
+   options[active]?.setAttribute("aria-selected","false");
+   active=e.key==="ArrowDown"?Math.min(active+1,options.length-1):Math.max(active-1,0);
+   options[active].classList.add("active");
+   options[active].setAttribute("aria-selected","true");
+   options[active].scrollIntoView({block:"nearest"});
+  }else if(e.key==="Enter"){
+   e.preventDefault();
+   options[Math.max(active,0)].click();
+  }else if(e.key==="Escape")closeFamilyResults();
+ });
+ document.addEventListener("click",e=>{if(!document.getElementById("familySearchBox").contains(e.target))closeFamilyResults();});
+ if(d.familles.length)selectFamily(d.familles[0]);
 }).catch(err=>{document.getElementById("body").innerHTML=`<p style="color:#b00;padding:0 4vw">Erreur : ${err.message} (ouvre via un serveur).</p>`;});
 </script>
 </body></html>
