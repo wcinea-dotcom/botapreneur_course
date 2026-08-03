@@ -2508,7 +2508,7 @@
   },
   {
    "fam": "Moraceae",
-   "note": "",
+   "note": "Signature pédagogique : latex blanc ou laiteux ; stipules terminales souvent caduques laissant une cicatrice annulaire ; feuilles généralement simples et alternes ; fleurs minuscules, unisexuées et apétales, regroupées en inflorescences denses ; fruits souvent multiples. Chez Ficus, le sycone enferme les fleurs ; chez Artocarpus, l’infrutescence forme une sorose ou un syncarpe. Les racines aériennes/adventives concernent certains Ficus et ne sont pas constantes dans toute la famille.",
    "organes": {
     "Feuille": [
      {
@@ -2537,9 +2537,546 @@
      }
     ],
     "Fleur": [],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "media/Moraceae_Artocarpus_altilis_fruit_feuille_001.jpg",
+      "nom": "Artocarpus altilis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "20210726_132745.jpg"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_altilis_fruit_feuille_002.jpg",
+      "nom": "Artocarpus altilis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "DSC_0378.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_altilis_fruit_feuille_003.jpg",
+      "nom": "Artocarpus altilis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "DSC_0476.heic"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_altilis_fruit_004.jpg",
+      "nom": "Artocarpus altilis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_1940.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_altilis_fruit_feuille_005.jpg",
+      "nom": "Artocarpus altilis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_3153.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_altilis_fruit_coupe_006.jpg",
+      "nom": "Artocarpus altilis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "fruit en coupe",
+       "structure interne",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_3389.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_altilis_fruit_007.jpg",
+      "nom": "Artocarpus altilis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5329.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_altilis_fruit_008.jpg",
+      "nom": "Artocarpus altilis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5618.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_altilis_fruit_feuille_009.jpg",
+      "nom": "Artocarpus altilis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_7691.HEIC"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_altilis_fruit_feuille_010.jpg",
+      "nom": "Artocarpus altilis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "Veritab.jpg"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_001.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "DSC_0700.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_002.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_2411.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_coupe_003.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "fruit en coupe",
+       "structure interne",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_3550.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_004.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_3961.HEIC"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_005.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_3964.HEIC"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_006.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_3965.HEIC"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_007.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_4205.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_008.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5623.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_009.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5751.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_010.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5869.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_011.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5876.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_012.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5953.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_013.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5954.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_014.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5956.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_015.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5965.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_016.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5966.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_017.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5979.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_018.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "IMG_5981.JPG"
+     },
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_019.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sorose / syncarpe"
+      ],
+      "confidence": "high",
+      "validation_status": "validated",
+      "original_filename": "Jaca.jpg"
+     },
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_fruit_feuille_001.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sycone",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "DSC_0348.JPG"
+     },
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_fruit_feuille_002.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sycone",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "IMG_0192.JPG"
+     },
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_fruit_004.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sycone",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "IMG_3483.JPG"
+     },
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_fruit_feuille_005.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sycone",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "IMG_3484.JPG"
+     },
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_fruit_006.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "sycone",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "IMG_3488.JPG"
+     },
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_fruit_feuille_tige_007.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sycone",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "IMG_3767.JPG"
+     },
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_fruit_feuille_009.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sycone",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "IMG_3794.JPG"
+     },
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_fruit_feuille_012.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "fruit multiple",
+       "infrutescence",
+       "feuille simple",
+       "feuilles alternes",
+       "sycone",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "IMG_8362.JPG"
+     }
+    ],
+    "Semence": [],
     "Tige": [],
-    "Racine": []
+    "Racine": [],
+    "Structures spécialisées": [
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_feuille_stipule_003.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "feuille simple",
+       "feuilles alternes",
+       "stipule terminale",
+       "cicatrice annulaire",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "IMG_2425.JPG"
+     },
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_stipule_tige_008.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "stipule terminale",
+       "cicatrice annulaire",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "IMG_3787.JPG"
+     },
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_latex_feuille_tige_010.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "feuille simple",
+       "feuilles alternes",
+       "latex blanc visible",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "IMG_5490.JPG"
+     },
+     {
+      "img": "media/Moraceae_Ficus_cf_benghalensis_feuille_stipule_011.jpg",
+      "nom": "Ficus cf. benghalensis",
+      "patterns": [
+       "feuille simple",
+       "feuilles alternes",
+       "stipule terminale",
+       "cicatrice annulaire",
+       "identification à confirmer"
+      ],
+      "confidence": "medium",
+      "validation_status": "to_confirm",
+      "original_filename": "IMG_8216.JPG"
+     }
+    ]
    }
   },
   {
