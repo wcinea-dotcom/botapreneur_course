@@ -28,7 +28,9 @@
     .badge{display:inline-block;padding:7px 15px;border-radius:999px;background:rgba(108,194,74,.2);color:#c8f2cf;font:700 12px Poppins,sans-serif;letter-spacing:.12em;text-transform:uppercase}
     h1{font-size:clamp(2.3rem,6vw,4.4rem);margin:20px auto 16px;max-width:820px}
     .lead{font-size:clamp(1.05rem,2.5vw,1.3rem);color:#dbe9f4;max-width:690px;margin:0 auto 30px}
+    .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
     .cta{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;border-radius:999px;padding:14px 25px;font:700 15px Poppins,sans-serif;box-shadow:0 8px 22px rgba(244,124,32,.32)}
+    .cta.secondary{background:#fff;color:var(--blue);box-shadow:none}
     .promise{padding:56px 24px}
     .promise .content{color:var(--ink)}
     h2{color:var(--blue);font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:12px}
@@ -52,13 +54,17 @@
         <span class="badge">Formation en construction</span>
         <h1>Une nouvelle façon d’apprendre la botanique arrive bientôt.</h1>
         <p class="lead">Une formation visuelle et progressive pour observer les plantes, reconnaître leurs patterns et comprendre les liens entre organes, espèces et familles botaniques.</p>
-        <a class="cta" href="https://botapreneurs.com/fr/contact/">Être informé du lancement</a>
+        <div class="actions">
+          <a class="cta" href="plant-patterns/">Ouvrir Plant Patterns</a>
+          <a class="cta secondary" href="fiche-famille/">Explorer les familles</a>
+        </div>
       </div>
     </section>
     <section class="promise">
       <div class="content">
         <h2>De la curiosité à la maîtrise</h2>
         <p>Le parcours Botapreneurs reliera de vraies photographies, des exemples comparatifs et des explications simples pour rendre la botanique accessible, rigoureuse et utile.</p>
+        <p><strong>Les outils Plant Patterns sont déjà accessibles pour consultation et correction.</strong> La formation complète, elle, reste en cours de construction.</p>
         <div class="cards">
           <div class="card"><b>Plant Enthusiast</b><span>Découvrir les grands organes et apprendre à observer les plantes.</span></div>
           <div class="card"><b>Plant Master</b><span>Comparer les caractères botaniques et comprendre les familles.</span></div>
