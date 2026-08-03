@@ -2520,14 +2520,6 @@
       ]
      },
      {
-      "img": "../patterns-feuilles-handoff/app/images/FE-89.jpg",
-      "nom": "Grande feuille cordée",
-      "patterns": [
-       "Acrodrome",
-       "Cordée"
-      ]
-     },
-     {
       "img": "../patterns-feuilles-handoff/app/images/FE-98.jpg",
       "nom": "Grande feuille (pétiole épais)",
       "patterns": [
@@ -2536,7 +2528,21 @@
       ]
      }
     ],
-    "Fleur": [],
+    "Fleur": [
+     {
+      "img": "media/Moraceae_Artocarpus_heterophyllus_inflorescence_006.jpg",
+      "nom": "Artocarpus heterophyllus — inflorescence",
+      "patterns": [
+       "inflorescence immature",
+       "fleurs unisexuées",
+       "fleurs apétales",
+       "structure florale"
+      ],
+      "confidence": "high",
+      "validation_status": "corrected_by_author",
+      "original_filename": "IMG_3965.HEIC"
+     }
+    ],
     "Fruit": [
      {
       "img": "media/Moraceae_Artocarpus_altilis_fruit_feuille_001.jpg",
@@ -2733,18 +2739,6 @@
       "confidence": "high",
       "validation_status": "validated",
       "original_filename": "IMG_3964.HEIC"
-     },
-     {
-      "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_006.jpg",
-      "nom": "Artocarpus heterophyllus",
-      "patterns": [
-       "fruit multiple",
-       "infrutescence",
-       "sorose / syncarpe"
-      ],
-      "confidence": "high",
-      "validation_status": "validated",
-      "original_filename": "IMG_3965.HEIC"
      },
      {
       "img": "media/Moraceae_Artocarpus_heterophyllus_fruit_007.jpg",
@@ -3613,6 +3607,32 @@
     "Fruit": [],
     "Tige": [],
     "Racine": []
+   }
+  },
+  {
+   "fam": "Dioscoreaceae",
+   "note": "Famille de l’igname. Plantes souvent grimpantes à tiges volubiles ; feuilles fréquemment pétiolées et cordées, avec plusieurs nervures principales partant près de la base. La disposition des feuilles et la présence éventuelle de bulbilles doivent être observées sur plusieurs vues avant l’identification de l’espèce.",
+   "organes": {
+    "Feuille": [
+     {
+      "img": "../patterns-feuilles-handoff/app/images/FE-89.jpg",
+      "nom": "Dioscoreaceae — taxon à identifier",
+      "patterns": [
+       "feuille cordée",
+       "nervation acrodrome",
+       "nervation palmée",
+       "identification familiale confirmée"
+      ],
+      "confidence": "high",
+      "validation_status": "validated_family"
+     }
+    ],
+    "Fleur": [],
+    "Fruit": [],
+    "Semence": [],
+    "Tige": [],
+    "Racine": [],
+    "Structures spécialisées": []
    }
   },
   {
