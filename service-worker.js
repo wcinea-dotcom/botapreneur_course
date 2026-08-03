@@ -1,4 +1,4 @@
-const CACHE="botany-v3";
+const CACHE="botany-v4";
 const ASSETS=["index.html","Communaute.html","Cours_Ch1_Evolution.html","Cours_Ch2_Morphologie.html","Cours_Ch3_Parties.html","Cours_Ch3_Racine.html","Cours_Ch3_Tige.html","Cours_Ch3_Feuille.html","Cours_Ch3_Fleur.html","Cours_Ch3_Fruit.html","Cours_Ch3_Graine.html","Cours_Ch4_Terrain.html","Cours_Ch5_Identification.html","Cours_Ch6_Chimiotaxonomie.html","explorateur_botanique.html","Botany_Made_Simple_Course.html","manifest.webmanifest","icon-192.png","icon-512.png"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));});
 self.addEventListener("activate",e=>{e.waitUntil((async()=>{const ks=await caches.keys();await Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim();})());});
