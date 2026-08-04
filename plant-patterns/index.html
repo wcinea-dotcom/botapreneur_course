@@ -200,7 +200,7 @@ const L={
  ,famBignoniaceae:{o:'Fleur',g:'Familles florales',t:'Bignoniaceae — probable',d:'Les photographies 1344–1345 montrent de grandes fleurs jaunes en trompette, à corolle gamopétale.',h:'La présence d’étamines didynames doit être contrôlée dans une vue interne plus rapprochée.',formula:'⚥  ↑  K(5)  C(5)  A4 + 1 staminode  G̲(2)',formulaNote:'Pattern familial fréquent : corolle soudée, quatre étamines souvent didynames et une cinquième réduite; ovaire supère à deux carpelles. Variations possibles.',p:['1344','1345'].map(flowerPhoto),family:true,confidence:'probable'}
  ,famPlumbaginaceae:{o:'Fleur',g:'Familles florales',t:'Plumbaginaceae — probable',d:'Les séries 1418–1434 montrent des fleurs bleues actinomorphes à cinq lobes portées en groupes.',h:'Comparer le long tube de la corolle, les cinq lobes et les boutons allongés.',p:['1418','1420','1431','1434'].map(flowerPhoto),family:true,confidence:'probable'}
 };
-const seedGroups=new Set(['Anatomie de la graine','Conservation des graines','Germination']);const FS=(g,t,d,h)=>({o:seedGroups.has(g)?'Semence':'Fruit',g,t,d,h,p:[]});const FP=n=>`fruit-library-v1/${n}`;
+const seedGroups=new Set(['Anatomie de la graine','Conservation des graines','Germination']);const FS=(g,t,d,h)=>({o:seedGroups.has(g)?'Semence':'Fruit',g,t,d,h,p:[]});const FP=n=>`fruit-library-v1/${n}`;const PF2=n=>`../fiche-famille/fruits/${n}`;
 Object.assign(L,{
  fruit:FS('De la fleur au fruit','Du gynécée au fruit','Après la fécondation, l’ovaire mûrit généralement en fruit et les ovules deviennent des graines. Des tissus non ovariens peuvent aussi participer au fruit.','Comparer sur une même plante la fleur fanée, le jeune fruit et le fruit mature; suivre la position de l’ovaire et des ovules.'),
  fruitSet:FS('De la fleur au fruit','Nouaison','Début du développement du fruit après la floraison. La nouaison suit souvent la pollinisation et la fécondation, mais un fruit peut aussi être parthénocarpique.','Repérer le gonflement de l’ovaire et distinguer une fleur fanée d’un jeune fruit réellement engagé dans son développement.'),
@@ -266,6 +266,20 @@ const fruitSets={
  zoochory:['fr-01-mangue.jpg','fr-03-rubiaceae.jpg','fr-05-avocat.jpg','fr-06-fruits-rouges.jpg','fr-07-cestrum.jpg','fr-10-cacao.jpg','fr-12-goyave.jpg','fr-15-picramnia.jpg','fr-19-tomate-sauvage.jpg']
 };
 Object.entries(fruitSets).forEach(([id,photos])=>{if(L[id])L[id].p=photos.map(FP)});
+const pilotSets={
+ capsule:['Malvaceae__Abelmoschus-esculentus__fruit-001.jpg','Sapindaceae__Blighia-sapida__fruit-001.jpg'],
+ caryopsis:['Poaceae__Coix-lacryma-jobi__fruit-001.jpg'],
+ berry:['Oxalidaceae__Averrhoa-bilimbi__fruit-001.jpg','Oxalidaceae__Averrhoa-bilimbi__fruit-002.jpg','Oxalidaceae__Averrhoa-carambola__fruit-001.jpg','Musaceae__Musa-sp__fruit-001.jpg','Musaceae__Musa-sp__fruit-002.jpg','Sapotaceae__Manilkara-zapota__fruit-001.jpg','Lauraceae__Persea-americana__fruit-001.jpg','Lauraceae__Persea-americana__fruit-002.jpg'],
+ drupe:['Anacardiaceae__Mangifera-indica__fruit-001.jpg','Arecaceae__Cocos-nucifera__fruit-001.jpg'],
+ hesperidium:['Rutaceae__Citrus-sp__fruit-001.jpg'],
+ multipleFruit:['Moraceae__Artocarpus-altilis__fruit-001.jpg','Moraceae__Artocarpus-altilis__fruit-002.jpg','Moraceae__Artocarpus-altilis__fruit-003.jpg'],
+ accessoryFruit:['Rosaceae__Fragaria-ananassa__fruit-001.jpg']
+};
+Object.entries(pilotSets).forEach(([id,photos])=>{if(L[id])L[id].p=(L[id].p||[]).concat(photos.map(PF2))});
+Object.assign(L,{
+ fruitFamOxalidaceae:{...FS('Familles par leurs fruits','Oxalidaceae \u2014 carambole & bilimbi','La carambole et le bilimbi (Averrhoa) sont des baies charnues c\u00f4tel\u00e9es; la coupe transversale de la carambole montre une \u00e9toile \u00e0 cinq branches.','Comparer les c\u00f4tes externes, la coupe en \u00e9toile et la pulpe juteuse acidul\u00e9e.'),p:['Oxalidaceae__Averrhoa-carambola__fruit-001.jpg','Oxalidaceae__Averrhoa-bilimbi__fruit-001.jpg','Oxalidaceae__Averrhoa-bilimbi__fruit-002.jpg'].map(PF2),family:true,confidence:'confirm\u00e9e'},
+ fruitFamSapotaceae:{...FS('Familles par leurs fruits','Sapotaceae \u2014 sapotille','La sapotille (Manilkara zapota) est une baie charnue \u00e0 latex, \u00e0 chair brune granuleuse et graines noires luisantes.','Observer le latex, la chair granuleuse et les graines \u00e0 t\u00e9gument dur.'),p:['Sapotaceae__Manilkara-zapota__fruit-001.jpg'].map(PF2),family:true,confidence:'confirm\u00e9e'}
+});
 Object.assign(L,{
  fruitFamAnacardiaceae:{...FS('Familles par leurs fruits','Anacardiaceae — mangue','La mangue illustre une drupe des Anacardiaceae : exocarpe mince, mésocarpe charnu et endocarpe dur entourant la graine. La famille présente toutefois plusieurs autres architectures fruitières.','Comparer plusieurs mangues, puis vérifier le noyau et les caractères végétatifs avant d’utiliser ce pattern familial.'),p:['fr-01-mangue.jpg'].map(FP),family:true,confidence:'confirmée'},
  fruitFamMeliaceae:{...FS('Familles par leurs fruits','Meliaceae — attribution à confirmer','La photographie « Mombin Bata » a été donnée comme Meliaceae. Cette association est conservée comme hypothèse de travail, car le nom vernaculaire peut couvrir plusieurs taxons.','Documenter fleurs, feuilles, fruit ouvert et nom scientifique avant validation familiale.'),p:['fr-02-mombin.jpg'].map(FP),family:true,confidence:'à confirmer'},
