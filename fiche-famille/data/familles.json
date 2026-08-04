@@ -839,7 +839,19 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__fruit-001.jpg",
+      "nom": "Cocos nucifera (Coco)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu/fibreux",
+       "drupe",
+       "indéhiscent",
+       "une graine"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -1343,7 +1355,30 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Malvaceae__Abelmoschus-esculentus__fruit-001.jpg",
+      "nom": "Abelmoschus esculentus (Gombo)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit sec",
+       "capsule",
+       "déhiscent",
+       "côtelé"
+      ]
+     },
+     {
+      "img": "fruits/Malvaceae__Theobroma-cacao__fruit-001.jpg",
+      "nom": "Theobroma cacao (Cacao)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "baie (cabosse)",
+       "indéhiscent",
+       "graines nombreuses"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -2381,7 +2416,18 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Poaceae__Coix-lacryma-jobi__fruit-001.jpg",
+      "nom": "Coix lacryma-jobi (Larmes de Job)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit sec",
+       "caryopse",
+       "indéhiscent"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3011,6 +3057,36 @@
       "confidence": "medium",
       "validation_status": "to_confirm",
       "original_filename": "IMG_8362.JPG"
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-altilis__fruit-001.jpg",
+      "nom": "Artocarpus altilis (Fruit à pain)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "fruit multiple (syncarpe)",
+       "indéhiscent"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-altilis__fruit-002.jpg",
+      "nom": "Artocarpus altilis (Fruit à pain)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "fruit multiple (syncarpe)",
+       "indéhiscent"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-altilis__fruit-003.jpg",
+      "nom": "Artocarpus altilis (Fruit à pain)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "fruit multiple (syncarpe)",
+       "indéhiscent"
+      ]
      }
     ],
     "Semence": [],
@@ -3167,7 +3243,20 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__fruit-001.jpg",
+      "nom": "Blighia sapida (Akée)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit sec",
+       "capsule",
+       "déhiscent",
+       "arille charnu",
+       "graines noires"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3404,7 +3493,19 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Rosaceae__Fragaria-ananassa__fruit-001.jpg",
+      "nom": "Fragaria × ananassa (Fraise)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "faux-fruit",
+       "réceptacle charnu",
+       "akènes en surface",
+       "fruit complexe"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3564,7 +3665,30 @@
      }
     ],
     "Fleur": [],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Musaceae__Musa-sp__fruit-001.jpg",
+      "nom": "Musa sp (Banane)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "indéhiscent",
+       "parthénocarpique (sans graines)"
+      ]
+     },
+     {
+      "img": "fruits/Musaceae__Musa-sp__fruit-002.jpg",
+      "nom": "Musa sp (Banane)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "indéhiscent",
+       "parthénocarpique (sans graines)"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3584,7 +3708,18 @@
      }
     ],
     "Fleur": [],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Rutaceae__Citrus-sp__fruit-001.jpg",
+      "nom": "Citrus sp",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "hespéride (baie modifiée)",
+       "péricarpe glanduleux"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3653,6 +3788,110 @@
     "Fruit": [],
     "Tige": [],
     "Racine": []
+   }
+  },
+  {
+   "fam": "Oxalidaceae",
+   "note": "Oxalidacées. Herbes/arbres à feuilles souvent composées (trifoliolées ou pennées), au goût ACIDE (acide oxalique). Fleurs pentamères (K5 C5), actinomorphes, 10 étamines, gynécée à 5 carpelles. Fruits : capsule ou BAIE côtelée (Averrhoa : carambole, bilimbi). CHIMIE : acide oxalique/oxalates, vitamine C.",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Oxalidaceae__Averrhoa-bilimbi__fruit-001.jpg",
+      "nom": "Averrhoa bilimbi (Bilimbi)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "côtelé"
+      ]
+     },
+     {
+      "img": "fruits/Oxalidaceae__Averrhoa-bilimbi__fruit-002.jpg",
+      "nom": "Averrhoa bilimbi (Bilimbi)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "côtelé"
+      ]
+     },
+     {
+      "img": "fruits/Oxalidaceae__Averrhoa-carambola__fruit-001.jpg",
+      "nom": "Averrhoa carambola (Carambole)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "côtelé (5 côtes → étoile)"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Anacardiaceae",
+   "note": "Anacardiacées. Arbres/arbustes à RÉSINE ou latex souvent irritant. Feuilles alternes, souvent composées pennées (parfois simples). Fleurs petites, pentamères, souvent unisexuées ; disque nectarifère. Fruit : DRUPE (mangue, cajou, pistachier, mombin). CHIMIE : phénols allergisants (urushiol), tanins, résines.",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Anacardiaceae__Mangifera-indica__fruit-001.jpg",
+      "nom": "Mangifera indica (Mangue)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "drupe",
+       "indéhiscent",
+       "une graine"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Sapotaceae",
+   "note": "Sapotacées. Arbres à LATEX blanc. Feuilles simples, alternes, entières, souvent groupées en bout de rameau, à poils roussâtres dessous. Fleurs actinomorphes, souvent fasciculées. Fruit : BAIE charnue à latex (sapotille, caïmite, abricot-pays). CHIMIE : latex (chicle/gutta), saponines, polyphénols.",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__fruit-001.jpg",
+      "nom": "Manilkara zapota (Sapotille)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "indéhiscent",
+       "latex"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Lauraceae",
+   "note": "Lauracées. Arbres/arbustes AROMATIQUES (huiles essentielles). Feuilles simples, alternes, entières, coriaces, odorantes au froissement. Fleurs trimères (3+3 tépales), étamines à déhiscence par VALVES. Fruit : BAIE ou DRUPE (avocat, laurier, cannelle, avocat-marron). CHIMIE : huiles essentielles (cinnamaldéhyde, eugénol, camphre), alcaloïdes, lipides (avocat).",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Lauraceae__Persea-americana__fruit-001.jpg",
+      "nom": "Persea americana (Avocat)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "baie (une grosse graine)",
+       "indéhiscent"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__fruit-002.jpg",
+      "nom": "Persea americana (Avocat)",
+      "confidence": "nommé par William — confirmé",
+      "patterns": [
+       "fruit charnu",
+       "baie (une grosse graine)",
+       "indéhiscent"
+      ]
+     }
+    ]
    }
   }
  ]
