@@ -6041,6 +6041,17 @@
     ],
     "Fruit": [
      {
+      "img": "fruits/Rosaceae__Malus-domestica__IMG_3296.jpg",
+      "nom": "Malus domestica",
+      "confidence": "confirmé visuellement — correction William",
+      "patterns": [
+       "fruit charnu",
+       "pomme (piridion)",
+       "fruit accessoire",
+       "Rosaceae"
+      ]
+     },
+     {
       "img": "fruits/Rosaceae__Fragaria-ananassa__Fragaria_x_ananassa_001.jpg",
       "nom": "Fragaria × ananassa",
       "confidence": "probable",
@@ -7677,17 +7688,6 @@
      },
      {
       "img": "fruits/Anacardiaceae__Mangifera-indica__IMG_3141.jpg",
-      "nom": "Mangifera indica",
-      "confidence": "à confirmer",
-      "patterns": [
-       "charnu",
-       "drupe",
-       "résine",
-       "feuilles souvent composées"
-      ]
-     },
-     {
-      "img": "fruits/Anacardiaceae__Mangifera-indica__IMG_3296.jpg",
       "nom": "Mangifera indica",
       "confidence": "à confirmer",
       "patterns": [
