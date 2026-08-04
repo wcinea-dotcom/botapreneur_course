@@ -1432,7 +1432,46 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Solanaceae__Solanum-muricatum__fruit-001.jpg",
+      "nom": "Solanum muricatum (Pepino)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "graines nombreuses"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-melongena__fruit-001.jpg",
+      "nom": "Solanum melongena (Aubergine)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "calice persistant"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-capsicoides__fruit-001.jpg",
+      "nom": "Solanum capsicoides",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-dulcamara__fruit-001.jpg",
+      "nom": "Solanum dulcamara (Douce-amère)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -1810,7 +1849,29 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Myrtaceae__Psidium-guajava__fruit-001.jpg",
+      "nom": "Psidium guajava (Goyave)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "ovaire infère",
+       "graines nombreuses"
+      ]
+     },
+     {
+      "img": "fruits/Myrtaceae__Eugenia-axillaris__fruit-001.jpg",
+      "nom": "Eugenia axillaris",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "ovaire infère"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -2130,7 +2191,28 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Vitaceae__Vitis-labrusca__fruit-001.jpg",
+      "nom": "Vitis labrusca (Raisin)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "en grappe"
+      ]
+     },
+     {
+      "img": "fruits/Vitaceae__Vitis-vulpina__fruit-001.jpg",
+      "nom": "Vitis vulpina (Vigne des renards)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "en grappe"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3322,7 +3404,30 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Caricaceae__Carica-papaya__fruit-001.jpg",
+      "nom": "Carica papaya (Papaye)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "graines nombreuses",
+       "latex"
+      ]
+     },
+     {
+      "img": "fruits/Caricaceae__Carica-papaya__fruit-002.jpg",
+      "nom": "Carica papaya (Papaye)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "graines nombreuses",
+       "latex"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3503,6 +3608,47 @@
        "réceptacle charnu",
        "akènes en surface",
        "fruit complexe"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Pyrus-communis__fruit-001.jpg",
+      "nom": "Pyrus communis (Poire)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "piridion (pome)",
+       "fruit à pépins",
+       "fruit accessoire"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Crataegus-phaenopyrum__fruit-001.jpg",
+      "nom": "Crataegus phaenopyrum (Aubépine)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "piridion (pome)",
+       "cenelle"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Rubus-niveus__fruit-001.jpg",
+      "nom": "Rubus niveus (Mûre)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "fruit agrégé",
+       "drupéoles"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Rubus-phoenicolasius__fruit-001.jpg",
+      "nom": "Rubus phoenicolasius (Ronce)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "fruit agrégé",
+       "drupéoles"
       ]
      }
     ],
@@ -3785,7 +3931,60 @@
      }
     ],
     "Fleur": [],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Cucurbitaceae__Momordica-charantia__fruit-001.jpg",
+      "nom": "Momordica charantia (Margose)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "péponide (pepo)",
+       "déhiscent",
+       "graines à arille rouge"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Momordica-charantia__fruit-002.jpg",
+      "nom": "Momordica charantia (Margose)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "péponide (pepo)",
+       "déhiscent",
+       "graines à arille rouge"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Cucurbita-moschata__fruit-001.jpg",
+      "nom": "Cucurbita moschata (Courge)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "péponide (pepo)",
+       "écorce épaisse",
+       "graines nombreuses"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Cucumis-sativus__fruit-001.jpg",
+      "nom": "Cucumis sativus (Concombre)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "péponide (pepo)"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Sicyos-edulis__fruit-001.jpg",
+      "nom": "Sicyos edulis (Chayote)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "péponide (pepo)",
+       "une graine"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3843,6 +4042,16 @@
        "indéhiscent",
        "une graine"
       ]
+     },
+     {
+      "img": "fruits/Anacardiaceae__Anacardium-occidentale__fruit-001.jpg",
+      "nom": "Anacardium occidentale (Cajou)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "faux-fruit (pomme cajou)",
+       "noix terminale",
+       "fruit accessoire"
+      ]
      }
     ]
    }
@@ -3889,6 +4098,34 @@
        "fruit charnu",
        "baie (une grosse graine)",
        "indéhiscent"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Ebenaceae",
+   "note": "Ébénacées. Arbres/arbustes (dont les ébènes, Diospyros). Feuilles simples, alternes, entières, sans stipules. Fleurs souvent unisexuées (dioïques), corolle urcéolée. Fruit : BAIE charnue à calice persistant/accrescent (kaki, plaquemine). CHIMIE : tanins, naphtoquinones (plumbagine, diospyrine).",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Ebenaceae__Diospyros-blancoi__fruit-001.jpg",
+      "nom": "Diospyros blancoi (Kaki velours)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "calice persistant"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-nigra__fruit-001.jpg",
+      "nom": "Diospyros nigra (Kaki noir)",
+      "confidence": "proposé Pl@ntNet — à confirmer",
+      "patterns": [
+       "fruit charnu",
+       "baie",
+       "calice accrescent"
       ]
      }
     ]
