@@ -278,6 +278,62 @@
        "surface presque lisse",
        "identification probable"
       ]
+     },
+     {
+      "img": "fruits/Annonaceae__Annona-glabra__IMG_2555.jpg",
+      "nom": "Annona glabra",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "fruit composé charnu",
+       "pièces florales par 3",
+       "arbre aromatique"
+      ]
+     },
+     {
+      "img": "fruits/Annonaceae__Annona-glabra__IMG_2557.jpg",
+      "nom": "Annona glabra",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "fruit composé charnu",
+       "pièces florales par 3",
+       "arbre aromatique"
+      ]
+     },
+     {
+      "img": "fruits/Annonaceae__Annona-glabra__IMG_2566.jpg",
+      "nom": "Annona glabra",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "fruit composé charnu",
+       "pièces florales par 3",
+       "arbre aromatique"
+      ]
+     },
+     {
+      "img": "fruits/Annonaceae__Cananga-odorata__IMG_2593.jpg",
+      "nom": "Cananga odorata",
+      "confidence": "probable",
+      "patterns": [
+       "fruit composé charnu",
+       "pièces florales par 3",
+       "arbre aromatique"
+      ]
+     },
+     {
+      "img": "fruits/Annonaceae__Asimina-triloba__IMG_2972_1.jpg",
+      "nom": "Asimina triloba",
+      "confidence": "à confirmer",
+      "patterns": [
+       "fruit composé charnu",
+       "pièces florales par 3",
+       "arbre aromatique"
+      ]
      }
     ],
     "Tige": [],
@@ -390,7 +446,68 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Fabaceae__Robinia-pseudoacacia__IMG_1470.jpg",
+      "nom": "Robinia pseudoacacia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "gousse",
+       "graines en rangée",
+       "feuilles composées à stipules"
+      ]
+     },
+     {
+      "img": "fruits/Fabaceae__Erythrina-costaricensis__IMG_2533.jpg",
+      "nom": "Erythrina costaricensis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "gousse",
+       "graines en rangée",
+       "feuilles composées à stipules"
+      ]
+     },
+     {
+      "img": "fruits/Fabaceae__Wisteria-frutescens__IMG_2658.jpg",
+      "nom": "Wisteria frutescens",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "gousse",
+       "graines en rangée",
+       "feuilles composées à stipules"
+      ]
+     },
+     {
+      "img": "fruits/Fabaceae__Vigna-marina__IMG_3108.jpg",
+      "nom": "Vigna marina",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "gousse",
+       "graines en rangée",
+       "feuilles composées à stipules"
+      ]
+     },
+     {
+      "img": "fruits/Fabaceae__Leucaena-pulverulenta__IMG_3277.jpg",
+      "nom": "Leucaena pulverulenta",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "gousse",
+       "graines en rangée",
+       "feuilles composées à stipules"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -569,7 +686,14 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Araceae__Colocasia-esculenta__IMG_3146.jpg",
+      "nom": "Colocasia esculenta",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -648,7 +772,123 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Euphorbiaceae__Jatropha-integerrima__IMG_0504.jpg",
+      "nom": "Jatropha integerrima",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "latex",
+       "capsule à 3 loges (tricoque)",
+       "graines à caroncule"
+      ]
+     },
+     {
+      "img": "fruits/Euphorbiaceae__Hevea-brasiliensis__IMG_1579.jpg",
+      "nom": "Hevea brasiliensis",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "latex",
+       "capsule à 3 loges (tricoque)",
+       "graines à caroncule"
+      ]
+     },
+     {
+      "img": "fruits/Euphorbiaceae__Hevea-brasiliensis__IMG_1580.jpg",
+      "nom": "Hevea brasiliensis",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "latex",
+       "capsule à 3 loges (tricoque)",
+       "graines à caroncule"
+      ]
+     },
+     {
+      "img": "fruits/Euphorbiaceae__Gymnanthes-lucida__IMG_1850.jpg",
+      "nom": "Gymnanthes lucida",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "latex",
+       "capsule à 3 loges (tricoque)",
+       "graines à caroncule"
+      ]
+     },
+     {
+      "img": "fruits/Euphorbiaceae__Gymnanthes-lucida__IMG_1852.jpg",
+      "nom": "Gymnanthes lucida",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "latex",
+       "capsule à 3 loges (tricoque)",
+       "graines à caroncule"
+      ]
+     },
+     {
+      "img": "fruits/Euphorbiaceae__Euphorbia-serpens__IMG_2189.jpg",
+      "nom": "Euphorbia serpens",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "latex",
+       "capsule à 3 loges (tricoque)",
+       "graines à caroncule"
+      ]
+     },
+     {
+      "img": "fruits/Euphorbiaceae__Sebastiania-brasiliensis__IMG_2709.jpg",
+      "nom": "Sebastiania brasiliensis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "latex",
+       "capsule à 3 loges (tricoque)",
+       "graines à caroncule"
+      ]
+     },
+     {
+      "img": "fruits/Euphorbiaceae__Manihot-esculenta__IMG_3135.jpg",
+      "nom": "Manihot esculenta",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "latex",
+       "capsule à 3 loges (tricoque)",
+       "graines à caroncule"
+      ]
+     },
+     {
+      "img": "fruits/Euphorbiaceae__Manihot-esculenta__Manihot_esculenta_racine_001.jpg",
+      "nom": "Manihot esculenta",
+      "confidence": "probable",
+      "patterns": [
+       "racine",
+       "latex",
+       "capsule à 3 loges (tricoque)",
+       "graines à caroncule"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -711,7 +951,176 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_1300.jpg",
+      "nom": "Mammea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_1566.jpg",
+      "nom": "Mammea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_1568.jpg",
+      "nom": "Mammea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_1570.jpg",
+      "nom": "Mammea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_1575.jpg",
+      "nom": "Mammea americana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_2750.jpg",
+      "nom": "Mammea americana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_2753.jpg",
+      "nom": "Mammea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_2754.jpg",
+      "nom": "Mammea americana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_2764.jpg",
+      "nom": "Mammea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_2765.jpg",
+      "nom": "Mammea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_2774.jpg",
+      "nom": "Mammea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_3023.jpg",
+      "nom": "Mammea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_3028.jpg",
+      "nom": "Mammea americana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     },
+     {
+      "img": "fruits/Calophyllaceae__Mammea-americana__IMG_3142.jpg",
+      "nom": "Mammea americana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex jaune",
+       "grosse graine",
+       "nervures parallèles serrées"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -776,7 +1185,14 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Asparagaceae__Asparagus-officinalis__IMG_3335.jpg",
+      "nom": "Asparagus officinalis",
+      "confidence": "probable",
+      "patterns": []
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -841,13 +1257,278 @@
     ],
     "Fruit": [
      {
-      "img": "fruits/Arecaceae__Cocos-nucifera__fruit-001.jpg",
-      "nom": "Cocos nucifera (Coco)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Arecaceae__Cocos-nucifera__Cocos_nucifera_001.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu/fibreux",
+       "charnu",
        "drupe",
-       "indéhiscent",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_1716.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_1723.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_1743.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_1747.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_1754.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_1838.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_1895.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_1903.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_1912.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_2018.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_2021.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_2022.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Bismarckia-nobilis__IMG_2525.jpg",
+      "nom": "Bismarckia nobilis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Bismarckia-nobilis__IMG_2527.jpg",
+      "nom": "Bismarckia nobilis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Arenga-engleri__IMG_2620.jpg",
+      "nom": "Arenga engleri",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Phoenix-dactylifera__IMG_3028_1.jpg",
+      "nom": "Phoenix dactylifera",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_3031.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Brahea-edulis__IMG_3110.jpg",
+      "nom": "Brahea edulis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_3150.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_3371.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Cocos-nucifera__IMG_3408.jpg",
+      "nom": "Cocos nucifera",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
+       "une graine"
+      ]
+     },
+     {
+      "img": "fruits/Arecaceae__Salacca-zalacca__IMG_3486.jpg",
+      "nom": "Salacca zalacca",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "palmier",
+       "coque fibreuse",
        "une graine"
       ]
      }
@@ -977,7 +1658,68 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Asphodelaceae__Aloe-vera__IMG_3363.jpg",
+      "nom": "Aloe vera",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "feuilles charnues en rosette",
+       "capsule"
+      ]
+     },
+     {
+      "img": "fruits/Asphodelaceae__Aloe-globuligemma__IMG_3364.jpg",
+      "nom": "Aloe globuligemma",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "feuilles charnues en rosette",
+       "capsule"
+      ]
+     },
+     {
+      "img": "fruits/Asphodelaceae__Aloe-vera__IMG_3365.jpg",
+      "nom": "Aloe vera",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "feuilles charnues en rosette",
+       "capsule"
+      ]
+     },
+     {
+      "img": "fruits/Asphodelaceae__Aloe-vaombe__IMG_3397.jpg",
+      "nom": "Aloe vaombe",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "feuilles charnues en rosette",
+       "capsule"
+      ]
+     },
+     {
+      "img": "fruits/Asphodelaceae__Aloe-officinalis__IMG_3401.jpg",
+      "nom": "Aloe officinalis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "feuilles charnues en rosette",
+       "capsule"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -1031,7 +1773,50 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Asteraceae__Lactuca-sativa__IMG_3008.jpg",
+      "nom": "Lactuca sativa",
+      "confidence": "probable",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Asteraceae__Lactuca-sativa__IMG_3125.jpg",
+      "nom": "Lactuca sativa",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Asteraceae__Smallanthus-sonchifolius__IMG_3425.jpg",
+      "nom": "Smallanthus sonchifolius",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "indéhiscent",
+       "akène"
+      ]
+     },
+     {
+      "img": "fruits/Asteraceae__Smallanthus-sonchifolius__IMG_3428.jpg",
+      "nom": "Smallanthus sonchifolius",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "indéhiscent",
+       "akène"
+      ]
+     },
+     {
+      "img": "fruits/Asteraceae__Smallanthus-sonchifolius__IMG_3430.jpg",
+      "nom": "Smallanthus sonchifolius",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "indéhiscent",
+       "akène"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -1193,7 +1978,98 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Apocynaceae__Alyxia-ruscifolia__10.jpg",
+      "nom": "Alyxia ruscifolia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "latex",
+       "graines à aigrette"
+      ]
+     },
+     {
+      "img": "fruits/Apocynaceae__Calotropis-procera__DSC_0221.jpg",
+      "nom": "Calotropis procera",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "follicule",
+       "latex",
+       "graines à aigrette"
+      ]
+     },
+     {
+      "img": "fruits/Apocynaceae__Calotropis-procera__DSC_0224.jpg",
+      "nom": "Calotropis procera",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "follicule",
+       "latex",
+       "graines à aigrette"
+      ]
+     },
+     {
+      "img": "fruits/Apocynaceae__Ochrosia-elliptica__IMG_1715.jpg",
+      "nom": "Ochrosia elliptica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "latex",
+       "graines à aigrette"
+      ]
+     },
+     {
+      "img": "fruits/Apocynaceae__Ochrosia-elliptica__IMG_1730.jpg",
+      "nom": "Ochrosia elliptica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "latex",
+       "graines à aigrette"
+      ]
+     },
+     {
+      "img": "fruits/Apocynaceae__Ochrosia-elliptica__IMG_1732.jpg",
+      "nom": "Ochrosia elliptica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "latex",
+       "graines à aigrette"
+      ]
+     },
+     {
+      "img": "fruits/Apocynaceae__Cascabela-thevetia__IMG_1927.jpg",
+      "nom": "Cascabela thevetia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "latex",
+       "graines à aigrette"
+      ]
+     },
+     {
+      "img": "fruits/Apocynaceae__Cascabela-thevetia__IMG_1929.jpg",
+      "nom": "Cascabela thevetia",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "latex",
+       "graines à aigrette"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -1301,7 +2177,30 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Boraginaceae__Cordia-laevigata__IMG_1078.jpg",
+      "nom": "Cordia laevigata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "plante rêche",
+       "cyme scorpioïde"
+      ]
+     },
+     {
+      "img": "fruits/Boraginaceae__Heliotropium-glabrum__IMG_1700.jpg",
+      "nom": "Heliotropium glabrum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "plante rêche",
+       "cyme scorpioïde"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -1357,25 +2256,73 @@
     ],
     "Fruit": [
      {
-      "img": "fruits/Malvaceae__Abelmoschus-esculentus__fruit-001.jpg",
-      "nom": "Abelmoschus esculentus (Gombo)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Malvaceae__Abelmoschus-esculentus__Abelmoschus_esculentus_001.jpg",
+      "nom": "Abelmoschus esculentus",
+      "confidence": "probable",
       "patterns": [
-       "fruit sec",
-       "capsule",
+       "sec",
        "déhiscent",
-       "côtelé"
+       "capsule",
+       "mucilage",
+       "poils étoilés"
       ]
      },
      {
-      "img": "fruits/Malvaceae__Theobroma-cacao__fruit-001.jpg",
-      "nom": "Theobroma cacao (Cacao)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Malvaceae__Theobroma-cacao__IMG_1527.jpg",
+      "nom": "Theobroma cacao",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
-       "baie (cabosse)",
-       "indéhiscent",
-       "graines nombreuses"
+       "charnu",
+       "baie",
+       "mucilage",
+       "poils étoilés"
+      ]
+     },
+     {
+      "img": "fruits/Malvaceae__Abelmoschus-esculentus__IMG_3402.jpg",
+      "nom": "Abelmoschus esculentus",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "mucilage",
+       "poils étoilés"
+      ]
+     },
+     {
+      "img": "fruits/Malvaceae__Abelmoschus-esculentus__IMG_3405.jpg",
+      "nom": "Abelmoschus esculentus",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "mucilage",
+       "poils étoilés"
+      ]
+     },
+     {
+      "img": "fruits/Malvaceae__Abelmoschus-esculentus__IMG_3541.jpg",
+      "nom": "Abelmoschus esculentus",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "mucilage",
+       "poils étoilés"
+      ]
+     },
+     {
+      "img": "fruits/Malvaceae__Theobroma-cacao__Theobroma_cacao_001.jpg",
+      "nom": "Theobroma cacao",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "mucilage",
+       "poils étoilés"
       ]
      }
     ],
@@ -1434,41 +2381,351 @@
     ],
     "Fruit": [
      {
-      "img": "fruits/Solanaceae__Solanum-muricatum__fruit-001.jpg",
-      "nom": "Solanum muricatum (Pepino)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Solanaceae__Solanum-lycopersicum__13227381_1084334961625860_2782005946938394393_o.jpg",
+      "nom": "Solanum lycopersicum",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "graines nombreuses"
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
       ]
      },
      {
-      "img": "fruits/Solanaceae__Solanum-melongena__fruit-001.jpg",
-      "nom": "Solanum melongena (Aubergine)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Solanaceae__Solanum-mammosum__DSC_0305.jpg",
+      "nom": "Solanum mammosum",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "calice persistant"
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
       ]
      },
      {
-      "img": "fruits/Solanaceae__Solanum-capsicoides__fruit-001.jpg",
+      "img": "fruits/Solanaceae__Solanum-lycopersicum__IMG_1542.jpg",
+      "nom": "Solanum lycopersicum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-capsicoides__IMG_1761.jpg",
       "nom": "Solanum capsicoides",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
-       "baie"
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
       ]
      },
      {
-      "img": "fruits/Solanaceae__Solanum-dulcamara__fruit-001.jpg",
-      "nom": "Solanum dulcamara (Douce-amère)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Solanaceae__Solanum-pimpinellifolium__IMG_2382.jpg",
+      "nom": "Solanum pimpinellifolium",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
-       "baie"
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-melongena__IMG_2383_1.jpg",
+      "nom": "Solanum melongena",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-lycopersicum__IMG_2384_1.jpg",
+      "nom": "Solanum lycopersicum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-lycopersicum__IMG_2385_1.jpg",
+      "nom": "Solanum lycopersicum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-melongena__IMG_2395.jpg",
+      "nom": "Solanum melongena",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-dulcamara__IMG_2943.jpg",
+      "nom": "Solanum dulcamara",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Capsicum-annuum__IMG_2971.jpg",
+      "nom": "Capsicum annuum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Capsicum-annuum__IMG_3010_1.jpg",
+      "nom": "Capsicum annuum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Capsicum-annuum__IMG_3011.jpg",
+      "nom": "Capsicum annuum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Capsicum-annuum__IMG_3013.jpg",
+      "nom": "Capsicum annuum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-lycopersicum__IMG_3015.jpg",
+      "nom": "Solanum lycopersicum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-melongena__IMG_3016_1.jpg",
+      "nom": "Solanum melongena",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-lycopersicum__IMG_3036.jpg",
+      "nom": "Solanum lycopersicum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-aethiopicum__IMG_3078.jpg",
+      "nom": "Solanum aethiopicum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Capsicum-chinense__IMG_3080.jpg",
+      "nom": "Capsicum chinense",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-chenopodioides__IMG_3101.jpg",
+      "nom": "Solanum chenopodioides",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-nigrescens__IMG_3105.jpg",
+      "nom": "Solanum nigrescens",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Solanum-muricatum__IMG_3292.jpg",
+      "nom": "Solanum muricatum",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Capsicum-annuum__IMG_3300.jpg",
+      "nom": "Capsicum annuum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Capsicum-annuum__IMG_3302.jpg",
+      "nom": "Capsicum annuum",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Capsicum-annuum__IMG_3308.jpg",
+      "nom": "Capsicum annuum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Capsicum-annuum__IMG_3312.jpg",
+      "nom": "Capsicum annuum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Physalis-philadelphica__IMG_3314.jpg",
+      "nom": "Physalis philadelphica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Capsicum-annuum__IMG_3318.jpg",
+      "nom": "Capsicum annuum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
+      ]
+     },
+     {
+      "img": "fruits/Solanaceae__Capsicum-chinense__IMG_3538.jpg",
+      "nom": "Capsicum chinense",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à nombreuses graines",
+       "calice persistant",
+       "odeur forte"
       ]
      }
     ],
@@ -1525,7 +2782,14 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Acanthaceae__Mendoncia-hoffmannseggiana__IMG_1710.jpg",
+      "nom": "Mendoncia hoffmannseggiana",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -1579,7 +2843,26 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Amaryllidaceae__Allium-fistulosum__IMG_3127.jpg",
+      "nom": "Allium fistulosum",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Amaryllidaceae__Allium-ascalonicum__IMG_3339.jpg",
+      "nom": "Allium ascalonicum",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Amaryllidaceae__Allium-ascalonicum__IMG_3423.jpg",
+      "nom": "Allium ascalonicum",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -1633,7 +2916,83 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Rubiaceae__Psychotria-isalensis__1_Rubaceae4.jpg",
+      "nom": "Psychotria isalensis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "feuilles opposées à stipules",
+       "fruit en grappe"
+      ]
+     },
+     {
+      "img": "fruits/Rubiaceae__Psychotria-ligustrifolia__4.jpg",
+      "nom": "Psychotria ligustrifolia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "feuilles opposées à stipules",
+       "fruit en grappe"
+      ]
+     },
+     {
+      "img": "fruits/Rubiaceae__Palicourea-pubescens__IMG_1991.jpg",
+      "nom": "Palicourea pubescens",
+      "confidence": "à confirmer",
+      "patterns": [
+       "feuilles opposées à stipules",
+       "fruit en grappe"
+      ]
+     },
+     {
+      "img": "fruits/Rubiaceae__Randia-aculeata__IMG_2734.jpg",
+      "nom": "Randia aculeata",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "feuilles opposées à stipules",
+       "fruit en grappe"
+      ]
+     },
+     {
+      "img": "fruits/Rubiaceae__Randia-aculeata__IMG_3177.jpg",
+      "nom": "Randia aculeata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "feuilles opposées à stipules",
+       "fruit en grappe"
+      ]
+     },
+     {
+      "img": "fruits/Rubiaceae__Randia-aculeata__IMG_3182.jpg",
+      "nom": "Randia aculeata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "feuilles opposées à stipules",
+       "fruit en grappe"
+      ]
+     },
+     {
+      "img": "fruits/Rubiaceae__Psychotria-nervosa__IMG_3492_1.jpg",
+      "nom": "Psychotria nervosa",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "feuilles opposées à stipules",
+       "fruit en grappe"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -1741,7 +3100,63 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Bignoniaceae__Crescentia-cujete__DSC_0115.jpg",
+      "nom": "Crescentia cujete",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "coque dure (calebasse)",
+       "grosses fleurs"
+      ]
+     },
+     {
+      "img": "fruits/Bignoniaceae__Crescentia-cujete__DSC_0117.jpg",
+      "nom": "Crescentia cujete",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "coque dure (calebasse)",
+       "grosses fleurs"
+      ]
+     },
+     {
+      "img": "fruits/Bignoniaceae__Crescentia-cujete__IMG_2018_1.jpg",
+      "nom": "Crescentia cujete",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "coque dure (calebasse)",
+       "grosses fleurs"
+      ]
+     },
+     {
+      "img": "fruits/Bignoniaceae__Crescentia-cujete__IMG_2021_1.jpg",
+      "nom": "Crescentia cujete",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "coque dure (calebasse)",
+       "grosses fleurs"
+      ]
+     },
+     {
+      "img": "fruits/Bignoniaceae__Crescentia-cujete__IMG_2310.jpg",
+      "nom": "Crescentia cujete",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "coque dure (calebasse)",
+       "grosses fleurs"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -1851,24 +3266,124 @@
     ],
     "Fruit": [
      {
-      "img": "fruits/Myrtaceae__Psidium-guajava__fruit-001.jpg",
-      "nom": "Psidium guajava (Goyave)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Myrtaceae__Eugenia-axillaris__IMG_1447.jpg",
+      "nom": "Eugenia axillaris",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "ovaire infère",
-       "graines nombreuses"
+       "fruit couronné par le calice",
+       "points translucides aromatiques"
       ]
      },
      {
-      "img": "fruits/Myrtaceae__Eugenia-axillaris__fruit-001.jpg",
+      "img": "fruits/Myrtaceae__Eugenia-axillaris__IMG_1449.jpg",
       "nom": "Eugenia axillaris",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "ovaire infère"
+       "fruit couronné par le calice",
+       "points translucides aromatiques"
+      ]
+     },
+     {
+      "img": "fruits/Myrtaceae__Psidium-cattleyanum__IMG_2125.jpg",
+      "nom": "Psidium cattleyanum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit couronné par le calice",
+       "points translucides aromatiques"
+      ]
+     },
+     {
+      "img": "fruits/Myrtaceae__Eugenia-monticola__IMG_2145.jpg",
+      "nom": "Eugenia monticola",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit couronné par le calice",
+       "points translucides aromatiques"
+      ]
+     },
+     {
+      "img": "fruits/Myrtaceae__Syzygium-malaccense__IMG_2469.jpg",
+      "nom": "Syzygium malaccense",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit couronné par le calice",
+       "points translucides aromatiques"
+      ]
+     },
+     {
+      "img": "fruits/Myrtaceae__Psidium-cattleyanum__IMG_2486.jpg",
+      "nom": "Psidium cattleyanum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit couronné par le calice",
+       "points translucides aromatiques"
+      ]
+     },
+     {
+      "img": "fruits/Myrtaceae__Eugenia-axillaris__IMG_2901.jpg",
+      "nom": "Eugenia axillaris",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit couronné par le calice",
+       "points translucides aromatiques"
+      ]
+     },
+     {
+      "img": "fruits/Myrtaceae__Eugenia-axillaris__IMG_2933.jpg",
+      "nom": "Eugenia axillaris",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit couronné par le calice",
+       "points translucides aromatiques"
+      ]
+     },
+     {
+      "img": "fruits/Myrtaceae__Psidium-guajava__IMG_3083.jpg",
+      "nom": "Psidium guajava",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit couronné par le calice",
+       "points translucides aromatiques"
+      ]
+     },
+     {
+      "img": "fruits/Myrtaceae__Psidium-guajava__IMG_3284.jpg",
+      "nom": "Psidium guajava",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit couronné par le calice",
+       "points translucides aromatiques"
+      ]
+     },
+     {
+      "img": "fruits/Myrtaceae__Psidium-cattleyanum__IMG_3530.jpg",
+      "nom": "Psidium cattleyanum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit couronné par le calice",
+       "points translucides aromatiques"
       ]
      }
     ],
@@ -1925,7 +3440,92 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Cactaceae__Selenicereus-undatus__IMG_1244.jpg",
+      "nom": "Selenicereus undatus",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "tige succulente",
+       "aréoles/épines",
+       "nombreuses graines"
+      ]
+     },
+     {
+      "img": "fruits/Cactaceae__Cereus-hexagonus__IMG_1812.jpg",
+      "nom": "Cereus hexagonus",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "tige succulente",
+       "aréoles/épines",
+       "nombreuses graines"
+      ]
+     },
+     {
+      "img": "fruits/Cactaceae__Cereus-hexagonus__IMG_1860.jpg",
+      "nom": "Cereus hexagonus",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "tige succulente",
+       "aréoles/épines",
+       "nombreuses graines"
+      ]
+     },
+     {
+      "img": "fruits/Cactaceae__Cereus-hexagonus__IMG_1871.jpg",
+      "nom": "Cereus hexagonus",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "tige succulente",
+       "aréoles/épines",
+       "nombreuses graines"
+      ]
+     },
+     {
+      "img": "fruits/Cactaceae__Selenicereus-undatus__IMG_3289.jpg",
+      "nom": "Selenicereus undatus",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "tige succulente",
+       "aréoles/épines",
+       "nombreuses graines"
+      ]
+     },
+     {
+      "img": "fruits/Cactaceae__Opuntia-ficus-indica__IMG_3304.jpg",
+      "nom": "Opuntia ficus-indica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "tige succulente",
+       "aréoles/épines",
+       "nombreuses graines"
+      ]
+     },
+     {
+      "img": "fruits/Cactaceae__Opuntia-ficus-indica__IMG_3306.jpg",
+      "nom": "Opuntia ficus-indica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "tige succulente",
+       "aréoles/épines",
+       "nombreuses graines"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -2033,7 +3633,63 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Primulaceae__Ardisia-elliptica__IMG_2419.jpg",
+      "nom": "Ardisia elliptica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "petits fruits en grappe",
+       "feuilles ponctuées"
+      ]
+     },
+     {
+      "img": "fruits/Primulaceae__Jacquinia-keyensis__IMG_2454.jpg",
+      "nom": "Jacquinia keyensis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "petits fruits en grappe",
+       "feuilles ponctuées"
+      ]
+     },
+     {
+      "img": "fruits/Primulaceae__Myrsine-coriacea__IMG_2635.jpg",
+      "nom": "Myrsine coriacea",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "petits fruits en grappe",
+       "feuilles ponctuées"
+      ]
+     },
+     {
+      "img": "fruits/Primulaceae__Myrsine-coriacea__IMG_2636.jpg",
+      "nom": "Myrsine coriacea",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "petits fruits en grappe",
+       "feuilles ponctuées"
+      ]
+     },
+     {
+      "img": "fruits/Primulaceae__Myrsine-parvifolia__IMG_2898.jpg",
+      "nom": "Myrsine parvifolia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "petits fruits en grappe",
+       "feuilles ponctuées"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -2087,7 +3743,63 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Combretaceae__Conocarpus-erectus__IMG_2969.jpg",
+      "nom": "Conocarpus erectus",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "fruit ailé/côtelé",
+       "feuilles groupées en bout de rameau"
+      ]
+     },
+     {
+      "img": "fruits/Combretaceae__Conocarpus-erectus__IMG_2978.jpg",
+      "nom": "Conocarpus erectus",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "fruit ailé/côtelé",
+       "feuilles groupées en bout de rameau"
+      ]
+     },
+     {
+      "img": "fruits/Combretaceae__Conocarpus-erectus__IMG_2983.jpg",
+      "nom": "Conocarpus erectus",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "fruit ailé/côtelé",
+       "feuilles groupées en bout de rameau"
+      ]
+     },
+     {
+      "img": "fruits/Combretaceae__Conocarpus-erectus__IMG_3004.jpg",
+      "nom": "Conocarpus erectus",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "fruit ailé/côtelé",
+       "feuilles groupées en bout de rameau"
+      ]
+     },
+     {
+      "img": "fruits/Combretaceae__Conocarpus-erectus__IMG_3010.jpg",
+      "nom": "Conocarpus erectus",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "fruit ailé/côtelé",
+       "feuilles groupées en bout de rameau"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -2193,23 +3905,123 @@
     ],
     "Fruit": [
      {
-      "img": "fruits/Vitaceae__Vitis-labrusca__fruit-001.jpg",
-      "nom": "Vitis labrusca (Raisin)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Vitaceae__Vitis-vulpina__IMG_0979.jpg",
+      "nom": "Vitis vulpina",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "en grappe"
+       "liane à vrilles",
+       "grappes de baies",
+       "pépins piriformes"
       ]
      },
      {
-      "img": "fruits/Vitaceae__Vitis-vulpina__fruit-001.jpg",
-      "nom": "Vitis vulpina (Vigne des renards)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Vitaceae__Vitis-labrusca__IMG_1686_1.jpg",
+      "nom": "Vitis labrusca",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "en grappe"
+       "liane à vrilles",
+       "grappes de baies",
+       "pépins piriformes"
+      ]
+     },
+     {
+      "img": "fruits/Vitaceae__Vitis-labrusca__IMG_1690.jpg",
+      "nom": "Vitis labrusca",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "liane à vrilles",
+       "grappes de baies",
+       "pépins piriformes"
+      ]
+     },
+     {
+      "img": "fruits/Vitaceae__Vitis-vinifera__IMG_2130_1.jpg",
+      "nom": "Vitis vinifera",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "liane à vrilles",
+       "grappes de baies",
+       "pépins piriformes"
+      ]
+     },
+     {
+      "img": "fruits/Vitaceae__Vitis-labrusca__IMG_2131.jpg",
+      "nom": "Vitis labrusca",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "liane à vrilles",
+       "grappes de baies",
+       "pépins piriformes"
+      ]
+     },
+     {
+      "img": "fruits/Vitaceae__Vitis-labrusca__IMG_2132.jpg",
+      "nom": "Vitis labrusca",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "liane à vrilles",
+       "grappes de baies",
+       "pépins piriformes"
+      ]
+     },
+     {
+      "img": "fruits/Vitaceae__Vitis-labrusca__IMG_2146.jpg",
+      "nom": "Vitis labrusca",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "liane à vrilles",
+       "grappes de baies",
+       "pépins piriformes"
+      ]
+     },
+     {
+      "img": "fruits/Vitaceae__Vitis-vinifera__IMG_2151.jpg",
+      "nom": "Vitis vinifera",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "liane à vrilles",
+       "grappes de baies",
+       "pépins piriformes"
+      ]
+     },
+     {
+      "img": "fruits/Vitaceae__Vitis-vulpina__IMG_2263.jpg",
+      "nom": "Vitis vulpina",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "liane à vrilles",
+       "grappes de baies",
+       "pépins piriformes"
+      ]
+     },
+     {
+      "img": "fruits/Vitaceae__Clematicissus-striata__IMG_2525_1.jpg",
+      "nom": "Clematicissus striata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "liane à vrilles",
+       "grappes de baies",
+       "pépins piriformes"
       ]
      }
     ],
@@ -2264,7 +4076,52 @@
      }
     ],
     "Fleur": [],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Polygonaceae__Coccoloba-diversifolia__IMG_2108.jpg",
+      "nom": "Coccoloba diversifolia",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "faux-fruit",
+       "périanthe charnu autour de l'akène",
+       "ocréa à la tige"
+      ]
+     },
+     {
+      "img": "fruits/Polygonaceae__Coccoloba-diversifolia__IMG_2908.jpg",
+      "nom": "Coccoloba diversifolia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "faux-fruit",
+       "périanthe charnu autour de l'akène",
+       "ocréa à la tige"
+      ]
+     },
+     {
+      "img": "fruits/Polygonaceae__Coccoloba-diversifolia__IMG_2911_1.jpg",
+      "nom": "Coccoloba diversifolia",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "faux-fruit",
+       "périanthe charnu autour de l'akène",
+       "ocréa à la tige"
+      ]
+     },
+     {
+      "img": "fruits/Polygonaceae__Coccoloba-diversifolia__IMG_2912.jpg",
+      "nom": "Coccoloba diversifolia",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "faux-fruit",
+       "périanthe charnu autour de l'akène",
+       "ocréa à la tige"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -2411,7 +4268,20 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Lamiaceae__Mentha-rotundifolia__IMG_3007.jpg",
+      "nom": "Mentha × rotundifolia",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Lamiaceae__Rosmarinus-officinalis__IMG_3331.jpg",
+      "nom": "Rosmarinus officinalis",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -2500,13 +4370,48 @@
     ],
     "Fruit": [
      {
-      "img": "fruits/Poaceae__Coix-lacryma-jobi__fruit-001.jpg",
-      "nom": "Coix lacryma-jobi (Larmes de Job)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Poaceae__Coix-lacryma-jobi__Coix_lacryma_jobi_001.jpg",
+      "nom": "Coix lacryma-jobi",
+      "confidence": "probable",
       "patterns": [
-       "fruit sec",
+       "sec",
+       "indéhiscent",
        "caryopse",
-       "indéhiscent"
+       "épillets",
+       "gaine et ligule"
+      ]
+     },
+     {
+      "img": "fruits/Poaceae__Zea-mays__IMG_3343.jpg",
+      "nom": "Zea mays",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "indéhiscent",
+       "caryopse",
+       "épillets",
+       "gaine et ligule"
+      ]
+     },
+     {
+      "img": "fruits/Poaceae__Zea-mays__IMG_3352.jpg",
+      "nom": "Zea mays",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "indéhiscent",
+       "caryopse",
+       "épillets",
+       "gaine et ligule"
+      ]
+     },
+     {
+      "img": "fruits/Poaceae__Phyllostachys-reticulata__IMG_3480.jpg",
+      "nom": "Phyllostachys reticulata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "épillets",
+       "gaine et ligule"
       ]
      }
     ],
@@ -2549,7 +4454,20 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Lecythidaceae__Gustavia-augusta__IMG_0743.jpg",
+      "nom": "Gustavia augusta",
+      "confidence": "probable",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Lecythidaceae__Bertholletia-excelsa__IMG_3024.jpg",
+      "nom": "Bertholletia excelsa",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -2629,7 +4547,74 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Bromeliaceae__Bromelia-antiacantha__IMG_0294.jpg",
+      "nom": "Bromelia antiacantha",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "rosette de feuilles",
+       "fruit charnu ou multiple"
+      ]
+     },
+     {
+      "img": "fruits/Bromeliaceae__Bromelia-antiacantha__IMG_0296.jpg",
+      "nom": "Bromelia antiacantha",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "rosette de feuilles",
+       "fruit charnu ou multiple"
+      ]
+     },
+     {
+      "img": "fruits/Bromeliaceae__Bromelia-pinguin__IMG_1261.jpg",
+      "nom": "Bromelia pinguin",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "rosette de feuilles",
+       "fruit charnu ou multiple"
+      ]
+     },
+     {
+      "img": "fruits/Bromeliaceae__Bromelia-pinguin__IMG_1275.jpg",
+      "nom": "Bromelia pinguin",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "rosette de feuilles",
+       "fruit charnu ou multiple"
+      ]
+     },
+     {
+      "img": "fruits/Bromeliaceae__Bromelia-pinguin__IMG_1302.jpg",
+      "nom": "Bromelia pinguin",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "rosette de feuilles",
+       "fruit charnu ou multiple"
+      ]
+     },
+     {
+      "img": "fruits/Bromeliaceae__Ananas-comosus__IMG_3406.jpg",
+      "nom": "Ananas comosus",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "rosette de feuilles",
+       "fruit charnu ou multiple"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3141,33 +5126,171 @@
       "original_filename": "IMG_8362.JPG"
      },
      {
-      "img": "fruits/Moraceae__Artocarpus-altilis__fruit-001.jpg",
-      "nom": "Artocarpus altilis (Fruit à pain)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Moraceae__Artocarpus-altilis__Artocarpus_altilis_001.jpg",
+      "nom": "Artocarpus altilis",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
-       "fruit multiple (syncarpe)",
-       "indéhiscent"
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
       ]
      },
      {
-      "img": "fruits/Moraceae__Artocarpus-altilis__fruit-002.jpg",
-      "nom": "Artocarpus altilis (Fruit à pain)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Moraceae__Artocarpus-altilis__Artocarpus_altilis_002.jpg",
+      "nom": "Artocarpus altilis",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
-       "fruit multiple (syncarpe)",
-       "indéhiscent"
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
       ]
      },
      {
-      "img": "fruits/Moraceae__Artocarpus-altilis__fruit-003.jpg",
-      "nom": "Artocarpus altilis (Fruit à pain)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Moraceae__Artocarpus-altilis__Artocarpus_altilis_003.jpg",
+      "nom": "Artocarpus altilis",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
-       "fruit multiple (syncarpe)",
-       "indéhiscent"
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-altilis__Copy_of_IMG_3496.jpg",
+      "nom": "Artocarpus altilis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Morus-nigra__IMG_0956.jpg",
+      "nom": "Morus nigra",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-altilis__IMG_1940.jpg",
+      "nom": "Artocarpus altilis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-heterophyllus__IMG_2409.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-heterophyllus__IMG_2410.jpg",
+      "nom": "Artocarpus heterophyllus",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-altilis__IMG_3053.jpg",
+      "nom": "Artocarpus altilis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-altilis__IMG_3153.jpg",
+      "nom": "Artocarpus altilis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-altilis__IMG_3385_1.jpg",
+      "nom": "Artocarpus altilis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-altilis__IMG_3479.jpg",
+      "nom": "Artocarpus altilis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Ficus-trichopoda__IMG_3488.jpg",
+      "nom": "Ficus trichopoda",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "faux-fruit",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
+      ]
+     },
+     {
+      "img": "fruits/Moraceae__Artocarpus-altilis__IMG_3496_1.jpg",
+      "nom": "Artocarpus altilis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "fruit multiple",
+       "latex blanc",
+       "fruit composé / sycone",
+       "stipule engainante"
       ]
      }
     ],
@@ -3327,15 +5450,167 @@
     ],
     "Fruit": [
      {
-      "img": "fruits/Sapindaceae__Blighia-sapida__fruit-001.jpg",
-      "nom": "Blighia sapida (Akée)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Sapindaceae__Blighia-sapida__Blighia_sapida_001.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "probable",
       "patterns": [
-       "fruit sec",
-       "capsule",
+       "sec",
        "déhiscent",
-       "arille charnu",
-       "graines noires"
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__IMG_0320.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__IMG_0325.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__IMG_1783.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Dimocarpus-longan__IMG_2274.jpg",
+      "nom": "Dimocarpus longan",
+      "confidence": "probable",
+      "patterns": [
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__IMG_3259.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__IMG_3261.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__IMG_3264.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__IMG_3265.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__IMG_3375.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__IMG_3376.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__IMG_3377.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Blighia-sapida__IMG_3379.jpg",
+      "nom": "Blighia sapida",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "arille autour de la graine",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Sapindaceae__Nephelium-lappaceum__IMG_3390.jpg",
+      "nom": "Nephelium lappaceum",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "arille autour de la graine",
+       "feuilles composées"
       ]
      }
     ],
@@ -3406,25 +5681,99 @@
     ],
     "Fruit": [
      {
-      "img": "fruits/Caricaceae__Carica-papaya__fruit-001.jpg",
-      "nom": "Carica papaya (Papaye)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Caricaceae__Carica-papaya__IMG_1843.jpg",
+      "nom": "Carica papaya",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "graines nombreuses",
-       "latex"
+       "baie creuse à graines noires",
+       "latex",
+       "port en palmier"
       ]
      },
      {
-      "img": "fruits/Caricaceae__Carica-papaya__fruit-002.jpg",
-      "nom": "Carica papaya (Papaye)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Caricaceae__Carica-papaya__IMG_1845.jpg",
+      "nom": "Carica papaya",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "graines nombreuses",
-       "latex"
+       "baie creuse à graines noires",
+       "latex",
+       "port en palmier"
+      ]
+     },
+     {
+      "img": "fruits/Caricaceae__Carica-papaya__IMG_2979.jpg",
+      "nom": "Carica papaya",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie creuse à graines noires",
+       "latex",
+       "port en palmier"
+      ]
+     },
+     {
+      "img": "fruits/Caricaceae__Carica-papaya__IMG_2980.jpg",
+      "nom": "Carica papaya",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie creuse à graines noires",
+       "latex",
+       "port en palmier"
+      ]
+     },
+     {
+      "img": "fruits/Caricaceae__Carica-papaya__IMG_2990.jpg",
+      "nom": "Carica papaya",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie creuse à graines noires",
+       "latex",
+       "port en palmier"
+      ]
+     },
+     {
+      "img": "fruits/Caricaceae__Carica-papaya__IMG_2993.jpg",
+      "nom": "Carica papaya",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie creuse à graines noires",
+       "latex",
+       "port en palmier"
+      ]
+     },
+     {
+      "img": "fruits/Caricaceae__Carica-papaya__IMG_2998_1.jpg",
+      "nom": "Carica papaya",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie creuse à graines noires",
+       "latex",
+       "port en palmier"
+      ]
+     },
+     {
+      "img": "fruits/Caricaceae__Carica-papaya__IMG_3022.jpg",
+      "nom": "Carica papaya",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie creuse à graines noires",
+       "latex",
+       "port en palmier"
       ]
      }
     ],
@@ -3460,7 +5809,86 @@
       ]
      }
     ],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Zygophyllaceae__Guaiacum-officinale__DSC_0214.jpg",
+      "nom": "Guaiacum officinale",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit anguleux/ailé",
+       "bois très dur",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Zygophyllaceae__Guaiacum-officinale__IMG_1357.jpg",
+      "nom": "Guaiacum officinale",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit anguleux/ailé",
+       "bois très dur",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Zygophyllaceae__Guaiacum-officinale__IMG_1358.jpg",
+      "nom": "Guaiacum officinale",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit anguleux/ailé",
+       "bois très dur",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Zygophyllaceae__Guaiacum-sanctum__IMG_2160.jpg",
+      "nom": "Guaiacum sanctum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit anguleux/ailé",
+       "bois très dur",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Zygophyllaceae__Guaiacum-sanctum__IMG_2161_1.jpg",
+      "nom": "Guaiacum sanctum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit anguleux/ailé",
+       "bois très dur",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Zygophyllaceae__Guaiacum-sanctum__IMG_2162.jpg",
+      "nom": "Guaiacum sanctum",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit anguleux/ailé",
+       "bois très dur",
+       "feuilles composées"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3488,7 +5916,20 @@
      }
     ],
     "Fleur": [],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Zingiberaceae__Curcuma-longa__IMG_3328.jpg",
+      "nom": "Curcuma longa",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Zingiberaceae__Zingiber-officinale__IMG_3367.jpg",
+      "nom": "Zingiber officinale",
+      "confidence": "probable",
+      "patterns": []
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3600,55 +6041,361 @@
     ],
     "Fruit": [
      {
-      "img": "fruits/Rosaceae__Fragaria-ananassa__fruit-001.jpg",
-      "nom": "Fragaria × ananassa (Fraise)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Rosaceae__Fragaria-ananassa__Fragaria_x_ananassa_001.jpg",
+      "nom": "Fragaria × ananassa",
+      "confidence": "probable",
       "patterns": [
-       "faux-fruit",
-       "réceptacle charnu",
-       "akènes en surface",
-       "fruit complexe"
+       "charnu",
+       "fruit accessoire",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
       ]
      },
      {
-      "img": "fruits/Rosaceae__Pyrus-communis__fruit-001.jpg",
-      "nom": "Pyrus communis (Poire)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Rosaceae__Rubus-niveus__IMG_0695.jpg",
+      "nom": "Rubus niveus",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
-       "piridion (pome)",
-       "fruit à pépins",
-       "fruit accessoire"
-      ]
-     },
-     {
-      "img": "fruits/Rosaceae__Crataegus-phaenopyrum__fruit-001.jpg",
-      "nom": "Crataegus phaenopyrum (Aubépine)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
-      "patterns": [
-       "fruit charnu",
-       "piridion (pome)",
-       "cenelle"
-      ]
-     },
-     {
-      "img": "fruits/Rosaceae__Rubus-niveus__fruit-001.jpg",
-      "nom": "Rubus niveus (Mûre)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
-      "patterns": [
-       "fruit charnu",
+       "charnu",
        "fruit agrégé",
-       "drupéoles"
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
       ]
      },
      {
-      "img": "fruits/Rosaceae__Rubus-phoenicolasius__fruit-001.jpg",
-      "nom": "Rubus phoenicolasius (Ronce)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Rosaceae__Malus-baccata__IMG_1029.jpg",
+      "nom": "Malus baccata",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-sylvestris__IMG_1506.jpg",
+      "nom": "Malus sylvestris",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Pyrus-communis__IMG_1545.jpg",
+      "nom": "Pyrus communis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-domestica__IMG_1942.jpg",
+      "nom": "Malus domestica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-domestica__IMG_1945.jpg",
+      "nom": "Malus domestica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-domestica__IMG_1947.jpg",
+      "nom": "Malus domestica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-domestica__IMG_1952.jpg",
+      "nom": "Malus domestica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-sylvestris__IMG_2146_1.jpg",
+      "nom": "Malus sylvestris",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-sylvestris__IMG_2152_1.jpg",
+      "nom": "Malus sylvestris",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-domestica__IMG_2153_1.jpg",
+      "nom": "Malus domestica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-sylvestris__IMG_2155_1.jpg",
+      "nom": "Malus sylvestris",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-domestica__IMG_2158.jpg",
+      "nom": "Malus domestica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-domestica__IMG_2164.jpg",
+      "nom": "Malus domestica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-domestica__IMG_2165_1.jpg",
+      "nom": "Malus domestica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Rubus-phoenicolasius__IMG_2199.jpg",
+      "nom": "Rubus phoenicolasius",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
        "fruit agrégé",
-       "drupéoles"
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-sylvestris__IMG_2246_1.jpg",
+      "nom": "Malus sylvestris",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Prunus-persica__IMG_2341.jpg",
+      "nom": "Prunus persica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Pyrus-pyrifolia__IMG_2401.jpg",
+      "nom": "Pyrus pyrifolia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Pyrus-spinosa__IMG_2407.jpg",
+      "nom": "Pyrus spinosa",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-domestica__IMG_2466.jpg",
+      "nom": "Malus domestica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Crataegus-phaenopyrum__IMG_2569.jpg",
+      "nom": "Crataegus phaenopyrum",
+      "confidence": "probable",
+      "patterns": [
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-hupehensis__IMG_2612.jpg",
+      "nom": "Malus hupehensis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Malus-domestica__IMG_3072.jpg",
+      "nom": "Malus domestica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Pyrus-communis__IMG_3073.jpg",
+      "nom": "Pyrus communis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Pyrus-communis__IMG_3075.jpg",
+      "nom": "Pyrus communis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Pyrus-communis__IMG_3076.jpg",
+      "nom": "Pyrus communis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Pyrus-calleryana__IMG_3126.jpg",
+      "nom": "Pyrus calleryana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "pome",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
+      ]
+     },
+     {
+      "img": "fruits/Rosaceae__Prunus-persica__IMG_3294.jpg",
+      "nom": "Prunus persica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "5 pétales",
+       "nombreuses étamines",
+       "stipules"
       ]
      }
     ],
@@ -3671,7 +6418,52 @@
      }
     ],
     "Fleur": [],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Ericaceae__Vaccinium-corymbosum__IMG_1979.jpg",
+      "nom": "Vaccinium corymbosum",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "feuilles coriaces",
+       "sol acide"
+      ]
+     },
+     {
+      "img": "fruits/Ericaceae__Vaccinium-corymbosum__IMG_1982.jpg",
+      "nom": "Vaccinium corymbosum",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "feuilles coriaces",
+       "sol acide"
+      ]
+     },
+     {
+      "img": "fruits/Ericaceae__Vaccinium-corymbosum__IMG_1985.jpg",
+      "nom": "Vaccinium corymbosum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "feuilles coriaces",
+       "sol acide"
+      ]
+     },
+     {
+      "img": "fruits/Ericaceae__Vaccinium-corymbosum__IMG_1989.jpg",
+      "nom": "Vaccinium corymbosum",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "feuilles coriaces",
+       "sol acide"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3731,7 +6523,142 @@
      }
     ],
     "Fleur": [],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Clusiaceae__Pentadesma-butyracea__DSC_0235.jpg",
+      "nom": "Pentadesma butyracea",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex",
+       "grosses graines",
+       "feuilles coriaces opposées"
+      ]
+     },
+     {
+      "img": "fruits/Clusiaceae__Clusia-rosea__IMG_0718.jpg",
+      "nom": "Clusia rosea",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "latex",
+       "grosses graines",
+       "feuilles coriaces opposées"
+      ]
+     },
+     {
+      "img": "fruits/Clusiaceae__Clusia-rosea__IMG_0723.jpg",
+      "nom": "Clusia rosea",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "latex",
+       "grosses graines",
+       "feuilles coriaces opposées"
+      ]
+     },
+     {
+      "img": "fruits/Clusiaceae__Garcinia-cochinchinensis__IMG_1618.jpg",
+      "nom": "Garcinia cochinchinensis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex",
+       "grosses graines",
+       "feuilles coriaces opposées"
+      ]
+     },
+     {
+      "img": "fruits/Clusiaceae__Garcinia-livingstonei__IMG_2205.jpg",
+      "nom": "Garcinia livingstonei",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex",
+       "grosses graines",
+       "feuilles coriaces opposées"
+      ]
+     },
+     {
+      "img": "fruits/Clusiaceae__Garcinia-livingstonei__IMG_2207.jpg",
+      "nom": "Garcinia livingstonei",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex",
+       "grosses graines",
+       "feuilles coriaces opposées"
+      ]
+     },
+     {
+      "img": "fruits/Clusiaceae__Garcinia-subelliptica__IMG_3381.jpg",
+      "nom": "Garcinia subelliptica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex",
+       "grosses graines",
+       "feuilles coriaces opposées"
+      ]
+     },
+     {
+      "img": "fruits/Clusiaceae__Garcinia-subelliptica__IMG_3383.jpg",
+      "nom": "Garcinia subelliptica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex",
+       "grosses graines",
+       "feuilles coriaces opposées"
+      ]
+     },
+     {
+      "img": "fruits/Clusiaceae__Garcinia-subelliptica__IMG_3385.jpg",
+      "nom": "Garcinia subelliptica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex",
+       "grosses graines",
+       "feuilles coriaces opposées"
+      ]
+     },
+     {
+      "img": "fruits/Clusiaceae__Garcinia-subelliptica__IMG_3386.jpg",
+      "nom": "Garcinia subelliptica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex",
+       "grosses graines",
+       "feuilles coriaces opposées"
+      ]
+     },
+     {
+      "img": "fruits/Clusiaceae__Garcinia-subelliptica__IMG_3389.jpg",
+      "nom": "Garcinia subelliptica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex",
+       "grosses graines",
+       "feuilles coriaces opposées"
+      ]
+     }
+    ],
     "Tige": [],
     "Racine": []
    }
@@ -3813,25 +6740,123 @@
     "Fleur": [],
     "Fruit": [
      {
-      "img": "fruits/Musaceae__Musa-sp__fruit-001.jpg",
-      "nom": "Musa sp (Banane)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Musaceae__Musa-acuminata__DSC_0247.jpg",
+      "nom": "Musa acuminata",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "indéhiscent",
-       "parthénocarpique (sans graines)"
+       "régime",
+       "fausse-tige",
+       "baie sans graines (cultivée)"
       ]
      },
      {
-      "img": "fruits/Musaceae__Musa-sp__fruit-002.jpg",
-      "nom": "Musa sp (Banane)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Musaceae__Musa-paradisiaca__DSC_0327.jpg",
+      "nom": "Musa × paradisiaca",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "indéhiscent",
-       "parthénocarpique (sans graines)"
+       "régime",
+       "fausse-tige",
+       "baie sans graines (cultivée)"
+      ]
+     },
+     {
+      "img": "fruits/Musaceae__Musa-acuminata__IMG_1520.jpg",
+      "nom": "Musa acuminata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "régime",
+       "fausse-tige",
+       "baie sans graines (cultivée)"
+      ]
+     },
+     {
+      "img": "fruits/Musaceae__Musa-paradisiaca__IMG_1523.jpg",
+      "nom": "Musa × paradisiaca",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "régime",
+       "fausse-tige",
+       "baie sans graines (cultivée)"
+      ]
+     },
+     {
+      "img": "fruits/Musaceae__Musa-acuminata__IMG_1528.jpg",
+      "nom": "Musa acuminata",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "régime",
+       "fausse-tige",
+       "baie sans graines (cultivée)"
+      ]
+     },
+     {
+      "img": "fruits/Musaceae__Musa-acuminata__IMG_2075.jpg",
+      "nom": "Musa acuminata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "régime",
+       "fausse-tige",
+       "baie sans graines (cultivée)"
+      ]
+     },
+     {
+      "img": "fruits/Musaceae__Musa-paradisiaca__IMG_3143.jpg",
+      "nom": "Musa × paradisiaca",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "régime",
+       "fausse-tige",
+       "baie sans graines (cultivée)"
+      ]
+     },
+     {
+      "img": "fruits/Musaceae__Musa-acuminata__IMG_3375_1.jpg",
+      "nom": "Musa acuminata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "régime",
+       "fausse-tige",
+       "baie sans graines (cultivée)"
+      ]
+     },
+     {
+      "img": "fruits/Musaceae__Musa__Musa_sp_001.jpg",
+      "nom": "Musa sp.",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "régime",
+       "fausse-tige",
+       "baie sans graines (cultivée)"
+      ]
+     },
+     {
+      "img": "fruits/Musaceae__Musa__Musa_sp_002.jpg",
+      "nom": "Musa sp.",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "régime",
+       "fausse-tige",
+       "baie sans graines (cultivée)"
       ]
      }
     ],
@@ -3856,13 +6881,245 @@
     "Fleur": [],
     "Fruit": [
      {
-      "img": "fruits/Rutaceae__Citrus-sp__fruit-001.jpg",
-      "nom": "Citrus sp",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Rutaceae__Citrus-limon__117759154_728297281050575_4032937261124579830_n.jpg",
+      "nom": "Citrus × limon",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
-       "hespéride (baie modifiée)",
-       "péricarpe glanduleux"
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus__Citrus_sp_001.jpg",
+      "nom": "Citrus sp.",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-aurantium__IMG_1517.jpg",
+      "nom": "Citrus × aurantium",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-maxima__IMG_1525.jpg",
+      "nom": "Citrus maxima",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-maxima__IMG_1542_1.jpg",
+      "nom": "Citrus maxima",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-aurantiifolia__IMG_1622.jpg",
+      "nom": "Citrus × aurantiifolia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Aegle-marmelos__IMG_1626.jpg",
+      "nom": "Aegle marmelos",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Aegle-marmelos__IMG_1630.jpg",
+      "nom": "Aegle marmelos",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-maxima__IMG_1733.jpg",
+      "nom": "Citrus maxima",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Casimiroa-edulis__IMG_2305.jpg",
+      "nom": "Casimiroa edulis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Casimiroa-edulis__IMG_2306.jpg",
+      "nom": "Casimiroa edulis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Casimiroa-edulis__IMG_2307.jpg",
+      "nom": "Casimiroa edulis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Murraya-paniculata__IMG_2552.jpg",
+      "nom": "Murraya paniculata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-maxima__IMG_2610.jpg",
+      "nom": "Citrus maxima",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Amyris-elemifera__IMG_2693.jpg",
+      "nom": "Amyris elemifera",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-aurantiifolia__IMG_3019.jpg",
+      "nom": "Citrus × aurantiifolia",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-maxima__IMG_3290.jpg",
+      "nom": "Citrus maxima",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-maxima__IMG_3291.jpg",
+      "nom": "Citrus maxima",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-aurantiifolia__IMG_3357.jpg",
+      "nom": "Citrus × aurantiifolia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-aurantium__IMG_3374.jpg",
+      "nom": "Citrus × aurantium",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-japonica__IMG_3483.jpg",
+      "nom": "Citrus japonica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
+      ]
+     },
+     {
+      "img": "fruits/Rutaceae__Citrus-aurantiifolia__IMG_3531.jpg",
+      "nom": "Citrus × aurantiifolia",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "hespéride",
+       "points translucides aromatiques",
+       "glandes à huile"
       ]
      }
     ],
@@ -3909,7 +7166,86 @@
      }
     ],
     "Fleur": [],
-    "Fruit": [],
+    "Fruit": [
+     {
+      "img": "fruits/Dioscoreaceae__Dioscorea-esculenta__IMG_3130.jpg",
+      "nom": "Dioscorea esculenta",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit ailé à 3 loges",
+       "liane",
+       "feuilles cordées"
+      ]
+     },
+     {
+      "img": "fruits/Dioscoreaceae__Dioscorea-esculenta__IMG_3131.jpg",
+      "nom": "Dioscorea esculenta",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit ailé à 3 loges",
+       "liane",
+       "feuilles cordées"
+      ]
+     },
+     {
+      "img": "fruits/Dioscoreaceae__Dioscorea-esculenta__IMG_3132.jpg",
+      "nom": "Dioscorea esculenta",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit ailé à 3 loges",
+       "liane",
+       "feuilles cordées"
+      ]
+     },
+     {
+      "img": "fruits/Dioscoreaceae__Dioscorea-esculenta__IMG_3360.jpg",
+      "nom": "Dioscorea esculenta",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit ailé à 3 loges",
+       "liane",
+       "feuilles cordées"
+      ]
+     },
+     {
+      "img": "fruits/Dioscoreaceae__Dioscorea-esculenta__IMG_3434.jpg",
+      "nom": "Dioscorea esculenta",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit ailé à 3 loges",
+       "liane",
+       "feuilles cordées"
+      ]
+     },
+     {
+      "img": "fruits/Dioscoreaceae__Dioscorea-esculenta__IMG_3437.jpg",
+      "nom": "Dioscorea esculenta",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "fruit ailé à 3 loges",
+       "liane",
+       "feuilles cordées"
+      ]
+     }
+    ],
     "Semence": [],
     "Tige": [],
     "Racine": [],
@@ -3933,55 +7269,195 @@
     "Fleur": [],
     "Fruit": [
      {
-      "img": "fruits/Cucurbitaceae__Momordica-charantia__fruit-001.jpg",
-      "nom": "Momordica charantia (Margose)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Cucurbitaceae__Cucurbita-ficifolia__DSC_0095_2.jpg",
+      "nom": "Cucurbita ficifolia",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
-       "péponide (pepo)",
-       "déhiscent",
-       "graines à arille rouge"
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
       ]
      },
      {
-      "img": "fruits/Cucurbitaceae__Momordica-charantia__fruit-002.jpg",
-      "nom": "Momordica charantia (Margose)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Cucurbitaceae__Cucurbita-pepo__IMG_2390.jpg",
+      "nom": "Cucurbita pepo",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
-       "péponide (pepo)",
-       "déhiscent",
-       "graines à arille rouge"
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
       ]
      },
      {
-      "img": "fruits/Cucurbitaceae__Cucurbita-moschata__fruit-001.jpg",
-      "nom": "Cucurbita moschata (Courge)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Cucurbitaceae__Momordica-charantia__IMG_2563.jpg",
+      "nom": "Momordica charantia",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
-       "péponide (pepo)",
-       "écorce épaisse",
-       "graines nombreuses"
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
       ]
      },
      {
-      "img": "fruits/Cucurbitaceae__Cucumis-sativus__fruit-001.jpg",
-      "nom": "Cucumis sativus (Concombre)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Cucurbitaceae__Momordica-charantia__IMG_2566_1.jpg",
+      "nom": "Momordica charantia",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
-       "péponide (pepo)"
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
       ]
      },
      {
-      "img": "fruits/Cucurbitaceae__Sicyos-edulis__fruit-001.jpg",
-      "nom": "Sicyos edulis (Chayote)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Cucurbitaceae__Cucurbita-maxima__IMG_3144.jpg",
+      "nom": "Cucurbita maxima",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
-       "péponide (pepo)",
-       "une graine"
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Cucurbita-pepo__IMG_3310.jpg",
+      "nom": "Cucurbita pepo",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Cucumis-sativus__IMG_3317.jpg",
+      "nom": "Cucumis sativus",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Cucurbita-pepo__IMG_3320.jpg",
+      "nom": "Cucurbita pepo",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Cucumis-dipsaceus__IMG_3322.jpg",
+      "nom": "Cucumis dipsaceus",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Sicyos-edulis__IMG_3351.jpg",
+      "nom": "Sicyos edulis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Sicyos-edulis__IMG_3354.jpg",
+      "nom": "Sicyos edulis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Cucurbita-moschata__IMG_3411.jpg",
+      "nom": "Cucurbita moschata",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Cucumis-melo__IMG_3414.jpg",
+      "nom": "Cucumis melo",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Cucurbita-moschata__IMG_3418.jpg",
+      "nom": "Cucurbita moschata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Cucurbita-moschata__IMG_3420.jpg",
+      "nom": "Cucurbita moschata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
+      ]
+     },
+     {
+      "img": "fruits/Cucurbitaceae__Cucurbita-moschata__IMG_3493.jpg",
+      "nom": "Cucurbita moschata",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "péponide",
+       "liane à vrilles",
+       "écorce dure",
+       "nombreuses graines plates"
       ]
      }
     ],
@@ -3995,33 +7471,111 @@
    "organes": {
     "Fruit": [
      {
-      "img": "fruits/Oxalidaceae__Averrhoa-bilimbi__fruit-001.jpg",
-      "nom": "Averrhoa bilimbi (Bilimbi)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Oxalidaceae__Averrhoa-bilimbi__Averrhoa_bilimbi_001.jpg",
+      "nom": "Averrhoa bilimbi",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "côtelé"
+       "fruit côtelé/anguleux",
+       "saveur acide",
+       "feuilles composées"
       ]
      },
      {
-      "img": "fruits/Oxalidaceae__Averrhoa-bilimbi__fruit-002.jpg",
-      "nom": "Averrhoa bilimbi (Bilimbi)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Oxalidaceae__Averrhoa-bilimbi__Averrhoa_bilimbi_002.jpg",
+      "nom": "Averrhoa bilimbi",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "côtelé"
+       "fruit côtelé/anguleux",
+       "saveur acide",
+       "feuilles composées"
       ]
      },
      {
-      "img": "fruits/Oxalidaceae__Averrhoa-carambola__fruit-001.jpg",
-      "nom": "Averrhoa carambola (Carambole)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Oxalidaceae__Averrhoa-carambola__Averrhoa_carambola_001.jpg",
+      "nom": "Averrhoa carambola",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "côtelé (5 côtes → étoile)"
+       "fruit côtelé/anguleux",
+       "saveur acide",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Oxalidaceae__Averrhoa-carambola__Copy_of_IMG_7337.jpg",
+      "nom": "Averrhoa carambola",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit côtelé/anguleux",
+       "saveur acide",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Oxalidaceae__Averrhoa-carambola__IMG_1543.jpg",
+      "nom": "Averrhoa carambola",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit côtelé/anguleux",
+       "saveur acide",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Oxalidaceae__Averrhoa-carambola__IMG_2405.jpg",
+      "nom": "Averrhoa carambola",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit côtelé/anguleux",
+       "saveur acide",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Oxalidaceae__Averrhoa-carambola__IMG_3287.jpg",
+      "nom": "Averrhoa carambola",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit côtelé/anguleux",
+       "saveur acide",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Oxalidaceae__Averrhoa-carambola__IMG_3516.jpg",
+      "nom": "Averrhoa carambola",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit côtelé/anguleux",
+       "saveur acide",
+       "feuilles composées"
+      ]
+     },
+     {
+      "img": "fruits/Oxalidaceae__Averrhoa-bilimbi__IMG_3525.jpg",
+      "nom": "Averrhoa bilimbi",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "fruit côtelé/anguleux",
+       "saveur acide",
+       "feuilles composées"
       ]
      }
     ]
@@ -4033,24 +7587,125 @@
    "organes": {
     "Fruit": [
      {
-      "img": "fruits/Anacardiaceae__Mangifera-indica__fruit-001.jpg",
-      "nom": "Mangifera indica (Mangue)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Anacardiaceae__Spondias-dulcis__DSC_0084.jpg",
+      "nom": "Spondias dulcis",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "drupe",
-       "indéhiscent",
-       "une graine"
+       "résine",
+       "feuilles souvent composées"
       ]
      },
      {
-      "img": "fruits/Anacardiaceae__Anacardium-occidentale__fruit-001.jpg",
-      "nom": "Anacardium occidentale (Cajou)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Anacardiaceae__Mangifera-indica__DSC_0731.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
       "patterns": [
-       "faux-fruit (pomme cajou)",
-       "noix terminale",
-       "fruit accessoire"
+       "charnu",
+       "drupe",
+       "résine",
+       "feuilles souvent composées"
+      ]
+     },
+     {
+      "img": "fruits/Anacardiaceae__Schinus-terebinthifolia__IMG_1457.jpg",
+      "nom": "Schinus terebinthifolia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "résine",
+       "feuilles souvent composées"
+      ]
+     },
+     {
+      "img": "fruits/Anacardiaceae__Mangifera-indica__IMG_2242.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "résine",
+       "feuilles souvent composées"
+      ]
+     },
+     {
+      "img": "fruits/Anacardiaceae__Mangifera-indica__IMG_2245.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "résine",
+       "feuilles souvent composées"
+      ]
+     },
+     {
+      "img": "fruits/Anacardiaceae__Mangifera-indica__IMG_3021.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "résine",
+       "feuilles souvent composées"
+      ]
+     },
+     {
+      "img": "fruits/Anacardiaceae__Schinus-terebinthifolia__IMG_3027_1.jpg",
+      "nom": "Schinus terebinthifolia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "résine",
+       "feuilles souvent composées"
+      ]
+     },
+     {
+      "img": "fruits/Anacardiaceae__Anacardium-occidentale__IMG_3140.jpg",
+      "nom": "Anacardium occidentale",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "indéhiscent",
+       "noix",
+       "résine",
+       "feuilles souvent composées"
+      ]
+     },
+     {
+      "img": "fruits/Anacardiaceae__Mangifera-indica__IMG_3141.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "résine",
+       "feuilles souvent composées"
+      ]
+     },
+     {
+      "img": "fruits/Anacardiaceae__Mangifera-indica__IMG_3296.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "résine",
+       "feuilles souvent composées"
+      ]
+     },
+     {
+      "img": "fruits/Anacardiaceae__Mangifera-indica__Mangifera_indica_001.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "résine",
+       "feuilles souvent composées"
       ]
      }
     ]
@@ -4062,14 +7717,471 @@
    "organes": {
     "Fruit": [
      {
-      "img": "fruits/Sapotaceae__Manilkara-zapota__fruit-001.jpg",
-      "nom": "Manilkara zapota (Sapotille)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Sapotaceae__Pouteria-sapota__Copy_of_IMG_6461_1.jpg",
+      "nom": "Pouteria sapota",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "indéhiscent",
-       "latex"
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-sapota__Copy_of_IMG_6461.jpg",
+      "nom": "Pouteria sapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__Copy_of_IMG_6588_1.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__Copy_of_IMG_6595.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__IMG_1770.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__IMG_1775.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__IMG_1779.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__IMG_1780.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__IMG_1781.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-campechiana__IMG_2150.jpg",
+      "nom": "Pouteria campechiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-campechiana__IMG_2152.jpg",
+      "nom": "Pouteria campechiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-campechiana__IMG_2154.jpg",
+      "nom": "Pouteria campechiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-campechiana__IMG_2159.jpg",
+      "nom": "Pouteria campechiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-campechiana__IMG_2165.jpg",
+      "nom": "Pouteria campechiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-glomerata__IMG_2288.jpg",
+      "nom": "Pouteria glomerata",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-glomerata__IMG_2290.jpg",
+      "nom": "Pouteria glomerata",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-glomerata__IMG_2291.jpg",
+      "nom": "Pouteria glomerata",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Lucuma-campechiana__IMG_2383.jpg",
+      "nom": "Lucuma campechiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Lucuma-campechiana__IMG_2384.jpg",
+      "nom": "Lucuma campechiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__IMG_2786.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__IMG_2789.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__IMG_2793.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__IMG_2800.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Lucuma-campechiana__IMG_2906.jpg",
+      "nom": "Lucuma campechiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-campechiana__IMG_2909.jpg",
+      "nom": "Pouteria campechiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-campechiana__IMG_2910.jpg",
+      "nom": "Pouteria campechiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-campechiana__IMG_2915.jpg",
+      "nom": "Pouteria campechiana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Gambeya-lacourtiana__IMG_3018.jpg",
+      "nom": "Gambeya lacourtiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Gambeya-lacourtiana__IMG_3066.jpg",
+      "nom": "Gambeya lacourtiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Gambeya-lacourtiana__IMG_3067.jpg",
+      "nom": "Gambeya lacourtiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Gambeya-lacourtiana__IMG_3069.jpg",
+      "nom": "Gambeya lacourtiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-sapota__IMG_3181.jpg",
+      "nom": "Pouteria sapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-sapota__IMG_3186.jpg",
+      "nom": "Pouteria sapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-sapota__IMG_3200.jpg",
+      "nom": "Pouteria sapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-sapota__IMG_3201.jpg",
+      "nom": "Pouteria sapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-sapota__IMG_3205.jpg",
+      "nom": "Pouteria sapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Pouteria-sapota__IMG_3212.jpg",
+      "nom": "Pouteria sapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Gambeya-lacourtiana__IMG_3491.jpg",
+      "nom": "Gambeya lacourtiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
+      ]
+     },
+     {
+      "img": "fruits/Sapotaceae__Manilkara-zapota__Manilkara_zapota_001.jpg",
+      "nom": "Manilkara zapota",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "latex blanc",
+       "graines luisantes à cicatrice claire",
+       "feuilles coriaces"
       ]
      }
     ]
@@ -4081,23 +8193,195 @@
    "organes": {
     "Fruit": [
      {
-      "img": "fruits/Lauraceae__Persea-americana__fruit-001.jpg",
-      "nom": "Persea americana (Avocat)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Lauraceae__Persea-americana__IMG_1588.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
-       "baie (une grosse graine)",
-       "indéhiscent"
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
       ]
      },
      {
-      "img": "fruits/Lauraceae__Persea-americana__fruit-002.jpg",
-      "nom": "Persea americana (Avocat)",
-      "confidence": "nommé par William — confirmé",
+      "img": "fruits/Lauraceae__Persea-americana__IMG_1589.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
-       "baie (une grosse graine)",
-       "indéhiscent"
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_1590.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_1606.jpg",
+      "nom": "Persea americana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_1609.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_1610.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_1613.jpg",
+      "nom": "Persea americana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_2110.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_2112.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_2230.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_2232.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_3145.jpg",
+      "nom": "Persea americana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_3395.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__IMG_3520.jpg",
+      "nom": "Persea americana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__Persea_americana_001.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
+      ]
+     },
+     {
+      "img": "fruits/Lauraceae__Persea-americana__Persea_americana_002.jpg",
+      "nom": "Persea americana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à une graine",
+       "feuilles aromatiques",
+       "cupule à la base"
       ]
      }
     ]
@@ -4109,24 +8393,1201 @@
    "organes": {
     "Fruit": [
      {
-      "img": "fruits/Ebenaceae__Diospyros-blancoi__fruit-001.jpg",
-      "nom": "Diospyros blancoi (Kaki velours)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Ebenaceae__Diospyros-kaki__IMG_1246.jpg",
+      "nom": "Diospyros kaki",
+      "confidence": "à confirmer",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "calice persistant"
+       "baie à calice élargi persistant",
+       "chair astringente"
       ]
      },
      {
-      "img": "fruits/Ebenaceae__Diospyros-nigra__fruit-001.jpg",
-      "nom": "Diospyros nigra (Kaki noir)",
-      "confidence": "proposé Pl@ntNet — à confirmer",
+      "img": "fruits/Ebenaceae__Diospyros-nigra__IMG_2248.jpg",
+      "nom": "Diospyros nigra",
+      "confidence": "probable",
       "patterns": [
-       "fruit charnu",
+       "charnu",
        "baie",
-       "calice accrescent"
+       "baie à calice élargi persistant",
+       "chair astringente"
       ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-nigra__IMG_2255.jpg",
+      "nom": "Diospyros nigra",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-blancoi__IMG_2972.jpg",
+      "nom": "Diospyros blancoi",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-blancoi__IMG_2977.jpg",
+      "nom": "Diospyros blancoi",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-blancoi__IMG_2987.jpg",
+      "nom": "Diospyros blancoi",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-blancoi__IMG_2991.jpg",
+      "nom": "Diospyros blancoi",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-blancoi__IMG_2996.jpg",
+      "nom": "Diospyros blancoi",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-blancoi__IMG_2998.jpg",
+      "nom": "Diospyros blancoi",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-blancoi__IMG_3001.jpg",
+      "nom": "Diospyros blancoi",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-discolor__IMG_3002.jpg",
+      "nom": "Diospyros discolor",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-blancoi__IMG_3005.jpg",
+      "nom": "Diospyros blancoi",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-crassiflora__IMG_3116.jpg",
+      "nom": "Diospyros crassiflora",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     },
+     {
+      "img": "fruits/Ebenaceae__Diospyros-kaki__IMG_3392.jpg",
+      "nom": "Diospyros kaki",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "baie à calice élargi persistant",
+       "chair astringente"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Actinidiaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Actinidiaceae__Actinidia-chinensis__IMG_3068.jpg",
+      "nom": "Actinidia chinensis",
+      "confidence": "probable",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Actinidiaceae__Actinidia-chinensis__IMG_3522.jpg",
+      "nom": "Actinidia chinensis",
+      "confidence": "probable",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Apiaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Apiaceae__Coriandrum-sativum__IMG_3113.jpg",
+      "nom": "Coriandrum sativum",
+      "confidence": "probable",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Apiaceae__Daucus-carota__IMG_3221.jpg",
+      "nom": "Daucus carota",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Apiaceae__Foeniculum-vulgare__IMG_3345.jpg",
+      "nom": "Foeniculum vulgare",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Aquifoliaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Aquifoliaceae__Ilex-rotunda__3.jpg",
+      "nom": "Ilex rotunda",
+      "confidence": "à confirmer",
+      "patterns": [
+       "drupe rouge",
+       "feuilles coriaces souvent épineuses"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Brassicaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Brassicaceae__Raphanus-raphanistrum__IMG_0929.jpg",
+      "nom": "Raphanus raphanistrum",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "silique",
+       "4 pétales en croix",
+       "saveur piquante"
+      ]
+     },
+     {
+      "img": "fruits/Brassicaceae__Nasturtium-officinale__IMG_3112.jpg",
+      "nom": "Nasturtium officinale",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "silique",
+       "4 pétales en croix",
+       "saveur piquante"
+      ]
+     },
+     {
+      "img": "fruits/Brassicaceae__Brassica-oleracea__IMG_3119.jpg",
+      "nom": "Brassica oleracea",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "silique",
+       "4 pétales en croix",
+       "saveur piquante"
+      ]
+     },
+     {
+      "img": "fruits/Brassicaceae__Brassica-oleracea__IMG_3121.jpg",
+      "nom": "Brassica oleracea",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "silique",
+       "4 pétales en croix",
+       "saveur piquante"
+      ]
+     },
+     {
+      "img": "fruits/Brassicaceae__Brassica-rapa__IMG_3128.jpg",
+      "nom": "Brassica rapa",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "silique",
+       "4 pétales en croix",
+       "saveur piquante"
+      ]
+     },
+     {
+      "img": "fruits/Brassicaceae__Brassica-rapa__IMG_3212_1.jpg",
+      "nom": "Brassica rapa",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "silique",
+       "4 pétales en croix",
+       "saveur piquante"
+      ]
+     },
+     {
+      "img": "fruits/Brassicaceae__Brassica-rapa__IMG_3213_1.jpg",
+      "nom": "Brassica rapa",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "silique",
+       "4 pétales en croix",
+       "saveur piquante"
+      ]
+     },
+     {
+      "img": "fruits/Brassicaceae__Brassica-oleracea__IMG_3341.jpg",
+      "nom": "Brassica oleracea",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "silique",
+       "4 pétales en croix",
+       "saveur piquante"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Burseraceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Burseraceae__Bursera-simaruba__IMG_3368.jpg",
+      "nom": "Bursera simaruba",
+      "confidence": "probable",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Capparaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Capparaceae__Capparis-sepiaria__IMG_1623.jpg",
+      "nom": "Capparis sepiaria",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Caprifoliaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Caprifoliaceae__Lonicera-bella__IMG_1125.jpg",
+      "nom": "Lonicera × bella",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Caprifoliaceae__Lonicera-maackii__IMG_1127.jpg",
+      "nom": "Lonicera maackii",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Casuarinaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Casuarinaceae__Casuarina-equisetifolia__IMG_0711.jpg",
+      "nom": "Casuarina equisetifolia",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Celastraceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Celastraceae__Elaeodendron-curtipendulum__IMG_1620.jpg",
+      "nom": "Elaeodendron curtipendulum",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Celastraceae__Euonymus-europaeus__IMG_2198.jpg",
+      "nom": "Euonymus europaeus",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Chrysobalanaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Chrysobalanaceae__Couepia-polyandra__IMG_3034.jpg",
+      "nom": "Couepia polyandra",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Convolvulaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Convolvulaceae__Ipomoea-batatas__IMG_3129.jpg",
+      "nom": "Ipomoea batatas",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Convolvulaceae__Ipomoea-batatas__IMG_3361.jpg",
+      "nom": "Ipomoea batatas",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Cornaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Cornaceae__Cornus-kousa__IMG_3179.jpg",
+      "nom": "Cornus kousa",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Cornaceae__Cornus-kousa__IMG_3184.jpg",
+      "nom": "Cornus kousa",
+      "confidence": "probable",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Cunoniaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Cunoniaceae__Davidsonia-pruriens__IMG_2409_1.jpg",
+      "nom": "Davidsonia pruriens",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Cupressaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Cupressaceae__Taxodium-distichum__IMG_2546.jpg",
+      "nom": "Taxodium distichum",
+      "confidence": "probable",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Cupressaceae__Taxodium-distichum__IMG_2547.jpg",
+      "nom": "Taxodium distichum",
+      "confidence": "probable",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Elaeagnaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Elaeagnaceae__Hippophae-rhamnoides__IMG_2075_1.jpg",
+      "nom": "Hippophae rhamnoides",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "écailles argentées",
+       "fruit acidulé"
+      ]
+     },
+     {
+      "img": "fruits/Elaeagnaceae__Hippophae-rhamnoides__IMG_2082_1.jpg",
+      "nom": "Hippophae rhamnoides",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "écailles argentées",
+       "fruit acidulé"
+      ]
+     },
+     {
+      "img": "fruits/Elaeagnaceae__Hippophae-rhamnoides__IMG_2086.jpg",
+      "nom": "Hippophae rhamnoides",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "écailles argentées",
+       "fruit acidulé"
+      ]
+     },
+     {
+      "img": "fruits/Elaeagnaceae__Hippophae-rhamnoides__IMG_2090.jpg",
+      "nom": "Hippophae rhamnoides",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "écailles argentées",
+       "fruit acidulé"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Elaeocarpaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Elaeocarpaceae__Sloanea-synandra__IMG_3394.jpg",
+      "nom": "Sloanea synandra",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Fagaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Fagaceae__Quercus-macrocarpa__IMG_1651.jpg",
+      "nom": "Quercus macrocarpa",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "indéhiscent",
+       "noix",
+       "gland dans une cupule",
+       "port d'arbre"
+      ]
+     },
+     {
+      "img": "fruits/Fagaceae__Quercus-rubra__IMG_1686.jpg",
+      "nom": "Quercus rubra",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "indéhiscent",
+       "noix",
+       "gland dans une cupule",
+       "port d'arbre"
+      ]
+     },
+     {
+      "img": "fruits/Fagaceae__Quercus-rubra__IMG_2483.jpg",
+      "nom": "Quercus rubra",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "indéhiscent",
+       "noix",
+       "gland dans une cupule",
+       "port d'arbre"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Goodeniaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Goodeniaceae__Scaevola-plumieri__IMG_2142.jpg",
+      "nom": "Scaevola plumieri",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Grossulariaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Grossulariaceae__Ribes-nigrum__IMG_2155.jpg",
+      "nom": "Ribes nigrum",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Grossulariaceae__Ribes-uva-crispa__IMG_3193.jpg",
+      "nom": "Ribes uva-crispa",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Lythraceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Lythraceae__Sonneratia-caseolaris__IMG_1715_1.jpg",
+      "nom": "Sonneratia caseolaris",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Lythraceae__Punica-granatum__IMG_2476.jpg",
+      "nom": "Punica granatum",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Lythraceae__Punica-granatum__IMG_3495_1.jpg",
+      "nom": "Punica granatum",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Malpighiaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Malpighiaceae__Bunchosia-dwyeri__13221420_1084335168292506_1964178908336456402_o.jpg",
+      "nom": "Bunchosia dwyeri",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "fruit côtelé",
+       "poils en T",
+       "feuilles opposées"
+      ]
+     },
+     {
+      "img": "fruits/Malpighiaceae__Malpighia-linearis__IMG_1178.jpg",
+      "nom": "Malpighia linearis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "fruit côtelé",
+       "poils en T",
+       "feuilles opposées"
+      ]
+     },
+     {
+      "img": "fruits/Malpighiaceae__Malpighia-glabra__IMG_2686.jpg",
+      "nom": "Malpighia glabra",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "fruit côtelé",
+       "poils en T",
+       "feuilles opposées"
+      ]
+     },
+     {
+      "img": "fruits/Malpighiaceae__Malpighia-glabra__IMG_2689.jpg",
+      "nom": "Malpighia glabra",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "fruit côtelé",
+       "poils en T",
+       "feuilles opposées"
+      ]
+     },
+     {
+      "img": "fruits/Malpighiaceae__Malpighia-glabra__IMG_2690.jpg",
+      "nom": "Malpighia glabra",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "fruit côtelé",
+       "poils en T",
+       "feuilles opposées"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Meliaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Meliaceae__Trichilia-hirta__1_Mombin_Bata.jpg",
+      "nom": "Trichilia hirta",
+      "confidence": "à confirmer",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "graines arillées",
+       "feuilles composées",
+       "écorce amère"
+      ]
+     },
+     {
+      "img": "fruits/Meliaceae__Soymida-febrifuga__13248581_1084335224959167_5829890641647103997_o.jpg",
+      "nom": "Soymida febrifuga",
+      "confidence": "à confirmer",
+      "patterns": [
+       "graines arillées",
+       "feuilles composées",
+       "écorce amère"
+      ]
+     },
+     {
+      "img": "fruits/Meliaceae__Guarea-guidonia__IMG_2183.jpg",
+      "nom": "Guarea guidonia",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "graines arillées",
+       "feuilles composées",
+       "écorce amère"
+      ]
+     },
+     {
+      "img": "fruits/Meliaceae__Guarea-guidonia__IMG_2184.jpg",
+      "nom": "Guarea guidonia",
+      "confidence": "probable",
+      "patterns": [
+       "sec",
+       "déhiscent",
+       "capsule",
+       "graines arillées",
+       "feuilles composées",
+       "écorce amère"
+      ]
+     },
+     {
+      "img": "fruits/Meliaceae__Sandoricum-koetjape__IMG_2385.jpg",
+      "nom": "Sandoricum koetjape",
+      "confidence": "à confirmer",
+      "patterns": [
+       "graines arillées",
+       "feuilles composées",
+       "écorce amère"
+      ]
+     },
+     {
+      "img": "fruits/Meliaceae__Sandoricum-koetjape__IMG_3387.jpg",
+      "nom": "Sandoricum koetjape",
+      "confidence": "à confirmer",
+      "patterns": [
+       "graines arillées",
+       "feuilles composées",
+       "écorce amère"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Nyssaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Nyssaceae__Nyssa-sylvatica__IMG_2513.jpg",
+      "nom": "Nyssa sylvatica",
+      "confidence": "probable",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Oleaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Oleaceae__Jasminum-didymum__IMG_2554.jpg",
+      "nom": "Jasminum didymum",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Oleaceae__Olea-capensis__IMG_2695.jpg",
+      "nom": "Olea capensis",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Pandanaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Pandanaceae__Pandanus-utilis__IMG_0878.jpg",
+      "nom": "Pandanus utilis",
+      "confidence": "probable",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Pandanaceae__Pandanus-utilis__IMG_0880.jpg",
+      "nom": "Pandanus utilis",
+      "confidence": "probable",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Passifloraceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Passifloraceae__Passiflora-caerulea__AF879C10_B5BA_4332_A081_2442D2756E3B.jpg",
+      "nom": "Passiflora caerulea",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "placentation pariétale",
+       "arille autour des graines",
+       "liane à vrilles"
+      ]
+     },
+     {
+      "img": "fruits/Passifloraceae__Passiflora-laurifolia__IMG_0119.jpg",
+      "nom": "Passiflora laurifolia",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "placentation pariétale",
+       "arille autour des graines",
+       "liane à vrilles"
+      ]
+     },
+     {
+      "img": "fruits/Passifloraceae__Passiflora-edulis__IMG_2009.jpg",
+      "nom": "Passiflora edulis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "placentation pariétale",
+       "arille autour des graines",
+       "liane à vrilles"
+      ]
+     },
+     {
+      "img": "fruits/Passifloraceae__Passiflora-rubra__IMG_2698.jpg",
+      "nom": "Passiflora rubra",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie",
+       "placentation pariétale",
+       "arille autour des graines",
+       "liane à vrilles"
+      ]
+     },
+     {
+      "img": "fruits/Passifloraceae__Passiflora-quadrangularis__IMG_2944.jpg",
+      "nom": "Passiflora quadrangularis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "placentation pariétale",
+       "arille autour des graines",
+       "liane à vrilles"
+      ]
+     },
+     {
+      "img": "fruits/Passifloraceae__Passiflora-quadrangularis__IMG_2950.jpg",
+      "nom": "Passiflora quadrangularis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie",
+       "placentation pariétale",
+       "arille autour des graines",
+       "liane à vrilles"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Pentaphylacaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Pentaphylacaceae__Ternstroemia-tepezapote__IMG_1714.jpg",
+      "nom": "Ternstroemia tepezapote",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Pentaphylacaceae__Ternstroemia-tepezapote__IMG_1717.jpg",
+      "nom": "Ternstroemia tepezapote",
+      "confidence": "probable",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Phytolaccaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Phytolaccaceae__Phytolacca-americana__IMG_2694.jpg",
+      "nom": "Phytolacca americana",
+      "confidence": "probable",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Pinaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Pinaceae__Pinus-caribaea__IMG_3421.jpg",
+      "nom": "Pinus caribaea",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Proteaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Proteaceae__Macadamia-tetraphylla__IMG_3445.jpg",
+      "nom": "Macadamia tetraphylla",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Rhamnaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Rhamnaceae__Ziziphus-mauritiana__IMG_1585.jpg",
+      "nom": "Ziziphus mauritiana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "noyau dur",
+       "épines",
+       "nervation marquée"
+      ]
+     },
+     {
+      "img": "fruits/Rhamnaceae__Ziziphus-mauritiana__IMG_1586.jpg",
+      "nom": "Ziziphus mauritiana",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "noyau dur",
+       "épines",
+       "nervation marquée"
+      ]
+     },
+     {
+      "img": "fruits/Rhamnaceae__Ziziphus-mauritiana__IMG_3497.jpg",
+      "nom": "Ziziphus mauritiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "noyau dur",
+       "épines",
+       "nervation marquée"
+      ]
+     },
+     {
+      "img": "fruits/Rhamnaceae__Ziziphus-mauritiana__IMG_3528.jpg",
+      "nom": "Ziziphus mauritiana",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe",
+       "noyau dur",
+       "épines",
+       "nervation marquée"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Rhizophoraceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Rhizophoraceae__Rhizophora-mangle__IMG_2688.jpg",
+      "nom": "Rhizophora mangle",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie"
+      ]
+     },
+     {
+      "img": "fruits/Rhizophoraceae__Rhizophora-mangle__IMG_2710.jpg",
+      "nom": "Rhizophora mangle",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "baie"
+      ]
+     },
+     {
+      "img": "fruits/Rhizophoraceae__Rhizophora-racemosa__IMG_3134.jpg",
+      "nom": "Rhizophora racemosa",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "baie"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Salicaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Salicaceae__Flacourtia-indica__IMG_1641.jpg",
+      "nom": "Flacourtia indica",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Salicaceae__Flacourtia-indica__IMG_1643.jpg",
+      "nom": "Flacourtia indica",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Schisandraceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Schisandraceae__Illicium-lanceolatum__IMG_2204.jpg",
+      "nom": "Illicium lanceolatum",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Schisandraceae__Illicium-lanceolatum__IMG_2206.jpg",
+      "nom": "Illicium lanceolatum",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Thymelaeaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Thymelaeaceae__Daphne-bholua__IMG_2860.jpg",
+      "nom": "Daphne bholua",
+      "confidence": "à confirmer",
+      "patterns": []
+     },
+     {
+      "img": "fruits/Thymelaeaceae__Daphne-bholua__IMG_2861.jpg",
+      "nom": "Daphne bholua",
+      "confidence": "à confirmer",
+      "patterns": []
+     }
+    ]
+   }
+  },
+  {
+   "fam": "Viburnaceae",
+   "note": "",
+   "organes": {
+    "Fruit": [
+     {
+      "img": "fruits/Viburnaceae__Sambucus-canadensis__IMG_2032.jpg",
+      "nom": "Sambucus canadensis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe"
+      ]
+     },
+     {
+      "img": "fruits/Viburnaceae__Sambucus-canadensis__IMG_2034.jpg",
+      "nom": "Sambucus canadensis",
+      "confidence": "à confirmer",
+      "patterns": [
+       "charnu",
+       "drupe"
+      ]
+     },
+     {
+      "img": "fruits/Viburnaceae__Sambucus-canadensis__IMG_2036.jpg",
+      "nom": "Sambucus canadensis",
+      "confidence": "probable",
+      "patterns": [
+       "charnu",
+       "drupe"
+      ]
+     },
+     {
+      "img": "fruits/Viburnaceae__Viburnum-trilobum__IMG_2069.jpg",
+      "nom": "Viburnum trilobum",
+      "confidence": "probable",
+      "patterns": []
      }
     ]
    }
