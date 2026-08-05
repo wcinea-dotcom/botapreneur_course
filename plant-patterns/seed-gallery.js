@@ -243,13 +243,13 @@ window.SEED_MEDIA=[
   {
     "code": "PP-SEED-SHEET-0069",
     "family": "Fabaceae",
-    "name": "Adenanthera pavonina",
+    "name": "Entada gigas",
     "src": "https://aqvlamiahynbyrzjnppr.supabase.co/storage/v1/object/public/pp-large/semences/validated_seeds_upload/fabaceae/Adenanthera_pavonina_semence_IMG_7886.JPG"
   },
   {
     "code": "PP-SEED-SHEET-0070",
     "family": "Fabaceae",
-    "name": "Adenanthera pavonina",
+    "name": "Entada gigas",
     "src": "https://aqvlamiahynbyrzjnppr.supabase.co/storage/v1/object/public/pp-large/semences/validated_seeds_upload/fabaceae/Adenanthera_pavonina_semence_IMG_7888.JPG"
   },
   {
