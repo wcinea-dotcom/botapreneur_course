@@ -694,7 +694,19 @@
       "patterns": []
      }
     ],
-    "Tige": [],
+    "Tige": [
+     {
+      "img": "stem-library-v1/araceae__epipremnum-pinnatum__img-2245.jpg",
+      "nom": "Epipremnum pinnatum",
+      "patterns": [
+       "tige grimpante",
+       "racines adventives d’accrochage",
+       "nœuds visibles"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     }
+    ],
     "Racine": []
    }
   },
@@ -1533,7 +1545,33 @@
       ]
      }
     ],
-    "Tige": [],
+    "Tige": [
+     {
+      "img": "stem-library-v1/arecaceae__sp__img-3103.jpg",
+      "nom": "Arecaceae sp.",
+      "patterns": [
+       "stipe",
+       "tige dressée",
+       "port arborescent",
+       "cicatrices foliaires annelées",
+       "identification à vérifier"
+      ],
+      "validation": "identification à vérifier",
+      "source": "Photo_tiges_nommees"
+     },
+     {
+      "img": "stem-library-v1/arecaceae__sp__img-3162.jpg",
+      "nom": "Arecaceae sp.",
+      "patterns": [
+       "stipe",
+       "tige dressée",
+       "port arborescent",
+       "identification à vérifier"
+      ],
+      "validation": "identification à vérifier",
+      "source": "Photo_tiges_nommees"
+     }
+    ],
     "Racine": []
    }
   },
@@ -7708,6 +7746,19 @@
        "feuilles souvent composées"
       ]
      }
+    ],
+    "Tige": [
+     {
+      "img": "stem-library-v1/anacardiaceae__toxicodendron-radicans__img-9780.jpg",
+      "nom": "Toxicodendron radicans",
+      "patterns": [
+       "tige grimpante",
+       "tige ligneuse",
+       "racines adventives d’accrochage"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     }
     ]
    }
   },
@@ -8384,6 +8435,19 @@
        "cupule à la base"
       ]
      }
+    ],
+    "Tige": [
+     {
+      "img": "stem-library-v1/lauraceae__cassytha-filiformis__img-8893.jpg",
+      "nom": "Cassytha filiformis",
+      "patterns": [
+       "tige volubile",
+       "tige filiforme",
+       "plante parasite"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     }
     ]
    }
   },
@@ -8727,6 +8791,20 @@
       "confidence": "probable",
       "patterns": []
      }
+    ],
+    "Tige": [
+     {
+      "img": "stem-library-v1/burseraceae__bursera-simaruba__img-5239.jpg",
+      "nom": "Bursera simaruba",
+      "patterns": [
+       "tige ligneuse",
+       "port arborescent",
+       "écorce exfoliante",
+       "lenticelles visibles"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     }
     ]
    }
   },
@@ -8831,6 +8909,20 @@
       "nom": "Ipomoea batatas",
       "confidence": "à confirmer",
       "patterns": []
+     }
+    ],
+    "Tige": [
+     {
+      "img": "stem-library-v1/convolvulaceae__ipomoea-pes-caprae__dsc-0043.jpg",
+      "nom": "Ipomoea pes-caprae",
+      "patterns": [
+       "tige rampante",
+       "tige prostrée",
+       "tige herbacée",
+       "nœuds visibles"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
      }
     ]
    }
