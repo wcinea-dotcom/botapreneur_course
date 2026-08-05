@@ -59,6 +59,7 @@
 
 <div class="modal" id="modal"><button class="x" onclick="closeM()">FERMER ×</button><img id="mImg" alt=""></div>
 
+<script src="../plant-patterns/seed-gallery.js"></script>
 <script>
 let DATA=null;
 function photo(p,organ){
@@ -120,7 +121,38 @@ function showFamilyResults(query=""){
  });
 }
 
+function linkValidatedSeedsToFamilies(data){
+ const seeds=Array.isArray(window.SEED_MEDIA)?window.SEED_MEDIA:[];
+ const byFamily=new Map(data.familles.map(f=>[normalizeText(f.fam),f]));
+ const emptyOrgans=()=>Object.fromEntries(data.organes.map(organ=>[organ,[]]));
+ seeds.forEach(seed=>{
+  const key=normalizeText(seed.family);
+  let family=byFamily.get(key);
+  if(!family){
+   family={
+    fam:seed.family,
+    note:seed.family==="Bixaceae"?"Famille illustrée ici par Bixa orellana. Les semences validées constituent le premier matériel documentaire; les autres organes seront complétés progressivement.":"",
+    organes:emptyOrgans()
+   };
+   data.familles.push(family);
+   byFamily.set(key,family);
+  }
+  data.organes.forEach(organ=>{if(!Array.isArray(family.organes[organ]))family.organes[organ]=[]});
+  const semences=family.organes.Semence;
+  if(!semences.some(item=>item.img===seed.src)){
+   semences.push({
+    img:seed.src,
+    nom:seed.name,
+    confidence:"validé par William",
+    patterns:["semence",seed.family,"identification validée"]
+   });
+  }
+ });
+ data.familles.sort((a,b)=>a.fam.localeCompare(b.fam,"fr"));
+}
+
 fetch("data/familles.json").then(r=>r.json()).then(d=>{
+ linkValidatedSeedsToFamilies(d);
  DATA=d;
  const input=document.getElementById("familySearchInput");
  input.addEventListener("focus",()=>showFamilyResults(input.value));
