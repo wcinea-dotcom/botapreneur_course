@@ -509,7 +509,22 @@
      }
     ],
     "Tige": [],
-    "Racine": []
+    "Racine": [
+     {
+      "img": "root-library-v1/fabaceae__crotalaria-sp__img-6667.jpg",
+      "nom": "Crotalaria sp. — nodosités racinaires",
+      "patterns": [
+       "nodosité racinaire",
+       "symbiose racinaire",
+       "Fabaceae",
+       "fixation de l’azote à confirmer",
+       "racine latérale",
+       "Crotalaria sp."
+      ],
+      "validation": "PlantNet faible — genre à confirmer",
+      "source": "Photos_Racines"
+     }
+    ]
    }
   },
   {
@@ -707,7 +722,22 @@
       "source": "Photo_tiges_nommees"
      }
     ],
-    "Racine": []
+    "Racine": [
+     {
+      "img": "root-library-v1/araceae__epipremnum-pinnatum__img-2250.jpg",
+      "nom": "Epipremnum pinnatum — racines d’accrochage",
+      "patterns": [
+       "racine adventive",
+       "racine aérienne",
+       "racine crampon",
+       "plante grimpante",
+       "Araceae",
+       "Epipremnum pinnatum"
+      ],
+      "validation": "PlantNet fort — à confirmer",
+      "source": "Photos_Racines"
+     }
+    ]
    }
   },
   {
@@ -4141,7 +4171,22 @@
       "source": "Photo_tiges_nommees"
      }
     ],
-    "Racine": []
+    "Racine": [
+     {
+      "img": "root-library-v1/vitaceae__parthenocissus-quinquefolia__img-9781.jpg",
+      "nom": "Parthenocissus quinquefolia — racines crampons",
+      "patterns": [
+       "racine adventive",
+       "racine aérienne",
+       "racine crampon",
+       "tige grimpante",
+       "accrochage mécanique",
+       "Parthenocissus quinquefolia"
+      ],
+      "validation": "PlantNet fort — à confirmer",
+      "source": "Photos_Racines"
+     }
+    ]
    }
   },
   {
@@ -4531,7 +4576,22 @@
      }
     ],
     "Tige": [],
-    "Racine": []
+    "Racine": [
+     {
+      "img": "root-library-v1/poaceae__sp__img-4702.jpg",
+      "nom": "Poaceae sp. — système fasciculé",
+      "patterns": [
+       "système fasciculé",
+       "racines fibreuses",
+       "racines adventives",
+       "monocotylédone",
+       "jeune plantule",
+       "Poaceae sp."
+      ],
+      "validation": "famille probable — espèce à confirmer",
+      "source": "Photos_Racines"
+     }
+    ]
    }
   },
   {
@@ -5411,7 +5471,22 @@
     ],
     "Semence": [],
     "Tige": [],
-    "Racine": [],
+    "Racine": [
+     {
+      "img": "root-library-v1/moraceae__ficus-aurea__img-1097.jpg",
+      "nom": "Ficus aurea — racines aériennes",
+      "patterns": [
+       "racine adventive",
+       "racine aérienne",
+       "racine de soutien",
+       "racine échasse",
+       "racine ligneuse",
+       "Ficus aurea"
+      ],
+      "validation": "PlantNet faible — espèce à confirmer",
+      "source": "Photos_Racines"
+     }
+    ],
     "Structures spécialisées": [
      {
       "img": "media/Moraceae_Ficus_cf_benghalensis_feuille_stipule_003.jpg",
@@ -8771,6 +8846,22 @@
       "confidence": "à confirmer",
       "patterns": []
      }
+    ],
+    "Racine": [
+     {
+      "img": "root-library-v1/apiaceae__daucus-carota__img-3199.jpg",
+      "nom": "Daucus carota — racine conique",
+      "patterns": [
+       "racine pivotante",
+       "racine de réserve",
+       "racine charnue",
+       "racine conique",
+       "racine épaissie",
+       "Daucus carota"
+      ],
+      "validation": "PlantNet fort — à confirmer",
+      "source": "Photos_Racines"
+     }
     ]
    }
   },
@@ -8891,6 +8982,22 @@
        "4 pétales en croix",
        "saveur piquante"
       ]
+     }
+    ],
+    "Racine": [
+     {
+      "img": "root-library-v1/brassicaceae__raphanus-sativus__img-3197.jpg",
+      "nom": "Raphanus sativus — racine napiforme",
+      "patterns": [
+       "racine pivotante",
+       "racine de réserve",
+       "racine charnue",
+       "racine napiforme",
+       "racine épaissie",
+       "Raphanus sativus"
+      ],
+      "validation": "corrigé morphologiquement — nom cultivé à confirmer",
+      "source": "Photos_Racines"
      }
     ]
    }
@@ -9039,6 +9146,22 @@
       "validation": "nom fourni",
       "source": "Photo_tiges_nommees"
      }
+    ],
+    "Racine": [
+     {
+      "img": "root-library-v1/convolvulaceae__ipomoea-batatas__img-7928.jpg",
+      "nom": "Ipomoea batatas — racines tubéreuses",
+      "patterns": [
+       "racine tubéreuse",
+       "racine de réserve",
+       "racine charnue",
+       "racine épaissie",
+       "multiplication végétative",
+       "Ipomoea batatas"
+      ],
+      "validation": "PlantNet moyen — à confirmer",
+      "source": "Photos_Racines"
+     }
     ]
    }
   },
@@ -9092,6 +9215,22 @@
       "nom": "Taxodium distichum",
       "confidence": "probable",
       "patterns": []
+     }
+    ],
+    "Racine": [
+     {
+      "img": "root-library-v1/cupressaceae__taxodium-distichum__img-7832.jpg",
+      "nom": "Taxodium distichum — pneumatophores",
+      "patterns": [
+       "pneumatophore",
+       "racine respiratoire",
+       "sol humide",
+       "racine spécialisée",
+       "échanges gazeux",
+       "Taxodium distichum"
+      ],
+      "validation": "PlantNet fort — à confirmer",
+      "source": "Photos_Racines"
      }
     ]
    }
@@ -9694,6 +9833,22 @@
        "charnu",
        "baie"
       ]
+     }
+    ],
+    "Racine": [
+     {
+      "img": "root-library-v1/rhizophoraceae__rhizophora-mangle__dsc-0577.jpg",
+      "nom": "Rhizophora mangle — racines échasses",
+      "patterns": [
+       "racine échasse",
+       "racine de soutien",
+       "racine aérienne",
+       "mangrove",
+       "sol inondé",
+       "Rhizophora mangle"
+      ],
+      "validation": "PlantNet fort — à confirmer",
+      "source": "Photos_Racines"
      }
     ]
    }
