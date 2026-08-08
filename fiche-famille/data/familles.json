@@ -901,7 +901,19 @@
       ]
      }
     ],
-    "Tige": [],
+    "Tige": [
+     {
+      "img": "stem-library-v1/euphorbiaceae__hura-crepitans__img-2103.jpg",
+      "nom": "Hura crepitans",
+      "patterns": [
+       "tronc armé",
+       "aiguillons",
+       "tige ligneuse"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     }
+    ],
     "Racine": []
    }
   },
@@ -2364,7 +2376,20 @@
       ]
      }
     ],
-    "Tige": [],
+    "Tige": [
+     {
+      "img": "stem-library-v1/malvaceae__ceiba-pentandra__img-8238.jpg",
+      "nom": "Ceiba pentandra",
+      "patterns": [
+       "tronc armé",
+       "aiguillons",
+       "tige ligneuse",
+       "écorce verte"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     }
+    ],
     "Racine": []
    }
   },
@@ -3425,7 +3450,20 @@
       ]
      }
     ],
-    "Tige": [],
+    "Tige": [
+     {
+      "img": "stem-library-v1/myrtaceae__eucalyptus-deglupta__img-6902.jpg",
+      "nom": "Eucalyptus deglupta",
+      "patterns": [
+       "écorce lisse",
+       "écorce exfoliante",
+       "tige ligneuse",
+       "port arborescent"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     }
+    ],
     "Racine": []
    }
   },
@@ -3564,7 +3602,33 @@
       ]
      }
     ],
-    "Tige": [],
+    "Tige": [
+     {
+      "img": "stem-library-v1/cactaceae__leptocereus-undulosus__img-3281-1.jpg",
+      "nom": "Leptocereus undulosus",
+      "patterns": [
+       "tige succulente",
+       "tige photosynthétique",
+       "aréoles",
+       "épines portées sur la tige"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     },
+     {
+      "img": "stem-library-v1/cactaceae__consolea-moniliformis__img-5421.jpg",
+      "nom": "Consolea moniliformis",
+      "patterns": [
+       "cladode",
+       "tige succulente",
+       "tige photosynthétique",
+       "aréoles",
+       "épines portées sur la tige"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     }
+    ],
     "Racine": []
    }
   },
@@ -4063,7 +4127,20 @@
       ]
      }
     ],
-    "Tige": [],
+    "Tige": [
+     {
+      "img": "stem-library-v1/vitaceae__vitis-rotundifolia__img-9015.jpg",
+      "nom": "Vitis rotundifolia",
+      "patterns": [
+       "tige grimpante",
+       "vrille caulinaire",
+       "tige ligneuse",
+       "sarment"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     }
+    ],
     "Racine": []
    }
   },
@@ -5652,7 +5729,19 @@
       ]
      }
     ],
-    "Tige": [],
+    "Tige": [
+     {
+      "img": "stem-library-v1/sapindaceae__acer-griseum__img-1749.jpg",
+      "nom": "Acer griseum",
+      "patterns": [
+       "écorce exfoliante",
+       "tige ligneuse",
+       "port arborescent"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     }
+    ],
     "Racine": []
    }
   },
@@ -5927,7 +6016,20 @@
       ]
      }
     ],
-    "Tige": [],
+    "Tige": [
+     {
+      "img": "stem-library-v1/zygophyllaceae__guaiacum-officinale__img-6549.jpg",
+      "nom": "Guaiacum officinale",
+      "patterns": [
+       "tige ligneuse",
+       "tronc ramifié",
+       "écorce en plaques",
+       "écorce exfoliante"
+      ],
+      "validation": "corrigé par William",
+      "source": "Photo_tiges_nommees"
+     }
+    ],
     "Racine": []
    }
   },
@@ -7510,7 +7612,20 @@
       ]
      }
     ],
-    "Tige": [],
+    "Tige": [
+     {
+      "img": "stem-library-v1/cucurbitaceae__momordica-charantia__img-5412.jpg",
+      "nom": "Momordica charantia",
+      "patterns": [
+       "tige grimpante",
+       "vrille caulinaire",
+       "tige herbacée",
+       "tige pubescente"
+      ],
+      "validation": "nom fourni",
+      "source": "Photo_tiges_nommees"
+     }
+    ],
     "Racine": []
    }
   },
