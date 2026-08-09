@@ -929,6 +929,20 @@
        "capsule à 3 loges (tricoque)",
        "graines à caroncule"
       ]
+     },
+     {
+      "img": "fruits/Euphorbiaceae__Hura-crepitans__fruit-001.jpg",
+      "nom": "Hura crepitans",
+      "confidence": "confirmé",
+      "patterns": [
+       "fruit sec",
+       "capsule",
+       "déhiscent",
+       "dispersion balistique",
+       "capsule côtelée",
+       "fruit explosif",
+       "Euphorbiaceae"
+      ]
      }
     ],
     "Tige": [
