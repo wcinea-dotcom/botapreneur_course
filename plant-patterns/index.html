@@ -268,7 +268,7 @@ const fruitSets={
 };
 Object.entries(fruitSets).forEach(([id,photos])=>{if(L[id])L[id].p=photos.map(FP)});
 const pilotSets={
- capsule:['Malvaceae__Abelmoschus-esculentus__fruit-001.jpg','Sapindaceae__Blighia-sapida__fruit-001.jpg'],
+ capsule:['Malvaceae__Abelmoschus-esculentus__fruit-001.jpg','Sapindaceae__Blighia-sapida__fruit-001.jpg','Euphorbiaceae__Hura-crepitans__fruit-001.jpg'],
  caryopsis:['Poaceae__Coix-lacryma-jobi__fruit-001.jpg'],
  berry:['Oxalidaceae__Averrhoa-bilimbi__fruit-001.jpg','Oxalidaceae__Averrhoa-bilimbi__fruit-002.jpg','Oxalidaceae__Averrhoa-carambola__fruit-001.jpg','Musaceae__Musa-sp__fruit-001.jpg','Musaceae__Musa-sp__fruit-002.jpg','Sapotaceae__Manilkara-zapota__fruit-001.jpg','Lauraceae__Persea-americana__fruit-001.jpg','Lauraceae__Persea-americana__fruit-002.jpg'],
  drupe:['Anacardiaceae__Mangifera-indica__fruit-001.jpg','Arecaceae__Cocos-nucifera__fruit-001.jpg'],
@@ -277,9 +277,11 @@ const pilotSets={
  accessoryFruit:['Rosaceae__Fragaria-ananassa__fruit-001.jpg']
 };
 Object.entries(pilotSets).forEach(([id,photos])=>{if(L[id])L[id].p=(L[id].p||[]).concat(photos.map(PF2))});
+['capsuleOpening','autochory'].forEach(id=>{if(L[id])L[id].p=(L[id].p||[]).concat(['Euphorbiaceae__Hura-crepitans__fruit-001.jpg'].map(PF2))});
 Object.assign(L,{
  fruitFamOxalidaceae:{...FS('Familles par leurs fruits','Oxalidaceae \u2014 carambole & bilimbi','La carambole et le bilimbi (Averrhoa) sont des baies charnues c\u00f4tel\u00e9es; la coupe transversale de la carambole montre une \u00e9toile \u00e0 cinq branches.','Comparer les c\u00f4tes externes, la coupe en \u00e9toile et la pulpe juteuse acidul\u00e9e.'),p:['Oxalidaceae__Averrhoa-carambola__fruit-001.jpg','Oxalidaceae__Averrhoa-bilimbi__fruit-001.jpg','Oxalidaceae__Averrhoa-bilimbi__fruit-002.jpg'].map(PF2),family:true,confidence:'confirm\u00e9e'},
  fruitFamSapotaceae:{...FS('Familles par leurs fruits','Sapotaceae \u2014 sapotille','La sapotille (Manilkara zapota) est une baie charnue \u00e0 latex, \u00e0 chair brune granuleuse et graines noires luisantes.','Observer le latex, la chair granuleuse et les graines \u00e0 t\u00e9gument dur.'),p:['Sapotaceae__Manilkara-zapota__fruit-001.jpg'].map(PF2),family:true,confidence:'confirm\u00e9e'}
+ ,fruitFamEuphorbiaceae:{...FS('Familles par leurs fruits','Euphorbiaceae — capsule explosive','Hura crepitans illustre un fruit sec capsulaire, côtelé, dont la dispersion peut être balistique à maturité. Ce pattern aide à comprendre les Euphorbiaceae par le fruit et pas seulement par le latex ou les fleurs.','Observer les côtes du fruit, la capsule sèche et le mécanisme de déhiscence; ne pas manipuler un fruit mûr sans prudence.'),p:['Euphorbiaceae__Hura-crepitans__fruit-001.jpg'].map(PF2),family:true,confidence:'confirmée'}
 });
 Object.assign(L,{
  fruitFamAnacardiaceae:{...FS('Familles par leurs fruits','Anacardiaceae — mangue','La mangue illustre une drupe des Anacardiaceae : exocarpe mince, mésocarpe charnu et endocarpe dur entourant la graine. La famille présente toutefois plusieurs autres architectures fruitières.','Comparer plusieurs mangues, puis vérifier le noyau et les caractères végétatifs avant d’utiliser ce pattern familial.'),p:['fr-01-mangue.jpg'].map(FP),family:true,confidence:'confirmée'},
