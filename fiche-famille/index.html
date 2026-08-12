@@ -31,6 +31,8 @@
 .organ h3{font-family:Poppins;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--green);display:inline-block;padding:5px 12px;border-radius:8px;margin:0 0 10px}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .ph{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in}
+.ph{position:relative}.editCard{position:absolute;z-index:3;top:7px;right:7px;border:0;border-radius:7px;padding:6px 9px;background:rgba(0,51,102,.92);color:#fff;font:700 10px Poppins,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.editCard:hover{background:var(--orange)}
 .ph .im{aspect-ratio:1/1;background:#eef1f3;overflow:hidden}.ph .im img{width:100%;height:100%;object-fit:cover;display:block}
 .ph .bd{padding:7px 9px}.ph .nm{font-size:12px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:3px}
 .tag{display:inline-block;background:#eef3ea;color:var(--green);border-radius:5px;padding:1px 6px;font-size:10px;margin:0 3px 3px 0}
@@ -41,6 +43,16 @@
 .modal.open{display:flex;align-items:center;justify-content:center}
 .modal img{max-width:92vw;max-height:92vh;object-fit:contain}
 .modal .x{position:absolute;top:16px;right:20px;color:#fff;border:1px solid #4a6a86;background:transparent;padding:8px 12px;border-radius:8px;cursor:pointer}
+.editModal{display:none;position:fixed;inset:0;z-index:80;background:rgba(7,20,30,.78);padding:20px;overflow:auto}
+.editModal.open{display:flex;align-items:center;justify-content:center}
+.editPanel{width:min(620px,100%);max-height:calc(100vh - 40px);overflow:auto;background:#fff;border-radius:16px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.editPanel h2{margin:0 0 4px;color:var(--navy);font:800 22px Poppins,sans-serif}.editIntro{margin:0 0 16px;color:#64717c;font-size:13px;line-height:1.45}
+.editPreview{display:flex;gap:12px;align-items:center;margin-bottom:15px;padding:10px;background:#f4f6f2;border-radius:10px}.editPreview img{width:78px;height:78px;object-fit:cover;border-radius:8px}.editPreview span{font-size:12px;color:#5d6872;overflow-wrap:anywhere}
+.editGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editField{display:flex;flex-direction:column;gap:5px}.editField.full{grid-column:1/-1}.editField label{font:700 12px Poppins,sans-serif;color:var(--green)}
+.editField input,.editField select,.editField textarea{width:100%;padding:10px;border:1px solid #b9c4cc;border-radius:8px;font:14px Lato,sans-serif;color:var(--ink);background:#fff}.editField textarea{min-height:76px;resize:vertical}
+.editActions{display:flex;justify-content:flex-end;gap:9px;margin-top:17px}.editActions button{border:0;border-radius:8px;padding:10px 15px;font:700 12px Poppins,sans-serif;cursor:pointer}.cancelEdit{background:#e9edf0;color:#53606b}.saveEdit{background:var(--green);color:#fff}.editMessage{display:none;margin-top:12px;padding:10px;border-radius:8px;font-size:13px}.editMessage.ok{display:block;background:#e8f3e8;color:#236128}.editMessage.error{display:block;background:#fff0ec;color:#a33a20}
+.proposalTag{background:#fff3e9;color:#a94f12}
+@media(max-width:600px){.editGrid{grid-template-columns:1fr}.editField.full{grid-column:auto}.editPanel{padding:17px}}
 </style></head><body>
 <header class="top"><div class="wm">Bota<span class="b">preneurs</span> · Fiche famille</div>
 <a class="back" href="../index.html">← Retour au cours</a></header>
@@ -59,15 +71,47 @@
 
 <div class="modal" id="modal"><button class="x" onclick="closeM()">FERMER ×</button><img id="mImg" alt=""></div>
 
+<div class="editModal" id="editModal" aria-hidden="true">
+ <div class="editPanel" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+  <h2 id="editTitle">Corriger cette photo</h2>
+  <p class="editIntro">Modifie le nom, la famille, l’organe ou les tags. La correction est enregistrée comme proposition afin de préserver les données déjà validées.</p>
+  <div class="editPreview"><img id="editImg" alt="Photo à corriger"><span id="editPath"></span></div>
+  <form id="correctionForm" name="correction-photo" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+   <input type="hidden" name="form-name" value="correction-photo">
+   <input type="hidden" name="photo" id="editPhoto">
+   <input type="hidden" name="ancienne-famille" id="editOldFamily">
+   <input type="hidden" name="ancien-organe" id="editOldOrgan">
+   <input type="hidden" name="ancien-nom" id="editOldName">
+   <p hidden><label>Ne pas remplir : <input name="bot-field"></label></p>
+   <div class="editGrid">
+    <div class="editField"><label for="editName">Nom scientifique</label><input id="editName" name="nouveau-nom" autocomplete="off" required></div>
+    <div class="editField"><label for="editFamily">Famille</label><input id="editFamily" name="nouvelle-famille" list="familyNames" autocomplete="off" required><datalist id="familyNames"></datalist></div>
+    <div class="editField"><label for="editOrgan">Organe</label><select id="editOrgan" name="nouvel-organe" required></select></div>
+    <div class="editField"><label for="editConfidence">Validation</label><select id="editConfidence" name="validation"><option value="proposée">Proposée — à vérifier</option><option value="probable">Probable</option><option value="confirmée par William">Confirmée par William</option></select></div>
+    <div class="editField full"><label for="editPatterns">Tags / patterns (séparés par des virgules)</label><textarea id="editPatterns" name="nouveaux-patterns"></textarea></div>
+    <div class="editField full"><label for="editNote">Pourquoi cette correction ?</label><textarea id="editNote" name="note" placeholder="Ex. Cette image montre une feuille et non une fleur."></textarea></div>
+   </div>
+   <div class="editActions"><button class="cancelEdit" type="button" onclick="closeEdit()">Annuler</button><button class="saveEdit" type="submit">Enregistrer la correction</button></div>
+   <div class="editMessage" id="editMessage" role="status"></div>
+  </form>
+ </div>
+</div>
+
 <script src="../plant-patterns/seed-gallery.js?v=20260804-2"></script>
 <script>
 let DATA=null;
-function photo(p,organ){
- const tags=(p.patterns||[]).map(t=>`<span class="tag">${t}</span>`).join("");
- return `<div class="ph" onclick="openM('${p.img}')"><div class="im"><img loading="lazy" src="${p.img}"></div><div class="bd"><div class="nm">${p.nom||""}</div><span class="tag organTag">Organe : ${organ}</span>${tags}</div></div>`;
+let CURRENT_FAMILY=null;
+let EDIT_CONTEXT=null;
+const CORRECTION_KEY="botapreneurs-family-photo-corrections-v1";
+function esc(value){return String(value??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
+function photo(p,organ,index){
+ const tags=(p.patterns||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("");
+ const proposed=p._correction?`<span class="tag proposalTag">Correction proposée</span>`:"";
+ return `<div class="ph" data-family="${esc(CURRENT_FAMILY.fam)}" data-organ="${esc(organ)}" data-index="${index}"><button class="editCard" type="button">CORRIGER ✎</button><div class="im"><img loading="lazy" src="${esc(p.img)}" alt="${esc(p.nom||organ)}"></div><div class="bd"><div class="nm">${esc(p.nom||"")}</div><span class="tag organTag">Organe : ${esc(organ)}</span>${proposed}${tags}</div></div>`;
 }
 function detailScore(p){return (p.patterns||[]).some(t=>/pétale|détach|coupe|intérieur|dissection/i.test(t))?1:0;}
 function render(f){
+ CURRENT_FAMILY=f;
  const total=DATA.organes.reduce((s,o)=>s+((f.organes[o]||[]).length),0);
  document.getElementById("head").innerHTML=`<h1>${f.fam}</h1><div class="cnt">${total} photo(s) · ${DATA.organes.filter(o=>(f.organes[o]||[]).length).length} organe(s) documenté(s)</div>`;
  document.getElementById("sig").innerHTML=f.note?`<div class="sig"><b>SIGNATURE DE LA FAMILLE — ce qu'il faut regarder</b><br>${f.note}</div>`:"";
@@ -75,15 +119,109 @@ function render(f){
  DATA.organes.forEach(o=>{
   const arr=[...(f.organes[o]||[])].sort((a,b)=>detailScore(b)-detailScore(a));
   h+=`<div class="organ"><h3>${o} · ${arr.length}</h3>`;
-  h+= arr.length ? `<div class="gal">${arr.map(p=>photo(p,o)).join("")}</div>` : `<div class="void"><span class="plus">＋</span>Aucune photo ${o.toLowerCase()} pour cette famille — à alimenter</div>`;
+  h+= arr.length ? `<div class="gal">${arr.map((p,index)=>photo(p,o,index)).join("")}</div>` : `<div class="void"><span class="plus">＋</span>Aucune photo ${o.toLowerCase()} pour cette famille — à alimenter</div>`;
   h+=`</div>`;
  });
  document.getElementById("body").innerHTML=h;
 }
 function openM(src){document.getElementById("mImg").src=src;document.getElementById("modal").classList.add("open");}
 function closeM(){document.getElementById("modal").classList.remove("open");}
+document.getElementById("body").addEventListener("click",event=>{
+ const card=event.target.closest(".ph");
+ if(!card)return;
+ if(event.target.closest(".editCard")){
+  event.stopPropagation();
+  openEdit(card.dataset.family,card.dataset.organ,Number(card.dataset.index));
+  return;
+ }
+ const image=card.querySelector("img");
+ if(image)openM(image.getAttribute("src"));
+});
 document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")closeM();};
 document.onkeydown=e=>{if(e.key==="Escape")closeM();};
+
+function storedCorrections(){try{return JSON.parse(localStorage.getItem(CORRECTION_KEY)||"[]")}catch(_){return[]}}
+function saveStoredCorrection(correction){
+ const all=storedCorrections().filter(item=>item.photo!==correction.photo);
+ all.push(correction);
+ localStorage.setItem(CORRECTION_KEY,JSON.stringify(all));
+}
+function locatePhoto(familyName,organ,img){
+ const family=DATA.familles.find(f=>f.fam===familyName);
+ if(!family)return null;
+ const list=family.organes[organ]||[];
+ const index=list.findIndex(p=>p.img===img);
+ return index<0?null:{family,list,index,photo:list[index]};
+}
+function applyCorrection(correction){
+ const located=locatePhoto(correction.oldFamily,correction.oldOrgan,correction.photo);
+ if(!located)return false;
+ const [item]=located.list.splice(located.index,1);
+ let destination=DATA.familles.find(f=>normalizeText(f.fam)===normalizeText(correction.family));
+ if(!destination){
+  destination={fam:correction.family,note:"Famille ajoutée par une proposition de correction; signature botanique à documenter.",organes:Object.fromEntries(DATA.organes.map(o=>[o,[]]))};
+  DATA.familles.push(destination);
+  DATA.familles.sort((a,b)=>a.fam.localeCompare(b.fam,"fr"));
+ }
+ DATA.organes.forEach(o=>{if(!Array.isArray(destination.organes[o]))destination.organes[o]=[]});
+ item.nom=correction.name;
+ item.patterns=correction.patterns;
+ item.confidence=correction.confidence;
+ item._correction=true;
+ destination.organes[correction.organ].push(item);
+ return true;
+}
+function applyStoredCorrections(){storedCorrections().forEach(applyCorrection)}
+function openEdit(familyName,organ,index){
+ const family=DATA.familles.find(f=>f.fam===familyName);
+ const sorted=[...(family?.organes[organ]||[])].sort((a,b)=>detailScore(b)-detailScore(a));
+ const item=sorted[index];
+ if(!family||!item)return;
+ EDIT_CONTEXT={familyName,organ,img:item.img};
+ document.getElementById("editImg").src=item.img;
+ document.getElementById("editPath").textContent=item.img;
+ document.getElementById("editPhoto").value=item.img;
+ document.getElementById("editOldFamily").value=familyName;
+ document.getElementById("editOldOrgan").value=organ;
+ document.getElementById("editOldName").value=item.nom||"";
+ document.getElementById("editName").value=item.nom||"";
+ document.getElementById("editFamily").value=familyName;
+ document.getElementById("editOrgan").value=organ;
+ document.getElementById("editPatterns").value=(item.patterns||[]).join(", ");
+ document.getElementById("editConfidence").value="proposée";
+ document.getElementById("editNote").value="";
+ document.getElementById("editMessage").className="editMessage";
+ document.getElementById("editModal").classList.add("open");
+ document.getElementById("editModal").setAttribute("aria-hidden","false");
+ document.getElementById("editName").focus();
+}
+function closeEdit(){document.getElementById("editModal").classList.remove("open");document.getElementById("editModal").setAttribute("aria-hidden","true");EDIT_CONTEXT=null;}
+document.getElementById("editModal").onclick=e=>{if(e.target.id==="editModal")closeEdit()};
+document.getElementById("correctionForm").addEventListener("submit",async e=>{
+ e.preventDefault();
+ if(!EDIT_CONTEXT)return;
+ const form=e.currentTarget;
+ const message=document.getElementById("editMessage");
+ const correction={
+  photo:EDIT_CONTEXT.img,oldFamily:EDIT_CONTEXT.familyName,oldOrgan:EDIT_CONTEXT.organ,
+  oldName:document.getElementById("editOldName").value,
+  name:document.getElementById("editName").value.trim(),family:document.getElementById("editFamily").value.trim(),organ:document.getElementById("editOrgan").value,
+  patterns:document.getElementById("editPatterns").value.split(",").map(v=>v.trim()).filter(Boolean),confidence:document.getElementById("editConfidence").value,note:document.getElementById("editNote").value.trim(),createdAt:new Date().toISOString()
+ };
+ if(!correction.name||!correction.family){message.className="editMessage error";message.textContent="Le nom et la famille sont obligatoires.";return;}
+ message.className="editMessage";
+ try{
+  const body=new URLSearchParams(new FormData(form)).toString();
+  const response=await fetch(location.pathname,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});
+  if(!response.ok)throw new Error(`Erreur ${response.status}`);
+  saveStoredCorrection(correction);
+  applyCorrection(correction);
+  message.className="editMessage ok";
+  message.textContent="Correction enregistrée. Elle est affichée maintenant comme proposition et transmise pour validation.";
+  const destination=DATA.familles.find(f=>normalizeText(f.fam)===normalizeText(correction.family));
+  setTimeout(()=>{closeEdit();selectFamily(destination)},900);
+ }catch(error){message.className="editMessage error";message.textContent=`Impossible d’envoyer la correction : ${error.message}. Réessaie lorsque la connexion est rétablie.`;}
+});
 
 function normalizeText(value){
  return String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();
@@ -154,6 +292,9 @@ function linkValidatedSeedsToFamilies(data){
 fetch("data/familles.json").then(r=>r.json()).then(d=>{
  linkValidatedSeedsToFamilies(d);
  DATA=d;
+ applyStoredCorrections();
+ document.getElementById("familyNames").innerHTML=d.familles.map(f=>`<option value="${esc(f.fam)}"></option>`).join("");
+ document.getElementById("editOrgan").innerHTML=d.organes.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join("");
  const input=document.getElementById("familySearchInput");
  input.addEventListener("focus",()=>showFamilyResults(input.value));
  input.addEventListener("input",()=>showFamilyResults(input.value));
