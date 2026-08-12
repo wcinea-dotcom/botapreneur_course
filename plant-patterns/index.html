@@ -789,6 +789,29 @@ Object.assign(mediaTraits,{
 });
 /* STEM_LIBRARY_V1_END */
 
+const FAMILY_CORRECTION_KEY='botapreneurs-family-photo-corrections-v1';
+function patternCorrectionSrc(src){
+ if(/^https?:\/\//i.test(src))return src;
+ if(src.startsWith('../fiche-famille/'))return src;
+ if(src.startsWith('/fiche-famille/'))return `..${src}`;
+ return `../fiche-famille/${src.replace(/^\.\//,'')}`;
+}
+function loadFamilyCorrectionsIntoPatterns(){
+ let corrections=[];try{corrections=JSON.parse(localStorage.getItem(FAMILY_CORRECTION_KEY)||'[]')}catch(_){corrections=[]}
+ corrections.forEach(correction=>{
+  const src=patternCorrectionSrc(correction.photo);
+  const traits=[correction.family,correction.name,...(correction.patterns||[]),correction.confidence?`Statut : ${correction.confidence}`:'Correction proposée'].filter(Boolean);
+  mediaTraits[src]=[...new Set(traits)];
+  const relevantLessons=Object.values(L).filter(lesson=>lesson.o===correction.organ||lesson.organs?.includes(correction.organ));
+  const normalizedTags=(correction.patterns||[]).map(value=>String(value).toLowerCase());
+  const matching=relevantLessons.filter(lesson=>normalizedTags.some(tag=>`${lesson.t} ${lesson.g} ${lesson.subgroup||''}`.toLowerCase().includes(tag)||tag.includes(String(lesson.t).toLowerCase())));
+  const destinations=matching.length?matching:relevantLessons.filter(lesson=>lesson.family&&String(lesson.t).toLowerCase().includes(String(correction.family).toLowerCase()));
+  destinations.forEach(lesson=>{if(!lesson.p.includes(src))lesson.p.push(src)});
+ });
+}
+loadFamilyCorrectionsIntoPatterns();
+window.addEventListener('storage',event=>{if(event.key===FAMILY_CORRECTION_KEY)location.reload()});
+
 function drawMenu(query=''){const q=query.trim().toLowerCase(),groupOf=v=>activeOrgan==='Structures spécialisées'?(v.specialGroup||v.g):v.g;menu.innerHTML=groupsByOrgan[activeOrgan].map(g=>{const items=Object.entries(L).filter(([,v])=>(v.o===activeOrgan||v.organs?.includes(activeOrgan))&&groupOf(v)===g&&(!q||`${v.t} ${v.d} ${v.g} ${v.specialGroup||''}`.toLowerCase().includes(q)));return items.length?`<div class="group"><b>${g}</b>${items.map(([k,v])=>v.family?`<a href="#famille-${k}" data-id="${k}" aria-label="Ouvrir la famille ${v.t}"><span>${v.t}</span><i>${v.p.length||'—'}</i></a>`:`<button data-id="${k}"><span>${v.t}</span><i>${v.p.length||'—'}</i></button>`).join('')}</div>`:''}).join('')||'<div class="empty">Aucune leçon trouvée.</div>';menu.querySelectorAll('[data-id]').forEach(b=>b.onclick=e=>{e.preventDefault();show(b.dataset.id)});}
 function show(id){
  const x=L[id],viewOrgan=x.organs?.includes(activeOrgan)?activeOrgan:x.o;document.querySelectorAll('.menu [data-id]').forEach(b=>b.classList.toggle('on',b.dataset.id===id));

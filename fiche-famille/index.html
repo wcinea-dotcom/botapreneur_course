@@ -22,6 +22,7 @@
 .familyOption small{font:400 12px Lato,sans-serif;color:#7a8590;white-space:nowrap}
 .noFamily{padding:12px;color:#7a8590;font-size:13px}
 .hint{color:#7a8590;font-size:13px}
+.batchBar{display:flex;align-items:center;gap:9px;padding:10px 4vw;background:#f0f5ec;border-bottom:1px solid #d6e2d0}.batchBar button{border:0;border-radius:8px;padding:9px 13px;font:700 11px Poppins,sans-serif;cursor:pointer}.toggleSelect{background:var(--navy);color:#fff}.toggleSelect.on{background:var(--orange)}.editSelected{background:var(--green);color:#fff}.editSelected:disabled{background:#b7c2ba;cursor:not-allowed}.selectionCount{font:700 12px Poppins,sans-serif;color:var(--green)}
 .head{padding:22px 4vw 6px}
 .head h1{font-family:Poppins;font-weight:800;color:var(--navy);font-size:clamp(24px,4vw,38px);margin:0}
 .head .cnt{color:var(--green);font-family:Poppins;font-weight:700;font-size:14px;margin-top:4px}
@@ -33,6 +34,7 @@
 .ph{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in}
 .ph{position:relative}.editCard{position:absolute;z-index:3;top:7px;right:7px;border:0;border-radius:7px;padding:6px 9px;background:rgba(0,51,102,.92);color:#fff;font:700 10px Poppins,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
 .editCard:hover{background:var(--orange)}
+.selectBox{display:none;position:absolute;z-index:4;top:8px;left:8px;width:26px;height:26px;border:2px solid #fff;border-radius:7px;background:rgba(0,51,102,.9);box-shadow:0 2px 8px rgba(0,0,0,.22);place-items:center;color:#fff;font:800 16px Poppins,sans-serif}.selectionMode .selectBox{display:grid}.selectionMode .editCard{display:none}.selectionMode .ph{cursor:pointer}.selectionMode .ph.selected{outline:4px solid var(--orange);outline-offset:-4px}.selectionMode .ph.selected .selectBox{background:var(--orange)}
 .ph .im{aspect-ratio:1/1;background:#eef1f3;overflow:hidden}.ph .im img{width:100%;height:100%;object-fit:cover;display:block}
 .ph .bd{padding:7px 9px}.ph .nm{font-size:12px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:3px}
 .tag{display:inline-block;background:#eef3ea;color:var(--green);border-radius:5px;padding:1px 6px;font-size:10px;margin:0 3px 3px 0}
@@ -48,6 +50,7 @@
 .editPanel{width:min(620px,100%);max-height:calc(100vh - 40px);overflow:auto;background:#fff;border-radius:16px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .editPanel h2{margin:0 0 4px;color:var(--navy);font:800 22px Poppins,sans-serif}.editIntro{margin:0 0 16px;color:#64717c;font-size:13px;line-height:1.45}
 .editPreview{display:flex;gap:12px;align-items:center;margin-bottom:15px;padding:10px;background:#f4f6f2;border-radius:10px}.editPreview img{width:78px;height:78px;object-fit:cover;border-radius:8px}.editPreview span{font-size:12px;color:#5d6872;overflow-wrap:anywhere}
+.batchPreview{display:none;grid-template-columns:repeat(5,54px);gap:6px;margin:0 0 15px}.batchPreview.show{display:grid}.batchPreview img{width:54px;height:54px;object-fit:cover;border-radius:7px;border:2px solid #dce4d8}.batchNotice{display:none;margin:-5px 0 13px;padding:9px 11px;border-radius:8px;background:#eef3ea;color:#315f34;font-size:12px}.batchNotice.show{display:block}
 .editGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editField{display:flex;flex-direction:column;gap:5px}.editField.full{grid-column:1/-1}.editField label{font:700 12px Poppins,sans-serif;color:var(--green)}
 .editField input,.editField select,.editField textarea{width:100%;padding:10px;border:1px solid #b9c4cc;border-radius:8px;font:14px Lato,sans-serif;color:var(--ink);background:#fff}.editField textarea{min-height:76px;resize:vertical}
 .editActions{display:flex;justify-content:flex-end;gap:9px;margin-top:17px}.editActions button{border:0;border-radius:8px;padding:10px 15px;font:700 12px Poppins,sans-serif;cursor:pointer}.cancelEdit{background:#e9edf0;color:#53606b}.saveEdit{background:var(--green);color:#fff}.editMessage{display:none;margin-top:12px;padding:10px;border-radius:8px;font-size:13px}.editMessage.ok{display:block;background:#e8f3e8;color:#236128}.editMessage.error{display:block;background:#fff0ec;color:#a33a20}
@@ -64,6 +67,7 @@
   <div class="familyResults" id="familyResults" role="listbox"></div>
  </div>
  <span class="hint">Choisis une famille → vois toutes ses photos par organe, pour apprendre sa signature.</span></div>
+<div class="batchBar"><button class="toggleSelect" id="toggleSelect" type="button">Sélectionner plusieurs photos</button><button class="editSelected" id="editSelected" type="button" disabled>Corriger la sélection</button><span class="selectionCount" id="selectionCount">0 photo sélectionnée</span></div>
 
 <div class="head" id="head"></div>
 <div id="sig"></div>
@@ -75,16 +79,19 @@
  <div class="editPanel" role="dialog" aria-modal="true" aria-labelledby="editTitle">
   <h2 id="editTitle">Corriger cette photo</h2>
   <p class="editIntro">Modifie le nom, la famille, l’organe ou les tags. La correction est enregistrée comme proposition afin de préserver les données déjà validées.</p>
-  <div class="editPreview"><img id="editImg" alt="Photo à corriger"><span id="editPath"></span></div>
+  <div class="editPreview" id="editPreview"><img id="editImg" alt="Photo à corriger"><span id="editPath"></span></div>
+  <div class="batchPreview" id="batchPreview"></div><div class="batchNotice" id="batchNotice"></div>
   <form id="correctionForm" name="correction-photo" method="POST" data-netlify="true" netlify-honeypot="bot-field">
    <input type="hidden" name="form-name" value="correction-photo">
    <input type="hidden" name="photo" id="editPhoto">
    <input type="hidden" name="ancienne-famille" id="editOldFamily">
    <input type="hidden" name="ancien-organe" id="editOldOrgan">
    <input type="hidden" name="ancien-nom" id="editOldName">
+   <input type="hidden" name="nombre-photos" id="editCount">
+   <input type="hidden" name="photos-json" id="editPhotosJson">
    <p hidden><label>Ne pas remplir : <input name="bot-field"></label></p>
    <div class="editGrid">
-    <div class="editField"><label for="editName">Nom scientifique</label><input id="editName" name="nouveau-nom" autocomplete="off" required></div>
+    <div class="editField"><label for="editName" id="editNameLabel">Nom scientifique</label><input id="editName" name="nouveau-nom" autocomplete="off"></div>
     <div class="editField"><label for="editFamily">Famille</label><input id="editFamily" name="nouvelle-famille" list="familyNames" autocomplete="off" required><datalist id="familyNames"></datalist></div>
     <div class="editField"><label for="editOrgan">Organe</label><select id="editOrgan" name="nouvel-organe" required></select></div>
     <div class="editField"><label for="editConfidence">Validation</label><select id="editConfidence" name="validation"><option value="proposée">Proposée — à vérifier</option><option value="probable">Probable</option><option value="confirmée par William">Confirmée par William</option></select></div>
@@ -102,12 +109,15 @@
 let DATA=null;
 let CURRENT_FAMILY=null;
 let EDIT_CONTEXT=null;
+let SELECTION_MODE=false;
+const SELECTED=new Map();
 const CORRECTION_KEY="botapreneurs-family-photo-corrections-v1";
 function esc(value){return String(value??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
 function photo(p,organ,index){
  const tags=(p.patterns||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("");
  const proposed=p._correction?`<span class="tag proposalTag">Correction proposée</span>`:"";
- return `<div class="ph" data-family="${esc(CURRENT_FAMILY.fam)}" data-organ="${esc(organ)}" data-index="${index}"><button class="editCard" type="button">CORRIGER ✎</button><div class="im"><img loading="lazy" src="${esc(p.img)}" alt="${esc(p.nom||organ)}"></div><div class="bd"><div class="nm">${esc(p.nom||"")}</div><span class="tag organTag">Organe : ${esc(organ)}</span>${proposed}${tags}</div></div>`;
+ const selected=SELECTED.has(p.img)?" selected":"";
+ return `<div class="ph${selected}" data-family="${esc(CURRENT_FAMILY.fam)}" data-organ="${esc(organ)}" data-index="${index}"><span class="selectBox" aria-hidden="true">${selected?"✓":""}</span><button class="editCard" type="button">CORRIGER ✎</button><div class="im"><img loading="lazy" src="${esc(p.img)}" alt="${esc(p.nom||organ)}"></div><div class="bd"><div class="nm">${esc(p.nom||"")}</div><span class="tag organTag">Organe : ${esc(organ)}</span>${proposed}${tags}</div></div>`;
 }
 function detailScore(p){return (p.patterns||[]).some(t=>/pétale|détach|coupe|intérieur|dissection/i.test(t))?1:0;}
 function render(f){
@@ -122,13 +132,16 @@ function render(f){
   h+= arr.length ? `<div class="gal">${arr.map((p,index)=>photo(p,o,index)).join("")}</div>` : `<div class="void"><span class="plus">＋</span>Aucune photo ${o.toLowerCase()} pour cette famille — à alimenter</div>`;
   h+=`</div>`;
  });
- document.getElementById("body").innerHTML=h;
+ const body=document.getElementById("body");
+ body.innerHTML=h;
+ body.classList.toggle("selectionMode",SELECTION_MODE);
 }
 function openM(src){document.getElementById("mImg").src=src;document.getElementById("modal").classList.add("open");}
 function closeM(){document.getElementById("modal").classList.remove("open");}
 document.getElementById("body").addEventListener("click",event=>{
  const card=event.target.closest(".ph");
  if(!card)return;
+ if(SELECTION_MODE){toggleCardSelection(card);return;}
  if(event.target.closest(".editCard")){
   event.stopPropagation();
   openEdit(card.dataset.family,card.dataset.organ,Number(card.dataset.index));
@@ -141,10 +154,12 @@ document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")closeM();}
 document.onkeydown=e=>{if(e.key==="Escape")closeM();};
 
 function storedCorrections(){try{return JSON.parse(localStorage.getItem(CORRECTION_KEY)||"[]")}catch(_){return[]}}
-function saveStoredCorrection(correction){
- const all=storedCorrections().filter(item=>item.photo!==correction.photo);
- all.push(correction);
+function saveStoredCorrections(corrections){
+ const photos=new Set(corrections.map(item=>item.photo));
+ const all=storedCorrections().filter(item=>!photos.has(item.photo));
+ all.push(...corrections);
  localStorage.setItem(CORRECTION_KEY,JSON.stringify(all));
+ window.dispatchEvent(new CustomEvent("plant-patterns-corrections-updated",{detail:{corrections}}));
 }
 function locatePhoto(familyName,organ,img){
  const family=DATA.familles.find(f=>f.fam===familyName);
@@ -172,18 +187,60 @@ function applyCorrection(correction){
  return true;
 }
 function applyStoredCorrections(){storedCorrections().forEach(applyCorrection)}
+function selectedRecords(){return [...SELECTED.values()]}
+function updateSelectionUI(){
+ const count=SELECTED.size;
+ document.getElementById("selectionCount").textContent=`${count} photo${count>1?"s":""} sélectionnée${count>1?"s":""}`;
+ document.getElementById("editSelected").disabled=count===0;
+ document.getElementById("toggleSelect").classList.toggle("on",SELECTION_MODE);
+ document.getElementById("toggleSelect").textContent=SELECTION_MODE?"Terminer la sélection":"Sélectionner plusieurs photos";
+}
+function selectionRecord(card){
+ const familyName=card.dataset.family,organ=card.dataset.organ,index=Number(card.dataset.index);
+ const family=DATA.familles.find(f=>f.fam===familyName);
+ const sorted=[...(family?.organes[organ]||[])].sort((a,b)=>detailScore(b)-detailScore(a));
+ const item=sorted[index];
+ return item?{familyName,organ,img:item.img,name:item.nom||"",patterns:[...(item.patterns||[])]}:null;
+}
+function toggleCardSelection(card){
+ const record=selectionRecord(card);if(!record)return;
+ if(SELECTED.has(record.img))SELECTED.delete(record.img);else SELECTED.set(record.img,record);
+ card.classList.toggle("selected",SELECTED.has(record.img));
+ card.querySelector(".selectBox").textContent=SELECTED.has(record.img)?"✓":"";
+ updateSelectionUI();
+}
+document.getElementById("toggleSelect").onclick=()=>{
+ SELECTION_MODE=!SELECTION_MODE;
+ if(!SELECTION_MODE)SELECTED.clear();
+ document.getElementById("body").classList.toggle("selectionMode",SELECTION_MODE);
+ document.querySelectorAll(".ph").forEach(card=>{if(!SELECTION_MODE){card.classList.remove("selected");card.querySelector(".selectBox").textContent=""}});
+ updateSelectionUI();
+};
+document.getElementById("editSelected").onclick=()=>openBatchEdit(selectedRecords());
+function resetEditPresentation(){
+ document.getElementById("batchPreview").className="batchPreview";
+ document.getElementById("batchPreview").innerHTML="";
+ document.getElementById("batchNotice").className="batchNotice";
+ document.getElementById("batchNotice").textContent="";
+ document.getElementById("editPreview").style.display="flex";
+ document.getElementById("editNameLabel").textContent="Nom scientifique";
+ document.getElementById("editName").required=true;
+}
 function openEdit(familyName,organ,index){
  const family=DATA.familles.find(f=>f.fam===familyName);
  const sorted=[...(family?.organes[organ]||[])].sort((a,b)=>detailScore(b)-detailScore(a));
  const item=sorted[index];
  if(!family||!item)return;
- EDIT_CONTEXT={familyName,organ,img:item.img};
+ resetEditPresentation();
+ EDIT_CONTEXT={mode:"single",items:[{familyName,organ,img:item.img,name:item.nom||"",patterns:[...(item.patterns||[])]}]};
  document.getElementById("editImg").src=item.img;
  document.getElementById("editPath").textContent=item.img;
  document.getElementById("editPhoto").value=item.img;
  document.getElementById("editOldFamily").value=familyName;
  document.getElementById("editOldOrgan").value=organ;
  document.getElementById("editOldName").value=item.nom||"";
+ document.getElementById("editCount").value="1";
+ document.getElementById("editPhotosJson").value=JSON.stringify([item.img]);
  document.getElementById("editName").value=item.nom||"";
  document.getElementById("editFamily").value=familyName;
  document.getElementById("editOrgan").value=organ;
@@ -195,31 +252,53 @@ function openEdit(familyName,organ,index){
  document.getElementById("editModal").setAttribute("aria-hidden","false");
  document.getElementById("editName").focus();
 }
-function closeEdit(){document.getElementById("editModal").classList.remove("open");document.getElementById("editModal").setAttribute("aria-hidden","true");EDIT_CONTEXT=null;}
+function openBatchEdit(items){
+ if(!items.length)return;
+ resetEditPresentation();
+ EDIT_CONTEXT={mode:"batch",items};
+ document.getElementById("editPreview").style.display="none";
+ const preview=document.getElementById("batchPreview");preview.className="batchPreview show";preview.innerHTML=items.slice(0,10).map(item=>`<img src="${esc(item.img)}" alt="Photo sélectionnée">`).join("");
+ const notice=document.getElementById("batchNotice");notice.className="batchNotice show";notice.textContent=`Une seule correction sera appliquée aux ${items.length} photos sélectionnées. Laisse le nom vide si les photos ne montrent pas toutes la même espèce.`;
+ document.getElementById("editTitle").textContent=`Corriger ${items.length} photos`;
+ document.getElementById("editNameLabel").textContent="Nom scientifique commun aux photos (facultatif)";
+ document.getElementById("editName").required=false;
+ document.getElementById("editPhoto").value=items.map(item=>item.img).join(" | ");
+ document.getElementById("editOldFamily").value=[...new Set(items.map(item=>item.familyName))].join(" | ");
+ document.getElementById("editOldOrgan").value=[...new Set(items.map(item=>item.organ))].join(" | ");
+ document.getElementById("editOldName").value=[...new Set(items.map(item=>item.name))].join(" | ");
+ document.getElementById("editCount").value=String(items.length);
+ document.getElementById("editPhotosJson").value=JSON.stringify(items.map(item=>item.img));
+ document.getElementById("editName").value="";
+ document.getElementById("editFamily").value=items.every(item=>item.familyName===items[0].familyName)?items[0].familyName:"";
+ document.getElementById("editOrgan").value=items.every(item=>item.organ===items[0].organ)?items[0].organ:"";
+ document.getElementById("editPatterns").value="";
+ document.getElementById("editConfidence").value="proposée";
+ document.getElementById("editNote").value="";
+ document.getElementById("editMessage").className="editMessage";
+ document.getElementById("editModal").classList.add("open");document.getElementById("editModal").setAttribute("aria-hidden","false");
+}
+function closeEdit(){document.getElementById("editModal").classList.remove("open");document.getElementById("editModal").setAttribute("aria-hidden","true");document.getElementById("editTitle").textContent="Corriger cette photo";EDIT_CONTEXT=null;}
 document.getElementById("editModal").onclick=e=>{if(e.target.id==="editModal")closeEdit()};
 document.getElementById("correctionForm").addEventListener("submit",async e=>{
  e.preventDefault();
  if(!EDIT_CONTEXT)return;
  const form=e.currentTarget;
  const message=document.getElementById("editMessage");
- const correction={
-  photo:EDIT_CONTEXT.img,oldFamily:EDIT_CONTEXT.familyName,oldOrgan:EDIT_CONTEXT.organ,
-  oldName:document.getElementById("editOldName").value,
-  name:document.getElementById("editName").value.trim(),family:document.getElementById("editFamily").value.trim(),organ:document.getElementById("editOrgan").value,
-  patterns:document.getElementById("editPatterns").value.split(",").map(v=>v.trim()).filter(Boolean),confidence:document.getElementById("editConfidence").value,note:document.getElementById("editNote").value.trim(),createdAt:new Date().toISOString()
- };
- if(!correction.name||!correction.family){message.className="editMessage error";message.textContent="Le nom et la famille sont obligatoires.";return;}
+ const commonName=document.getElementById("editName").value.trim(),family=document.getElementById("editFamily").value.trim(),organ=document.getElementById("editOrgan").value;
+ const patterns=document.getElementById("editPatterns").value.split(",").map(v=>v.trim()).filter(Boolean),confidence=document.getElementById("editConfidence").value,note=document.getElementById("editNote").value.trim(),createdAt=new Date().toISOString();
+ const corrections=EDIT_CONTEXT.items.map(item=>({photo:item.img,oldFamily:item.familyName,oldOrgan:item.organ,oldName:item.name,name:commonName||item.name,family,organ,patterns:patterns.length?patterns:item.patterns,confidence,note,createdAt}));
+ if(!family||!organ||corrections.some(item=>!item.name)){message.className="editMessage error";message.textContent="La famille et l’organe sont obligatoires. Le nom peut rester vide seulement si chaque photo possède déjà un nom.";return;}
  message.className="editMessage";
  try{
   const body=new URLSearchParams(new FormData(form)).toString();
   const response=await fetch(location.pathname,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});
   if(!response.ok)throw new Error(`Erreur ${response.status}`);
-  saveStoredCorrection(correction);
-  applyCorrection(correction);
+  saveStoredCorrections(corrections);
+  corrections.forEach(applyCorrection);
   message.className="editMessage ok";
-  message.textContent="Correction enregistrée. Elle est affichée maintenant comme proposition et transmise pour validation.";
-  const destination=DATA.familles.find(f=>normalizeText(f.fam)===normalizeText(correction.family));
-  setTimeout(()=>{closeEdit();selectFamily(destination)},900);
+  message.textContent=`${corrections.length} correction${corrections.length>1?"s":""} enregistrée${corrections.length>1?"s":""}. Les fiches de famille et les galeries de patterns sont maintenant synchronisées sur cet appareil.`;
+  const destination=DATA.familles.find(f=>normalizeText(f.fam)===normalizeText(family));
+  setTimeout(()=>{closeEdit();SELECTED.clear();SELECTION_MODE=false;updateSelectionUI();selectFamily(destination)},900);
  }catch(error){message.className="editMessage error";message.textContent=`Impossible d’envoyer la correction : ${error.message}. Réessaie lorsque la connexion est rétablie.`;}
 });
 
@@ -294,7 +373,7 @@ fetch("data/familles.json").then(r=>r.json()).then(d=>{
  DATA=d;
  applyStoredCorrections();
  document.getElementById("familyNames").innerHTML=d.familles.map(f=>`<option value="${esc(f.fam)}"></option>`).join("");
- document.getElementById("editOrgan").innerHTML=d.organes.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join("");
+ document.getElementById("editOrgan").innerHTML=`<option value="">Choisir un organe…</option>`+d.organes.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join("");
  const input=document.getElementById("familySearchInput");
  input.addEventListener("focus",()=>showFamilyResults(input.value));
  input.addEventListener("input",()=>showFamilyResults(input.value));
