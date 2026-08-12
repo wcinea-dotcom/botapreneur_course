@@ -22,19 +22,19 @@
 .familyOption small{font:400 12px Lato,sans-serif;color:#7a8590;white-space:nowrap}
 .noFamily{padding:12px;color:#7a8590;font-size:13px}
 .hint{color:#7a8590;font-size:13px}
-.batchBar{position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:9px;padding:10px 4vw;background:#f0f5ec;border-bottom:1px solid #d6e2d0;box-shadow:0 2px 8px rgba(0,51,102,.06);flex-wrap:wrap}.batchBar button{border:0;border-radius:8px;padding:9px 13px;font:700 11px Poppins,sans-serif;cursor:pointer}.batchGuide{font:700 12px Poppins,sans-serif;color:var(--navy);margin-right:auto}.batchGuide strong{color:var(--orange)}.clearSelection{display:none;background:#e5e9ec;color:#53606b}.batchBar.hasSelection .clearSelection{display:inline-block}.editSelected{background:var(--green);color:#fff}.editSelected:disabled{display:none}.selectionCount{font:700 12px Poppins,sans-serif;color:var(--green)}
+.batchBar{position:fixed;left:50%;bottom:18px;z-index:45;display:none;align-items:center;gap:8px;transform:translateX(-50%);padding:7px 8px 7px 12px;background:rgba(0,51,102,.96);color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:999px;box-shadow:0 8px 25px rgba(0,30,60,.28);white-space:nowrap}.batchBar.hasSelection{display:flex}.batchBar button{border:0;border-radius:999px;padding:7px 11px;font:700 10px Poppins,sans-serif;cursor:pointer}.clearSelection{background:rgba(255,255,255,.16);color:#fff}.editSelected{background:var(--lime);color:#173c19}.selectionCount{font:700 11px Poppins,sans-serif}.batchGuide{display:none}
 .head{padding:22px 4vw 6px}
 .head h1{font-family:Poppins;font-weight:800;color:var(--navy);font-size:clamp(24px,4vw,38px);margin:0}
 .head .cnt{color:var(--green);font-family:Poppins;font-weight:700;font-size:14px;margin-top:4px}
 .sig{background:#eef3ea;border-left:4px solid var(--lime);padding:12px 16px;margin:12px 4vw 0;border-radius:8px;max-width:900px;font-size:14px;line-height:1.55}
 .sig b{font-family:Poppins;color:var(--green)}
 .organ{padding:16px 4vw 4px}
-.organHeader{display:flex;align-items:center;gap:8px;margin:0 0 10px;flex-wrap:wrap}.organ h3{font-family:Poppins;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--green);display:inline-block;padding:5px 12px;border-radius:8px;margin:0}.selectOrgan{border:1px solid #a9bda1;background:#fff;color:var(--green);border-radius:7px;padding:5px 10px;font:700 10px Poppins,sans-serif;cursor:pointer}.selectOrgan:hover{border-color:var(--orange);color:var(--orange)}
+.organHeader{display:flex;align-items:center;gap:8px;margin:0 0 10px;flex-wrap:wrap}.organ h3{font-family:Poppins;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--green);display:inline-block;padding:5px 12px;border-radius:8px;margin:0}.selectOrgan{border:0;background:transparent;color:#71806d;border-radius:5px;padding:3px 5px;font:700 9px Poppins,sans-serif;cursor:pointer}.selectOrgan:hover{color:var(--green);text-decoration:underline}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .ph{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in}
 .ph{position:relative}.editCard{position:absolute;z-index:3;top:7px;right:7px;border:0;border-radius:7px;padding:6px 9px;background:rgba(0,51,102,.92);color:#fff;font:700 10px Poppins,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
 .editCard:hover{background:var(--orange)}
-.selectBox{display:grid;position:absolute;z-index:4;top:8px;left:8px;width:28px;height:28px;border:2px solid #fff;border-radius:50%;background:rgba(0,51,102,.72);box-shadow:0 2px 8px rgba(0,0,0,.25);place-items:center;color:#fff;font:800 16px Poppins,sans-serif;cursor:pointer}.selectBox:hover{transform:scale(1.08);background:var(--orange)}.ph.selected{outline:4px solid var(--orange);outline-offset:-4px}.ph.selected .selectBox{background:var(--orange)}
+.selectBox{display:grid;position:absolute;z-index:4;top:6px;left:6px;width:18px;height:18px;padding:0;border:1.5px solid rgba(255,255,255,.96);border-radius:3px;background:rgba(255,255,255,.72);box-shadow:0 1px 4px rgba(0,0,0,.18);place-items:center;color:#fff;font:800 12px/1 Poppins,sans-serif;cursor:pointer;opacity:.58}.ph:hover .selectBox,.selectBox:focus-visible{opacity:1}.selectBox:hover{border-color:var(--lime)}.ph.selected{outline:2px solid var(--green);outline-offset:-2px}.ph.selected .selectBox{opacity:1;background:var(--green);border-color:#fff}
 .ph .im{aspect-ratio:1/1;background:#eef1f3;overflow:hidden}.ph .im img{width:100%;height:100%;object-fit:cover;display:block}
 .ph .bd{padding:7px 9px}.ph .nm{font-size:12px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:3px}
 .tag{display:inline-block;background:#eef3ea;color:var(--green);border-radius:5px;padding:1px 6px;font-size:10px;margin:0 3px 3px 0}
@@ -67,7 +67,7 @@
   <div class="familyResults" id="familyResults" role="listbox"></div>
  </div>
  <span class="hint">Choisis une famille → vois toutes ses photos par organe, pour apprendre sa signature.</span></div>
-<div class="batchBar" id="batchBar"><span class="batchGuide"><strong>Comme Google Photos :</strong> cochez directement les photos dans leur coin supérieur gauche.</span><span class="selectionCount" id="selectionCount">0 photo sélectionnée</span><button class="clearSelection" id="clearSelection" type="button">Annuler</button><button class="editSelected" id="editSelected" type="button" disabled>Corriger les photos sélectionnées</button></div>
+<div class="batchBar" id="batchBar"><span class="selectionCount" id="selectionCount">0 sélectionnée</span><button class="clearSelection" id="clearSelection" type="button">Annuler</button><button class="editSelected" id="editSelected" type="button" disabled>Corriger</button></div>
 
 <div class="head" id="head"></div>
 <div id="sig"></div>
@@ -112,10 +112,12 @@ let EDIT_CONTEXT=null;
 const SELECTED=new Map();
 const CORRECTION_KEY="botapreneurs-family-photo-corrections-v1";
 function esc(value){return String(value??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
+function selectionKey(familyName,organ,index,img){return [familyName,organ,index,img].join("\u241f");}
 function photo(p,organ,index){
  const tags=(p.patterns||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("");
  const proposed=p._correction?`<span class="tag proposalTag">Correction proposée</span>`:"";
- const selected=SELECTED.has(p.img)?" selected":"";
+ const key=selectionKey(CURRENT_FAMILY.fam,organ,index,p.img);
+ const selected=SELECTED.has(key)?" selected":"";
  return `<div class="ph${selected}" data-family="${esc(CURRENT_FAMILY.fam)}" data-organ="${esc(organ)}" data-index="${index}"><button class="selectBox" type="button" aria-label="${selected?"Retirer":"Sélectionner"} cette photo" aria-pressed="${selected}">${selected?"✓":""}</button><button class="editCard" type="button">CORRIGER ✎</button><div class="im"><img loading="lazy" src="${esc(p.img)}" alt="${esc(p.nom||organ)}"></div><div class="bd"><div class="nm">${esc(p.nom||"")}</div><span class="tag organTag">Organe : ${esc(organ)}</span>${proposed}${tags}</div></div>`;
 }
 function detailScore(p){return (p.patterns||[]).some(t=>/pétale|détach|coupe|intérieur|dissection/i.test(t))?1:0;}
@@ -127,7 +129,7 @@ function render(f){
  let h="";
  DATA.organes.forEach(o=>{
   const arr=[...(f.organes[o]||[])].sort((a,b)=>detailScore(b)-detailScore(a));
-  h+=`<div class="organ"><div class="organHeader"><h3>${o} · ${arr.length}</h3>${arr.length?`<button class="selectOrgan" type="button" data-organ="${esc(o)}">Cocher toutes les photos ${esc(o.toLowerCase())}</button>`:""}</div>`;
+  h+=`<div class="organ"><div class="organHeader"><h3>${o} · ${arr.length}</h3>${arr.length?`<button class="selectOrgan" type="button" data-organ="${esc(o)}">Tout cocher</button>`:""}</div>`;
   h+= arr.length ? `<div class="gal">${arr.map((p,index)=>photo(p,o,index)).join("")}</div>` : `<div class="void"><span class="plus">＋</span>Aucune photo ${o.toLowerCase()} pour cette famille — à alimenter</div>`;
   h+=`</div>`;
  });
@@ -161,15 +163,15 @@ function saveStoredCorrections(corrections){
  localStorage.setItem(CORRECTION_KEY,JSON.stringify(all));
  window.dispatchEvent(new CustomEvent("plant-patterns-corrections-updated",{detail:{corrections}}));
 }
-function locatePhoto(familyName,organ,img){
+function locatePhoto(familyName,organ,img,sourceItem){
  const family=DATA.familles.find(f=>f.fam===familyName);
  if(!family)return null;
  const list=family.organes[organ]||[];
- const index=list.findIndex(p=>p.img===img);
+ const index=sourceItem ? list.indexOf(sourceItem) : list.findIndex(p=>p.img===img);
  return index<0?null:{family,list,index,photo:list[index]};
 }
-function applyCorrection(correction){
- const located=locatePhoto(correction.oldFamily,correction.oldOrgan,correction.photo);
+function applyCorrection(correction,sourceItem){
+ const located=locatePhoto(correction.oldFamily,correction.oldOrgan,correction.photo,sourceItem);
  if(!located)return false;
  const [item]=located.list.splice(located.index,1);
  let destination=DATA.familles.find(f=>normalizeText(f.fam)===normalizeText(correction.family));
@@ -186,11 +188,11 @@ function applyCorrection(correction){
  destination.organes[correction.organ].push(item);
  return true;
 }
-function applyStoredCorrections(){storedCorrections().forEach(applyCorrection)}
+function applyStoredCorrections(){storedCorrections().forEach(correction=>applyCorrection(correction))}
 function selectedRecords(){return [...SELECTED.values()]}
 function updateSelectionUI(){
  const count=SELECTED.size;
- document.getElementById("selectionCount").textContent=`${count} photo${count>1?"s":""} sélectionnée${count>1?"s":""}`;
+ document.getElementById("selectionCount").textContent=`${count} sélectionnée${count>1?"s":""}`;
  document.getElementById("editSelected").disabled=count===0;
  document.getElementById("batchBar").classList.toggle("hasSelection",count>0);
 }
@@ -199,24 +201,24 @@ function selectionRecord(card){
  const family=DATA.familles.find(f=>f.fam===familyName);
  const sorted=[...(family?.organes[organ]||[])].sort((a,b)=>detailScore(b)-detailScore(a));
  const item=sorted[index];
- return item?{familyName,organ,img:item.img,name:item.nom||"",patterns:[...(item.patterns||[])]}:null;
+ return item?{key:selectionKey(familyName,organ,index,item.img),familyName,organ,index,img:item.img,name:item.nom||"",patterns:[...(item.patterns||[])],sourceItem:item}:null;
 }
 function toggleCardSelection(card){
  const record=selectionRecord(card);if(!record)return;
- if(SELECTED.has(record.img))SELECTED.delete(record.img);else SELECTED.set(record.img,record);
- card.classList.toggle("selected",SELECTED.has(record.img));
+ if(SELECTED.has(record.key))SELECTED.delete(record.key);else SELECTED.set(record.key,record);
+ card.classList.toggle("selected",SELECTED.has(record.key));
  const checkbox=card.querySelector(".selectBox");
- checkbox.textContent=SELECTED.has(record.img)?"✓":"";
- checkbox.setAttribute("aria-pressed",String(SELECTED.has(record.img)));
- checkbox.setAttribute("aria-label",`${SELECTED.has(record.img)?"Retirer":"Sélectionner"} cette photo`);
+ checkbox.textContent=SELECTED.has(record.key)?"✓":"";
+ checkbox.setAttribute("aria-pressed",String(SELECTED.has(record.key)));
+ checkbox.setAttribute("aria-label",`${SELECTED.has(record.key)?"Retirer":"Sélectionner"} cette photo`);
  updateSelectionUI();
 }
 function selectWholeOrgan(organ){
  const cards=[...document.querySelectorAll(`.ph[data-organ="${CSS.escape(organ)}"]`)];
  const records=cards.map(card=>({card,record:selectionRecord(card)})).filter(item=>item.record);
- const allSelected=records.length&&records.every(item=>SELECTED.has(item.record.img));
+ const allSelected=records.length&&records.every(item=>SELECTED.has(item.record.key));
  records.forEach(({card,record})=>{
-  if(allSelected)SELECTED.delete(record.img);else SELECTED.set(record.img,record);
+  if(allSelected)SELECTED.delete(record.key);else SELECTED.set(record.key,record);
   card.classList.toggle("selected",!allSelected);
   const checkbox=card.querySelector(".selectBox");
   checkbox.textContent=allSelected?"":"✓";
@@ -248,7 +250,7 @@ function openEdit(familyName,organ,index){
  const item=sorted[index];
  if(!family||!item)return;
  resetEditPresentation();
- EDIT_CONTEXT={mode:"single",items:[{familyName,organ,img:item.img,name:item.nom||"",patterns:[...(item.patterns||[])]}]};
+ EDIT_CONTEXT={mode:"single",items:[{key:selectionKey(familyName,organ,index,item.img),familyName,organ,index,img:item.img,name:item.nom||"",patterns:[...(item.patterns||[])],sourceItem:item}]};
  document.getElementById("editImg").src=item.img;
  document.getElementById("editPath").textContent=item.img;
  document.getElementById("editPhoto").value=item.img;
@@ -313,7 +315,12 @@ document.getElementById("correctionForm").addEventListener("submit",async e=>{
   transmitted=true;
  }catch(error){console.warn("Transmission Netlify différée",error);}
  saveStoredCorrections(corrections);
- corrections.forEach(applyCorrection);
+ const appliedCount=corrections.reduce((count,correction,index)=>count+(applyCorrection(correction,EDIT_CONTEXT.items[index].sourceItem)?1:0),0);
+ if(appliedCount!==corrections.length){
+  message.className="editMessage error";
+  message.textContent=`${appliedCount} correction${appliedCount>1?"s":""} appliquée${appliedCount>1?"s":""} sur ${corrections.length}. La fenêtre reste ouverte pour éviter de perdre la sélection.`;
+  return;
+ }
  message.className="editMessage ok";
  message.textContent=transmitted
   ? `${corrections.length} correction${corrections.length>1?"s":""} enregistrée${corrections.length>1?"s":""}. Les fiches de famille et les galeries de patterns sont synchronisées.`
