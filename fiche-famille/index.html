@@ -22,14 +22,14 @@
 .familyOption small{font:400 12px Lato,sans-serif;color:#7a8590;white-space:nowrap}
 .noFamily{padding:12px;color:#7a8590;font-size:13px}
 .hint{color:#7a8590;font-size:13px}
-.batchBar{display:flex;align-items:center;gap:9px;padding:10px 4vw;background:#f0f5ec;border-bottom:1px solid #d6e2d0}.batchBar button{border:0;border-radius:8px;padding:9px 13px;font:700 11px Poppins,sans-serif;cursor:pointer}.toggleSelect{background:var(--navy);color:#fff}.toggleSelect.on{background:var(--orange)}.editSelected{background:var(--green);color:#fff}.editSelected:disabled{background:#b7c2ba;cursor:not-allowed}.selectionCount{font:700 12px Poppins,sans-serif;color:var(--green)}
+.batchBar{position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:9px;padding:10px 4vw;background:#f0f5ec;border-bottom:1px solid #d6e2d0;box-shadow:0 2px 8px rgba(0,51,102,.06);flex-wrap:wrap}.batchBar button{border:0;border-radius:8px;padding:9px 13px;font:700 11px Poppins,sans-serif;cursor:pointer}.batchGuide{font:700 12px Poppins,sans-serif;color:var(--navy);margin-right:4px}.batchGuide strong{color:var(--orange)}.toggleSelect{background:var(--navy);color:#fff}.toggleSelect.on{background:#d45c08}.editSelected{background:var(--green);color:#fff}.editSelected:disabled{background:#b7c2ba;cursor:not-allowed}.selectionCount{font:700 12px Poppins,sans-serif;color:var(--green)}
 .head{padding:22px 4vw 6px}
 .head h1{font-family:Poppins;font-weight:800;color:var(--navy);font-size:clamp(24px,4vw,38px);margin:0}
 .head .cnt{color:var(--green);font-family:Poppins;font-weight:700;font-size:14px;margin-top:4px}
 .sig{background:#eef3ea;border-left:4px solid var(--lime);padding:12px 16px;margin:12px 4vw 0;border-radius:8px;max-width:900px;font-size:14px;line-height:1.55}
 .sig b{font-family:Poppins;color:var(--green)}
 .organ{padding:16px 4vw 4px}
-.organ h3{font-family:Poppins;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--green);display:inline-block;padding:5px 12px;border-radius:8px;margin:0 0 10px}
+.organHeader{display:flex;align-items:center;gap:8px;margin:0 0 10px;flex-wrap:wrap}.organ h3{font-family:Poppins;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--green);display:inline-block;padding:5px 12px;border-radius:8px;margin:0}.selectOrgan{display:none;border:1px solid #a9bda1;background:#fff;color:var(--green);border-radius:7px;padding:5px 10px;font:700 10px Poppins,sans-serif;cursor:pointer}.selectionMode .selectOrgan{display:inline-block}.selectOrgan:hover{border-color:var(--orange);color:var(--orange)}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .ph{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in}
 .ph{position:relative}.editCard{position:absolute;z-index:3;top:7px;right:7px;border:0;border-radius:7px;padding:6px 9px;background:rgba(0,51,102,.92);color:#fff;font:700 10px Poppins,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
@@ -67,7 +67,7 @@
   <div class="familyResults" id="familyResults" role="listbox"></div>
  </div>
  <span class="hint">Choisis une famille → vois toutes ses photos par organe, pour apprendre sa signature.</span></div>
-<div class="batchBar"><button class="toggleSelect" id="toggleSelect" type="button">Sélectionner plusieurs photos</button><button class="editSelected" id="editSelected" type="button" disabled>Corriger la sélection</button><span class="selectionCount" id="selectionCount">0 photo sélectionnée</span></div>
+<div class="batchBar"><span class="batchGuide"><strong>Correction groupée :</strong> 1. sélectionner → 2. cocher les photos → 3. appliquer une correction</span><button class="toggleSelect" id="toggleSelect" type="button">1. Sélectionner des photos</button><button class="editSelected" id="editSelected" type="button" disabled>3. Corriger le groupe</button><span class="selectionCount" id="selectionCount">0 photo sélectionnée</span></div>
 
 <div class="head" id="head"></div>
 <div id="sig"></div>
@@ -128,7 +128,7 @@ function render(f){
  let h="";
  DATA.organes.forEach(o=>{
   const arr=[...(f.organes[o]||[])].sort((a,b)=>detailScore(b)-detailScore(a));
-  h+=`<div class="organ"><h3>${o} · ${arr.length}</h3>`;
+  h+=`<div class="organ"><div class="organHeader"><h3>${o} · ${arr.length}</h3>${arr.length?`<button class="selectOrgan" type="button" data-organ="${esc(o)}">Cocher toutes les photos ${esc(o.toLowerCase())}</button>`:""}</div>`;
   h+= arr.length ? `<div class="gal">${arr.map((p,index)=>photo(p,o,index)).join("")}</div>` : `<div class="void"><span class="plus">＋</span>Aucune photo ${o.toLowerCase()} pour cette famille — à alimenter</div>`;
   h+=`</div>`;
  });
@@ -139,6 +139,8 @@ function render(f){
 function openM(src){document.getElementById("mImg").src=src;document.getElementById("modal").classList.add("open");}
 function closeM(){document.getElementById("modal").classList.remove("open");}
 document.getElementById("body").addEventListener("click",event=>{
+ const selectOrgan=event.target.closest(".selectOrgan");
+ if(selectOrgan){selectWholeOrgan(selectOrgan.dataset.organ);return;}
  const card=event.target.closest(".ph");
  if(!card)return;
  if(SELECTION_MODE){toggleCardSelection(card);return;}
@@ -193,7 +195,7 @@ function updateSelectionUI(){
  document.getElementById("selectionCount").textContent=`${count} photo${count>1?"s":""} sélectionnée${count>1?"s":""}`;
  document.getElementById("editSelected").disabled=count===0;
  document.getElementById("toggleSelect").classList.toggle("on",SELECTION_MODE);
- document.getElementById("toggleSelect").textContent=SELECTION_MODE?"Terminer la sélection":"Sélectionner plusieurs photos";
+ document.getElementById("toggleSelect").textContent=SELECTION_MODE?"Annuler la sélection":"1. Sélectionner des photos";
 }
 function selectionRecord(card){
  const familyName=card.dataset.family,organ=card.dataset.organ,index=Number(card.dataset.index);
@@ -207,6 +209,18 @@ function toggleCardSelection(card){
  if(SELECTED.has(record.img))SELECTED.delete(record.img);else SELECTED.set(record.img,record);
  card.classList.toggle("selected",SELECTED.has(record.img));
  card.querySelector(".selectBox").textContent=SELECTED.has(record.img)?"✓":"";
+ updateSelectionUI();
+}
+function selectWholeOrgan(organ){
+ if(!SELECTION_MODE){SELECTION_MODE=true;document.getElementById("body").classList.add("selectionMode");}
+ const cards=[...document.querySelectorAll(`.ph[data-organ="${CSS.escape(organ)}"]`)];
+ const records=cards.map(card=>({card,record:selectionRecord(card)})).filter(item=>item.record);
+ const allSelected=records.length&&records.every(item=>SELECTED.has(item.record.img));
+ records.forEach(({card,record})=>{
+  if(allSelected)SELECTED.delete(record.img);else SELECTED.set(record.img,record);
+  card.classList.toggle("selected",!allSelected);
+  card.querySelector(".selectBox").textContent=allSelected?"":"✓";
+ });
  updateSelectionUI();
 }
 document.getElementById("toggleSelect").onclick=()=>{
@@ -258,7 +272,7 @@ function openBatchEdit(items){
  EDIT_CONTEXT={mode:"batch",items};
  document.getElementById("editPreview").style.display="none";
  const preview=document.getElementById("batchPreview");preview.className="batchPreview show";preview.innerHTML=items.slice(0,10).map(item=>`<img src="${esc(item.img)}" alt="Photo sélectionnée">`).join("");
- const notice=document.getElementById("batchNotice");notice.className="batchNotice show";notice.textContent=`Une seule correction sera appliquée aux ${items.length} photos sélectionnées. Laisse le nom vide si les photos ne montrent pas toutes la même espèce.`;
+ const notice=document.getElementById("batchNotice");notice.className="batchNotice show";notice.textContent=`Les informations choisies ci-dessous seront appliquées en une seule fois aux ${items.length} photos sélectionnées. Exemple : choisis « Fruit » pour déplacer tout le groupe de Fleur vers Fruit. Laisse le nom vide si les photos ne montrent pas toutes la même espèce.`;
  document.getElementById("editTitle").textContent=`Corriger ${items.length} photos`;
  document.getElementById("editNameLabel").textContent="Nom scientifique commun aux photos (facultatif)";
  document.getElementById("editName").required=false;
