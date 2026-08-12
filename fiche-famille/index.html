@@ -289,17 +289,21 @@ document.getElementById("correctionForm").addEventListener("submit",async e=>{
  const corrections=EDIT_CONTEXT.items.map(item=>({photo:item.img,oldFamily:item.familyName,oldOrgan:item.organ,oldName:item.name,name:commonName||item.name,family,organ,patterns:patterns.length?patterns:item.patterns,confidence,note,createdAt}));
  if(!family||!organ||corrections.some(item=>!item.name)){message.className="editMessage error";message.textContent="La famille et l’organe sont obligatoires. Le nom peut rester vide seulement si chaque photo possède déjà un nom.";return;}
  message.className="editMessage";
+ let transmitted=false;
  try{
   const body=new URLSearchParams(new FormData(form)).toString();
-  const response=await fetch(location.pathname,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});
+  const response=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});
   if(!response.ok)throw new Error(`Erreur ${response.status}`);
-  saveStoredCorrections(corrections);
-  corrections.forEach(applyCorrection);
-  message.className="editMessage ok";
-  message.textContent=`${corrections.length} correction${corrections.length>1?"s":""} enregistrée${corrections.length>1?"s":""}. Les fiches de famille et les galeries de patterns sont maintenant synchronisées sur cet appareil.`;
-  const destination=DATA.familles.find(f=>normalizeText(f.fam)===normalizeText(family));
-  setTimeout(()=>{closeEdit();SELECTED.clear();SELECTION_MODE=false;updateSelectionUI();selectFamily(destination)},900);
- }catch(error){message.className="editMessage error";message.textContent=`Impossible d’envoyer la correction : ${error.message}. Réessaie lorsque la connexion est rétablie.`;}
+  transmitted=true;
+ }catch(error){console.warn("Transmission Netlify différée",error);}
+ saveStoredCorrections(corrections);
+ corrections.forEach(applyCorrection);
+ message.className="editMessage ok";
+ message.textContent=transmitted
+  ? `${corrections.length} correction${corrections.length>1?"s":""} enregistrée${corrections.length>1?"s":""}. Les fiches de famille et les galeries de patterns sont synchronisées.`
+  : `${corrections.length} correction${corrections.length>1?"s":""} enregistrée${corrections.length>1?"s":""} sur cet appareil. La transmission centrale sera retentée après connexion à Supabase.`;
+ const destination=DATA.familles.find(f=>normalizeText(f.fam)===normalizeText(family));
+ setTimeout(()=>{closeEdit();SELECTED.clear();SELECTION_MODE=false;updateSelectionUI();selectFamily(destination)},1200);
 });
 
 function normalizeText(value){
