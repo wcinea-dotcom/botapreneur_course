@@ -58,6 +58,7 @@
 .editActions{display:flex;justify-content:flex-end;gap:9px;margin-top:17px}.editActions button{border:0;border-radius:8px;padding:10px 15px;font:700 12px Poppins,sans-serif;cursor:pointer}.cancelEdit{background:#e9edf0;color:#53606b}.saveEdit{background:var(--green);color:#fff}.editMessage{display:none;margin-top:12px;padding:10px;border-radius:8px;font-size:13px}.editMessage.ok{display:block;background:#e8f3e8;color:#236128}.editMessage.error{display:block;background:#fff0ec;color:#a33a20}
 .proposalTag{background:#fff3e9;color:#a94f12}
 .familyEditPanel{width:min(540px,100%)}.familySummary{padding:11px 13px;border-radius:9px;background:#eef3ea;color:#315f34;font-size:13px;line-height:1.45;margin:0 0 14px}.familyMergeInfo{display:none;margin-top:7px;padding:9px 11px;border-radius:8px;background:#fff3e9;color:#914513;font-size:12px;line-height:1.4}.familyMergeInfo.show{display:block}
+.taxonAssist{display:none;grid-column:1/-1;margin-top:-3px;padding:10px 12px;border-radius:8px;background:#eef4f8;color:#214f72;font-size:12px;line-height:1.45}.taxonAssist.show{display:block}.taxonAssist.warning{display:block;background:#fff3e9;color:#914513}.taxonAssist b{font-family:Poppins,sans-serif}
 @media(max-width:600px){.editGrid{grid-template-columns:1fr}.editField.full{grid-column:auto}.editPanel{padding:17px}}
 </style></head><body>
 <header class="top"><div class="wm">Bota<span class="b">preneurs</span> · Fiche famille</div>
@@ -96,6 +97,7 @@
    <div class="editGrid">
     <div class="editField"><label for="editName" id="editNameLabel">Genre ou nom scientifique (facultatif)</label><input id="editName" name="nouveau-nom" autocomplete="off" placeholder="Ex. Annona ou Annona glabra"></div>
     <div class="editField"><label for="editFamily">Famille (facultatif si elle ne change pas)</label><input id="editFamily" name="nouvelle-famille" list="familyNames" autocomplete="off" placeholder="Ex. Annonaceae"><datalist id="familyNames"></datalist></div>
+    <div class="taxonAssist" id="taxonAssist" role="status"></div>
     <div class="editField"><label for="editOrgan">Organe</label><select id="editOrgan" name="nouvel-organe" required></select></div>
     <div class="editField"><label for="editConfidence">Validation</label><select id="editConfidence" name="validation"><option value="proposée">Proposée — à vérifier</option><option value="probable">Probable</option><option value="confirmée par William">Confirmée par William</option></select></div>
     <div class="editField full"><label for="editPatterns">Tags / patterns (séparés par des virgules)</label><textarea id="editPatterns" name="nouveaux-patterns"></textarea></div>
@@ -366,8 +368,10 @@ function openEdit(familyName,organ,index){
  document.getElementById("editConfidence").value="proposée";
  document.getElementById("editNote").value="";
  document.getElementById("editMessage").className="editMessage";
+ document.getElementById("taxonAssist").className="taxonAssist";document.getElementById("taxonAssist").textContent="";
  document.getElementById("editModal").classList.add("open");
  document.getElementById("editModal").setAttribute("aria-hidden","false");
+ taxonProposal();
  document.getElementById("editName").focus();
 }
 function openBatchEdit(items){
@@ -393,15 +397,21 @@ function openBatchEdit(items){
  document.getElementById("editConfidence").value="proposée";
  document.getElementById("editNote").value="";
  document.getElementById("editMessage").className="editMessage";
+ document.getElementById("taxonAssist").className="taxonAssist";document.getElementById("taxonAssist").textContent="";
  document.getElementById("editModal").classList.add("open");document.getElementById("editModal").setAttribute("aria-hidden","false");
 }
 function closeEdit(){document.getElementById("editModal").classList.remove("open");document.getElementById("editModal").setAttribute("aria-hidden","true");document.getElementById("editTitle").textContent="Corriger cette photo";EDIT_CONTEXT=null;}
 document.getElementById("editModal").onclick=e=>{if(e.target.id==="editModal")closeEdit()};
+document.getElementById("editName").addEventListener("input",()=>taxonProposal());
+document.getElementById("editFamily").addEventListener("input",()=>taxonProposal());
+document.getElementById("editName").addEventListener("blur",()=>taxonProposal(true));
+document.getElementById("editFamily").addEventListener("blur",()=>taxonProposal(true));
 document.getElementById("correctionForm").addEventListener("submit",async e=>{
  e.preventDefault();
  if(!EDIT_CONTEXT)return;
  const form=e.currentTarget;
  const message=document.getElementById("editMessage");
+ taxonProposal(true);
  const commonName=document.getElementById("editName").value.trim(),family=document.getElementById("editFamily").value.trim(),organ=document.getElementById("editOrgan").value;
  const patterns=document.getElementById("editPatterns").value.split(",").map(v=>v.trim()).filter(Boolean),confidence=document.getElementById("editConfidence").value,note=document.getElementById("editNote").value.trim(),createdAt=new Date().toISOString();
  const corrections=EDIT_CONTEXT.items.map(item=>({photo:item.img,oldFamily:item.familyName,oldOrgan:item.organ,oldName:item.name,name:commonName||item.name||"",family:family||item.familyName,organ,patterns:patterns.length?patterns:item.patterns,confidence,note,createdAt}));
@@ -431,6 +441,51 @@ document.getElementById("correctionForm").addEventListener("submit",async e=>{
 
 function normalizeText(value){
  return String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();
+}
+function editDistance(a,b){
+ const left=normalizeText(a),right=normalizeText(b),row=Array.from({length:right.length+1},(_,i)=>i);
+ for(let i=1;i<=left.length;i++){let previous=row[0];row[0]=i;for(let j=1;j<=right.length;j++){const saved=row[j];row[j]=Math.min(row[j]+1,row[j-1]+1,previous+(left[i-1]===right[j-1]?0:1));previous=saved;}}
+ return row[right.length];
+}
+function nearestCanonical(value,candidates,minimum=.68){
+ const query=normalizeText(value);if(!query)return null;
+ let best=null;
+ candidates.forEach(candidate=>{const normalized=normalizeText(candidate),distance=editDistance(query,normalized),score=1-distance/Math.max(query.length,normalized.length,1);if(!best||score>best.score)best={value:candidate,score,distance};});
+ return best&&best.score>=minimum&&best.distance<=Math.max(2,Math.ceil(query.length*.32))?best:null;
+}
+function taxonomyIndex(){
+ const names=new Map(),genera=new Map(),families=new Map(DATA.familles.map(f=>[normalizeText(f.fam),f.fam]));
+ DATA.familles.forEach(family=>DATA.organes.forEach(organ=>(family.organes[organ]||[]).forEach(photo=>{
+  const name=String(photo.nom||"").trim();if(!name)return;
+  names.set(normalizeText(name),name);
+  const genus=name.split(/\s+/)[0],key=normalizeText(genus);if(!genera.has(key))genera.set(key,{name:genus,counts:new Map()});
+  const entry=genera.get(key);entry.counts.set(family.fam,(entry.counts.get(family.fam)||0)+1);
+ })));
+ return {names,genera,families};
+}
+function bestFamilyForName(name,index){
+ const genus=normalizeText(String(name||"").split(/\s+/)[0]),entry=index.genera.get(genus);if(!entry)return "";
+ return [...entry.counts.entries()].sort((a,b)=>b[1]-a[1])[0]?.[0]||"";
+}
+function taxonProposal(commit=false){
+ if(!DATA)return null;
+ const nameInput=document.getElementById("editName"),familyInput=document.getElementById("editFamily"),box=document.getElementById("taxonAssist"),index=taxonomyIndex();
+ const rawName=nameInput.value.trim(),rawFamily=familyInput.value.trim();let canonicalName=rawName,canonicalFamily=rawFamily,nameChanged=false,familyChanged=false;
+ if(rawName){
+  const exact=index.names.get(normalizeText(rawName))||index.genera.get(normalizeText(rawName))?.name;
+  const candidates=rawName.includes(" ")?[...index.names.values()]:[...index.genera.values()].map(item=>item.name);
+  const match=exact?{value:exact,score:1}:nearestCanonical(rawName,candidates);
+  if(match){canonicalName=match.value;nameChanged=normalizeText(canonicalName)!==normalizeText(rawName);}
+ }
+ const expectedFamily=bestFamilyForName(canonicalName,index);
+ if(expectedFamily){canonicalFamily=expectedFamily;familyChanged=normalizeText(expectedFamily)!==normalizeText(rawFamily);}
+ else if(rawFamily){const exact=index.families.get(normalizeText(rawFamily)),match=exact?{value:exact,score:1}:nearestCanonical(rawFamily,[...index.families.values()],.72);if(match){canonicalFamily=match.value;familyChanged=normalizeText(canonicalFamily)!==normalizeText(rawFamily);}}
+ const changes=[];if(nameChanged)changes.push(`<b>${esc(rawName)}</b> → <b>${esc(canonicalName)}</b>`);if(familyChanged)changes.push(`<b>${esc(rawFamily||"famille non renseignée")}</b> → <b>${esc(canonicalFamily)}</b>`);
+ if(changes.length){box.className="taxonAssist warning";box.innerHTML=`Suggestion taxonomique : ${changes.join(" · ")}. Vérifiez la photo avant de choisir « Confirmée par William ».${commit?" La proposition a été appliquée au formulaire.":""}`;}
+ else if(rawName||rawFamily){box.className="taxonAssist show";box.textContent=expectedFamily?`Relation reconnue : ${canonicalName} appartient à ${expectedFamily}.`:`Orthographe reconnue dans les familles déjà documentées.`;}
+ else{box.className="taxonAssist";box.textContent="";}
+ if(commit){if(canonicalName)nameInput.value=canonicalName;if(canonicalFamily)familyInput.value=canonicalFamily;if(changes.length&&document.getElementById("editConfidence").value==="confirmée par William")document.getElementById("editConfidence").value="probable";}
+ return {name:canonicalName,family:canonicalFamily,changed:changes.length>0};
 }
 function familyTotal(f){
  return DATA.organes.reduce((sum,organ)=>sum+((f.organes[organ]||[]).length),0);
