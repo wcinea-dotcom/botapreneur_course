@@ -7950,6 +7950,30 @@
        "résine",
        "feuilles souvent composées"
       ]
+     },
+     {
+      "img": "media/anacardiaceae/Anacardiaceae__Mangifera-indica__fruit-interieur_IMG_9754.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
+      "patterns": [
+       "drupe",
+       "vue interne du fruit",
+       "mésocarpe charnu et fibreux",
+       "endocarpe fibreux"
+      ],
+      "source": "William Cinea — IMG_9754.JPG"
+     },
+     {
+      "img": "media/anacardiaceae/Anacardiaceae__Mangifera-indica__endocarpe-ouvert_IMG_9757.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
+      "patterns": [
+       "drupe",
+       "noyau ouvert",
+       "endocarpe fibreux",
+       "vue interne du noyau"
+      ],
+      "source": "William Cinea — IMG_9757.JPG"
      }
     ],
     "Tige": [
@@ -7963,6 +7987,32 @@
       ],
       "validation": "nom fourni",
       "source": "Photo_tiges_nommees"
+     }
+    ],
+    "Germination": [
+     {
+      "img": "media/anacardiaceae/Anacardiaceae__Mangifera-indica__germination_IMG_9765.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
+      "patterns": [
+       "germination",
+       "radicule émergente",
+       "noyau de mangue",
+       "début de germination"
+      ],
+      "source": "William Cinea — IMG_9765.JPG"
+     },
+     {
+      "img": "media/anacardiaceae/Anacardiaceae__Mangifera-indica__germination-pot_IMG_9776.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
+      "patterns": [
+       "germination",
+       "semis en pot",
+       "émergence",
+       "noyau partiellement enterré"
+      ],
+      "source": "William Cinea — IMG_9776.JPG"
      }
     ]
    }

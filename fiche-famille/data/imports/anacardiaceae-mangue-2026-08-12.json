@@ -1,0 +1,69 @@
+{
+  "family": "Anacardiaceae",
+  "taxon": "Mangifera indica",
+  "source_directory": "/Users/williamcinea/Downloads/Photos-1-001",
+  "imported": [
+    {
+      "source": "IMG_9754.JPG",
+      "organ": "Fruit",
+      "reason": "Vue complémentaire de l'intérieur du fruit"
+    },
+    {
+      "source": "IMG_9757.JPG",
+      "organ": "Fruit",
+      "reason": "Vue complémentaire de l'endocarpe ouvert"
+    },
+    {
+      "source": "IMG_9765.JPG",
+      "organ": "Germination",
+      "reason": "Vue rapprochée de la radicule émergente"
+    },
+    {
+      "source": "IMG_9776.JPG",
+      "organ": "Germination",
+      "reason": "Étape suivante de germination en pot"
+    }
+  ],
+  "excluded_as_duplicates": [
+    {
+      "source": "IMG_9759.JPG",
+      "duplicate_of": "IMG_9765.JPG"
+    },
+    {
+      "source": "IMG_9760.JPG",
+      "duplicate_of": "IMG_9765.JPG"
+    },
+    {
+      "source": "IMG_9767.JPG",
+      "duplicate_of": "IMG_9765.JPG"
+    },
+    {
+      "source": "IMG_9754.MP4",
+      "duplicate_of": "IMG_9754.JPG"
+    },
+    {
+      "source": "IMG_9757.MP4",
+      "duplicate_of": "IMG_9757.JPG"
+    },
+    {
+      "source": "IMG_9759.MP4",
+      "duplicate_of": "IMG_9765.JPG"
+    },
+    {
+      "source": "IMG_9760.MP4",
+      "duplicate_of": "IMG_9765.JPG"
+    },
+    {
+      "source": "IMG_9765.MP4",
+      "duplicate_of": "IMG_9765.JPG"
+    },
+    {
+      "source": "IMG_9767.MP4",
+      "duplicate_of": "IMG_9765.JPG"
+    },
+    {
+      "source": "IMG_9776.MP4",
+      "duplicate_of": "IMG_9776.JPG"
+    }
+  ]
+}
