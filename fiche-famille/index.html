@@ -94,8 +94,8 @@
    <input type="hidden" name="photos-json" id="editPhotosJson">
    <p hidden><label>Ne pas remplir : <input name="bot-field"></label></p>
    <div class="editGrid">
-    <div class="editField"><label for="editName" id="editNameLabel">Nom scientifique</label><input id="editName" name="nouveau-nom" autocomplete="off"></div>
-    <div class="editField"><label for="editFamily">Famille</label><input id="editFamily" name="nouvelle-famille" list="familyNames" autocomplete="off" required><datalist id="familyNames"></datalist></div>
+    <div class="editField"><label for="editName" id="editNameLabel">Genre ou nom scientifique (facultatif)</label><input id="editName" name="nouveau-nom" autocomplete="off" placeholder="Ex. Annona ou Annona glabra"></div>
+    <div class="editField"><label for="editFamily">Famille (facultatif si elle ne change pas)</label><input id="editFamily" name="nouvelle-famille" list="familyNames" autocomplete="off" placeholder="Ex. Annonaceae"><datalist id="familyNames"></datalist></div>
     <div class="editField"><label for="editOrgan">Organe</label><select id="editOrgan" name="nouvel-organe" required></select></div>
     <div class="editField"><label for="editConfidence">Validation</label><select id="editConfidence" name="validation"><option value="proposée">Proposée — à vérifier</option><option value="probable">Probable</option><option value="confirmée par William">Confirmée par William</option></select></div>
     <div class="editField full"><label for="editPatterns">Tags / patterns (séparés par des virgules)</label><textarea id="editPatterns" name="nouveaux-patterns"></textarea></div>
@@ -341,8 +341,8 @@ function resetEditPresentation(){
  document.getElementById("batchNotice").className="batchNotice";
  document.getElementById("batchNotice").textContent="";
  document.getElementById("editPreview").style.display="flex";
- document.getElementById("editNameLabel").textContent="Nom scientifique";
- document.getElementById("editName").required=true;
+ document.getElementById("editNameLabel").textContent="Genre ou nom scientifique (facultatif)";
+ document.getElementById("editName").required=false;
 }
 function openEdit(familyName,organ,index){
  const family=DATA.familles.find(f=>f.fam===familyName);
@@ -378,7 +378,7 @@ function openBatchEdit(items){
  const preview=document.getElementById("batchPreview");preview.className="batchPreview show";preview.innerHTML=items.slice(0,10).map(item=>`<img src="${esc(item.img)}" alt="Photo sélectionnée">`).join("");
  const notice=document.getElementById("batchNotice");notice.className="batchNotice show";notice.textContent=`Les informations choisies ci-dessous seront appliquées en une seule fois aux ${items.length} photos sélectionnées. Exemple : choisis « Fruit » pour déplacer tout le groupe de Fleur vers Fruit. Laisse le nom vide si les photos ne montrent pas toutes la même espèce.`;
  document.getElementById("editTitle").textContent=`Corriger ${items.length} photos`;
- document.getElementById("editNameLabel").textContent="Nom scientifique commun aux photos (facultatif)";
+ document.getElementById("editNameLabel").textContent="Genre ou nom scientifique commun aux photos (facultatif)";
  document.getElementById("editName").required=false;
  document.getElementById("editPhoto").value=items.map(item=>item.img).join(" | ");
  document.getElementById("editOldFamily").value=[...new Set(items.map(item=>item.familyName))].join(" | ");
@@ -404,8 +404,8 @@ document.getElementById("correctionForm").addEventListener("submit",async e=>{
  const message=document.getElementById("editMessage");
  const commonName=document.getElementById("editName").value.trim(),family=document.getElementById("editFamily").value.trim(),organ=document.getElementById("editOrgan").value;
  const patterns=document.getElementById("editPatterns").value.split(",").map(v=>v.trim()).filter(Boolean),confidence=document.getElementById("editConfidence").value,note=document.getElementById("editNote").value.trim(),createdAt=new Date().toISOString();
- const corrections=EDIT_CONTEXT.items.map(item=>({photo:item.img,oldFamily:item.familyName,oldOrgan:item.organ,oldName:item.name,name:commonName||item.name,family,organ,patterns:patterns.length?patterns:item.patterns,confidence,note,createdAt}));
- if(!family||!organ||corrections.some(item=>!item.name)){message.className="editMessage error";message.textContent="La famille et l’organe sont obligatoires. Le nom peut rester vide seulement si chaque photo possède déjà un nom.";return;}
+ const corrections=EDIT_CONTEXT.items.map(item=>({photo:item.img,oldFamily:item.familyName,oldOrgan:item.organ,oldName:item.name,name:commonName||item.name||"",family:family||item.familyName,organ,patterns:patterns.length?patterns:item.patterns,confidence,note,createdAt}));
+ if(!organ){message.className="editMessage error";message.textContent="Choisissez seulement l’organe. La famille et le genre peuvent rester inchangés ou être complétés plus tard.";return;}
  message.className="editMessage";
  let transmitted=false;
  try{
