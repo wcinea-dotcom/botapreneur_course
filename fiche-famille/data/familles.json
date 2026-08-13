@@ -7989,19 +7989,21 @@
       "source": "Photo_tiges_nommees"
      }
     ],
-    "Germination": [
+    "Semence": [
      {
       "img": "media/anacardiaceae/Anacardiaceae__Mangifera-indica__germination_IMG_9765.jpg",
       "nom": "Mangifera indica",
       "confidence": "probable",
       "patterns": [
-       "germination",
+       "semence exalbuminée",
+       "graine extraite du noyau",
        "radicule émergente",
-       "noyau de mangue",
-       "début de germination"
+       "germination amorcée"
       ],
       "source": "William Cinea — IMG_9765.JPG"
-     },
+     }
+    ],
+    "Germination": [
      {
       "img": "media/anacardiaceae/Anacardiaceae__Mangifera-indica__germination-pot_IMG_9776.jpg",
       "nom": "Mangifera indica",
