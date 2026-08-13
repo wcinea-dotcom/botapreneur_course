@@ -24,8 +24,10 @@
 .hint{color:#7a8590;font-size:13px}
 .batchBar{position:fixed;left:50%;bottom:18px;z-index:45;display:none;align-items:center;gap:8px;transform:translateX(-50%);padding:7px 8px 7px 12px;background:rgba(0,51,102,.96);color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:999px;box-shadow:0 8px 25px rgba(0,30,60,.28);white-space:nowrap}.batchBar.hasSelection{display:flex}.batchBar button{border:0;border-radius:999px;padding:7px 11px;font:700 10px Poppins,sans-serif;cursor:pointer}.clearSelection{background:rgba(255,255,255,.16);color:#fff}.editSelected{background:var(--lime);color:#173c19}.selectionCount{font:700 11px Poppins,sans-serif}.batchGuide{display:none}
 .head{padding:22px 4vw 6px}
+.headRow{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .head h1{font-family:Poppins;font-weight:800;color:var(--navy);font-size:clamp(24px,4vw,38px);margin:0}
 .head .cnt{color:var(--green);font-family:Poppins;font-weight:700;font-size:14px;margin-top:4px}
+.renameFamily{border:1px solid #b8c7d5;border-radius:8px;padding:8px 11px;background:#fff;color:var(--navy);font:700 11px Poppins,sans-serif;cursor:pointer}.renameFamily:hover{border-color:var(--green);color:var(--green);background:#f4f8f1}
 .sig{background:#eef3ea;border-left:4px solid var(--lime);padding:12px 16px;margin:12px 4vw 0;border-radius:8px;max-width:900px;font-size:14px;line-height:1.55}
 .sig b{font-family:Poppins;color:var(--green)}
 .organ{padding:16px 4vw 4px}
@@ -55,6 +57,7 @@
 .editField input,.editField select,.editField textarea{width:100%;padding:10px;border:1px solid #b9c4cc;border-radius:8px;font:14px Lato,sans-serif;color:var(--ink);background:#fff}.editField textarea{min-height:76px;resize:vertical}
 .editActions{display:flex;justify-content:flex-end;gap:9px;margin-top:17px}.editActions button{border:0;border-radius:8px;padding:10px 15px;font:700 12px Poppins,sans-serif;cursor:pointer}.cancelEdit{background:#e9edf0;color:#53606b}.saveEdit{background:var(--green);color:#fff}.editMessage{display:none;margin-top:12px;padding:10px;border-radius:8px;font-size:13px}.editMessage.ok{display:block;background:#e8f3e8;color:#236128}.editMessage.error{display:block;background:#fff0ec;color:#a33a20}
 .proposalTag{background:#fff3e9;color:#a94f12}
+.familyEditPanel{width:min(540px,100%)}.familySummary{padding:11px 13px;border-radius:9px;background:#eef3ea;color:#315f34;font-size:13px;line-height:1.45;margin:0 0 14px}.familyMergeInfo{display:none;margin-top:7px;padding:9px 11px;border-radius:8px;background:#fff3e9;color:#914513;font-size:12px;line-height:1.4}.familyMergeInfo.show{display:block}
 @media(max-width:600px){.editGrid{grid-template-columns:1fr}.editField.full{grid-column:auto}.editPanel{padding:17px}}
 </style></head><body>
 <header class="top"><div class="wm">Bota<span class="b">preneurs</span> · Fiche famille</div>
@@ -104,6 +107,26 @@
  </div>
 </div>
 
+<div class="editModal" id="familyEditModal" aria-hidden="true">
+ <div class="editPanel familyEditPanel" role="dialog" aria-modal="true" aria-labelledby="familyEditTitle">
+  <h2 id="familyEditTitle">Corriger le nom de la famille</h2>
+  <p class="editIntro">Cette correction s’applique à toute la famille et à tous ses organes. Si la famille correcte existe déjà, les photos seront fusionnées sans doublon.</p>
+  <div class="familySummary" id="familySummary"></div>
+  <form id="familyCorrectionForm" name="correction-famille" method="POST" data-netlify="true" netlify-honeypot="family-bot-field">
+   <input type="hidden" name="form-name" value="correction-famille">
+   <input type="hidden" name="ancienne-famille" id="familyOldName">
+   <input type="hidden" name="action" id="familyAction">
+   <input type="hidden" name="nombre-photos" id="familyPhotoCount">
+   <p hidden><label>Ne pas remplir : <input name="family-bot-field"></label></p>
+   <div class="editField"><label for="familyNewName">Nom botanique correct de la famille</label><input id="familyNewName" name="nouvelle-famille" list="familyNames" autocomplete="off" placeholder="Ex. Fabaceae" required></div>
+   <div class="familyMergeInfo" id="familyMergeInfo"></div>
+   <div class="editField" style="margin-top:12px"><label for="familyRenameNote">Note de correction (facultative)</label><textarea id="familyRenameNote" name="note" placeholder="Ex. Fabassé était une faute d’orthographe de Fabaceae."></textarea></div>
+   <div class="editActions"><button class="cancelEdit" type="button" id="cancelFamilyEdit">Annuler</button><button class="saveEdit" type="submit">Enregistrer pour toute la famille</button></div>
+   <div class="editMessage" id="familyEditMessage" role="status"></div>
+  </form>
+ </div>
+</div>
+
 <script src="../plant-patterns/seed-gallery.js?v=20260804-2"></script>
 <script>
 let DATA=null;
@@ -111,6 +134,7 @@ let CURRENT_FAMILY=null;
 let EDIT_CONTEXT=null;
 const SELECTED=new Map();
 const CORRECTION_KEY="botapreneurs-family-photo-corrections-v1";
+const FAMILY_RENAME_KEY="botapreneurs-family-renames-v1";
 function esc(value){return String(value??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
 function selectionKey(familyName,organ,index,img){return [familyName,organ,index,img].join("\u241f");}
 function photo(p,organ,index){
@@ -124,7 +148,8 @@ function detailScore(p){return (p.patterns||[]).some(t=>/pétale|détach|coupe|i
 function render(f){
  CURRENT_FAMILY=f;
  const total=DATA.organes.reduce((s,o)=>s+((f.organes[o]||[]).length),0);
- document.getElementById("head").innerHTML=`<h1>${f.fam}</h1><div class="cnt">${total} photo(s) · ${DATA.organes.filter(o=>(f.organes[o]||[]).length).length} organe(s) documenté(s)</div>`;
+ document.getElementById("head").innerHTML=`<div class="headRow"><div><h1>${esc(f.fam)}</h1><div class="cnt">${total} photo(s) · ${DATA.organes.filter(o=>(f.organes[o]||[]).length).length} organe(s) documenté(s)</div></div><button class="renameFamily" id="renameFamilyButton" type="button">Corriger le nom de la famille ✎</button></div>`;
+ document.getElementById("renameFamilyButton").onclick=()=>openFamilyEdit(f);
  document.getElementById("sig").innerHTML=f.note?`<div class="sig"><b>SIGNATURE DE LA FAMILLE — ce qu'il faut regarder</b><br>${f.note}</div>`:"";
  let h="";
  DATA.organes.forEach(o=>{
@@ -189,6 +214,81 @@ function applyCorrection(correction,sourceItem){
  return true;
 }
 function applyStoredCorrections(){storedCorrections().forEach(correction=>applyCorrection(correction))}
+function storedFamilyRenames(){try{return JSON.parse(localStorage.getItem(FAMILY_RENAME_KEY)||"[]")}catch(_){return[]}}
+function saveFamilyRename(correction){
+ const all=storedFamilyRenames().filter(item=>normalizeText(item.oldFamily)!==normalizeText(correction.oldFamily));
+ all.push(correction);
+ localStorage.setItem(FAMILY_RENAME_KEY,JSON.stringify(all));
+ window.dispatchEvent(new CustomEvent("plant-patterns-family-renames-updated",{detail:{correction}}));
+}
+function ensureFamilyOrgans(family){DATA.organes.forEach(organ=>{if(!Array.isArray(family.organes[organ]))family.organes[organ]=[]})}
+function mergePhotoLists(target,incoming){
+ let added=0,duplicates=0;
+ incoming.forEach(item=>{
+  const existing=target.find(photo=>photo.img===item.img);
+  if(!existing){target.push(item);added++;return;}
+  existing.patterns=[...new Set([...(existing.patterns||[]),...(item.patterns||[])])];
+  if(!existing.nom&&item.nom)existing.nom=item.nom;
+  duplicates++;
+ });
+ return {added,duplicates};
+}
+function applyFamilyRename(correction){
+ const oldKey=normalizeText(correction.oldFamily),newName=String(correction.newFamily||"").trim(),newKey=normalizeText(newName);
+ const source=DATA.familles.find(f=>normalizeText(f.fam)===oldKey);
+ if(!source||!newName)return null;
+ ensureFamilyOrgans(source);
+ const destination=DATA.familles.find(f=>f!==source&&normalizeText(f.fam)===newKey);
+ let added=0,duplicates=0,merged=false;
+ if(destination){
+  ensureFamilyOrgans(destination);
+  DATA.organes.forEach(organ=>{const result=mergePhotoLists(destination.organes[organ],source.organes[organ]);added+=result.added;duplicates+=result.duplicates});
+  if(!destination.note&&source.note)destination.note=source.note;
+  DATA.familles.splice(DATA.familles.indexOf(source),1);
+  merged=true;
+ }else source.fam=newName;
+ DATA.familles.sort((a,b)=>a.fam.localeCompare(b.fam,"fr"));
+ return {family:destination||source,merged,added,duplicates};
+}
+function applyStoredFamilyRenames(){storedFamilyRenames().forEach(correction=>applyFamilyRename(correction))}
+function refreshFamilyNames(){document.getElementById("familyNames").innerHTML=DATA.familles.map(f=>`<option value="${esc(f.fam)}"></option>`).join("")}
+function familyRenameTarget(){
+ const value=document.getElementById("familyNewName").value.trim();
+ return DATA?.familles.find(f=>f!==CURRENT_FAMILY&&normalizeText(f.fam)===normalizeText(value));
+}
+function updateFamilyMergeInfo(){
+ const value=document.getElementById("familyNewName").value.trim(),target=familyRenameTarget(),box=document.getElementById("familyMergeInfo"),action=document.getElementById("familyAction");
+ if(target){box.className="familyMergeInfo show";box.textContent=`« ${target.fam} » existe déjà. Toutes les photos de « ${CURRENT_FAMILY.fam} » seront transférées vers cette famille, organe par organe, sans doublon.`;action.value="fusion";return;}
+ if(value&&normalizeText(value)===normalizeText(CURRENT_FAMILY?.fam)){box.className="familyMergeInfo show";box.textContent="Le nom saisi correspond déjà à cette famille. Modifiez l’orthographe pour enregistrer une correction.";action.value="aucun changement";return;}
+ box.className="familyMergeInfo";box.textContent="";action.value="renommage";
+}
+function openFamilyEdit(family){
+ CURRENT_FAMILY=family;
+ const photos=familyTotal(family),organs=DATA.organes.filter(organ=>(family.organes[organ]||[]).length).length;
+ document.getElementById("familySummary").innerHTML=`<b>${esc(family.fam)}</b><br>${photos} photo(s) dans ${organs} organe(s) seront concernées par cette correction.`;
+ document.getElementById("familyOldName").value=family.fam;document.getElementById("familyNewName").value=family.fam;document.getElementById("familyPhotoCount").value=String(photos);document.getElementById("familyRenameNote").value="";document.getElementById("familyEditMessage").className="editMessage";
+ updateFamilyMergeInfo();
+ const modal=document.getElementById("familyEditModal");modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.getElementById("familyNewName").select();
+}
+function closeFamilyEdit(){const modal=document.getElementById("familyEditModal");modal.classList.remove("open");modal.setAttribute("aria-hidden","true")}
+document.getElementById("familyNewName").addEventListener("input",updateFamilyMergeInfo);
+document.getElementById("cancelFamilyEdit").onclick=closeFamilyEdit;
+document.getElementById("familyEditModal").onclick=event=>{if(event.target.id==="familyEditModal")closeFamilyEdit()};
+document.getElementById("familyCorrectionForm").addEventListener("submit",async event=>{
+ event.preventDefault();
+ const form=event.currentTarget,message=document.getElementById("familyEditMessage"),oldFamily=CURRENT_FAMILY?.fam||"",newFamily=document.getElementById("familyNewName").value.trim();
+ if(!oldFamily||!newFamily){message.className="editMessage error";message.textContent="Le nouveau nom de famille est obligatoire.";return;}
+ if(oldFamily===newFamily){message.className="editMessage error";message.textContent="Le nom n’a pas changé. Saisissez le nom botanique correct.";return;}
+ const correction={oldFamily,newFamily,note:document.getElementById("familyRenameNote").value.trim(),createdAt:new Date().toISOString()};
+ let transmitted=false;
+ try{const body=new URLSearchParams(new FormData(form)).toString(),response=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});if(!response.ok)throw new Error(`Erreur ${response.status}`);transmitted=true}catch(error){console.warn("Transmission Netlify différée",error)}
+ const result=applyFamilyRename(correction);
+ if(!result){message.className="editMessage error";message.textContent="La famille source n’a pas été retrouvée. Aucune donnée n’a été modifiée.";return;}
+ saveFamilyRename(correction);refreshFamilyNames();clearSelection();
+ message.className="editMessage ok";
+ message.textContent=result.merged?`Familles fusionnées : ${result.added} photo(s) transférée(s), ${result.duplicates} doublon(s) évité(s).${transmitted?" La demande centrale a aussi été envoyée.":" Correction conservée sur cet appareil."}`:`La famille « ${oldFamily} » est maintenant « ${newFamily} » sur toutes ses photos.${transmitted?" La demande centrale a aussi été envoyée.":" Correction conservée sur cet appareil."}`;
+ setTimeout(()=>{closeFamilyEdit();selectFamily(result.family)},1400);
+});
 function selectedRecords(){return [...SELECTED.values()]}
 function updateSelectionUI(){
  const count=SELECTED.size;
@@ -399,7 +499,8 @@ fetch("data/familles.json").then(r=>r.json()).then(d=>{
  linkValidatedSeedsToFamilies(d);
  DATA=d;
  applyStoredCorrections();
- document.getElementById("familyNames").innerHTML=d.familles.map(f=>`<option value="${esc(f.fam)}"></option>`).join("");
+ applyStoredFamilyRenames();
+ refreshFamilyNames();
  document.getElementById("editOrgan").innerHTML=`<option value="">Choisir un organe…</option>`+d.organes.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join("");
  const input=document.getElementById("familySearchInput");
  input.addEventListener("focus",()=>showFamilyResults(input.value));
