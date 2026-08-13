@@ -14,9 +14,24 @@
       "reason": "Vue complémentaire de l'endocarpe ouvert"
     },
     {
+      "source": "IMG_9759.JPG",
+      "organ": "Semence",
+      "reason": "Vue latérale propre de la graine et de la radicule"
+    },
+    {
+      "source": "IMG_9760.JPG",
+      "organ": "Semence",
+      "reason": "Vue rapprochée propre de la graine"
+    },
+    {
       "source": "IMG_9765.JPG",
       "organ": "Semence",
       "reason": "Graine extraite du noyau avec radicule émergente"
+    },
+    {
+      "source": "IMG_9767.JPG",
+      "organ": "Semence",
+      "reason": "Vue oblique propre de la graine"
     },
     {
       "source": "IMG_9776.JPG",
@@ -25,18 +40,6 @@
     }
   ],
   "excluded_as_duplicates": [
-    {
-      "source": "IMG_9759.JPG",
-      "duplicate_of": "IMG_9765.JPG"
-    },
-    {
-      "source": "IMG_9760.JPG",
-      "duplicate_of": "IMG_9765.JPG"
-    },
-    {
-      "source": "IMG_9767.JPG",
-      "duplicate_of": "IMG_9765.JPG"
-    },
     {
       "source": "IMG_9754.MP4",
       "duplicate_of": "IMG_9754.JPG"

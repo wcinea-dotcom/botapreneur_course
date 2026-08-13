@@ -7991,6 +7991,30 @@
     ],
     "Semence": [
      {
+      "img": "media/anacardiaceae/Anacardiaceae__Mangifera-indica__semence-radicule_IMG_9759.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
+      "patterns": [
+       "semence exalbuminée",
+       "graine extraite du noyau",
+       "radicule émergente",
+       "vue latérale"
+      ],
+      "source": "William Cinea — IMG_9759.JPG"
+     },
+     {
+      "img": "media/anacardiaceae/Anacardiaceae__Mangifera-indica__semence-detail_IMG_9760.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
+      "patterns": [
+       "semence exalbuminée",
+       "graine extraite du noyau",
+       "radicule émergente",
+       "vue rapprochée"
+      ],
+      "source": "William Cinea — IMG_9760.JPG"
+     },
+     {
       "img": "media/anacardiaceae/Anacardiaceae__Mangifera-indica__germination_IMG_9765.jpg",
       "nom": "Mangifera indica",
       "confidence": "probable",
@@ -8001,6 +8025,18 @@
        "germination amorcée"
       ],
       "source": "William Cinea — IMG_9765.JPG"
+     },
+     {
+      "img": "media/anacardiaceae/Anacardiaceae__Mangifera-indica__semence-autre-angle_IMG_9767.jpg",
+      "nom": "Mangifera indica",
+      "confidence": "probable",
+      "patterns": [
+       "semence exalbuminée",
+       "graine extraite du noyau",
+       "radicule émergente",
+       "vue oblique"
+      ],
+      "source": "William Cinea — IMG_9767.JPG"
      }
     ],
     "Germination": [
