@@ -480,8 +480,8 @@ function taxonProposal(commit=false){
  const expectedFamily=bestFamilyForName(canonicalName,index);
  if(expectedFamily){canonicalFamily=expectedFamily;familyChanged=normalizeText(expectedFamily)!==normalizeText(rawFamily);}
  else if(rawFamily){const exact=index.families.get(normalizeText(rawFamily)),match=exact?{value:exact,score:1}:nearestCanonical(rawFamily,[...index.families.values()],.72);if(match){canonicalFamily=match.value;familyChanged=normalizeText(canonicalFamily)!==normalizeText(rawFamily);}}
- const changes=[];if(nameChanged)changes.push(`<b>${esc(rawName)}</b> → <b>${esc(canonicalName)}</b>`);if(familyChanged)changes.push(`<b>${esc(rawFamily||"famille non renseignée")}</b> → <b>${esc(canonicalFamily)}</b>`);
- if(changes.length){box.className="taxonAssist warning";box.innerHTML=`Suggestion taxonomique : ${changes.join(" · ")}. Vérifiez la photo avant de choisir « Confirmée par William ».${commit?" La proposition a été appliquée au formulaire.":""}`;}
+ const changes=[];if(nameChanged)changes.push(`${rawName} → ${canonicalName}`);if(familyChanged)changes.push(`${rawFamily||"famille non renseignée"} → ${canonicalFamily}`);
+ if(changes.length){box.className="taxonAssist warning";box.textContent=`Suggestion taxonomique : ${changes.join(" · ")}. Vérifiez la photo avant de choisir « Confirmée par William ».${commit?" La proposition a été appliquée au formulaire.":""}`;}
  else if(rawName||rawFamily){box.className="taxonAssist show";box.textContent=expectedFamily?`Relation reconnue : ${canonicalName} appartient à ${expectedFamily}.`:`Orthographe reconnue dans les familles déjà documentées.`;}
  else{box.className="taxonAssist";box.textContent="";}
  if(commit){if(canonicalName)nameInput.value=canonicalName;if(canonicalFamily)familyInput.value=canonicalFamily;if(changes.length&&document.getElementById("editConfidence").value==="confirmée par William")document.getElementById("editConfidence").value="probable";}
