@@ -33,7 +33,7 @@
 .floralFormula{margin:16px 4vw 4px;padding:18px;background:#fff;border:1px solid #d8e1d3;border-top:5px solid var(--orange);border-radius:14px;box-shadow:0 6px 20px rgba(0,51,102,.06)}
 .formulaEyebrow{font:800 11px Poppins,sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:var(--green)}
 .formulaTop{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:6px}.formulaCode{font:800 clamp(24px,4vw,42px) Poppins,sans-serif;color:var(--navy);letter-spacing:.04em}.formulaScope{max-width:500px;padding:8px 11px;border-radius:8px;background:#fff3e9;color:#8d4617;font-size:12px;line-height:1.4}
-.formulaIntro{margin:10px 0 13px;max-width:950px;color:#53606b;font-size:13px;line-height:1.55}.formulaParts{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px}.formulaPart{min-height:94px;padding:11px;border:1px solid #e1e7dc;border-radius:10px;background:#f7f9f4}.formulaPart strong{display:block;margin-bottom:4px;color:var(--green);font:700 12px Poppins,sans-serif}.formulaPart span{display:block;color:#39444d;font-size:12px;line-height:1.4}.formulaSymbol{color:var(--navy)!important;font:800 18px Poppins,sans-serif!important;margin-bottom:5px}.formulaSource{margin-top:11px;color:#78838b;font-size:10px}.formulaSource a{color:var(--green)}
+.formulaIntro{margin:10px 0 13px;max-width:950px;color:#53606b;font-size:13px;line-height:1.55}.formulaParts{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:9px}.formulaPart{overflow:hidden;border:1px solid #e1e7dc;border-radius:10px;background:#f7f9f4}.formulaPartPhoto{display:block;width:100%;aspect-ratio:4/3;padding:0;border:0;background:#e7ece3;cursor:zoom-in;overflow:hidden}.formulaPartPhoto img{display:block;width:100%;height:100%;object-fit:cover}.formulaPartMissing{display:grid;aspect-ratio:4/3;padding:12px;border-bottom:1px dashed #c7d1c2;background:#f2f5ef;color:#788474;font:700 10px/1.45 Poppins,sans-serif;text-align:center;place-items:center}.formulaPartBody{padding:11px}.formulaPart strong{display:block;margin-bottom:4px;color:var(--green);font:700 12px Poppins,sans-serif}.formulaPart span{display:block;color:#39444d;font-size:12px;line-height:1.4}.formulaSymbol{color:var(--navy)!important;font:800 18px Poppins,sans-serif!important;margin-bottom:5px}.formulaCaption{margin-top:7px;color:#6d777f!important;font-size:10px!important}.formulaNeed{margin-top:7px;color:#8d4617!important;font-size:10px!important}.formulaSource{margin-top:11px;color:#78838b;font-size:10px}.formulaSource a{color:var(--green)}
 .organ{padding:16px 4vw 4px}
 .organHeader{display:flex;align-items:center;gap:8px;margin:0 0 10px;flex-wrap:wrap}.organ h3{font-family:Poppins;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--green);display:inline-block;padding:5px 12px;border-radius:8px;margin:0}.selectOrgan{border:0;background:transparent;color:#71806d;border-radius:5px;padding:3px 5px;font:700 9px Poppins,sans-serif;cursor:pointer}.selectOrgan:hover{color:var(--green);text-decoration:underline}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
@@ -174,9 +174,9 @@ function photo(p,organ,index){
 function detailScore(p){return (p.patterns||[]).some(t=>/pétale|détach|coupe|intérieur|dissection/i.test(t))?1:0;}
 function renderFloralFormula(formula){
  if(!formula)return "";
- const parts=(formula.parties||[]).map(part=>`<div class="formulaPart"><span class="formulaSymbol">${esc(part.symbole||"")}</span><strong>${esc(part.nom||"")}</strong><span>${esc(part.valeur||"")}</span></div>`).join("");
+ const parts=(formula.parties||[]).map(part=>{const visual=part.image?`<button class="formulaPartPhoto" type="button" data-formula-image="${esc(part.image)}" aria-label="Agrandir : ${esc(part.legende||part.nom||'photo anatomique')}"><img loading="lazy" src="${esc(part.image)}" alt="${esc(part.legende||part.nom||'Caractère floral')}"></button>`:`<div class="formulaPartMissing">PHOTO ANATOMIQUE À AJOUTER</div>`;return `<div class="formulaPart">${visual}<div class="formulaPartBody"><span class="formulaSymbol">${esc(part.symbole||"")}</span><strong>${esc(part.nom||"")}</strong><span>${esc(part.valeur||"")}</span>${part.legende?`<span class="formulaCaption">${esc(part.legende)}</span>`:""}${part.vue?`<span class="formulaNeed">Vue recherchée : ${esc(part.vue)}</span>`:""}</div></div>`}).join("");
  const source=formula.source&&formula.source.url?`<div class="formulaSource">Source morphologique : <a href="${esc(formula.source.url)}" target="_blank" rel="noopener">${esc(formula.source.label||"consulter la source")}</a></div>`:"";
- return `<section class="floralFormula" aria-label="Formule florale de la famille"><div class="formulaEyebrow">Formule florale de la famille · à lire avant les photos</div><div class="formulaTop"><div class="formulaCode">${esc(formula.formule||"")}</div><div class="formulaScope">${esc(formula.portee||"")}</div></div><p class="formulaIntro">${esc(formula.explication||"")}</p><div class="formulaParts">${parts}</div>${source}</section>`;
+ return `<section class="floralFormula" aria-label="Formule florale de la famille"><div class="formulaEyebrow">Signature florale de la famille · formule + preuves visuelles</div><div class="formulaTop"><div class="formulaCode">${esc(formula.formule||"")}</div><div class="formulaScope">${esc(formula.portee||"")}</div></div><p class="formulaIntro">${esc(formula.explication||"")}</p><div class="formulaParts">${parts}</div>${source}</section>`;
 }
 function render(f){
  CURRENT_FAMILY=f;
@@ -184,10 +184,9 @@ function render(f){
  document.getElementById("head").innerHTML=`<div class="headRow"><div><h1>${esc(f.fam)}</h1><div class="cnt">${total} photo(s) · ${DATA.organes.filter(o=>(f.organes[o]||[]).length).length} organe(s) documenté(s)</div></div><button class="renameFamily" id="renameFamilyButton" type="button">Corriger le nom de la famille ✎</button></div>`;
  document.getElementById("renameFamilyButton").onclick=()=>openFamilyEdit(f);
  document.getElementById("sig").innerHTML=f.note?`<div class="sig"><b>SIGNATURE DE LA FAMILLE — ce qu'il faut regarder</b><br>${f.note}</div>`:"";
- let h="";
+ let h=renderFloralFormula(f.formuleFlorale);
  DATA.organes.forEach(o=>{
   const arr=[...(f.organes[o]||[])].sort((a,b)=>detailScore(b)-detailScore(a));
-  if(o==="Fleur"&&f.formuleFlorale)h+=renderFloralFormula(f.formuleFlorale);
   h+=`<div class="organ"><div class="organHeader"><h3>${o} · ${arr.length}</h3>${arr.length?`<button class="selectOrgan" type="button" data-organ="${esc(o)}">Tout cocher</button>`:""}</div>`;
   h+= arr.length ? `<div class="gal">${arr.map((p,index)=>photo(p,o,index)).join("")}</div>` : `<div class="void"><span class="plus">＋</span>Aucune photo ${o.toLowerCase()} pour cette famille — à alimenter</div>`;
   h+=`</div>`;
@@ -198,6 +197,8 @@ function render(f){
 function openM(src){document.getElementById("mImg").src=src;document.getElementById("modal").classList.add("open");}
 function closeM(){document.getElementById("modal").classList.remove("open");}
 document.getElementById("body").addEventListener("click",event=>{
+ const formulaPhoto=event.target.closest(".formulaPartPhoto");
+ if(formulaPhoto){openM(formulaPhoto.dataset.formulaImage);return;}
  const selectOrgan=event.target.closest(".selectOrgan");
  if(selectOrgan){selectWholeOrgan(selectOrgan.dataset.organ);return;}
  const card=event.target.closest(".ph");
@@ -564,6 +565,7 @@ function selectFamily(f){
  document.getElementById("familySearchInput").value=f.fam;
  closeFamilyResults();
  render(f);
+ if(location.protocol!=="file:"){const url=new URL(location.href);url.searchParams.set("famille",f.fam);history.replaceState(null,"",url);}
 }
 function closeFamilyResults(){
  const results=document.getElementById("familyResults");
@@ -649,7 +651,7 @@ fetch("data/familles.json").then(r=>r.json()).then(d=>{
   }else if(e.key==="Escape")closeFamilyResults();
  });
  document.addEventListener("click",e=>{if(!document.getElementById("familySearchBox").contains(e.target))closeFamilyResults();});
- if(d.familles.length)selectFamily(d.familles[0]);
+ if(d.familles.length){const requested=new URLSearchParams(location.search).get("famille"),initial=d.familles.find(f=>normalizeText(f.fam)===normalizeText(requested))||d.familles[0];selectFamily(initial);}
 }).catch(err=>{
  const localFile=location.protocol==="file:";
  document.getElementById("body").innerHTML=localFile

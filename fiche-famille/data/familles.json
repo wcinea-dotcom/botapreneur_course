@@ -18,12 +18,13 @@
     "portee": "Pattern familial typique, avec variations selon le genre et l’espèce.",
     "explication": "Fleur généralement régulière et bisexuée, trimère, avec un périanthe libre, de nombreuses étamines et de nombreux carpelles portés par un réceptacle.",
     "parties": [
-     {"symbole": "✳", "nom": "Symétrie", "valeur": "Actinomorphe : plusieurs plans de symétrie."},
-     {"symbole": "K3", "nom": "Sépales", "valeur": "Le plus souvent 3; libres ou soudés à la base."},
-     {"symbole": "C3+3", "nom": "Pétales", "valeur": "Habituellement 6, disposés en deux verticilles de 3; souvent libres et charnus."},
-     {"symbole": "A∞", "nom": "Étamines", "valeur": "Nombreuses, généralement libres et disposées en spirale."},
-     {"symbole": "G∞", "nom": "Carpelles", "valeur": "Nombreux; le plus souvent libres, mais parfois partiellement soudés."},
-     {"symbole": "G supère", "nom": "Ovaire", "valeur": "Ovaire supère; chaque carpelle forme une unité du gynécée."}
+     {"symbole": "✳", "nom": "Symétrie", "valeur": "Actinomorphe : plusieurs plans de symétrie.", "image": "media/Annonaceae__Cananga-odorata__fleur-detachee-024.jpg", "legende": "Cananga odorata — vue générale de la fleur détachée.", "vue": "Vue strictement de face pour tracer les axes de symétrie."},
+     {"symbole": "⚥", "nom": "Sexualité", "valeur": "Fleur généralement bisexuée : étamines et carpelles dans la même fleur.", "vue": "Dissection centrale montrant simultanément l’androcée et le gynécée."},
+     {"symbole": "K3", "nom": "Sépales", "valeur": "Le plus souvent 3; libres ou soudés à la base.", "vue": "Vue basale rapprochée du calice montrant les trois sépales."},
+     {"symbole": "C3+3", "nom": "Pétales", "valeur": "Habituellement 6, disposés en deux verticilles de 3; souvent libres et charnus.", "image": "media/Annonaceae__Cananga-odorata__petales-detaches-027.jpg", "legende": "Cananga odorata — six pétales libres détachés.", "vue": "Disposition des deux verticilles de trois pétales."},
+     {"symbole": "A∞", "nom": "Étamines", "valeur": "Nombreuses, généralement libres et disposées en spirale.", "vue": "Macro du réceptacle montrant les nombreuses étamines."},
+     {"symbole": "G∞", "nom": "Carpelles", "valeur": "Nombreux; le plus souvent libres, mais parfois partiellement soudés.", "vue": "Macro centrale après retrait des étamines montrant les carpelles libres."},
+     {"symbole": "G supère", "nom": "Ovaire", "valeur": "Ovaire supère; chaque carpelle forme une unité du gynécée.", "vue": "Coupe longitudinale montrant l’ovaire au-dessus du point d’insertion du périanthe."}
     ],
     "source": {"label": "Flora of North America — Annonaceae", "url": "https://www.efloras.org/florataxon.aspx?flora_id=1&taxon_id=10047"}
    },
