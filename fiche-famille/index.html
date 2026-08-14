@@ -650,6 +650,11 @@ fetch("data/familles.json").then(r=>r.json()).then(d=>{
  });
  document.addEventListener("click",e=>{if(!document.getElementById("familySearchBox").contains(e.target))closeFamilyResults();});
  if(d.familles.length)selectFamily(d.familles[0]);
-}).catch(err=>{document.getElementById("body").innerHTML=`<p style="color:#b00;padding:0 4vw">Erreur : ${err.message} (ouvre via un serveur).</p>`;});
+}).catch(err=>{
+ const localFile=location.protocol==="file:";
+ document.getElementById("body").innerHTML=localFile
+  ? `<div style="margin:3rem 4vw;padding:1.4rem;border:1px solid #d8e2d5;border-radius:16px;background:#fff"><h2 style="margin-top:0;color:#073b68">Cette copie locale ne peut pas charger les données</h2><p>Ouvrez la fiche famille publiée pour consulter les photos et les formules florales.</p><a href="https://botapreneucourse.netlify.app/fiche-famille/" style="display:inline-block;padding:.8rem 1.1rem;border-radius:10px;background:#073b68;color:#fff;font-weight:800;text-decoration:none">Ouvrir la version en ligne →</a></div>`
+  : `<p style="color:#b00;padding:0 4vw">Erreur de chargement : ${esc(err.message)}. Rechargez la page.</p>`;
+});
 </script>
 </body></html>
