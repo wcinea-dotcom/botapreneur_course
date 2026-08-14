@@ -7148,7 +7148,80 @@
       ]
      }
     ],
-    "Fleur": [],
+    "Fleur": [
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_0069_fleurs-sur-plante.JPG",
+      "nom": "Murraya paniculata — fleurs sur la plante",
+      "confidence": "probable",
+      "patterns": ["Rutaceae", "fleur", "inflorescence", "fleurs blanches", "identification probable"]
+     },
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_0076_inflorescence.JPG",
+      "nom": "Murraya paniculata — inflorescence",
+      "confidence": "probable",
+      "patterns": ["Rutaceae", "inflorescence", "fleur pentamère", "identification probable"]
+     },
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_7625_vue-frontale.JPG",
+      "nom": "Murraya paniculata — symétrie florale",
+      "confidence": "probable",
+      "patterns": ["actinomorphe", "pentamère", "5 pétales libres", "10 étamines", "disque nectarifère"]
+     },
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_7630_androcee-gynecee.JPG",
+      "nom": "Murraya paniculata — androcée et gynécée",
+      "confidence": "probable",
+      "patterns": ["10 étamines", "gynécée central", "fleur bisexuée", "disque nectarifère"]
+     },
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_7641_cinq-petales.JPG",
+      "nom": "Murraya paniculata — cinq pétales libres",
+      "confidence": "probable",
+      "patterns": ["pentamère", "dialypétale", "5 pétales libres"]
+     },
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_7705_pistil-etamines.JPG",
+      "nom": "Murraya paniculata — pistil et étamines",
+      "confidence": "probable",
+      "patterns": ["dissection florale", "androcée", "gynécée", "pistil", "ovaire supère"]
+     },
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_7683_dissection-florale.JPG",
+      "nom": "Murraya paniculata — dissection de l'androcée",
+      "confidence": "probable",
+      "patterns": ["dissection florale", "10 étamines", "pistil", "androcée"]
+     },
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_7673_pieces-florales.JPG",
+      "nom": "Murraya paniculata — pièces florales séparées",
+      "confidence": "probable",
+      "patterns": ["pièces florales séparées", "pétales libres", "corolle disséquée", "androcée", "gynécée"]
+     },
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_7672_petales-libres.JPG",
+      "nom": "Murraya paniculata — pétales libres",
+      "confidence": "probable",
+      "patterns": ["pièces florales séparées", "pétales libres", "corolle dialypétale"]
+     },
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_7656_vue-laterale-calice.JPG",
+      "nom": "Murraya paniculata — vue latérale du calice",
+      "confidence": "probable",
+      "patterns": ["vue latérale", "calice", "sépales", "corolle libre"]
+     },
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_7654_vue-frontale.JPG",
+      "nom": "Murraya paniculata — vue frontale",
+      "confidence": "probable",
+      "patterns": ["vue frontale", "actinomorphe", "pentamère", "10 étamines"]
+     },
+     {
+      "img": "fleurs/rutaceae/Murraya-paniculata_IMG_7650_vue-frontale.JPG",
+      "nom": "Murraya paniculata — vue frontale rapprochée",
+      "confidence": "probable",
+      "patterns": ["vue frontale", "actinomorphe", "pentamère", "10 étamines"]
+     }
+    ],
     "Fruit": [
      {
       "img": "fruits/Rutaceae__Citrus-limon__117759154_728297281050575_4032937261124579830_n.jpg",

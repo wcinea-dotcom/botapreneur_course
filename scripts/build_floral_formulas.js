@@ -176,6 +176,29 @@ const formules = {};
 for (const [family, entry] of Object.entries(flowering)) formules[family] = makeFormula(family, entry);
 for (const [family, entry] of Object.entries(nonFlowering)) formules[family] = makeNonFlowering(entry);
 
+// Rutaceae : formule familiale distincte de l'état observé chez l'espèce photographiée.
+// Les photographies de Murraya paniculata documentent concrètement chaque élément.
+formules.Rutaceae = {
+  formule: "✳ ⚥ K4–5 C4–5 A8–10(–∞) G(2–5)",
+  formuleIllustree: "Murraya paniculata : ✳ ⚥ K5 C5 A10 G(2) — ovaire supère",
+  portee: "Formule familiale synthétique : les nombres varient selon les genres. Les photographies montrent l'état observé chez Murraya paniculata.",
+  explication: "Fleurs généralement actinomorphes et bisexuées, à 4 ou 5 sépales et pétales libres, avec un disque nectarifère bien développé. L'androcée compte souvent 8 à 10 étamines, parfois davantage; le gynécée syncarpe porte un ovaire supère.",
+  statut: "Formule familiale généralisée; identification photographique de Murraya paniculata à confirmer par un spécimen documenté.",
+  parties: [
+    {symbole: "✳", nom: "Symétrie", valeur: "Actinomorphe : plusieurs plans de symétrie autour du centre.", image: "fleurs/rutaceae/Murraya-paniculata_IMG_7625_vue-frontale.JPG", legende: "Vue frontale montrant la symétrie radiale.", vue: "Fleur entière strictement de face."},
+    {symbole: "⚥", nom: "Sexualité", valeur: "Fleur bisexuée : étamines et gynécée réunis dans la même fleur.", image: "fleurs/rutaceae/Murraya-paniculata_IMG_7630_androcee-gynecee.JPG", legende: "Étamines entourant le gynécée central.", vue: "Centre floral avec organes reproducteurs visibles."},
+    {symbole: "K4–5", nom: "Sépales / calice", valeur: "Calice à 4 ou 5 petits sépales, libres ou partiellement unis selon le genre.", image: "fleurs/rutaceae/Murraya-paniculata_IMG_7656_vue-laterale-calice.JPG", legende: "Vue latérale de la base florale et du calice.", vue: "Dessous de la fleur et calice isolé."},
+    {symbole: "C4–5", nom: "Pétales / corolle", valeur: "Corolle à 4 ou 5 pétales libres; 5 pétales chez l'espèce photographiée.", image: "fleurs/rutaceae/Murraya-paniculata_IMG_7672_petales-libres.JPG", legende: "Pétales séparés montrant une corolle dialypétale.", vue: "Pétales isolés et disposés en verticille."},
+    {symbole: "A8–10(–∞)", nom: "Étamines / androcée", valeur: "Souvent 8 à 10 étamines, parfois plus nombreuses; 10 chez Murraya paniculata.", image: "fleurs/rutaceae/Murraya-paniculata_IMG_7683_dissection-florale.JPG", legende: "Dissection montrant les filets et les anthères.", vue: "Étamines isolées avec filet et anthère visibles."},
+    {symbole: "G(2–5)", nom: "Carpelles / gynécée", valeur: "Gynécée syncarpe, généralement formé de 2 à 5 carpelles; bicarpellé chez l'espèce illustrée.", image: "fleurs/rutaceae/Murraya-paniculata_IMG_7705_pistil-etamines.JPG", legende: "Pistil central entouré par les étamines.", vue: "Pistil isolé et coupe transversale de l'ovaire."},
+    {symbole: "G", nom: "Position de l'ovaire", valeur: "Ovaire supère, associé à un disque nectarifère intrastaminal caractéristique.", image: "fleurs/rutaceae/Murraya-paniculata_IMG_7673_pieces-florales.JPG", legende: "Pièces florales disséquées; la position supère reste à confirmer par une coupe longitudinale.", vue: "Coupe longitudinale montrant l'insertion des pièces florales."}
+  ],
+  source: {
+    label: "Kew Plants of the World Online — Murraya paniculata (Rutaceae)",
+    url: "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A774441-1/general-information"
+  }
+};
+
 fs.writeFileSync(output, JSON.stringify({
   version: "2026-08-14",
   avertissement: "Formules pédagogiques simplifiées. Toujours vérifier les variations au niveau du genre et de l’espèce avant une identification.",
