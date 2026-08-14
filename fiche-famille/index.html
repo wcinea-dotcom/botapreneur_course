@@ -176,7 +176,8 @@ function renderFloralFormula(formula){
  if(!formula)return "";
  const parts=(formula.parties||[]).map(part=>{const visual=part.image?`<button class="formulaPartPhoto" type="button" data-formula-image="${esc(part.image)}" aria-label="Agrandir : ${esc(part.legende||part.nom||'photo anatomique')}"><img loading="lazy" src="${esc(part.image)}" alt="${esc(part.legende||part.nom||'Caractère floral')}"></button>`:`<div class="formulaPartMissing">PHOTO ANATOMIQUE À AJOUTER</div>`;return `<div class="formulaPart">${visual}<div class="formulaPartBody"><span class="formulaSymbol">${esc(part.symbole||"")}</span><strong>${esc(part.nom||"")}</strong><span>${esc(part.valeur||"")}</span>${part.legende?`<span class="formulaCaption">${esc(part.legende)}</span>`:""}${part.vue?`<span class="formulaNeed">Vue recherchée : ${esc(part.vue)}</span>`:""}</div></div>`}).join("");
  const source=formula.source&&formula.source.url?`<div class="formulaSource">Source morphologique : <a href="${esc(formula.source.url)}" target="_blank" rel="noopener">${esc(formula.source.label||"consulter la source")}</a></div>`:"";
- return `<section class="floralFormula" aria-label="Formule florale de la famille"><div class="formulaEyebrow">Signature florale de la famille · formule + preuves visuelles</div><div class="formulaTop"><div class="formulaCode">${esc(formula.formule||"")}</div><div class="formulaScope">${esc(formula.portee||"")}</div></div><p class="formulaIntro">${esc(formula.explication||"")}</p><div class="formulaParts">${parts}</div>${source}</section>`;
+ const status=formula.statut?`<div class="formulaScope"><strong>Statut :</strong> ${esc(formula.statut)}</div>`:"";
+ return `<section class="floralFormula" aria-label="Formule florale de la famille"><div class="formulaEyebrow">Signature florale de la famille · formule + preuves visuelles</div><div class="formulaTop"><div class="formulaCode">${esc(formula.formule||"")}</div><div class="formulaScope">${esc(formula.portee||"")}</div></div>${status}<p class="formulaIntro">${esc(formula.explication||"")}</p><div class="formulaParts">${parts}</div>${source}</section>`;
 }
 function render(f){
  CURRENT_FAMILY=f;
@@ -622,7 +623,13 @@ function linkValidatedSeedsToFamilies(data){
  data.familles.sort((a,b)=>a.fam.localeCompare(b.fam,"fr"));
 }
 
-fetch("data/familles.json").then(r=>r.json()).then(d=>{
+Promise.all([
+ fetch("data/familles.json").then(r=>{if(!r.ok)throw new Error(`Familles : ${r.status}`);return r.json()}),
+ fetch("data/formules-florales.json").then(r=>{if(!r.ok)throw new Error(`Formules florales : ${r.status}`);return r.json()})
+]).then(([d,floralData])=>{
+ d.familles.forEach(family=>{
+  if(!family.formuleFlorale&&floralData.formules&&floralData.formules[family.fam])family.formuleFlorale=floralData.formules[family.fam];
+ });
  linkValidatedSeedsToFamilies(d);
  DATA=d;
  applyStoredCorrections();
