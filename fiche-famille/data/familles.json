@@ -13,6 +13,20 @@
   {
    "fam": "Annonaceae",
    "note": "Magnoliidées. Feuilles simples, entières, sans stipules, généralement alternes et DISTIQUES (deux rangs), souvent aromatiques. Fleurs le plus souvent TRIMÈRES : typiquement 3 sépales et 6 pétales en deux verticilles; pétales le plus souvent libres, rarement soudés. Nombreuses étamines et carpelles LIBRES (apocarpie) sur un réceptacle souvent bombé. Fruits AGRÉGÉS charnus. FORMULE FLORALE simplifiée : ✶ ⚥ K3 C3+3 A∞ G∞ (apocarpe, ovaire supère). CHIMIE : huiles essentielles aromatiques; alcaloïdes benzylisoquinoléiques surtout aporphiniques; acétogénines d'Annonaceae, dont la bioactivité et la neurotoxicité potentielle exigent de la prudence. Genres illustrés : Annona et Cananga.",
+   "formuleFlorale": {
+    "formule": "✳ ⚥ K3 C3+3 A∞ G∞",
+    "portee": "Pattern familial typique, avec variations selon le genre et l’espèce.",
+    "explication": "Fleur généralement régulière et bisexuée, trimère, avec un périanthe libre, de nombreuses étamines et de nombreux carpelles portés par un réceptacle.",
+    "parties": [
+     {"symbole": "✳", "nom": "Symétrie", "valeur": "Actinomorphe : plusieurs plans de symétrie."},
+     {"symbole": "K3", "nom": "Sépales", "valeur": "Le plus souvent 3; libres ou soudés à la base."},
+     {"symbole": "C3+3", "nom": "Pétales", "valeur": "Habituellement 6, disposés en deux verticilles de 3; souvent libres et charnus."},
+     {"symbole": "A∞", "nom": "Étamines", "valeur": "Nombreuses, généralement libres et disposées en spirale."},
+     {"symbole": "G∞", "nom": "Carpelles", "valeur": "Nombreux; le plus souvent libres, mais parfois partiellement soudés."},
+     {"symbole": "G supère", "nom": "Ovaire", "valeur": "Ovaire supère; chaque carpelle forme une unité du gynécée."}
+    ],
+    "source": {"label": "Flora of North America — Annonaceae", "url": "https://www.efloras.org/florataxon.aspx?flora_id=1&taxon_id=10047"}
+   },
    "organes": {
     "Feuille": [
      {
@@ -2303,6 +2317,20 @@
   {
    "fam": "Malvaceae",
    "note": "Colonne staminale (étamines monadelphes) très caractéristique.",
+   "formuleFlorale": {
+    "formule": "✳ ⚥ K(5) C5 A(∞) G(5)",
+    "portee": "Formule de type Hibiscus / Malvoideae, adaptée aux photos illustrées; la famille Malvaceae au sens large présente des variations.",
+    "explication": "La fleur est généralement régulière, bisexuée et pentamère. Chez Hibiscus, les nombreuses étamines sont soudées par leurs filets en une colonne très visible autour du style.",
+    "parties": [
+     {"symbole": "✳", "nom": "Symétrie", "valeur": "Actinomorphe : plusieurs plans de symétrie."},
+     {"symbole": "EpiK", "nom": "Calicule", "valeur": "Souvent présent chez Hibiscus; nombre de bractéoles variable et élément non universel de la famille."},
+     {"symbole": "K(5)", "nom": "Sépales", "valeur": "5 sépales généralement soudés en calice."},
+     {"symbole": "C5", "nom": "Pétales", "valeur": "5 pétales libres, souvent grands et colorés."},
+     {"symbole": "A(∞)", "nom": "Étamines", "valeur": "Nombreuses; filets soudés en colonne staminale (monadelphie)."},
+     {"symbole": "G(5)", "nom": "Carpelles et ovaire", "valeur": "Typiquement 5 carpelles soudés chez Hibiscus; ovaire supère et style à 5 branches."}
+    ],
+    "source": {"label": "Flora of China — Hibiscus rosa-sinensis", "url": "https://www.efloras.org/florataxon.aspx?flora_id=2&taxon_id=200013716"}
+   },
    "organes": {
     "Feuille": [],
     "Fleur": [
@@ -9221,6 +9249,20 @@
   {
    "fam": "Convolvulaceae",
    "note": "",
+   "formuleFlorale": {
+    "formule": "✳ ⚥ K5 C(5) A5 G(2)",
+    "portee": "Pattern fréquent des Convolvulaceae; certains nombres et la structure de l’ovaire varient selon les genres.",
+    "explication": "La fleur est généralement régulière, bisexuée et pentamère. Le contraste pédagogique majeur est celui des 5 sépales libres et des 5 pétales soudés formant une corolle en entonnoir ou en cloche.",
+    "parties": [
+     {"symbole": "✳", "nom": "Symétrie", "valeur": "Actinomorphe : plusieurs plans de symétrie."},
+     {"symbole": "K5", "nom": "Sépales", "valeur": "5 sépales généralement libres, souvent persistants autour du fruit."},
+     {"symbole": "C(5)", "nom": "Pétales", "valeur": "5 pétales soudés : corolle gamopétale, souvent en entonnoir."},
+     {"symbole": "A5", "nom": "Étamines", "valeur": "5 étamines insérées sur le tube de la corolle (épipétales)."},
+     {"symbole": "G(2)", "nom": "Carpelles", "valeur": "2 carpelles soudés; gynécée syncarpe."},
+     {"symbole": "G supère", "nom": "Ovaire", "valeur": "Ovaire supère, souvent à 2 loges; généralement un style et 2 stigmates ou lobes stigmatiques."}
+    ],
+    "source": {"label": "Flora of North America — Convolvulus", "url": "https://www.efloras.org/florataxon.aspx?flora_id=1&taxon_id=107909"}
+   },
    "organes": {
     "Fruit": [
      {

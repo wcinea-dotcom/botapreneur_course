@@ -30,6 +30,10 @@
 .renameFamily{border:1px solid #b8c7d5;border-radius:8px;padding:8px 11px;background:#fff;color:var(--navy);font:700 11px Poppins,sans-serif;cursor:pointer}.renameFamily:hover{border-color:var(--green);color:var(--green);background:#f4f8f1}
 .sig{background:#eef3ea;border-left:4px solid var(--lime);padding:12px 16px;margin:12px 4vw 0;border-radius:8px;max-width:900px;font-size:14px;line-height:1.55}
 .sig b{font-family:Poppins;color:var(--green)}
+.floralFormula{margin:16px 4vw 4px;padding:18px;background:#fff;border:1px solid #d8e1d3;border-top:5px solid var(--orange);border-radius:14px;box-shadow:0 6px 20px rgba(0,51,102,.06)}
+.formulaEyebrow{font:800 11px Poppins,sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:var(--green)}
+.formulaTop{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:6px}.formulaCode{font:800 clamp(24px,4vw,42px) Poppins,sans-serif;color:var(--navy);letter-spacing:.04em}.formulaScope{max-width:500px;padding:8px 11px;border-radius:8px;background:#fff3e9;color:#8d4617;font-size:12px;line-height:1.4}
+.formulaIntro{margin:10px 0 13px;max-width:950px;color:#53606b;font-size:13px;line-height:1.55}.formulaParts{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px}.formulaPart{min-height:94px;padding:11px;border:1px solid #e1e7dc;border-radius:10px;background:#f7f9f4}.formulaPart strong{display:block;margin-bottom:4px;color:var(--green);font:700 12px Poppins,sans-serif}.formulaPart span{display:block;color:#39444d;font-size:12px;line-height:1.4}.formulaSymbol{color:var(--navy)!important;font:800 18px Poppins,sans-serif!important;margin-bottom:5px}.formulaSource{margin-top:11px;color:#78838b;font-size:10px}.formulaSource a{color:var(--green)}
 .organ{padding:16px 4vw 4px}
 .organHeader{display:flex;align-items:center;gap:8px;margin:0 0 10px;flex-wrap:wrap}.organ h3{font-family:Poppins;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--green);display:inline-block;padding:5px 12px;border-radius:8px;margin:0}.selectOrgan{border:0;background:transparent;color:#71806d;border-radius:5px;padding:3px 5px;font:700 9px Poppins,sans-serif;cursor:pointer}.selectOrgan:hover{color:var(--green);text-decoration:underline}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
@@ -168,6 +172,12 @@ function photo(p,organ,index){
  return `<div class="ph${selected}" data-family="${esc(CURRENT_FAMILY.fam)}" data-organ="${esc(organ)}" data-index="${index}"><button class="selectBox" type="button" aria-label="${selected?"Retirer":"Sélectionner"} cette photo" aria-pressed="${selected}">${selected?"✓":""}</button><button class="editCard" type="button">CORRIGER ✎</button><div class="im"><img loading="lazy" src="${esc(p.img)}" alt="${esc(p.nom||organ)}"></div><div class="bd"><div class="nm">${esc(p.nom||"")}</div><span class="tag organTag">Organe : ${esc(organ)}</span>${proposed}${tags}</div></div>`;
 }
 function detailScore(p){return (p.patterns||[]).some(t=>/pétale|détach|coupe|intérieur|dissection/i.test(t))?1:0;}
+function renderFloralFormula(formula){
+ if(!formula)return "";
+ const parts=(formula.parties||[]).map(part=>`<div class="formulaPart"><span class="formulaSymbol">${esc(part.symbole||"")}</span><strong>${esc(part.nom||"")}</strong><span>${esc(part.valeur||"")}</span></div>`).join("");
+ const source=formula.source&&formula.source.url?`<div class="formulaSource">Source morphologique : <a href="${esc(formula.source.url)}" target="_blank" rel="noopener">${esc(formula.source.label||"consulter la source")}</a></div>`:"";
+ return `<section class="floralFormula" aria-label="Formule florale de la famille"><div class="formulaEyebrow">Formule florale de la famille · à lire avant les photos</div><div class="formulaTop"><div class="formulaCode">${esc(formula.formule||"")}</div><div class="formulaScope">${esc(formula.portee||"")}</div></div><p class="formulaIntro">${esc(formula.explication||"")}</p><div class="formulaParts">${parts}</div>${source}</section>`;
+}
 function render(f){
  CURRENT_FAMILY=f;
  const total=DATA.organes.reduce((s,o)=>s+((f.organes[o]||[]).length),0);
@@ -177,6 +187,7 @@ function render(f){
  let h="";
  DATA.organes.forEach(o=>{
   const arr=[...(f.organes[o]||[])].sort((a,b)=>detailScore(b)-detailScore(a));
+  if(o==="Fleur"&&f.formuleFlorale)h+=renderFloralFormula(f.formuleFlorale);
   h+=`<div class="organ"><div class="organHeader"><h3>${o} · ${arr.length}</h3>${arr.length?`<button class="selectOrgan" type="button" data-organ="${esc(o)}">Tout cocher</button>`:""}</div>`;
   h+= arr.length ? `<div class="gal">${arr.map((p,index)=>photo(p,o,index)).join("")}</div>` : `<div class="void"><span class="plus">＋</span>Aucune photo ${o.toLowerCase()} pour cette famille — à alimenter</div>`;
   h+=`</div>`;
