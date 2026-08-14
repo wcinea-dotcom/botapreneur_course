@@ -797,6 +797,7 @@ Object.assign(mediaTraits,{
 const FAMILY_CORRECTION_KEY='botapreneurs-family-photo-corrections-v1';
 const FAMILY_RENAME_KEY='botapreneurs-family-renames-v1';
 const PATTERN_CORRECTION_KEY='botapreneurs-pattern-photo-corrections-v1';
+const PHOTO_DELETION_KEY='botapreneurs-photo-deletions-v1';
 function normalizedFamily(value){return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim()}
 function storedFamilyRenameMap(){
  let renames=[];try{renames=JSON.parse(localStorage.getItem(FAMILY_RENAME_KEY)||'[]')}catch(_){renames=[]}
@@ -843,6 +844,12 @@ function applyPatternCorrection(correction){
  return true;
 }
 function loadPatternCorrections(){storedPatternCorrections().forEach(applyPatternCorrection)}
+function photoAssetKey(value){try{return decodeURIComponent(new URL(String(value||''),location.href).pathname.split('/').pop()||'').toLowerCase()}catch(_){return String(value||'').split('/').pop().toLowerCase()}}
+function loadPhotoDeletions(){
+ let deletions=[];try{deletions=JSON.parse(localStorage.getItem(PHOTO_DELETION_KEY)||'[]')}catch(_){deletions=[]}
+ const keys=new Set(deletions.map(item=>item.photoKey||photoAssetKey(item.photo)));
+ Object.values(L).forEach(lesson=>{lesson.p=(lesson.p||[]).filter(src=>!keys.has(photoAssetKey(src)))});
+}
 function savePatternCorrections(corrections){
  const changed=new Set(corrections.map(item=>`${item.photo}\u241f${normalizePattern(item.oldPattern)}`));
  const retained=storedPatternCorrections().filter(item=>!changed.has(`${item.photo}\u241f${normalizePattern(item.oldPattern)}`));
@@ -851,7 +858,8 @@ function savePatternCorrections(corrections){
 applyFamilyRenamesIntoPatterns();
 loadFamilyCorrectionsIntoPatterns();
 loadPatternCorrections();
-window.addEventListener('storage',event=>{if(event.key===FAMILY_CORRECTION_KEY||event.key===FAMILY_RENAME_KEY||event.key===PATTERN_CORRECTION_KEY)location.reload()});
+loadPhotoDeletions();
+window.addEventListener('storage',event=>{if(event.key===FAMILY_CORRECTION_KEY||event.key===FAMILY_RENAME_KEY||event.key===PATTERN_CORRECTION_KEY||event.key===PHOTO_DELETION_KEY)location.reload()});
 
 const PATTERN_SELECTED=new Map();
 let currentLessonId=null;

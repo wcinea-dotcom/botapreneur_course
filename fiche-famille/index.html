@@ -22,7 +22,7 @@
 .familyOption small{font:400 12px Lato,sans-serif;color:#7a8590;white-space:nowrap}
 .noFamily{padding:12px;color:#7a8590;font-size:13px}
 .hint{color:#7a8590;font-size:13px}
-.batchBar{position:fixed;left:50%;bottom:18px;z-index:45;display:none;align-items:center;gap:8px;transform:translateX(-50%);padding:7px 8px 7px 12px;background:rgba(0,51,102,.96);color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:999px;box-shadow:0 8px 25px rgba(0,30,60,.28);white-space:nowrap}.batchBar.hasSelection{display:flex}.batchBar button{border:0;border-radius:999px;padding:7px 11px;font:700 10px Poppins,sans-serif;cursor:pointer}.clearSelection{background:rgba(255,255,255,.16);color:#fff}.editSelected{background:var(--lime);color:#173c19}.selectionCount{font:700 11px Poppins,sans-serif}.batchGuide{display:none}
+.batchBar{position:fixed;left:50%;bottom:18px;z-index:45;display:none;align-items:center;gap:8px;transform:translateX(-50%);padding:7px 8px 7px 12px;background:rgba(0,51,102,.96);color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:999px;box-shadow:0 8px 25px rgba(0,30,60,.28);white-space:nowrap}.batchBar.hasSelection{display:flex}.batchBar button{border:0;border-radius:999px;padding:7px 11px;font:700 10px Poppins,sans-serif;cursor:pointer}.clearSelection{background:rgba(255,255,255,.16);color:#fff}.editSelected{background:var(--lime);color:#173c19}.deleteSelected{background:#b73a2c;color:#fff}.selectionCount{font:700 11px Poppins,sans-serif}.batchGuide{display:none}
 .head{padding:22px 4vw 6px}
 .headRow{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .head h1{font-family:Poppins;font-weight:800;color:var(--navy);font-size:clamp(24px,4vw,38px);margin:0}
@@ -57,6 +57,7 @@
 .editField input,.editField select,.editField textarea{width:100%;padding:10px;border:1px solid #b9c4cc;border-radius:8px;font:14px Lato,sans-serif;color:var(--ink);background:#fff}.editField textarea{min-height:76px;resize:vertical}
 .editActions{display:flex;justify-content:flex-end;gap:9px;margin-top:17px}.editActions button{border:0;border-radius:8px;padding:10px 15px;font:700 12px Poppins,sans-serif;cursor:pointer}.cancelEdit{background:#e9edf0;color:#53606b}.saveEdit{background:var(--green);color:#fff}.editMessage{display:none;margin-top:12px;padding:10px;border-radius:8px;font-size:13px}.editMessage.ok{display:block;background:#e8f3e8;color:#236128}.editMessage.error{display:block;background:#fff0ec;color:#a33a20}
 .proposalTag{background:#fff3e9;color:#a94f12}
+.deletePanel{width:min(540px,100%)}.deleteSummary{display:grid;grid-template-columns:repeat(6,52px);gap:6px;margin:12px 0}.deleteSummary img{width:52px;height:52px;object-fit:cover;border-radius:7px;border:2px solid #e7d4d0}.deleteWarning{padding:11px 13px;border-radius:9px;background:#fff0ec;color:#8e3024;font-size:13px;line-height:1.5}.confirmDelete{background:#b73a2c;color:#fff}
 .familyEditPanel{width:min(540px,100%)}.familySummary{padding:11px 13px;border-radius:9px;background:#eef3ea;color:#315f34;font-size:13px;line-height:1.45;margin:0 0 14px}.familyMergeInfo{display:none;margin-top:7px;padding:9px 11px;border-radius:8px;background:#fff3e9;color:#914513;font-size:12px;line-height:1.4}.familyMergeInfo.show{display:block}
 .taxonAssist{display:none;grid-column:1/-1;margin-top:-3px;padding:10px 12px;border-radius:8px;background:#eef4f8;color:#214f72;font-size:12px;line-height:1.45}.taxonAssist.show{display:block}.taxonAssist.warning{display:block;background:#fff3e9;color:#914513}.taxonAssist b{font-family:Poppins,sans-serif}
 @media(max-width:600px){.editGrid{grid-template-columns:1fr}.editField.full{grid-column:auto}.editPanel{padding:17px}}
@@ -71,7 +72,7 @@
   <div class="familyResults" id="familyResults" role="listbox"></div>
  </div>
  <span class="hint">Choisis une famille → vois toutes ses photos par organe, pour apprendre sa signature.</span></div>
-<div class="batchBar" id="batchBar"><span class="selectionCount" id="selectionCount">0 sélectionnée</span><button class="clearSelection" id="clearSelection" type="button">Annuler</button><button class="editSelected" id="editSelected" type="button" disabled>Corriger</button></div>
+<div class="batchBar" id="batchBar"><span class="selectionCount" id="selectionCount">0 sélectionnée</span><button class="clearSelection" id="clearSelection" type="button">Annuler</button><button class="editSelected" id="editSelected" type="button" disabled>Corriger</button><button class="deleteSelected" id="deleteSelected" type="button" disabled>Supprimer</button></div>
 
 <div class="head" id="head"></div>
 <div id="sig"></div>
@@ -129,6 +130,25 @@
  </div>
 </div>
 
+<div class="editModal" id="deleteModal" aria-hidden="true">
+ <div class="editPanel deletePanel" role="dialog" aria-modal="true" aria-labelledby="deleteTitle">
+  <h2 id="deleteTitle">Supprimer les photos sélectionnées ?</h2>
+  <p class="editIntro">Les photos seront masquées dans les fiches famille et dans Plant Patterns. Les fichiers originaux resteront conservés dans le stockage.</p>
+  <div class="deleteSummary" id="deletePreview"></div>
+  <div class="deleteWarning" id="deleteWarning"></div>
+  <form id="deleteForm" name="suppression-photo" method="POST" data-netlify="true" netlify-honeypot="delete-bot-field">
+   <input type="hidden" name="form-name" value="suppression-photo">
+   <input type="hidden" name="photos-json" id="deletePhotosJson">
+   <input type="hidden" name="nombre-photos" id="deleteCount">
+   <input type="hidden" name="famille" id="deleteFamily">
+   <p hidden><label>Ne pas remplir : <input name="delete-bot-field"></label></p>
+   <div class="editField"><label for="deleteNote">Raison de la suppression (facultative)</label><textarea id="deleteNote" name="raison" placeholder="Ex. Cette photo n’appartient pas à la famille."></textarea></div>
+   <div class="editActions"><button class="cancelEdit" id="cancelDelete" type="button">Annuler</button><button class="confirmDelete" type="submit">Confirmer la suppression</button></div>
+   <div class="editMessage" id="deleteMessage" role="status"></div>
+  </form>
+ </div>
+</div>
+
 <script src="../plant-patterns/seed-gallery.js?v=20260804-2"></script>
 <script>
 let DATA=null;
@@ -137,6 +157,7 @@ let EDIT_CONTEXT=null;
 const SELECTED=new Map();
 const CORRECTION_KEY="botapreneurs-family-photo-corrections-v1";
 const FAMILY_RENAME_KEY="botapreneurs-family-renames-v1";
+const PHOTO_DELETION_KEY="botapreneurs-photo-deletions-v1";
 function esc(value){return String(value??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
 function selectionKey(familyName,organ,index,img){return [familyName,organ,index,img].join("\u241f");}
 function photo(p,organ,index){
@@ -216,6 +237,18 @@ function applyCorrection(correction,sourceItem){
  return true;
 }
 function applyStoredCorrections(){storedCorrections().forEach(correction=>applyCorrection(correction))}
+function photoAssetKey(value){try{return decodeURIComponent(new URL(String(value||""),location.href).pathname.split("/").pop()||"").toLowerCase()}catch(_){return String(value||"").split("/").pop().toLowerCase()}}
+function storedPhotoDeletions(){try{return JSON.parse(localStorage.getItem(PHOTO_DELETION_KEY)||"[]")}catch(_){return[]}}
+function savePhotoDeletions(deletions){
+ const keys=new Set(deletions.map(item=>item.photoKey));
+ const retained=storedPhotoDeletions().filter(item=>!keys.has(item.photoKey));
+ localStorage.setItem(PHOTO_DELETION_KEY,JSON.stringify(retained.concat(deletions)));
+ window.dispatchEvent(new CustomEvent("plant-patterns-photo-deletions-updated",{detail:{deletions}}));
+}
+function applyPhotoDeletions(deletions=storedPhotoDeletions()){
+ const keys=new Set(deletions.map(item=>item.photoKey||photoAssetKey(item.photo)));
+ DATA.familles.forEach(family=>DATA.organes.forEach(organ=>{family.organes[organ]=(family.organes[organ]||[]).filter(photo=>!keys.has(photoAssetKey(photo.img)))}));
+}
 function storedFamilyRenames(){try{return JSON.parse(localStorage.getItem(FAMILY_RENAME_KEY)||"[]")}catch(_){return[]}}
 function saveFamilyRename(correction){
  const all=storedFamilyRenames().filter(item=>normalizeText(item.oldFamily)!==normalizeText(correction.oldFamily));
@@ -296,6 +329,7 @@ function updateSelectionUI(){
  const count=SELECTED.size;
  document.getElementById("selectionCount").textContent=`${count} sélectionnée${count>1?"s":""}`;
  document.getElementById("editSelected").disabled=count===0;
+ document.getElementById("deleteSelected").disabled=count===0;
  document.getElementById("batchBar").classList.toggle("hasSelection",count>0);
 }
 function selectionRecord(card){
@@ -337,6 +371,31 @@ function clearSelection(){
 }
 document.getElementById("clearSelection").onclick=clearSelection;
 document.getElementById("editSelected").onclick=()=>openBatchEdit(selectedRecords());
+document.getElementById("deleteSelected").onclick=()=>openDelete(selectedRecords());
+function openDelete(items){
+ if(!items.length)return;
+ document.getElementById("deletePreview").innerHTML=items.slice(0,12).map(item=>`<img src="${esc(item.img)}" alt="Photo sélectionnée">`).join("");
+ document.getElementById("deleteWarning").textContent=`Vous allez retirer ${items.length} photo${items.length>1?"s":""} de toutes les galeries publiques. Cette action ne supprimera pas les fichiers originaux.`;
+ document.getElementById("deletePhotosJson").value=JSON.stringify(items.map(item=>item.img));
+ document.getElementById("deleteCount").value=String(items.length);
+ document.getElementById("deleteFamily").value=[...new Set(items.map(item=>item.familyName))].join(" | ");
+ document.getElementById("deleteNote").value="";document.getElementById("deleteMessage").className="editMessage";
+ const modal=document.getElementById("deleteModal");modal.classList.add("open");modal.setAttribute("aria-hidden","false");
+}
+function closeDelete(){const modal=document.getElementById("deleteModal");modal.classList.remove("open");modal.setAttribute("aria-hidden","true")}
+document.getElementById("cancelDelete").onclick=closeDelete;
+document.getElementById("deleteModal").onclick=event=>{if(event.target.id==="deleteModal")closeDelete()};
+document.getElementById("deleteForm").addEventListener("submit",async event=>{
+ event.preventDefault();
+ const items=selectedRecords();if(!items.length){closeDelete();return}
+ const form=event.currentTarget,message=document.getElementById("deleteMessage"),note=document.getElementById("deleteNote").value.trim(),createdAt=new Date().toISOString();
+ const deletions=items.map(item=>({photo:item.img,photoKey:photoAssetKey(item.img),family:item.familyName,organ:item.organ,name:item.name,note,createdAt}));
+ let transmitted=false;
+ try{const body=new URLSearchParams(new FormData(form)).toString(),response=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});if(!response.ok)throw new Error(`Erreur ${response.status}`);transmitted=true}catch(error){console.warn("Transmission Netlify différée",error)}
+ savePhotoDeletions(deletions);applyPhotoDeletions(deletions);
+ message.className="editMessage ok";message.textContent=`${deletions.length} photo${deletions.length>1?"s":""} supprimée${deletions.length>1?"s":""} des galeries.${transmitted?" La demande centrale a aussi été envoyée.":" Les fichiers originaux sont conservés."}`;
+ const family=CURRENT_FAMILY;setTimeout(()=>{closeDelete();clearSelection();selectFamily(family)},900);
+});
 function resetEditPresentation(){
  document.getElementById("batchPreview").className="batchPreview";
  document.getElementById("batchPreview").innerHTML="";
@@ -555,6 +614,7 @@ fetch("data/familles.json").then(r=>r.json()).then(d=>{
  DATA=d;
  applyStoredCorrections();
  applyStoredFamilyRenames();
+ applyPhotoDeletions();
  refreshFamilyNames();
  document.getElementById("editOrgan").innerHTML=`<option value="">Choisir un organe…</option>`+d.organes.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join("");
  const input=document.getElementById("familySearchInput");
